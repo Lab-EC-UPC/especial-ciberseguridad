@@ -2,42 +2,12 @@ import React, { useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 import { ChevronLeftIcon, MagnifyingGlassIcon, PhoneIcon, VideoCameraIcon } from "@heroicons/react/24/outline";
+import {Chats} from "./content/Chats.ts";
 
 const Layout: React.FC = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-    const routes = [
-        {
-            link: "/",
-            title: "CiberAlerta Perú",
-            message: "Bienvenidos al especial",
-            time: "Jueves",
-            avatar: "https://cdn0.iconfinder.com/data/icons/color-statistics/433492/08-512.png",
-            isPinned: false,
-            isMute: false,
-            isRead: true,
-        },
-        {
-            link: "/definition",
-            title: "¿Qué es la ciberdelincuencia?",
-            message: "¿Cómo ha ido creciendo este delito?",
-            time: "18:10",
-            avatar: "https://png.pngtree.com/png-vector/20221019/ourlarge/pngtree-wondering-avatar-with-a-question-mark-head-seeking-iconic-help-vector-png-image_15051410.jpg",
-            isPinned: true,
-            isMute: true,
-            isRead: false,
-        },
-        {
-            link: "/link-verifier",
-            title: "Link Verifier Tool",
-            message: "Verify your links now",
-            time: "Yesterday",
-            avatar: "https://cdn-icons-png.flaticon.com/512/287/287221.png",
-            isPinned: false,
-            isMute: true,
-            isRead: false,
-        },
-    ];
+    const routes = Chats;
 
     const location = useLocation();
     const activeRoute = routes.find((route) => route.link === location.pathname) || routes[0];
