@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.button-green {
+  @apply bg-green-dark py-2 px-4 md:px-12 rounded-full;
+  @apply text-white md:text-xl;
+  @apply hover:scale-95 duration-300;
+}
