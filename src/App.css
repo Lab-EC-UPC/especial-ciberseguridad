@@ -2,9 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .button-green {
   @apply bg-green-dark py-2 px-4 md:px-12 rounded-full;
   @apply text-white md:text-xl;
   @apply hover:scale-95 duration-300;
+}
+
+.chat-title-box {
+    @apply w-full md:w-3/4;
+    @apply bg-green-dark py-2 px-4 md:px-8 rounded-full;
+    @apply text-lg md:text-2xl font-bold text-center;
+    @apply text-white;
+}
+
+.chat-left {
+    @apply text-sm md:text-base;
+    @apply w-3/4 md:max-w-xl;
+    @apply bg-white shadow-md rounded-lg p-4 my-2;
+}
+
+.chat-box {
+    @apply sm:text-sm md:text-base;
+    @apply w-3/4 md:max-w-xl;
+    @apply shadow-md rounded-lg p-4 my-2;
+}
+
+.chat-box.left {
+    @apply bg-white;
+}
+
+.chat-box.right {
+    @apply bg-green-chat-box;
+}
+
+.chat-box.center {
+    @apply flex flex-col items-center;
+    @apply text-center;
+    @apply bg-white;
+}
+
+.chat-time {
+    @apply w-full py-1;
+    @apply text-xs text-gray-500;
+    @apply inline-block text-right;
 }

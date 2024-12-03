@@ -5,7 +5,7 @@ interface OutletContext {
     toggleSidebar: () => void;
 }
 
-const Home: React.FC = () => {
+const Inicio: React.FC = () => {
     const { toggleSidebar } = useOutletContext<OutletContext>();
 
     return (
@@ -42,4 +42,4 @@ const Home: React.FC = () => {
     );
 };
 
-export default Home;
+export default Inicio;
