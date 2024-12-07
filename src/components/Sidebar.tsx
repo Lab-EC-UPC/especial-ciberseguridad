@@ -87,13 +87,13 @@ const Sidebar: React.FC<SidebarProps> = ({ routes, toggleSidebar }) => {
                                         <div className="flex items-center gap-1">
                                             {readStatus[route.link] ? (
                                                 <img
-                                                    src="/src/assets/read-double-check-icon.svg"
+                                                    src="read-double-check-icon.svg"
                                                     alt="Double check icon"
                                                     className="h-4 w-4 md:h-6 md:w-6"
                                                 />
                                             ) : (
                                                 <img
-                                                    src="/src/assets/unread-double-check-icon.svg"
+                                                    src="unread-double-check-icon.svg"
                                                     alt="Double check icon"
                                                     className="h-4 w-4 md:h-6 md:w-6"
                                                 />

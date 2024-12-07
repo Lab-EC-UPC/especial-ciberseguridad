@@ -1,27 +1,8 @@
 import AudioPlayer from "../components/AudioPlayer.tsx";
-import {useEffect} from "react";
 import {Link} from "react-router";
 import {ArrowDownCircleIcon, ArrowUpCircleIcon, MicrophoneIcon} from "@heroicons/react/24/solid";
 
 export const FormatosEjemplo = () => {
-    useEffect(() => {
-        const handleScroll = () => {
-            const isBottom =
-                window.innerHeight + window.scrollY >= document.body.offsetHeight;
-
-            if (isBottom) {
-                // Redirect to another page
-                window.location.href = "/"; // Replace with the desired URL
-            }
-        };
-
-        window.addEventListener("scroll", handleScroll);
-
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, []);
-
     return (
         <>
             <div className="">
@@ -35,7 +16,7 @@ export const FormatosEjemplo = () => {
                 {/*CENTRO*/}
                 <div className="flex flex-col items-center">
                     <div className="chat-box center">
-                        <img src="/src/assets/joined-chat-icon.svg"
+                        <img src="joined-chat-icon.svg"
                              alt="Joined chat icon"
                              className="w-16 h-16 md:w-24 md:h-24"
                         />
@@ -94,7 +75,7 @@ export const FormatosEjemplo = () => {
                         <div className="flex items-center gap-1">
                             <small className="chat-time">18:50</small>
                             <img
-                                src="/src/assets/read-double-check-icon.svg"
+                                src="read-double-check-icon.svg"
                                 alt="Double check icon"
                                 className="h-4 w-4 md:h-6 md:w-6"
                             />
@@ -112,7 +93,7 @@ export const FormatosEjemplo = () => {
                         <div className="flex items-center gap-1">
                             <small className="chat-time">18:50</small>
                             <img
-                                src="/src/assets/read-double-check-icon.svg"
+                                src="read-double-check-icon.svg"
                                 alt="Double check icon"
                                 className="h-4 w-4 md:h-6 md:w-6"
                             />
