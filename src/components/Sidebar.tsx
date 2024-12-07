@@ -37,7 +37,7 @@ const Sidebar: React.FC<SidebarProps> = ({ routes, toggleSidebar }) => {
     };
 
     return (
-        <div className="relative h-full flex flex-col bg-white border-r border-grey-light">
+        <div className="relative h-full flex flex-col bg-white border-r-2 border-grey-light">
             <div className="flex justify-between h-20 p-4 items-center border-gray-200">
                 <h1 className="md:text-2xl font-bold">
                     Especial Ciberdelincuencia
@@ -87,13 +87,13 @@ const Sidebar: React.FC<SidebarProps> = ({ routes, toggleSidebar }) => {
                                         <div className="flex items-center gap-1">
                                             {readStatus[route.link] ? (
                                                 <img
-                                                    src="src/assets/read-double-check-icon.svg"
+                                                    src="/src/assets/read-double-check-icon.svg"
                                                     alt="Double check icon"
                                                     className="h-4 w-4 md:h-6 md:w-6"
                                                 />
                                             ) : (
                                                 <img
-                                                    src="src/assets/unread-double-check-icon.svg"
+                                                    src="/src/assets/unread-double-check-icon.svg"
                                                     alt="Double check icon"
                                                     className="h-4 w-4 md:h-6 md:w-6"
                                                 />

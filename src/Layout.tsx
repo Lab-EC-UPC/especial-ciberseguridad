@@ -31,13 +31,13 @@ const Layout: React.FC = () => {
                 </div>
 
                 <div className="flex-1 flex flex-col bg-cover bg-center">
-                    <div className="bg-white sticky top-0 flex justify-between w-full items-center p-4 h-20 z-10">
+                    <div className="bg-white sticky top-0 flex justify-between w-full items-center p-4 h-20 z-10 border-b-2">
                         <div className="flex items-center gap-4">
                             <button
                                 className="flex md:hidden text-grey py-2"
                                 onClick={toggleSidebar}
                             >
-                                <ChevronLeftIcon className="h-6" />
+                                <ChevronLeftIcon className="h-6 animate-left-to-right"/>
                                 <span className="font-bold">2</span>
                             </button>
                             <div className="flex items-center gap-2 md:gap-4">
@@ -52,7 +52,7 @@ const Layout: React.FC = () => {
                         <div className="hidden md:block">
                             <div className="flex gap-2 text-grey-light items-center ">
                                 <div className="flex">
-                                    <div className="border border-grey-light py-2 px-3">
+                                <div className="border border-grey-light py-2 px-3">
                                         <VideoCameraIcon className="h-6" />
                                     </div>
                                     <div className="border border-grey-light py-2 px-3">
@@ -64,7 +64,7 @@ const Layout: React.FC = () => {
                         </div>
                     </div>
 
-                    <div className="flex-1 overflow-auto p-6 bg-wallpaper">
+                    <div className="flex-1 overflow-auto p-6 bg-white bg-chat">
                         <Outlet context={{ toggleSidebar }} />
                     </div>
                 </div>
