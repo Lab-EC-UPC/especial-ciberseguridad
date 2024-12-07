@@ -17,7 +17,7 @@ export default {
         'green-chat-box': '#E0F6CA',
       },
       backgroundImage: {
-        'chat': "url('./chat-bg.webp')",
+        'chat': "url('https://raw.githubusercontent.com/Lab-EC-UPC/assets/refs/heads/main/especial-ciberseguridad/chat-bg.webp')",
       },
       keyframes: {
         fadeIn: {
