@@ -64,7 +64,7 @@ const Layout: React.FC = () => {
                         </div>
                     </div>
 
-                    <div className="flex-1 overflow-auto p-6 bg-white bg-chat">
+                    <div className="flex-1 overflow-auto p-6 bg-chat">
                         <Outlet context={{ toggleSidebar }} />
                     </div>
                 </div>
