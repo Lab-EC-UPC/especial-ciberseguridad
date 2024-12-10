@@ -49,13 +49,13 @@ function App() {
         );
     }
 
-    if (screen === 2) {
-        return (
-            <div className={`transition-container ${transitionClass} relative h-screen bg-wallpaper`}>
-                <TeaserSplashScreen onSkip={skipTeaserSplashScreen} />
-            </div>
-        );
-    }
+    // if (screen === 2) {
+    //     return (
+    //         <div className={`transition-container ${transitionClass} relative h-screen bg-wallpaper`}>
+    //             <TeaserSplashScreen onSkip={skipTeaserSplashScreen} />
+    //         </div>
+    //     );
+    // }
 
     return (
         <BrowserRouter>
