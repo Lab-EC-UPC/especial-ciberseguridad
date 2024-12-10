@@ -25,35 +25,35 @@ function App() {
         setTimeout(() => setScreen(3), 500);
     };
 
-    useEffect(() => {
-        if (screen === 1) {
-            setTransitionClass("fade-in");
-            const timer = setTimeout(() => {
-                setTransitionClass("fade-out");
-                setTimeout(() => {
-                    setScreen(2);
-                    setTransitionClass("fade-in");
-                }, 500);
-            }, 1000);
-            return () => clearTimeout(timer);
-        }
-    }, [screen]);
-
-    if (screen === 1) {
-        return (
-            <div className={`transition-container ${transitionClass} relative h-screen bg-wallpaper`}>
-                <SplashScreen />
-            </div>
-        );
-    }
-
-    if (screen === 2) {
-        return (
-            <div className={`transition-container ${transitionClass} relative h-screen bg-wallpaper`}>
-                <TeaserSplashScreen onSkip={skipTeaserSplashScreen} />
-            </div>
-        );
-    }
+    // useEffect(() => {
+    //     if (screen === 1) {
+    //         setTransitionClass("fade-in");
+    //         const timer = setTimeout(() => {
+    //             setTransitionClass("fade-out");
+    //             setTimeout(() => {
+    //                 setScreen(2);
+    //                 setTransitionClass("fade-in");
+    //             }, 500);
+    //         }, 1000);
+    //         return () => clearTimeout(timer);
+    //     }
+    // }, [screen]);
+    //
+    // if (screen === 1) {
+    //     return (
+    //         <div className={`transition-container ${transitionClass} relative h-screen bg-wallpaper`}>
+    //             <SplashScreen />
+    //         </div>
+    //     );
+    // }
+    //
+    // if (screen === 2) {
+    //     return (
+    //         <div className={`transition-container ${transitionClass} relative h-screen bg-wallpaper`}>
+    //             <TeaserSplashScreen onSkip={skipTeaserSplashScreen} />
+    //         </div>
+    //     );
+    // }
 
     return (
         <BrowserRouter>
