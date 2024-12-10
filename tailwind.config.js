@@ -10,14 +10,14 @@ export default {
         'black': '#000000',
         'grey': '#6b7280',
         'grey-light': '#dbd8d4',
-        'wallpaper': '#efeae2',
+        'wallpaper': '#e2dbd3',
         'green': '#00a884',
         'green-light': '#59CE72',
         'green-dark': '#215C54',
         'green-chat-box': '#E0F6CA',
       },
       backgroundImage: {
-        'chat': "url('https://raw.githubusercontent.com/Lab-EC-UPC/assets/refs/heads/main/especial-ciberseguridad/chat-bg.webp')",
+        'chat': "url('https://i.imgur.com/24aAqXh.png')",
       },
       keyframes: {
         fadeIn: {
