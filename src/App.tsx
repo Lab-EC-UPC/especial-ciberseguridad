@@ -41,7 +41,7 @@ function App() {
 
     if (screen === 1) {
         return (
-            <div className={`transition-container ${transitionClass}`}>
+            <div className={`transition-container ${transitionClass} relative h-screen bg-wallpaper`}>
                 <SplashScreen />
             </div>
         );
@@ -49,7 +49,7 @@ function App() {
 
     if (screen === 2) {
         return (
-            <div className={`transition-container ${transitionClass}`}>
+            <div className={`transition-container ${transitionClass} relative h-screen bg-wallpaper`}>
                 <TeaserSplashScreen onSkip={skipTeaserSplashScreen} />
             </div>
         );
