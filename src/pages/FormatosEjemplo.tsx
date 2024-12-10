@@ -117,7 +117,7 @@ export const FormatosEjemplo = () => {
                                     className="w-12 h-12 md:w-24 md:h-24 rounded-full object-cover"
                                 />
                                 <span className="absolute bottom-0 left-0 flex p-2 bg-green-dark rounded-full">
-                                    <MicrophoneIcon className="h-4 w-4 text-white" />
+                                    <MicrophoneIcon className="h-2 w-2 md:h-4 md:w-4 text-white" />
                                 </span>
                             </div>
                         </div>
@@ -134,7 +134,7 @@ export const FormatosEjemplo = () => {
                                     className="w-12 h-12 md:w-24 md:h-24 rounded-full object-cover"
                                 />
                                 <span className="absolute bottom-0 right-0 flex p-2 bg-green-dark rounded-full">
-                                    <MicrophoneIcon className="h-4 w-4 text-white" />
+                                    <MicrophoneIcon className="h-2 w-2 md:h-4 md:w-4 text-white" />
                                 </span>
                             </div>
                             <div className="flex-1">
