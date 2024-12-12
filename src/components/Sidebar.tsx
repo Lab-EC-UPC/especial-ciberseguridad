@@ -71,7 +71,7 @@ const Sidebar: React.FC<SidebarProps> = ({ routes, toggleSidebar }) => {
                             <img
                                 src={route.avatar}
                                 alt={route.title}
-                                className="h-16 w-16 rounded-full mr-4"
+                                className="h-16 w-16 rounded-full object-cover mr-4 border"
                             />
                             <div className="flex-1 border-b border-grey-light">
                                 <div className="pb-4">

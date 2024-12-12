@@ -5,18 +5,17 @@ import './App.css';
 import { BrowserRouter, Route, Routes } from "react-router";
 import Layout from "./Layout.tsx";
 import Inicio from "./pages/Inicio.tsx";
-import QueEsLaCiberdelincuencia from "./pages/QueEsLaCiberdelincuencia.tsx";
 import VerificadorDeLinks from "./pages/VerificadorDeLinks.tsx";
-import { CiberdelincuenciaEnNuestroPais } from "./pages/CiberdelincuenciaEnNuestroPais.tsx";
 import { FormatosEjemplo } from "./pages/FormatosEjemplo.tsx";
-import { FormasComunesDeAtaquesCiberdigitales } from "./pages/FormasComunesDeAtaquesCiberdigitales.tsx";
-import { EstadoDeDenunciasPorCiberdelitos } from "./pages/EstadoDeDenunciasPorCiberdelitos.tsx";
-import { Victimas } from "./pages/Victimas.tsx";
-import { Especialistas } from "./pages/Especialistas.tsx";
-import { Creditos } from "./pages/Creditos.tsx";
-import { Otros } from "./pages/Otros.tsx";
+import Creditos from "./pages/Creditos.tsx";
 import SplashScreen from "./pages/SplashScreen.tsx";
 import TeaserSplashScreen from "./pages/TeaserSplashScreen.tsx";
+import CiberAlertaPeru from "./pages/CiberAlertaPeru.tsx";
+import UnPocoDeData from "./pages/UnPocoDeData.tsx";
+import ElPhishing from "./pages/ElPhishing.tsx";
+import Testimonios from "./pages/Testimonios.tsx";
+import OpinionesSobreLaCiberdelincuencia from "./pages/OpinionesSobreLaCiberdelincuencia.tsx";
+import PrevencionYDenuncia from "./pages/PrevencionYDenuncia.tsx";
 
 function App() {
     const [screen, setScreen] = useState(1);
@@ -63,15 +62,14 @@ function App() {
                 <Route element={<Layout />}>
                     <Route path="/formatos-ejemplo-para-borrar" element={<FormatosEjemplo />} />
                     <Route path="/" element={<Inicio />} />
-                    <Route path="/que-es-la-ciberdelincuencia" element={<QueEsLaCiberdelincuencia />} />
-                    <Route path="/ciberdelincuencia-en-nuestro-pais" element={<CiberdelincuenciaEnNuestroPais />} />
-                    <Route path="/formas-comunes-de-ataques-ciberdigitales" element={<FormasComunesDeAtaquesCiberdigitales />} />
-                    <Route path="/estado-de-denuncias-por-ciberdelitos" element={<EstadoDeDenunciasPorCiberdelitos />} />
-                    <Route path="/victimas" element={<Victimas />} />
-                    <Route path="/especialistas" element={<Especialistas />} />
+                    <Route path="/ciberdelincuencia" element={<CiberAlertaPeru />} />
+                    <Route path="/un-poco-de-data" element={<UnPocoDeData />} />
+                    <Route path="/el-phishing" element={<ElPhishing />} />
+                    <Route path="/testimonios" element={<Testimonios />} />
+                    <Route path="/opiniones-sobre-la-ciberdelincuencia" element={<OpinionesSobreLaCiberdelincuencia />} />
+                    <Route path="/prevencion-y-denuncia" element={<PrevencionYDenuncia />} />
                     <Route path="/verificador-de-links" element={<VerificadorDeLinks />} />
                     <Route path="/creditos" element={<Creditos />} />
-                    <Route path="/otros" element={<Otros />} />
                     <Route path="*" element={<Inicio />} />
                 </Route>
             </Routes>

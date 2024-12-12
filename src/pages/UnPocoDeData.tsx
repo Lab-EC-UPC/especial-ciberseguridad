@@ -1,4 +1,4 @@
-export default function Creditos () {
+export default function UnPocoDeData () {
     return (
         <>
 

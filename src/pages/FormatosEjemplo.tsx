@@ -88,8 +88,64 @@ export const FormatosEjemplo = () => {
                         <img
                             src="https://elcomercio.pe/resizer/wRFrqrlVBC0G6LfTG3p1k_C_9ks=/980x528/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/S5QSVVMMIJERFA3MR6OCQB4CPI.jpg"
                             alt="Imagen de ejemplo"
-                            className=""
+                            className="w-full"
                         />
+                        <div className="flex items-center gap-1">
+                            <small className="chat-time">18:50</small>
+                            <img
+                                src="read-double-check-icon.svg"
+                                alt="Double check icon"
+                                className="h-4 w-4 md:h-6 md:w-6"
+                            />
+                        </div>
+                    </div>
+                </div>
+                {/*IMAGEN IZQUIERDA*/}
+                <div className="flex flex-col items-start">
+                    <div className="chat-box right">
+                        <img
+                            src="https://elcomercio.pe/resizer/wRFrqrlVBC0G6LfTG3p1k_C_9ks=/980x528/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/S5QSVVMMIJERFA3MR6OCQB4CPI.jpg"
+                            alt="Imagen de ejemplo"
+                            className="w-full"
+                        />
+                        <div className="flex items-center gap-1">
+                            <small className="chat-time">18:50</small>
+                            <img
+                                src="read-double-check-icon.svg"
+                                alt="Double check icon"
+                                className="h-4 w-4 md:h-6 md:w-6"
+                            />
+                        </div>
+                    </div>
+                </div>
+                {/*VIDEO IZQUIERDA*/}
+                <div className="flex flex-col items-end">
+                    <div className="chat-box right">
+                        <video
+                            className="w-full"
+                            controls>
+                            <source src="mov_bbb.mp4" type="video/mp4"/>
+                            Your browser does not support HTML video.
+                        </video>
+                        <div className="flex items-center gap-1">
+                            <small className="chat-time">18:50</small>
+                            <img
+                                src="read-double-check-icon.svg"
+                                alt="Double check icon"
+                                className="h-4 w-4 md:h-6 md:w-6"
+                            />
+                        </div>
+                    </div>
+                </div>
+                {/*VIDEO DERECHA*/}
+                <div className="flex flex-col items-start">
+                    <div className="chat-box right">
+                        <video
+                            className="w-full"
+                            controls>
+                            <source src="mov_bbb.mp4" type="video/mp4"/>
+                            Your browser does not support HTML video.
+                        </video>
                         <div className="flex items-center gap-1">
                             <small className="chat-time">18:50</small>
                             <img
@@ -103,7 +159,7 @@ export const FormatosEjemplo = () => {
                 {/* VOZ DERECHA */}
                 <div className="flex flex-col items-start">
                     <div className="chat-box left">
-                        <div className="flex items-center">
+                    <div className="flex items-center">
                             <div className="flex-1">
                                 <AudioPlayer
                                     audio="https://d38nvwmjovqyq6.cloudfront.net/va90web25003/companions/Foundations%20of%20Rock/13.01.mp3"
@@ -146,12 +202,33 @@ export const FormatosEjemplo = () => {
                         </div>
                     </div>
                 </div>
+                {/* BURBUJA DE IMAGEN MEDIO */}
+                <div className="flex flex-col items-center">
+                    <img src="https://img.freepik.com/foto-gratis/hombre-rizado-amplia-sonrisa-muestra-dientes-perfectos-divirtiendose-charla-interesante-tiene-pelo-oscuro-rizado-espeso-encuentra-interior-contra-pared-blanca-blanco_273609-17092.jpg"
+                         alt=""
+                         className="w-32 h-32 md:w-48 md:h-48 my-4 rounded-full object-cover"
+                    />
+                </div>
+                {/* BURBUJA DE IMAGEN IZQUIERDA */}
+                <div className="flex flex-col items-end">
+                    <img src="https://img.freepik.com/foto-gratis/hombre-rizado-amplia-sonrisa-muestra-dientes-perfectos-divirtiendose-charla-interesante-tiene-pelo-oscuro-rizado-espeso-encuentra-interior-contra-pared-blanca-blanco_273609-17092.jpg"
+                         alt=""
+                         className="w-32 h-32 md:w-48 md:h-48 my-4 rounded-full object-cover"
+                    />
+                </div>
+                {/* BURBUJA DE IMAGEN DERECHA */}
+                <div className="flex flex-col items-start">
+                    <img src="https://img.freepik.com/foto-gratis/hombre-rizado-amplia-sonrisa-muestra-dientes-perfectos-divirtiendose-charla-interesante-tiene-pelo-oscuro-rizado-espeso-encuentra-interior-contra-pared-blanca-blanco_273609-17092.jpg"
+                         alt=""
+                         className="w-32 h-32 md:w-48 md:h-48 my-4 rounded-full object-cover"
+                    />
+                </div>
             </div>
 
             <Link to="/">
                 <div className="flex flex-col items-center hover:scale-95 duration-300">
                     <div className="chat-box center gap-2">
-                        <ArrowUpCircleIcon className="h-6 text-green-dark animate-bounce"/>
+                    <ArrowUpCircleIcon className="h-6 text-green-dark animate-bounce"/>
                         <p className="text-sm md:text-lg">
                             <span className="font-bold text-green-dark">Antes: </span>
                             Título del anterior

@@ -44,9 +44,9 @@ const Layout: React.FC = () => {
                                 <img
                                     src={activeRoute.avatar}
                                     alt={activeRoute.title}
-                                    className="h-8 w-8 md:h-12 md:w-12 rounded-full"
+                                    className="h-8 w-8 md:h-12 md:w-12 object-cover rounded-full"
                                 />
-                                <h1 className="text-lg md:text-xl font-bold">{activeRoute.title}</h1>
+                                <h1 className="text-lg md:text-xl font-bold">{activeRoute.subtitle}</h1>
                             </div>
                         </div>
                         <div className="hidden md:block">
