@@ -16,6 +16,7 @@ import ElPhishing from "./pages/ElPhishing.tsx";
 import Testimonios from "./pages/Testimonios.tsx";
 import OpinionesSobreLaCiberdelincuencia from "./pages/OpinionesSobreLaCiberdelincuencia.tsx";
 import PrevencionYDenuncia from "./pages/PrevencionYDenuncia.tsx";
+import EjemploChat from "./pages/EjemploChat.tsx";
 
 function App() {
     const [screen, setScreen] = useState(1);
@@ -61,6 +62,7 @@ function App() {
             <Routes>
                 <Route element={<Layout />}>
                     <Route path="/formatos-ejemplo-para-borrar" element={<FormatosEjemplo />} />
+                    <Route path="/ejemplo-chat" element={<EjemploChat />} />
                     <Route path="/" element={<Inicio />} />
                     <Route path="/ciberdelincuencia" element={<CiberAlertaPeru />} />
                     <Route path="/un-poco-de-data" element={<UnPocoDeData />} />

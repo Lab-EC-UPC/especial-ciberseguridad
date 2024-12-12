@@ -1,4 +1,8 @@
+import {useState} from "react";
+
 export default function TeaserSplashScreen({ onSkip }: { onSkip: () => void }) {
+    const [isMuted, setIsMuted] = useState(false);
+
     return (
         <div className="flex items-center justify-center h-screen w-screen">
             <div className="absolute top-4 left-4 z-10">
@@ -8,20 +12,47 @@ export default function TeaserSplashScreen({ onSkip }: { onSkip: () => void }) {
                 />
             </div>
             <div className="flex items-center justify-center w-screen h-screen">
-                <iframe
-                        className={"w-full h-full"}
-                        src="https://www.youtube.com/embed/YWtAj_HOs_E?si=V4FmGiKBL80cwUKP"
-                        title="YouTube video player" frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                <video
+                    autoPlay
+                    muted={isMuted}
+                    loop
+                    className="w-screen h-screen object-cover"
+                >
+                    <source
+                        src="https://okalphavideo.s3.us-east-2.amazonaws.com/makereign/idents/website/thumbnail-002.mp4"
+                        type="video/mp4"
+                    />
+                    Your browser does not support HTML video.
+                </video>
             </div>
 
-            <div className="absolute top-4 right-4 z-10">
+            <div className="flex gap-4 absolute top-2 right-4 z-10">
+                <button
+                    onClick={() => setIsMuted(!isMuted)}
+                    className="rounded-full text-white bg-black bg-opacity-50 p-2"
+                >
+                    {isMuted ? (
+                        <img
+                            src="volume-mute-outline.svg"
+                            alt="Unmute"
+                            className="h-8 w-8"
+                        />
+                    ) : (
+                        <img
+                            src="volume-medium-outline.svg"
+                            alt="Mute"
+                            className="h-8 w-8"
+                        />
+                    )}
+                </button>
+            </div>
+
+            <div className="flex gap-4 absolute bottom-8 right-4 z-10">
                 <button
                     onClick={onSkip}
-                    className="button-green animate-pulse"
+                    className="button-green"
                 >
-                    Saltar teaser
+                    Ver especial
                 </button>
             </div>
         </div>

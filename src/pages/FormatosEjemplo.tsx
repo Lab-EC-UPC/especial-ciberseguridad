@@ -124,7 +124,10 @@ export const FormatosEjemplo = () => {
                         <video
                             className="w-full"
                             controls>
-                            <source src="mov_bbb.mp4" type="video/mp4"/>
+                            <source
+                                src="https://okalphavideo.s3.us-east-2.amazonaws.com/makereign/idents/website/thumbnail-002.mp4"
+                                type="video/mp4"
+                            />
                             Your browser does not support HTML video.
                         </video>
                         <div className="flex items-center gap-1">
@@ -143,7 +146,10 @@ export const FormatosEjemplo = () => {
                         <video
                             className="w-full"
                             controls>
-                            <source src="mov_bbb.mp4" type="video/mp4"/>
+                            <source
+                                src="https://okalphavideo.s3.us-east-2.amazonaws.com/makereign/idents/website/thumbnail-002.mp4"
+                                type="video/mp4"
+                            />
                             Your browser does not support HTML video.
                         </video>
                         <div className="flex items-center gap-1">

@@ -12,7 +12,7 @@ export default {
         'grey-light': '#dbd8d4',
         'wallpaper': '#e2dbd3',
         'green': '#00a884',
-        'green-light': '#59CE72',
+        'green-light': '#35867E',
         'green-dark': '#215C54',
         'green-chat-box': '#E0F6CA',
       },
@@ -32,6 +32,7 @@ export default {
       },
       animation: {
         'fade-in': 'fadeIn 1.0s ease-in-out',
+        'fade-in-fast': 'fadeIn 0.2s ease-in-out',
         'left-to-right': 'leftToRightAndBack 2.0s ease-in-out infinite',
       },
     },
