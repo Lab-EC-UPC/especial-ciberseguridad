@@ -1,7 +1,7 @@
 import {useState} from "react";
 
 export default function TeaserSplashScreen({ onSkip }: { onSkip: () => void }) {
-    const [isMuted, setIsMuted] = useState(false);
+    const [isMuted, setIsMuted] = useState(true);
 
     return (
         <div className="flex items-center justify-center h-screen w-screen">
