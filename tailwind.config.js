@@ -41,6 +41,10 @@ export default {
           '0%': { transform: 'translateX(50%)', opacity: 0 },
           '100%': { transform: 'translateX(0)', opacity: 1 },
         },
+        scaleUpDown: {
+          '0%, 100%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.05)' },
+        },
       },
       animation: {
         'fade-in': 'fadeIn 1.0s ease-in-out',
@@ -48,6 +52,7 @@ export default {
         'left-to-right': 'leftToRightAndBack 2.0s ease-in-out infinite',
         'from-left': 'fromLeft 0.5s ease-in-out',
         'from-right': 'fromRight 0.5s ease-in-out',
+        'scale-loop': 'scaleUpDown 1.0s ease-in-out infinite',
       },
     },
   },

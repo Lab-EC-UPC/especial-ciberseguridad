@@ -29,7 +29,7 @@ export default function TeaserSplashScreen({ onSkip }: { onSkip: () => void }) {
             <div className="flex gap-4 absolute top-2 right-4 z-10">
                 <button
                     onClick={onSkip}
-                    className="button-green"
+                    className="button-green animate-scale-loop"
                 >
                     Ver especial
                 </button>
