@@ -193,7 +193,7 @@ export default function UnPocoDeData () {
             <div className="flex flex-col items-start">
                 <div className="chat-box left">
                     <p className="text-sm md:text-md">
-                        En el año 2023, la <span className="font-bold">Policía Nacional del Perú (PNP)</span>
+                        En el año 2023, la <span className="font-bold">Policía Nacional del Perú (PNP) </span>
                         registró un promedio de <span className="font-bold">107 intentos de ciberataques por minuto</span> . 💻⚠️👮‍♂️
                     </p>
                     <small className="chat-time">18:50</small>
