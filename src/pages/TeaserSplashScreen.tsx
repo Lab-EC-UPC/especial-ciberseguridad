@@ -28,6 +28,12 @@ export default function TeaserSplashScreen({ onSkip }: { onSkip: () => void }) {
 
             <div className="flex gap-4 absolute top-2 right-4 z-10">
                 <button
+                    onClick={onSkip}
+                    className="button-green"
+                >
+                    Ver especial
+                </button>
+                <button
                     onClick={() => setIsMuted(!isMuted)}
                     className="rounded-full text-white bg-black bg-opacity-50 p-2"
                 >
@@ -44,15 +50,6 @@ export default function TeaserSplashScreen({ onSkip }: { onSkip: () => void }) {
                             className="h-8 w-8"
                         />
                     )}
-                </button>
-            </div>
-
-            <div className="flex gap-4 absolute bottom-8 right-4 z-10">
-                <button
-                    onClick={onSkip}
-                    className="button-green"
-                >
-                    Ver especial
                 </button>
             </div>
         </div>

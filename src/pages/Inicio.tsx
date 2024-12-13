@@ -1,13 +1,10 @@
-import React from "react";
 import {useOutletContext} from "react-router";
-import {FormatosEjemplo} from "./FormatosEjemplo.tsx";
-import EjemploChat from "./EjemploChat.tsx";
 
 interface OutletContext {
     toggleSidebar: () => void;
 }
 
-const Inicio: React.FC = () => {
+export default function Inicio() {
     const { toggleSidebar } = useOutletContext<OutletContext>();
 
     return (
@@ -41,11 +38,7 @@ const Inicio: React.FC = () => {
                     </div>
                 </div>
             </div>
-            <FormatosEjemplo />
-            <EjemploChat />
         </div>
 
     );
 };
-
-export default Inicio;

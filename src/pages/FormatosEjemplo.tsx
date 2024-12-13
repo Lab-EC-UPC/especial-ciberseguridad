@@ -15,10 +15,10 @@ export const FormatosEjemplo = () => {
 
                 {/*CENTRO*/}
                 <div className="flex flex-col items-center">
-                    <div className="chat-box center">
+                    <div className="flex flex-col gap-2 md:gap-4 chat-box center">
                         <img src="joined-chat-icon.svg"
                              alt="Joined chat icon"
-                             className="w-16 h-16 md:w-24 md:h-24"
+                             className="w-16 h-16 md:w-32 md:h-32 rounded-full"
                         />
                         <h1 className="text-lg font-medium">
                             Creaste el grupo
