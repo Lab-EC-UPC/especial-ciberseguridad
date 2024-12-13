@@ -9,7 +9,7 @@ export default function UnPocoDeData () {
             <div className="chat-box right">
                 <p className="text-sm md:text-md">
                     Solo el <span className="font-bold">24% de usuarios en la región</span> (Latinoamérica)
-                    poseen un <span className="font-bold"> software de seguridad instalado</span>
+                    poseen un <span className="font-bold"> software de seguridad instalado </span>
                     en sus dispositivos. 🔒📉💻
                 </p>
                 <div className="flex items-center gap-1">
@@ -55,7 +55,7 @@ export default function UnPocoDeData () {
         <div className="flex flex-col items-start animate-fade-in-fast">
             <div className="chat-box left">
                 <p className="text-sm md:text-md">
-                    Esto convierte a la ciberdelincuencia en la <span className="font-bold">tercera economía</span>
+                    Esto convierte a la ciberdelincuencia en la <span className="font-bold">tercera economía </span>
                     más grande del mundo 🌍, solo detrás de <span className="font-bold">Estados Unidos </span> 🇺🇸 y
                      <span className="font-bold"> China </span> 🇨🇳.
 
