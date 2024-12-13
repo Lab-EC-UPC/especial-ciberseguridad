@@ -1,4 +1,5 @@
 import {useEffect, useRef, useState} from "react";
+import getCurrentTime from "../components/CurrentTime.ts";
 
 export default function ElPhishing () {
     const [visibleElements, setVisibleElements] = useState(0);
@@ -25,7 +26,7 @@ export default function ElPhishing () {
                     </ul>
 
                 </p>
-                <small className="chat-time">18:50</small>
+                <small className="chat-time">{getCurrentTime()}</small>
             </div>
         </div>,
 
@@ -40,7 +41,7 @@ export default function ElPhishing () {
                     en todo el mundo 🌍👩‍💻.
                 </p>
                 <div className="flex items-center gap-1">
-                    <small className="chat-time">18:50</small>
+                    <small className="chat-time">{getCurrentTime()}</small>
                     <img
                         src="read-double-check-icon.svg"
                         alt="Double check icon"
@@ -59,7 +60,7 @@ export default function ElPhishing () {
                     más que en el año anterior. 📈⚠️
                 </p>
                 <div className="flex items-center gap-1">
-                    <small className="chat-time">18:50</small>
+                    <small className="chat-time">{getCurrentTime()}</small>
                     <img
                         src="read-double-check-icon.svg"
                         alt="Double check icon"
@@ -81,7 +82,7 @@ export default function ElPhishing () {
                     en 2024 en <strong> Latinoamérica </strong> son:
 
                 </p>
-                <small className="chat-time">21:06</small>
+                <small className="chat-time">{getCurrentTime()}</small>
             </div>
         </div>,
         <div className="flex flex-col items-start animate-fade-in-fast">
@@ -89,7 +90,7 @@ export default function ElPhishing () {
                 <p className="text-sm md:text-md">
                     Gráfico de Flourish
                 </p>
-                <small className="chat-time">21:06</small>
+                <small className="chat-time">{getCurrentTime()}</small>
             </div>
         </div>,
 
@@ -131,7 +132,7 @@ export default function ElPhishing () {
                     este método combina una <strong>llamada telefónica 📞</strong> con
                     <strong> información que el delincuente obtuvo previamente </strong>del usuario mediante internet 🌐.
                 </p>
-                <small className="chat-time">21:06</small>
+                <small className="chat-time">{getCurrentTime()}</small>
             </div>
         </div>,
         <div className="flex flex-col items-end animate-fade-in-fast">
@@ -142,7 +143,7 @@ export default function ElPhishing () {
                     <strong> cuentas bancarias  💳 y realizar transacciones 💸.</strong>
                 </p>
                 <div className="flex items-center gap-1">
-                    <small className="chat-time">18:50</small>
+                    <small className="chat-time">{getCurrentTime()}</small>
                     <img
                         src="read-double-check-icon.svg"
                         alt="Double check icon"
@@ -171,7 +172,7 @@ export default function ElPhishing () {
                     <strong> envío de mensajes de texto falsos 📱✉️ </strong> para <strong> engañar </strong>
                     a las personas y obtener su <strong> información personal o financiera. 🔑💳🚨</strong>
                 </p>
-                <small className="chat-time">21:06</small>
+                <small className="chat-time">{getCurrentTime()}</small>
             </div>
         </div>,
         <div className="flex flex-col items-end animate-fade-in-fast">
@@ -182,7 +183,7 @@ export default function ElPhishing () {
                     para conseguir sus objetivos. 🎯💳🚨
                 </p>
                 <div className="flex items-center gap-1">
-                    <small className="chat-time">18:50</small>
+                    <small className="chat-time">{getCurrentTime()}</small>
                     <img
                         src="read-double-check-icon.svg"
                         alt="Double check icon"
@@ -199,7 +200,7 @@ export default function ElPhishing () {
                     <strong> 4 de cada 10 consumidores </strong> enfrentaron al menos
                     <strong> un intento de estafa por SMS </strong> en 2023. 📱🚨📊
                 </p>
-                <small className="chat-time">21:06</small>
+                <small className="chat-time">{getCurrentTime()}</small>
             </div>
         </div>,
 
@@ -221,7 +222,7 @@ export default function ElPhishing () {
                     Este cibercrimen involucra el <strong> uso de malware,  </strong> que
                     <strong> redirige automáticamente a la víctima hacia sitios web falsos. 💻⚠️🌐 </strong>
                 </p>
-                <small className="chat-time">21:06</small>
+                <small className="chat-time">{getCurrentTime()}</small>
             </div>
         </div>,
         <div className="flex flex-col items-end animate-fade-in-fast">
@@ -232,7 +233,7 @@ export default function ElPhishing () {
                     <strong> trata de un fraude. 🔑💻❌</strong>
                 </p>
                 <div className="flex items-center gap-1">
-                    <small className="chat-time">18:50</small>
+                    <small className="chat-time">{getCurrentTime()}</small>
                     <img
                         src="read-double-check-icon.svg"
                         alt="Double check icon"
@@ -276,7 +277,7 @@ export default function ElPhishing () {
                         <span className="font-bold"> utiliza correos electrónicos 📧, mensajes de texto 📱 , llamadas telefonicas 📞 o sitios web fraudulentos 🌐 </span>
                         para engañar a las personas y persuadirlas a realizar acciones como:
                     </p>
-                    <small className="chat-time">21:06</small>
+                    <small className="chat-time">{getCurrentTime()}</small>
                 </div>
             </div>
             <div>

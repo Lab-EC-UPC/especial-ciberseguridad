@@ -107,16 +107,16 @@ export const Participants = [
     {
         name: "ESET Perú",
         subtitle: "Agradecimientos Especiales",
-        avatar: "",
+        avatar: "https://github.com/Lab-EC-UPC/assets/blob/main/especial-ciberseguridad/creditos/agradecimientos-especiales/eset.jpg?raw=true",
     },
     {
         name: "ISACA",
         subtitle: "Agradecimientos Especiales",
-        avatar: "",
+        avatar: "https://github.com/Lab-EC-UPC/assets/blob/main/especial-ciberseguridad/creditos/agradecimientos-especiales/isaca-icon.png?raw=true",
     },
     {
         name: "Ebiz",
         subtitle: "Agradecimientos Especiales",
-        avatar: "",
+        avatar: "https://github.com/Lab-EC-UPC/assets/blob/main/especial-ciberseguridad/creditos/agradecimientos-especiales/ebiz.jpg?raw=true",
     },
 ]

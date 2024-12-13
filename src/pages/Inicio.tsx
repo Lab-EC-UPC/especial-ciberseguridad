@@ -1,11 +1,11 @@
-import {useOutletContext} from "react-router";
+import {Link} from "react-router";
 
-interface OutletContext {
-    toggleSidebar: () => void;
-}
+// interface OutletContext {
+//     toggleSidebar: () => void;
+// }
 
 export default function Inicio() {
-    const { toggleSidebar } = useOutletContext<OutletContext>();
+    // const { toggleSidebar } = useOutletContext<OutletContext>();
 
     return (
         <div className="grid gap-56">
@@ -26,15 +26,18 @@ export default function Inicio() {
                         </h1>
                     </div>
                     <div className="grid gap-2 w-full max-w-xs">
-                        <button
-                            onClick={toggleSidebar}
-                            className="button-green">
-                            Explorar especial
-                        </button>
-                        <button
-                            className="button-green">
-                            Verificador de Links
-                        </button>
+                        <Link to="/verificador-de-links">
+                            <button
+                                className="button-green grid gap-2 w-full max-w-xs">
+                                Verificador de links 🔗
+                            </button>
+                        </Link>
+                        <Link to="/un-poco-de-data">
+                            <button
+                                className="button-green grid gap-2 w-full max-w-xs">
+                                Un poco de data 📊
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </div>
