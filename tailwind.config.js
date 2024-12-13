@@ -6,6 +6,10 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Agdasima', 'sans-serif'],
+        tomorrow: ['Tomorrow', 'sans-serif'],
+      },
       colors : {
         'black': '#000000',
         'grey': '#6b7280',
