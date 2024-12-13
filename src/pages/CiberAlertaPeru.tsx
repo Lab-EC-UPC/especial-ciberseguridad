@@ -51,8 +51,8 @@ export default function CiberAlertaPeru() {
             {/* TÍTULO (SIN ANIMACIÓN) */}
             <div className="flex justify-center">
                 <h1 className="chat-title-box">
-                    Una aproximación al
-                    concepto...
+                    Una Aproximación Al
+                    Concepto...
                 </h1>
             </div>
 
