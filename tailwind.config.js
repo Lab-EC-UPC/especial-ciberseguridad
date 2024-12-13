@@ -29,11 +29,21 @@ export default {
           '50%': { transform: 'translateX(5%)' },
           '100%': { transform: 'translateX(-5%)' },
         },
+        fromLeft: {
+          '0%': { transform: 'translateX(-50%)', opacity: 0 },
+          '100%': { transform: 'translateX(0)', opacity: 1 },
+        },
+        fromRight: {
+          '0%': { transform: 'translateX(50%)', opacity: 0 },
+          '100%': { transform: 'translateX(0)', opacity: 1 },
+        },
       },
       animation: {
         'fade-in': 'fadeIn 1.0s ease-in-out',
         'fade-in-fast': 'fadeIn 0.2s ease-in-out',
         'left-to-right': 'leftToRightAndBack 2.0s ease-in-out infinite',
+        'from-left': 'fromLeft 0.5s ease-in-out',
+        'from-right': 'fromRight 0.5s ease-in-out',
       },
     },
   },

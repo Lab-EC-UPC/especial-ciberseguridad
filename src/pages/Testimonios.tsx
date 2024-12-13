@@ -1,6 +1,7 @@
 import {useEffect, useRef, useState} from "react";
 import {MicrophoneIcon} from "@heroicons/react/24/solid";
 import AudioPlayer from "../components/AudioPlayer.tsx";
+import getCurrentTime from "../components/CurrentTime.ts";
 
 export default function Testimonios () {
     const [visibleElements, setVisibleElements] = useState(0);
@@ -12,7 +13,7 @@ export default function Testimonios () {
                     <strong>Jessica Rojas (43 años)</strong> <br/>
                     Víctima de Vishing
                 </p>
-                <small className="chat-time">21:06</small>
+                <small className="chat-time">{getCurrentTime()}</small>
             </div>
         </div>,
         <div className="flex flex-col items-start animate-fade-in-fast">
@@ -24,15 +25,18 @@ export default function Testimonios () {
                             time="1:30"
                         />
                     </div>
-                    <div className="relative flex-shrink-0">
-                        <img
-                            src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png"
-                            alt="Voice message avatar"
-                            className="w-12 h-12 md:w-24 md:h-24 rounded-full object-cover"
-                        />
-                        <span className="absolute bottom-0 left-0 flex p-2 bg-green-dark rounded-full">
+                    <div>
+                        <div className="relative flex-shrink-0">
+                            <img
+                                src="testimonios/1.webp"
+                                alt="Voice message avatar"
+                                className="w-12 h-12 md:w-24 md:h-24 rounded-full object-cover"
+                            />
+                            <span className="absolute bottom-0 left-0 flex p-2 bg-green-dark rounded-full">
                                     <MicrophoneIcon className="h-2 w-2 md:h-4 md:w-4 text-white"/>
-                                </span>
+                            </span>
+                        </div>
+                        <small className="chat-time">{getCurrentTime()}</small>
                     </div>
                 </div>
             </div>
@@ -48,7 +52,7 @@ export default function Testimonios () {
                     <strong> impactó su vida personal 👩‍💼, laboral 💼 y su negocio 🏢, </strong> ya que, como muchos,
                     usaba la aplicación como herramienta clave de comunicación 📲.
                 </p>
-                <small className="chat-time">21:06</small>
+                <small className="chat-time">{getCurrentTime()}</small>
             </div>
         </div>,
 
@@ -66,7 +70,7 @@ export default function Testimonios () {
                     Víctima de Smishing y Phishing
                 </p>
                 <div className="flex items-center gap-1">
-                    <small className="chat-time">18:50</small>
+                    <small className="chat-time">{getCurrentTime()}</small>
                     <img
                         src="read-double-check-icon.svg"
                         alt="Double check icon"
@@ -80,7 +84,7 @@ export default function Testimonios () {
                 <div className="flex items-center">
                     <div className="relative flex-shrink-0">
                         <img
-                            src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png"
+                            src="testimonios/2.webp"
                             alt="Voice message avatar"
                             className="w-12 h-12 md:w-24 md:h-24 rounded-full object-cover"
                         />
@@ -96,7 +100,7 @@ export default function Testimonios () {
                     </div>
                 </div>
                 <div className="flex items-center gap-1">
-                    <small className="chat-time">18:50</small>
+                    <small className="chat-time">{getCurrentTime()}</small>
                     <img
                         src="read-double-check-icon.svg"
                         alt="Double check icon"
@@ -114,7 +118,7 @@ export default function Testimonios () {
                     círculo cercano 👥.
                 </p>
                 <div className="flex items-center gap-1">
-                    <small className="chat-time">18:50</small>
+                    <small className="chat-time">{getCurrentTime()}</small>
                     <img
                         src="read-double-check-icon.svg"
                         alt="Double check icon"
@@ -137,7 +141,7 @@ export default function Testimonios () {
                     <strong>Ekaterina Zakharova (44 años)</strong> <br/>
                     Víctima de Phishing en comercio electrónico
                 </p>
-                <small className="chat-time">21:06</small>
+                <small className="chat-time">{getCurrentTime()}</small>
             </div>
         </div>,
         <div className="flex flex-col items-start animate-fade-in-fast">
@@ -149,15 +153,18 @@ export default function Testimonios () {
                             time="1:30"
                         />
                     </div>
-                    <div className="relative flex-shrink-0">
-                        <img
-                            src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png"
-                            alt="Voice message avatar"
-                            className="w-12 h-12 md:w-24 md:h-24 rounded-full object-cover"
-                        />
-                        <span className="absolute bottom-0 left-0 flex p-2 bg-green-dark rounded-full">
+                    <div>
+                        <div className="relative flex-shrink-0">
+                            <img
+                                src="testimonios/3.webp"
+                                alt="Voice message avatar"
+                                className="w-12 h-12 md:w-24 md:h-24 rounded-full object-cover"
+                            />
+                            <span className="absolute bottom-0 left-0 flex p-2 bg-green-dark rounded-full">
                                     <MicrophoneIcon className="h-2 w-2 md:h-4 md:w-4 text-white"/>
-                                </span>
+                            </span>
+                        </div>
+                        <small className="chat-time">{getCurrentTime()}</small>
                     </div>
                 </div>
             </div>
@@ -165,12 +172,14 @@ export default function Testimonios () {
         <div className="flex flex-col items-start animate-fade-in-fast">
             <div className="chat-box left">
                 <p className="text-sm md:text-md">
-                    Ekaterina, al realizar compras en Alibaba, una <strong> plataforma de comercio en internet 🌐🛒, </strong>
-                    fue estafada por un <strong> supuesto proveedor </strong> que presentó <strong> documentos falsos. 📄❌ </strong>
+                    Ekaterina, al realizar compras en Alibaba, una <strong> plataforma de comercio en internet
+                    🌐🛒, </strong>
+                    fue estafada por un <strong> supuesto proveedor </strong> que presentó <strong> documentos falsos.
+                    📄❌ </strong>
                     Como consecuencia, realizó <strong> pagos por un pedido que nunca llegó. 💸🚫  </strong> Los estafadores crearon
                     <strong> perfiles y páginas de seguimiento fraudulentas, simulando ser legítimos </strong>  dentro de la plataforma confiable. 🔍🎭
                 </p>
-                <small className="chat-time">21:06</small>
+                <small className="chat-time">{getCurrentTime()}</small>
             </div>
         </div>,
 
@@ -188,7 +197,7 @@ export default function Testimonios () {
                     Víctima de Phishing y Vishing
                 </p>
                 <div className="flex items-center gap-1">
-                    <small className="chat-time">18:50</small>
+                    <small className="chat-time">{getCurrentTime()}</small>
                     <img
                         src="read-double-check-icon.svg"
                         alt="Double check icon"
@@ -202,7 +211,7 @@ export default function Testimonios () {
                 <div className="flex items-center">
                     <div className="relative flex-shrink-0">
                         <img
-                            src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png"
+                            src="testimonios/4.webp"
                             alt="Voice message avatar"
                             className="w-12 h-12 md:w-24 md:h-24 rounded-full object-cover"
                         />
@@ -218,7 +227,7 @@ export default function Testimonios () {
                     </div>
                 </div>
                 <div className="flex items-center gap-1">
-                    <small className="chat-time">18:50</small>
+                    <small className="chat-time">{getCurrentTime()}</small>
                     <img
                         src="read-double-check-icon.svg"
                         alt="Double check icon"
@@ -235,7 +244,7 @@ export default function Testimonios () {
                     Tras denunciar, logró recuperar su dinero ✅.
                 </p>
                 <div className="flex items-center gap-1">
-                    <small className="chat-time">18:50</small>
+                    <small className="chat-time">{getCurrentTime()}</small>
                     <img
                         src="read-double-check-icon.svg"
                         alt="Double check icon"

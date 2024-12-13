@@ -9,7 +9,7 @@ interface Participant {
 
 const ParticipantCard = (participant: Participant) => {
     return (
-        <div className="flex bg-white items-center gap-6 animate-fade-in-fast">
+        <div className="flex bg-white items-center gap-6">
             <img src={participant.avatar || "https://github.com/Lab-EC-UPC/assets/blob/main/especial-ciberseguridad/creditos/placeholder-photo.png?raw=true"}
                  alt={participant.name}
                  className="w-10 h-10 md:w-14 md:h-14 rounded-full object-cover"
@@ -34,7 +34,7 @@ export default function Creditos () {
         if (visibleElements < participants.length) {
             const timer = setTimeout(() => {
                 setVisibleElements(visibleElements + 1);
-            }, 50);
+            }, 100);
             return () => clearTimeout(timer);
         }
     }, [visibleElements, participants.length]);
@@ -43,7 +43,7 @@ export default function Creditos () {
         <div>
             <div className="flex flex-col items-center">
                 <div className="flex flex-col gap-2 md:gap-4 chat-box center">
-                    <img src=""
+                    <img src="https://github.com/Lab-EC-UPC/assets/blob/main/logo-ec-data.png?raw=true"
                          alt="ECDATA-UPC"
                          className="w-16 h-16 md:w-32 md:h-32 border rounded-full"
                     />
@@ -65,12 +65,18 @@ export default function Creditos () {
                     <div className="flex flex-col items-start gap-3 md:gap-4">
                         <small className="text-grey text-justify">22 miembros</small>
                         {participants.slice(0, visibleElements).map((participant, index) => (
-                            <ParticipantCard
+                            <div
                                 key={index}
-                                name={participant.name}
-                                subtitle={participant.subtitle}
-                                avatar={participant.avatar}
-                            />
+                                className={`flex bg-white items-center gap-6 ${
+                                    index % 2 === 0 ? "animate-from-left" : "animate-from-right"
+                                }`}
+                            >
+                                <ParticipantCard
+                                    name={participant.name}
+                                    subtitle={participant.subtitle}
+                                    avatar={participant.avatar}
+                                />
+                            </div>
                         ))}
                     </div>
                 </div>
