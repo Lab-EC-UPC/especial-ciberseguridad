@@ -109,7 +109,7 @@ export default function ElPhishing () {
 
         //Falta colocar los iconos correspondientes a cada tipo de phishing
         //GRUPO
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center animate-fade-in-fast">
             <div className="chat-box center">
                 <img src="joined-chat-icon.svg"
                      alt="Joined chat icon"
@@ -128,7 +128,7 @@ export default function ElPhishing () {
         </div>,
 
         //VISHING
-        <div className="flex flex-col items-center pt-3">
+        <div className="flex flex-col items-center pt-3 animate-fade-in-fast">
             <img src="joined-chat-icon.svg"
                  alt="Joined chat icon"
                  className="w-24 h-24 md:w-32 md:h-32"
@@ -168,7 +168,7 @@ export default function ElPhishing () {
         </div>,
 
         //SMISHING
-        <div className="flex flex-col items-center pt-3">
+        <div className="flex flex-col items-center pt-3 animate-fade-in-fast">
             <img src="joined-chat-icon.svg"
                  alt="Joined chat icon"
                  className="w-24 h-24 md:w-32 md:h-32"
@@ -219,7 +219,7 @@ export default function ElPhishing () {
         </div>,
 
         //PHARMING
-        <div className="flex flex-col items-center pt-3">
+        <div className="flex flex-col items-center pt-3 animate-fade-in-fast">
             <img src="joined-chat-icon.svg"
                  alt="Joined chat icon"
                  className="w-24 h-24 md:w-32 md:h-32"
