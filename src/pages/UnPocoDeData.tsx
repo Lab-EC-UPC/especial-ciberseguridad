@@ -57,7 +57,7 @@ export default function UnPocoDeData () {
                 <p className="text-sm md:text-md">
                     Esto convierte a la ciberdelincuencia en la <span className="font-bold">tercera economía</span>
                     más grande del mundo 🌍, solo detrás de <span className="font-bold">Estados Unidos</span> 🇺🇸 y
-                    <span className="font-bold">China</span> 🇨🇳.
+                     <span className="font-bold">China</span> 🇨🇳.
 
                 </p>
                 <small className="chat-time">18:50</small>
