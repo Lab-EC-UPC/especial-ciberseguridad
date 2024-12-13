@@ -4,20 +4,6 @@ export default function ElPhishing () {
     const [visibleElements, setVisibleElements] = useState(0);
 
     const elements = [
-
-        //IZQUIERDA
-        <div className="flex flex-col items-start animate-fade-in-fast">
-            <div className="chat-box left">
-                <p className="text-sm md:text-md">
-                    El phishing es un tipo de
-                    <span className="font-bold"> ciberataque </span>
-                    que
-                    <span className="font-bold"> utiliza correos electrónicos 📧, mensajes de texto 📱 , llamadas telefonicas 📞 o sitios web fraudulentos 🌐 </span>
-                    para engañar a las personas y persuadirlas a realizar acciones como:
-                </p>
-                <small className="chat-time">21:06</small>
-            </div>
-        </div>,
         <div className="flex flex-col items-start animate-fade-in-fast">
             <div className="chat-box left">
                 <p className="text-sm md:text-md">
@@ -111,7 +97,7 @@ export default function ElPhishing () {
         //GRUPO
         <div className="flex flex-col items-center animate-fade-in-fast">
             <div className="chat-box center">
-                <img src="joined-chat-icon.svg"
+                <img src="el-phishing/1.webp"
                      alt="Joined chat icon"
                      className="w-16 h-16 md:w-24 md:h-24"
                 />
@@ -119,17 +105,16 @@ export default function ElPhishing () {
                     Grupo creado por el Phishing
                 </h1>
                 <small>
-                    Grupo 3 miembros
+                    <strong>Grupo 3 miembros</strong>
                 </small>
                 <p className="text-sm md:text-md">
                     Conoce acerca de las modalidades de uno de los ciberdelitos más comunes de la región.
                 </p>
             </div>
         </div>,
-
         //VISHING
         <div className="flex flex-col items-center pt-3 animate-fade-in-fast">
-            <img src="joined-chat-icon.svg"
+            <img src="el-phishing/2.webp"
                  alt="Joined chat icon"
                  className="w-24 h-24 md:w-32 md:h-32"
             />
@@ -169,7 +154,7 @@ export default function ElPhishing () {
 
         //SMISHING
         <div className="flex flex-col items-center pt-3 animate-fade-in-fast">
-            <img src="joined-chat-icon.svg"
+            <img src="el-phishing/3.webp"
                  alt="Joined chat icon"
                  className="w-24 h-24 md:w-32 md:h-32"
             />
@@ -220,7 +205,7 @@ export default function ElPhishing () {
 
         //PHARMING
         <div className="flex flex-col items-center pt-3 animate-fade-in-fast">
-            <img src="joined-chat-icon.svg"
+            <img src="el-phishing/4.webp"
                  alt="Joined chat icon"
                  className="w-24 h-24 md:w-32 md:h-32"
             />
@@ -255,12 +240,8 @@ export default function ElPhishing () {
                     />
                 </div>
             </div>
-        </div>,
-
-
-
+        </div>
     ];
-
 
     const lastElementRef = useRef<HTMLDivElement>(null);
 
@@ -285,6 +266,18 @@ export default function ElPhishing () {
                 <h1 className="chat-title-box">
                     Uno de los delitos de mayor crecimiento
                 </h1>
+            </div>
+            <div className="flex flex-col items-start animate-fade-in-fast">
+                <div className="chat-box left">
+                    <p className="text-sm md:text-md">
+                        El phishing es un tipo de
+                        <span className="font-bold"> ciberataque </span>
+                        que
+                        <span className="font-bold"> utiliza correos electrónicos 📧, mensajes de texto 📱 , llamadas telefonicas 📞 o sitios web fraudulentos 🌐 </span>
+                        para engañar a las personas y persuadirlas a realizar acciones como:
+                    </p>
+                    <small className="chat-time">21:06</small>
+                </div>
             </div>
             <div>
                 {elements.slice(0, visibleElements).map((element, index) => (

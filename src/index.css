@@ -9,6 +9,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .transition-container {
   transition: opacity 0.5s ease-in-out;
   opacity: 0;
