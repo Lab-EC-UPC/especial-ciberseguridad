@@ -8,9 +8,10 @@ export default function CiberAlertaPeru() {
         <div className="flex flex-col items-end animate-fade-in-fast">
             <div className="chat-box right">
                 <p className="text-sm md:text-md">
-                    Este tipo de delitos <span className="font-bold">ha aumentado debido a
-                    la expansión del internet</span> y el crecimiento del <span className="font-bold">comercio electrónico</span>,
-                    potenciado tras la pandemia. 📈🌐
+                    Este tipo de delito ha aumentado debido a la <span className="font-bold">expansión
+                    del internet </span> 🌐 y el crecimiento del <span className="font-bold">comercio
+                    electrónico</span> 🛒, que se potenció a <span className="font-bold">raíz de la
+                    pandemia </span>.🦠
                 </p>
                 <div className="flex items-center gap-1">
                     <small className="chat-time">18:50</small>
@@ -23,18 +24,6 @@ export default function CiberAlertaPeru() {
             </div>
         </div>,
 
-        // 2do CHAT IZQUIERDO (CON ANIMACIÓN)
-        <div className="flex flex-col items-start animate-fade-in-fast">
-            <div className="chat-box left">
-                <p className="text-sm md:text-md">
-                    ‼️ Cabe señalar que un ciberdelincuente <span className="font-bold">NO es un
-                    hacker</span>.
-                    Un ciberdelincuente es <span className="font-bold">UN CRIMINAL</span>.
-                    🚨👮‍♀️
-                </p>
-                <small className="chat-time">18:50</small>
-            </div>
-        </div>
     ];
 
     useEffect(() => {
@@ -47,12 +36,11 @@ export default function CiberAlertaPeru() {
     }, [visibleElements, elements.length]);
 
     return (
-        <div className="p-4">
+        <div>
             {/* TÍTULO (SIN ANIMACIÓN) */}
             <div className="flex justify-center">
                 <h1 className="chat-title-box">
-                    Una Aproximación Al
-                    Concepto...
+                    ¿Qué es la ciberdelincuencia?
                 </h1>
             </div>
 
@@ -60,11 +48,11 @@ export default function CiberAlertaPeru() {
             <div className="flex flex-col items-start">
                 <div className="chat-box left">
                     <p className="text-sm md:text-md">
-                        La <span className="font-bold">ciberdelincuencia</span> se refiere a todos
-                        <span className="font-bold">los delitos cometidos</span> por medio de las
-                        <span className="font-bold">tecnologías digitales</span> que vulneran la
-                        <span className="font-bold">seguridad de empresas, usuarios e
-                        individuos</span>. 💻⚠️
+                        La <span className="font-bold">ciberdelincuencia</span> engloba <span className="font-bold"> todos los delitos cometidos cometidos
+                        por medio de internet </span> 🌐 y las <span
+                        className="font-bold"> tecnologías digitales </span> 💻📱
+                        que vulneran la seguridad de <span className="font-bold">empresas</span> 🏢 y <span
+                        className="font-bold"> usuarios </span>👤.
                     </p>
                     <small className="chat-time">18:50</small>
                 </div>
