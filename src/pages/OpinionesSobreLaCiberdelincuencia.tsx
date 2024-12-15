@@ -191,7 +191,7 @@ export default function OpinionesSobreLaCiberdelincuencia() {
             </div>
         </div>,
         <div className="flex flex-col items-end animate-fade-in-fast">
-            <img src="https://github.com/Lab-EC-UPC/assets/blob/main/especial-ciberseguridad/especialistas/Jose%20Carlos%20Vargas.jpeg?raw=true" style={{ width: '200px', height: '200px', borderRadius: '50%' }}></img>
+            <img src="https://github.com/Lab-EC-UPC/assets/blob/main/especial-ciberseguridad/especialistas/ErickIriarte_squared.jpg?raw=true" style={{ width: '200px', height: '200px', borderRadius: '50%' }}></img>
         </div>,
         <div className="flex flex-col items-end animate-fade-in-fast">
             <div className="chat-box right">
