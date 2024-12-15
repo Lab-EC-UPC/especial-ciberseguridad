@@ -19,7 +19,7 @@ export default function TeaserSplashScreen({ onSkip }: { onSkip: () => void }) {
                     className="w-screen h-screen object-cover"
                 >
                     <source
-                        src="https://okalphavideo.s3.us-east-2.amazonaws.com/makereign/idents/website/thumbnail-002.mp4"
+                        src="https://github.com/Lab-EC-UPC/assets/raw/refs/heads/main/especial-ciberseguridad/videos/ec-ciberseguridad-horizontal_webm_hd.webm"
                         type="video/mp4"
                     />
                     Your browser does not support HTML video.
