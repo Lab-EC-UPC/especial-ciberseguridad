@@ -273,7 +273,7 @@ export default function OpinionesSobreLaCiberdelincuencia({visibleElements,setVi
                 <div className="flex flex-col items-end animate-fade-in-fast">
                     <div className="chat-box right">
                         <p className="text-sm md:text-md">
-                            “En el Perú, no tenemos cultura de ciberseguridad ni protección de datos. Ni siquiera los niños en las escuelas aprenden cómo cuidar su información o la de sus familias. (...)El reglamento de protección de datos tiene más de una década y no se ajusta a las dinámicas actuales. Un nuevo reglamento es urgente para dar más herramientas a los ciudadanos"
+                            “En el Perú, no tenemos cultura de ciberseguridad ni protección de datos. Ni siquiera los niños en las escuelas aprenden cómo cuidar su información o la de sus familias. (...) El reglamento de protección de datos tiene más de una década y no se ajusta a las dinámicas actuales. Un nuevo reglamento es urgente para dar más herramientas a los ciudadanos"
                         </p>
                         <div className="flex items-center gap-1">
                             <small className="chat-time">{getCurrentTime()}</small>

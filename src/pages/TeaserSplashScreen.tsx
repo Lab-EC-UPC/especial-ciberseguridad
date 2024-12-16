@@ -35,7 +35,7 @@ export default function TeaserSplashScreen({ onSkip }: { onSkip: () => void }) {
                 loop
                 className="object-fit h-full w-full"
             >
-                <source src={videoSrc} type="video/mp4" />
+                <source src={videoSrc} type="video/webm" />
                 Your browser does not support HTML video.
             </video>
 
