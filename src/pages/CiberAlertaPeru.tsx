@@ -23,6 +23,7 @@ export default function CiberAlertaPeru({visibleElements,setVisibleElements} :  
                             controls
                             autoPlay
                             muted
+                            playsInline
                         >
                             <source
                                 src="https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/video_teaser_recortado.webm"

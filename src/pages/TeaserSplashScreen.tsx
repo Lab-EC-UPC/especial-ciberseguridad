@@ -36,7 +36,15 @@ export default function TeaserSplashScreen({ onSkip }: { onSkip: () => void }) {
                 playsInline
                 className="object-fit h-full w-full"
             >
-                <source src={videoSrc} type="video/webm" />
+                <source
+                    src={videoSrc || "https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/ec-ciberseguridad-horizontal_webm_hd.webm"}
+                    type="video/webm"/>
+                <source
+                    src={videoSrc || "https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/ec-ciberseguridad-horizontal_webm_hd.webm"}
+                    type="video/mp4"/>
+                <source
+                    src={videoSrc || "https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/ec-ciberseguridad-horizontal_webm_hd.webm"}
+                    type="video/ogg"/>
                 Your browser does not support HTML video.
             </video>
 
