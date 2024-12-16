@@ -26,7 +26,7 @@ export default function CiberAlertaPeru({visibleElements,setVisibleElements} :  
                         >
                             <source
                                 src="https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/video_teaser_recortado.webm"
-                                type="video/mp4"
+                                type="video/webm"
                             />
                         </video>
                         <div className="flex items-center gap-1">

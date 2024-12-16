@@ -464,11 +464,11 @@ export default function VerificadorDeLinks({visibleElements,setVisibleElements,r
                         onMouseEnter={() => setShowTooltipFile(true)}
                         onMouseLeave={() => setShowTooltipFile(false)}
                     >
-                        <button
+                        <label
                             className="bg-green-dark hover:bg-green duration-200 text-white p-3 rounded-full shadow-lg cursor-pointer">
                             <PhotoIcon className="w-4 h-4 md:w-6 md:h-6"/>
                             <input type="file" accept="image/*" className="hidden" onChange={handleFileUpload} disabled={isFetchingResponse || isLoadingFileUpload} />
-                        </button>
+                        </label>
                         {
                             showTooltipFile &&
                                 <div className="absolute -top-10 bg-white text-xs p-2 rounded shadow-md">Sube un archivo</div>

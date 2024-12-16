@@ -73,7 +73,7 @@ export default function ElPhishing ({visibleElements,setVisibleElements} :  Prop
                 <div className="flex flex-col items-end animate-fade-in-fast">
                     <div className="chat-box right">
                         <p className="text-sm md:text-md">
-                            En ese mismo periodo, en el Perú ️ 🇵🇪 se registraron cerca de
+                            En ese mismo periodo, en el Perú 🇵🇪 se registraron cerca de
                             <strong> 91 millones de ataques de phishing, </strong>
                             casi
                             <strong> cuatro veces </strong>

@@ -184,7 +184,7 @@ export default function PrevencionYDenuncia({visibleElements,setVisibleElements}
                 <div className="flex flex-col items-start animate-fade-in-fast">
                     <div className="chat-box left">
                         <p className="text-sm md:text-md">
-                            <span className="font-bold">🔗 Enlace:</span> <a href="https://portal.mpfn.gob.pe/denuncias-en-linea" style={{color: "#3497f9", textDecoration: "underline"}}>Denuncias en línea</a>
+                            <span className="font-bold">🔗 Enlace:</span> <a href="https://portal.mpfn.gob.pe/denuncias-en-linea" target="_blank" style={{color: "#3497f9", textDecoration: "underline"}}>Denuncias en línea</a>
                         </p>
                         <div className="flex items-center gap-1">
                             <small className="chat-time">{getCurrentTime()}</small>
