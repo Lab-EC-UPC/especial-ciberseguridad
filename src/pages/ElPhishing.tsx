@@ -1,23 +1,10 @@
 import {useEffect, useRef, useState} from "react";
+import getCurrentTime from "../components/CurrentTime.ts";
 
 export default function ElPhishing () {
     const [visibleElements, setVisibleElements] = useState(0);
 
     const elements = [
-
-        //IZQUIERDA
-        <div className="flex flex-col items-start animate-fade-in-fast">
-            <div className="chat-box left">
-                <p className="text-sm md:text-md">
-                    El phishing es un tipo de
-                    <span className="font-bold"> ciberataque </span>
-                    que
-                    <span className="font-bold"> utiliza correos electrónicos 📧, mensajes de texto 📱 , llamadas telefonicas 📞 o sitios web fraudulentos 🌐 </span>
-                    para engañar a las personas y persuadirlas a realizar acciones como:
-                </p>
-                <small className="chat-time">21:06</small>
-            </div>
-        </div>,
         <div className="flex flex-col items-start animate-fade-in-fast">
             <div className="chat-box left">
                 <p className="text-sm md:text-md">
@@ -39,7 +26,7 @@ export default function ElPhishing () {
                     </ul>
 
                 </p>
-                <small className="chat-time">18:50</small>
+                <small className="chat-time">{getCurrentTime()}</small>
             </div>
         </div>,
 
@@ -54,7 +41,7 @@ export default function ElPhishing () {
                     en todo el mundo 🌍👩‍💻.
                 </p>
                 <div className="flex items-center gap-1">
-                    <small className="chat-time">18:50</small>
+                    <small className="chat-time">{getCurrentTime()}</small>
                     <img
                         src="read-double-check-icon.svg"
                         alt="Double check icon"
@@ -73,7 +60,7 @@ export default function ElPhishing () {
                     más que en el año anterior. 📈⚠️
                 </p>
                 <div className="flex items-center gap-1">
-                    <small className="chat-time">18:50</small>
+                    <small className="chat-time">{getCurrentTime()}</small>
                     <img
                         src="read-double-check-icon.svg"
                         alt="Double check icon"
@@ -83,8 +70,8 @@ export default function ElPhishing () {
             </div>
         </div>,
 
-        //Falta agregar el grafico de Flourish
-        //GRÁFICO
+        //Falta agregar el grafico de Flourish 
+        //GRÁFICO 4
         <div className="flex flex-col items-start animate-fade-in-fast">
             <div className="chat-box left">
                 <p className="text-sm md:text-md">
@@ -95,15 +82,26 @@ export default function ElPhishing () {
                     en 2024 en <strong> Latinoamérica </strong> son:
 
                 </p>
-                <small className="chat-time">21:06</small>
+                <small className="chat-time">{getCurrentTime()}</small>
             </div>
         </div>,
         <div className="flex flex-col items-start animate-fade-in-fast">
             <div className="chat-box left">
-                <p className="text-sm md:text-md">
-                    Gráfico de Flourish
+            <p className="text-sm md:text-md">
+            <span className="font-bold">Crecimiento de la actividad de phishing en Latinoamérica en 2024</span>
+            <br></br>Países con mayor crecimiento de Phishing en Latambr<br></br>
                 </p>
-                <small className="chat-time">21:06</small>
+            <iframe
+                className="flourish-embed flourish-charts"
+                src="https://public.flourish.studio/visualisation/20791460/embed"
+                width="100%"
+                height="300"
+                frameBorder="0"
+                allowFullScreen
+                title="Flourish Chart"
+            />
+            <p className="text-sm md:text-md">Fuente: </p>
+                <small className="chat-time">{getCurrentTime()}</small>
             </div>
         </div>,
 
@@ -111,7 +109,7 @@ export default function ElPhishing () {
         //GRUPO
         <div className="flex flex-col items-center animate-fade-in-fast">
             <div className="chat-box center">
-                <img src="joined-chat-icon.svg"
+                <img src="el-phishing/1.webp"
                      alt="Joined chat icon"
                      className="w-16 h-16 md:w-24 md:h-24"
                 />
@@ -119,17 +117,16 @@ export default function ElPhishing () {
                     Grupo creado por el Phishing
                 </h1>
                 <small>
-                    Grupo 3 miembros
+                    <strong>Grupo 3 miembros</strong>
                 </small>
                 <p className="text-sm md:text-md">
                     Conoce acerca de las modalidades de uno de los ciberdelitos más comunes de la región.
                 </p>
             </div>
         </div>,
-
         //VISHING
         <div className="flex flex-col items-center pt-3 animate-fade-in-fast">
-            <img src="joined-chat-icon.svg"
+            <img src="el-phishing/2.webp"
                  alt="Joined chat icon"
                  className="w-24 h-24 md:w-32 md:h-32"
             />
@@ -146,7 +143,7 @@ export default function ElPhishing () {
                     este método combina una <strong>llamada telefónica 📞</strong> con
                     <strong> información que el delincuente obtuvo previamente </strong>del usuario mediante internet 🌐.
                 </p>
-                <small className="chat-time">21:06</small>
+                <small className="chat-time">{getCurrentTime()}</small>
             </div>
         </div>,
         <div className="flex flex-col items-end animate-fade-in-fast">
@@ -157,7 +154,7 @@ export default function ElPhishing () {
                     <strong> cuentas bancarias  💳 y realizar transacciones 💸.</strong>
                 </p>
                 <div className="flex items-center gap-1">
-                    <small className="chat-time">18:50</small>
+                    <small className="chat-time">{getCurrentTime()}</small>
                     <img
                         src="read-double-check-icon.svg"
                         alt="Double check icon"
@@ -169,7 +166,7 @@ export default function ElPhishing () {
 
         //SMISHING
         <div className="flex flex-col items-center pt-3 animate-fade-in-fast">
-            <img src="joined-chat-icon.svg"
+            <img src="el-phishing/3.webp"
                  alt="Joined chat icon"
                  className="w-24 h-24 md:w-32 md:h-32"
             />
@@ -186,7 +183,7 @@ export default function ElPhishing () {
                     <strong> envío de mensajes de texto falsos 📱✉️ </strong> para <strong> engañar </strong>
                     a las personas y obtener su <strong> información personal o financiera. 🔑💳🚨</strong>
                 </p>
-                <small className="chat-time">21:06</small>
+                <small className="chat-time">{getCurrentTime()}</small>
             </div>
         </div>,
         <div className="flex flex-col items-end animate-fade-in-fast">
@@ -197,7 +194,7 @@ export default function ElPhishing () {
                     para conseguir sus objetivos. 🎯💳🚨
                 </p>
                 <div className="flex items-center gap-1">
-                    <small className="chat-time">18:50</small>
+                    <small className="chat-time">{getCurrentTime()}</small>
                     <img
                         src="read-double-check-icon.svg"
                         alt="Double check icon"
@@ -214,13 +211,13 @@ export default function ElPhishing () {
                     <strong> 4 de cada 10 consumidores </strong> enfrentaron al menos
                     <strong> un intento de estafa por SMS </strong> en 2023. 📱🚨📊
                 </p>
-                <small className="chat-time">21:06</small>
+                <small className="chat-time">{getCurrentTime()}</small>
             </div>
         </div>,
 
         //PHARMING
         <div className="flex flex-col items-center pt-3 animate-fade-in-fast">
-            <img src="joined-chat-icon.svg"
+            <img src="el-phishing/4.webp"
                  alt="Joined chat icon"
                  className="w-24 h-24 md:w-32 md:h-32"
             />
@@ -236,7 +233,7 @@ export default function ElPhishing () {
                     Este cibercrimen involucra el <strong> uso de malware,  </strong> que
                     <strong> redirige automáticamente a la víctima hacia sitios web falsos. 💻⚠️🌐 </strong>
                 </p>
-                <small className="chat-time">21:06</small>
+                <small className="chat-time">{getCurrentTime()}</small>
             </div>
         </div>,
         <div className="flex flex-col items-end animate-fade-in-fast">
@@ -247,7 +244,7 @@ export default function ElPhishing () {
                     <strong> trata de un fraude. 🔑💻❌</strong>
                 </p>
                 <div className="flex items-center gap-1">
-                    <small className="chat-time">18:50</small>
+                    <small className="chat-time">{getCurrentTime()}</small>
                     <img
                         src="read-double-check-icon.svg"
                         alt="Double check icon"
@@ -255,12 +252,8 @@ export default function ElPhishing () {
                     />
                 </div>
             </div>
-        </div>,
-
-
-
+        </div>
     ];
-
 
     const lastElementRef = useRef<HTMLDivElement>(null);
 
@@ -285,6 +278,18 @@ export default function ElPhishing () {
                 <h1 className="chat-title-box">
                     Uno de los delitos de mayor crecimiento
                 </h1>
+            </div>
+            <div className="flex flex-col items-start animate-fade-in-fast">
+                <div className="chat-box left">
+                    <p className="text-sm md:text-md">
+                        El phishing es un tipo de
+                        <span className="font-bold"> ciberataque </span>
+                        que
+                        <span className="font-bold"> utiliza correos electrónicos 📧, mensajes de texto 📱 , llamadas telefonicas 📞 o sitios web fraudulentos 🌐 </span>
+                        para engañar a las personas y persuadirlas a realizar acciones como:
+                    </p>
+                    <small className="chat-time">{getCurrentTime()}</small>
+                </div>
             </div>
             <div>
                 {elements.slice(0, visibleElements).map((element, index) => (

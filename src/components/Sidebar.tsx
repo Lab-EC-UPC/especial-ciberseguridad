@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import {ChatBubbleLeftIcon, EllipsisVerticalIcon, XMarkIcon} from "@heroicons/react/24/outline";
-import {SpeakerXMarkIcon} from "@heroicons/react/24/solid";
+import { XMarkIcon, PencilIcon, ChatBubbleBottomCenterIcon } from "@heroicons/react/24/outline";
+import { SpeakerXMarkIcon} from "@heroicons/react/24/solid";
 
 
 interface Route {
@@ -39,13 +39,13 @@ const Sidebar: React.FC<SidebarProps> = ({ routes, toggleSidebar }) => {
     return (
         <div className="relative h-full flex flex-col bg-white border-r-2 border-grey-light">
             <div className="flex justify-between h-20 p-4 items-center border-gray-200">
-                <h1 className="md:text-2xl font-bold">
-                    Especial Ciberdelincuencia
+                <h1 className="text-2xl md:text-5xl font-bold">
+                    Chats
                 </h1>
                 <div className="hidden md:block">
-                    <div className="flex gap-4 h-6 text-grey">
-                        <ChatBubbleLeftIcon/>
-                        <EllipsisVerticalIcon/>
+                    <div className="flex gap-2 h-6 text-grey">
+                        <PencilIcon />
+                        <ChatBubbleBottomCenterIcon />
                     </div>
                 </div>
                 <button
@@ -76,7 +76,7 @@ const Sidebar: React.FC<SidebarProps> = ({ routes, toggleSidebar }) => {
                             <div className="flex-1 border-b border-grey-light">
                                 <div className="pb-4">
                                     <div className="flex justify-between items-center">
-                                        <h2 className="font-medium">{route.title}</h2>
+                                        <h2 className="font-medium font-tomorrow text-lg md:text-xl">{route.title}</h2>
                                         <div className="grid items-center">
                                         <span className="text-xs text-gray-400 ml-2">
                                             {route.time}

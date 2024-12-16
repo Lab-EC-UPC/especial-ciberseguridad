@@ -1,14 +1,11 @@
-import React from "react";
-import {useOutletContext} from "react-router";
-import {FormatosEjemplo} from "./FormatosEjemplo.tsx";
-import EjemploChat from "./EjemploChat.tsx";
+import {Link} from "react-router";
 
-interface OutletContext {
-    toggleSidebar: () => void;
-}
+// interface OutletContext {
+//     toggleSidebar: () => void;
+// }
 
-const Inicio: React.FC = () => {
-    const { toggleSidebar } = useOutletContext<OutletContext>();
+export default function Inicio() {
+    // const { toggleSidebar } = useOutletContext<OutletContext>();
 
     return (
         <div className="grid gap-56">
@@ -29,23 +26,22 @@ const Inicio: React.FC = () => {
                         </h1>
                     </div>
                     <div className="grid gap-2 w-full max-w-xs">
-                        <button
-                            onClick={toggleSidebar}
-                            className="button-green">
-                            Explorar especial
-                        </button>
-                        <button
-                            className="button-green">
-                            Verificador de Links
-                        </button>
+                        <Link to="/ciberdelincuencia">
+                            <button
+                                className="button-green grid gap-2 w-full max-w-xs animate-scale-loop">
+                                Comenzar 🚀
+                            </button>
+                        </Link>
+                        <Link to="/verificador-de-links">
+                            <button
+                                className="button-green grid gap-2 w-full max-w-xs">
+                                Verificador de links 🔗
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </div>
-            <FormatosEjemplo />
-            <EjemploChat />
         </div>
 
     );
 };
-
-export default Inicio;

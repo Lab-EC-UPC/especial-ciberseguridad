@@ -1,6 +1,7 @@
 import AudioPlayer from "../components/AudioPlayer.tsx";
 import {Link} from "react-router";
 import {ArrowDownCircleIcon, ArrowUpCircleIcon, MicrophoneIcon} from "@heroicons/react/24/solid";
+import getCurrentTime from "../components/CurrentTime.ts";
 
 export const FormatosEjemplo = () => {
     return (
@@ -15,10 +16,10 @@ export const FormatosEjemplo = () => {
 
                 {/*CENTRO*/}
                 <div className="flex flex-col items-center">
-                    <div className="chat-box center">
+                    <div className="flex flex-col gap-2 md:gap-4 chat-box center">
                         <img src="joined-chat-icon.svg"
                              alt="Joined chat icon"
-                             className="w-16 h-16 md:w-24 md:h-24"
+                             className="w-16 h-16 md:w-32 md:h-32 rounded-full"
                         />
                         <h1 className="text-lg font-medium">
                             Creaste el grupo
@@ -54,7 +55,7 @@ export const FormatosEjemplo = () => {
                             sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
                             like Aldus PageMaker including versions of Lorem Ipsum.
                         </p>
-                        <small className="chat-time">18:50</small>
+                        <small className="chat-time">{getCurrentTime()}</small>
                     </div>
                 </div>
 
@@ -73,7 +74,7 @@ export const FormatosEjemplo = () => {
                             like Aldus PageMaker including versions of Lorem Ipsum.
                         </p>
                         <div className="flex items-center gap-1">
-                            <small className="chat-time">18:50</small>
+                            <small className="chat-time">{getCurrentTime()}</small>
                             <img
                                 src="read-double-check-icon.svg"
                                 alt="Double check icon"
@@ -91,7 +92,7 @@ export const FormatosEjemplo = () => {
                             className="w-full"
                         />
                         <div className="flex items-center gap-1">
-                            <small className="chat-time">18:50</small>
+                            <small className="chat-time">{getCurrentTime()}</small>
                             <img
                                 src="read-double-check-icon.svg"
                                 alt="Double check icon"
@@ -109,7 +110,7 @@ export const FormatosEjemplo = () => {
                             className="w-full"
                         />
                         <div className="flex items-center gap-1">
-                            <small className="chat-time">18:50</small>
+                            <small className="chat-time">{getCurrentTime()}</small>
                             <img
                                 src="read-double-check-icon.svg"
                                 alt="Double check icon"
@@ -131,7 +132,7 @@ export const FormatosEjemplo = () => {
                             Your browser does not support HTML video.
                         </video>
                         <div className="flex items-center gap-1">
-                            <small className="chat-time">18:50</small>
+                            <small className="chat-time">{getCurrentTime()}</small>
                             <img
                                 src="read-double-check-icon.svg"
                                 alt="Double check icon"
@@ -153,7 +154,7 @@ export const FormatosEjemplo = () => {
                             Your browser does not support HTML video.
                         </video>
                         <div className="flex items-center gap-1">
-                            <small className="chat-time">18:50</small>
+                            <small className="chat-time">{getCurrentTime()}</small>
                             <img
                                 src="read-double-check-icon.svg"
                                 alt="Double check icon"
