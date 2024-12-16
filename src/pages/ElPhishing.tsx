@@ -70,8 +70,8 @@ export default function ElPhishing () {
             </div>
         </div>,
 
-        //Falta agregar el grafico de Flourish
-        //GRÁFICO
+        //Falta agregar el grafico de Flourish 
+        //GRÁFICO 4
         <div className="flex flex-col items-start animate-fade-in-fast">
             <div className="chat-box left">
                 <p className="text-sm md:text-md">
@@ -87,9 +87,20 @@ export default function ElPhishing () {
         </div>,
         <div className="flex flex-col items-start animate-fade-in-fast">
             <div className="chat-box left">
-                <p className="text-sm md:text-md">
-                    Gráfico de Flourish
+            <p className="text-sm md:text-md">
+            <span className="font-bold">Crecimiento de la actividad de phishing en Latinoamérica en 2024</span>
+            <br></br>Países con mayor crecimiento de Phishing en Latambr<br></br>
                 </p>
+            <iframe
+                className="flourish-embed flourish-charts"
+                src="https://public.flourish.studio/visualisation/20791460/embed"
+                width="100%"
+                height="300"
+                frameBorder="0"
+                allowFullScreen
+                title="Flourish Chart"
+            />
+            <p className="text-sm md:text-md">Fuente: </p>
                 <small className="chat-time">{getCurrentTime()}</small>
             </div>
         </div>,
