@@ -33,6 +33,7 @@ export default function TeaserSplashScreen({ onSkip }: { onSkip: () => void }) {
                 autoPlay
                 muted={isMuted}
                 loop
+                playsInline
                 className="object-fit h-full w-full"
             >
                 <source src={videoSrc} type="video/webm" />
