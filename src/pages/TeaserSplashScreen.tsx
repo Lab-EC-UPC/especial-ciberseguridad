@@ -1,30 +1,43 @@
-import {useState} from "react";
+import { useState, useEffect } from "react";
 
 export default function TeaserSplashScreen({ onSkip }: { onSkip: () => void }) {
     const [isMuted, setIsMuted] = useState(true);
+    const [videoSrc, setVideoSrc] = useState("");
+
+    const desktopVideo =
+        "https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/ec-ciberseguridad-horizontal_webm_hd.webm";
+    const mobileVideo =
+        "https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/ec-ciberseguridad-vertical_webm_hd.webm";
+
+    useEffect(() => {
+        const updateVideoSrc = () => {
+            if (window.innerWidth <= 768) {
+                setVideoSrc(mobileVideo);
+            } else {
+                setVideoSrc(desktopVideo);
+            }
+        };
+
+        updateVideoSrc();
+
+        window.addEventListener("resize", updateVideoSrc);
+
+        return () => {
+            window.removeEventListener("resize", updateVideoSrc);
+        };
+    }, []);
 
     return (
-        <div className="flex items-center justify-center h-screen w-screen">
-            <div className="absolute top-4 left-4 z-10">
-                <img src="https://avatars.githubusercontent.com/u/189483635?s=200&v=4"
-                     alt="Lab EC-Data UPC"
-                     className="h-12 w-auto rounded-2xl"
-                />
-            </div>
-            <div className="flex items-center justify-center w-screen h-screen">
-                <video
-                    autoPlay
-                    muted={isMuted}
-                    loop
-                    className="w-screen h-screen object-cover"
-                >
-                    <source
-                        src="https://github.com/Lab-EC-UPC/assets/raw/refs/heads/main/especial-ciberseguridad/videos/ec-ciberseguridad-horizontal_webm_hd.webm"
-                        type="video/mp4"
-                    />
-                    Your browser does not support HTML video.
-                </video>
-            </div>
+        <div className="h-screen w-screen">
+            <video
+                autoPlay
+                muted={isMuted}
+                loop
+                className="object-fit h-full w-full"
+            >
+                <source src={videoSrc} type="video/mp4" />
+                Your browser does not support HTML video.
+            </video>
 
             <div className="flex gap-4 absolute top-2 right-4 z-10">
                 <button

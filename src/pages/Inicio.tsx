@@ -8,7 +8,7 @@ export default function Inicio() {
     // const { toggleSidebar } = useOutletContext<OutletContext>();
 
     return (
-        <div className="grid gap-56">
+        <div className="grid gap-56 p-4">
             <div className="flex flex-col items-center justify-center">
                 <div className="flex flex-col items-center justify-center w-full gap-6">
                     <div className="w-full justify-center block">
