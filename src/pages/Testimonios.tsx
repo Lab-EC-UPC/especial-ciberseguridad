@@ -5,8 +5,12 @@ import getCurrentTime from "../components/CurrentTime.ts";
 import PrevFabButton from "../components/PrevFabButton.tsx";
 import NextFabButton from "../components/NextFabButton.tsx";
 
-export default function Testimonios () {
-    const [visibleElements, setVisibleElements] = useState(0);
+interface Props {
+    visibleElements: number;
+    setVisibleElements: (index: number) => void;
+}
+
+export default function Testimonios ({visibleElements,setVisibleElements} :  Props) {
     const [isLoading, setIsLoading] = useState(false);
     const lastElementRef = useRef<HTMLDivElement>(null);
 

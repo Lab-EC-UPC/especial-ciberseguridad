@@ -3,8 +3,12 @@ import getCurrentTime from "../components/CurrentTime.ts";
 import PrevFabButton from "../components/PrevFabButton.tsx";
 import NextFabButton from "../components/NextFabButton.tsx";
 
-export default function OpinionesSobreLaCiberdelincuencia() {
-    const [visibleElements, setVisibleElements] = useState(0);
+interface Props {
+    visibleElements: number;
+    setVisibleElements: (index: number) => void;
+}
+
+export default function OpinionesSobreLaCiberdelincuencia({visibleElements,setVisibleElements} :  Props) {
     const [isLoading, setIsLoading] = useState(false);
     const lastElementRef = useRef<HTMLDivElement>(null);
 

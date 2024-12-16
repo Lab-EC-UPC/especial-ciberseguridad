@@ -50,7 +50,7 @@ const Layout: React.FC = () => {
                                         alt={activeRoute.title}
                                         className="h-8 w-8 md:h-12 md:w-12 object-cover rounded-full"
                                     />
-                                    <h1 className="text-lg md:text-xl font-bold">{activeRoute.subtitle}</h1>
+                                    <h1 className="text-lg md:text-2xl font-medium font-tomorrow">{activeRoute.subtitle}</h1>
                                 </div>
                             </Link>
                         </div>

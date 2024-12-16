@@ -4,8 +4,14 @@ import PrevFabButton from "../components/PrevFabButton.tsx";
 import NextFabButton from "../components/NextFabButton.tsx";
 import {PaperAirplaneIcon, PhotoIcon, QrCodeIcon} from "@heroicons/react/24/solid";
 
-export default function VerificadorDeLinks() {
-    const [visibleElements, setVisibleElements] = useState(0);
+interface Props {
+    visibleElements: number;
+    setVisibleElements: (index: number) => void;
+    responses: { message: string; details?: string; time: string; url?: string }[];
+    setResponses: (responses: (prev:any) => any[]) => void;
+}
+
+export default function VerificadorDeLinks({visibleElements,setVisibleElements,responses,setResponses} :  Props) {
     const [isLoading, setIsLoading] = useState(false);
     const lastElementRef = useRef<HTMLDivElement>(null);
 
@@ -120,7 +126,6 @@ export default function VerificadorDeLinks() {
     const [text, setText] = useState('');
     const [showTooltipQR, setShowTooltipQR] = useState(false);
     const [showTooltipFile, setShowTooltipFile] = useState(false);
-    const [responses, setResponses] = useState<{ message: string; details?: string; time: string; url?: string }[]>([]);
     const [cameraActive, setCameraActive] = useState(false);
     const videoRef = useRef<HTMLVideoElement | null>(null);
     const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -422,6 +427,7 @@ export default function VerificadorDeLinks() {
                     <div className="flex-1 items-center">
                         <div className="flex w-full border shadow-sm p-1 rounded-full bg-white">
                             <input
+                                disabled={isFetchingResponse || isLoadingFileUpload}
                                 type="text"
                                 value={text}
                                 onChange={(e) => setText(e.target.value)}
@@ -430,6 +436,7 @@ export default function VerificadorDeLinks() {
                                 className="w-full p-2 text-sm text-gray-700 placeholder-gray-500 rounded-full"
                             />
                             <button
+                                disabled={isFetchingResponse || isLoadingFileUpload}
                                 onClick={() => sendUrlToEndpoint(text).finally(() => setText(''))}
                                 className="text-green-dark hover:text-green duration-200 p-3 rounded-full">
                                 <PaperAirplaneIcon className="w-4 h-4 md:w-6 md:h-6"/>
@@ -440,29 +447,32 @@ export default function VerificadorDeLinks() {
                         className="relative group flex flex-col items-center cursor-pointer"
                         onMouseEnter={() => setShowTooltipQR(true)}
                         onMouseLeave={() => setShowTooltipQR(false)}
-                        onClick={handleOpenCamera}
                     >
                         <button
+                            onClick={handleOpenCamera}
+                            disabled={isFetchingResponse || isLoadingFileUpload}
                             className="bg-green-dark hover:bg-green duration-200 text-white p-3 rounded-full shadow-lg">
                             <QrCodeIcon className="w-4 h-4 md:w-6 md:h-6"/>
                         </button>
-                        {showTooltipQR &&
-                            <div className="absolute -top-10 bg-white text-xs p-2 rounded shadow-md">Escanea un
-                                QR</div>}
+                        {
+                            showTooltipQR &&
+                                <div className="absolute -top-10 bg-white text-xs p-2 rounded shadow-md">Escanea un QR</div>
+                        }
                     </div>
                     <div
                         className="relative group flex flex-col items-center cursor-pointer"
                         onMouseEnter={() => setShowTooltipFile(true)}
                         onMouseLeave={() => setShowTooltipFile(false)}
                     >
-                        <label
+                        <button
                             className="bg-green-dark hover:bg-green duration-200 text-white p-3 rounded-full shadow-lg cursor-pointer">
                             <PhotoIcon className="w-4 h-4 md:w-6 md:h-6"/>
-                            <input type="file" accept="image/*" className="hidden" onChange={handleFileUpload}/>
-                        </label>
-                        {showTooltipFile &&
-                            <div className="absolute -top-10 bg-white text-xs p-2 rounded shadow-md">Sube un
-                                archivo</div>}
+                            <input type="file" accept="image/*" className="hidden" onChange={handleFileUpload} disabled={isFetchingResponse || isLoadingFileUpload} />
+                        </button>
+                        {
+                            showTooltipFile &&
+                                <div className="absolute -top-10 bg-white text-xs p-2 rounded shadow-md">Sube un archivo</div>
+                        }
                     </div>
                 </div>
             </div>

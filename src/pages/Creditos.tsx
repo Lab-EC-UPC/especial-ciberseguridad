@@ -35,7 +35,7 @@ export default function Creditos () {
         if (visibleElements < participants.length) {
             const timer = setTimeout(() => {
                 setVisibleElements(visibleElements + 1);
-            }, 200);
+            }, 1);
             return () => clearTimeout(timer);
         }
     }, [visibleElements, participants.length]);

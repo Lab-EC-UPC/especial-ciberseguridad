@@ -1,12 +1,9 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-nocheck
 import { useState, useEffect } from "react";
 import './App.css';
-import { BrowserRouter, Route, Routes } from "react-router";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./Layout.tsx";
 import Inicio from "./pages/Inicio.tsx";
 import VerificadorDeLinks from "./pages/VerificadorDeLinks.tsx";
-import { FormatosEjemplo } from "./pages/FormatosEjemplo.tsx";
 import Creditos from "./pages/Creditos.tsx";
 import SplashScreen from "./pages/SplashScreen.tsx";
 import TeaserSplashScreen from "./pages/TeaserSplashScreen.tsx";
@@ -21,10 +18,88 @@ function App() {
     const [screen, setScreen] = useState(1);
     const [transitionClass, setTransitionClass] = useState("");
 
+    const [elementsCiberdelincuencia, setElementsCiberdelincuenciaCiberdelincuencia] = useState(0);
+    const [elementsUnPocoDeData, setElementsUnPocoDeData] = useState(0);
+    const [elementsElPhishing, setElementsElPhishing] = useState(0);
+    const [elementsTestimonios, setElementsTestimonios] = useState(0);
+    const [elementsOpiniones, setElementsOpiniones] = useState(0);
+    const [elementsPrevencion, setElementsPrevencion] = useState(0);
+    const [elementsVerificador, setElementsVerificador] = useState(0);
+    const [responses, setResponses] = useState<{ message: string; details?: string; time: string; url?: string }[]>([]);
+
     const skipTeaserSplashScreen = () => {
         setTransitionClass("fade-out");
         setTimeout(() => setScreen(3), 500);
     };
+
+    const router = createBrowserRouter([
+        {
+            path: "/",
+            element: <Layout />,
+            children: [
+                { path: "/", element: <Inicio /> },
+                {
+                    path: "/ciberdelincuencia",
+                    element:
+                        <CiberAlertaPeru
+                            visibleElements={elementsCiberdelincuencia}
+                            setVisibleElements={setElementsCiberdelincuenciaCiberdelincuencia}
+                        />
+                },
+                {
+                    path: "/un-poco-de-data",
+                    element:
+                        <UnPocoDeData
+                            visibleElements={elementsUnPocoDeData}
+                            setVisibleElements={setElementsUnPocoDeData}
+                        />
+                },
+                {
+                    path: "/el-phishing",
+                    element:
+                        <ElPhishing
+                            visibleElements={elementsElPhishing}
+                            setVisibleElements={setElementsElPhishing}
+                        />
+                },
+                {
+                    path: "/testimonios",
+                    element:
+                        <Testimonios
+                            visibleElements={elementsTestimonios}
+                            setVisibleElements={setElementsTestimonios}
+                        />
+                },
+                {
+                    path: "/opiniones-sobre-la-ciberdelincuencia",
+                    element:
+                        <OpinionesSobreLaCiberdelincuencia
+                            visibleElements={elementsOpiniones}
+                            setVisibleElements={setElementsOpiniones}
+                        />
+                },
+                {
+                    path: "/prevencion-y-denuncia",
+                    element: <PrevencionYDenuncia
+                        visibleElements={elementsPrevencion}
+                        setVisibleElements={setElementsPrevencion}
+                    />
+                },
+                {
+                    path: "/verificador-de-links",
+                    element:
+                        <VerificadorDeLinks
+                            visibleElements={elementsVerificador}
+                            setVisibleElements={setElementsVerificador}
+                            responses={responses}
+                            setResponses={setResponses}
+                        />
+                },
+                { path: "/creditos", element: <Creditos /> },
+                { path: "*", element: <Inicio /> },
+            ],
+        },
+    ]);
 
     useEffect(() => {
         if (screen === 1) {
@@ -56,25 +131,7 @@ function App() {
         );
     }
 
-    return (
-        <BrowserRouter>
-            <Routes>
-                <Route element={<Layout />}>
-                    <Route path="/formatos-ejemplo-para-borrar" element={<FormatosEjemplo />} />
-                    <Route path="/" element={<Inicio />} />
-                    <Route path="/ciberdelincuencia" element={<CiberAlertaPeru />} />
-                    <Route path="/un-poco-de-data" element={<UnPocoDeData />} />
-                    <Route path="/el-phishing" element={<ElPhishing />} />
-                    <Route path="/testimonios" element={<Testimonios />} />
-                    <Route path="/opiniones-sobre-la-ciberdelincuencia" element={<OpinionesSobreLaCiberdelincuencia />} />
-                    <Route path="/prevencion-y-denuncia" element={<PrevencionYDenuncia />} />
-                    <Route path="/verificador-de-links" element={<VerificadorDeLinks />} />
-                    <Route path="/creditos" element={<Creditos />} />
-                    <Route path="*" element={<Inicio />} />
-                </Route>
-            </Routes>
-        </BrowserRouter>
-    );
+    return <RouterProvider router={router} />;
 }
 
 export default App;
