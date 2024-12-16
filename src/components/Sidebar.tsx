@@ -39,7 +39,7 @@ const Sidebar: React.FC<SidebarProps> = ({ routes, toggleSidebar }) => {
     return (
         <div className="relative h-full flex flex-col bg-white border-r-2 border-grey-light">
             <div className="flex justify-between h-20 p-4 items-center border-gray-200">
-                <h1 className="text-2xl md:text-5xl font-bold">
+                <h1 className="text-2xl md:text-5xl font-bold font-tomorrow">
                     Chats
                 </h1>
                 <div className="hidden md:block">

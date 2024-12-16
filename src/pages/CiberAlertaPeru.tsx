@@ -3,8 +3,12 @@ import {useEffect, useRef, useState} from "react";
 import getCurrentTime from "../components/CurrentTime.ts";
 import PrevFabButton from "../components/PrevFabButton.tsx";
 
-export default function CiberAlertaPeru() {
-    const [visibleElements, setVisibleElements] = useState(0);
+interface Props {
+    visibleElements: number;
+    setVisibleElements: (index: number) => void;
+}
+
+export default function CiberAlertaPeru({visibleElements,setVisibleElements} :  Props) {
     const [isLoading, setIsLoading] = useState(false);
     const lastElementRef = useRef<HTMLDivElement>(null);
 
