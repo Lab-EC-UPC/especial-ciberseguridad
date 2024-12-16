@@ -11,7 +11,7 @@ export default function VerificadorDeLinks() {
 
     const elements = [
         {
-            cooldown: 1000,
+            cooldown: 100,
             alignment: "left",
             content:
                 <div className="flex flex-col items-start animate-fade-in-fast">
@@ -69,7 +69,7 @@ export default function VerificadorDeLinks() {
             content:
                 <div className="flex flex-col items-center">
                     <div className="chat-box center">
-                        <img src="joined-chat-icon.svg" alt="Joined chat icon"
+                        <img src="chat-icons/8.webp" alt="Ícono de verificador de enlaces"
                              className="w-16 h-16 md:w-24 md:h-24"/>
                         <h1 className="text-lg font-medium">Se ha creado la herramienta</h1>
                         <small className="font-medium">Verificador de Enlaces</small>
@@ -120,12 +120,15 @@ export default function VerificadorDeLinks() {
     const [text, setText] = useState('');
     const [showTooltipQR, setShowTooltipQR] = useState(false);
     const [showTooltipFile, setShowTooltipFile] = useState(false);
-    const [responses, setResponses] = useState<{ message: string; details?: string; time: string }[]>([]);
+    const [responses, setResponses] = useState<{ message: string; details?: string; time: string; url?: string }[]>([]);
     const [cameraActive, setCameraActive] = useState(false);
     const videoRef = useRef<HTMLVideoElement | null>(null);
     const canvasRef = useRef<HTMLCanvasElement | null>(null);
+    const [isLoadingFileUpload, setIsLoadingFileUpload] = useState(false);
+    const [isFetchingResponse, setIsFetchingResponse] = useState(false);
 
     const sendUrlToEndpoint = async (urlToCheck: string) => {
+        setIsFetchingResponse(true);
         try {
             const response = await fetch('https://link-validator-api.up.railway.app/api/v1/webrisk/verify', {
                 method: 'POST',
@@ -142,54 +145,104 @@ export default function VerificadorDeLinks() {
             const result = await response.json();
             setResponses((prev) => [
                 ...prev,
-                {message: result.message, details: result.details || '', time: new Date().toLocaleTimeString()},
+                {
+                    message: result.message,
+                    details: result.details || '',
+                    time: new Date().toLocaleTimeString(),
+                    url: urlToCheck
+                },
             ]);
         } catch (error) {
             setResponses((prev) => [
                 ...prev,
-                {message: (error as Error).message || 'Error desconocido', time: new Date().toLocaleTimeString()},
+                {
+                    message: (error as Error).message || 'Error desconocido',
+                    time: new Date().toLocaleTimeString(),
+                    url: urlToCheck
+                },
             ]);
+        } finally {
+            setIsFetchingResponse(false);
         }
     };
 
     const handleFileUpload = (e: ChangeEvent<HTMLInputElement>) => {
+        setIsLoadingFileUpload(true);
         const file = e.target.files?.[0];
-        if (!file) return;
+        if (!file) {
+            setIsLoadingFileUpload(false);
+            return;
+        }
 
         const reader = new FileReader();
         reader.onload = () => {
             const img = new Image();
             img.onload = () => {
-                const canvas = document.createElement('canvas');
-                canvas.width = img.width;
-                canvas.height = img.height;
-                const ctx = canvas.getContext('2d');
-                if (ctx) {
-                    ctx.drawImage(img, 0, 0);
-                    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-                    const qrCodeData = jsQR(imageData.data, canvas.width, canvas.height);
+                try {
+                    const canvas = document.createElement('canvas');
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+                    const ctx = canvas.getContext('2d');
+                    if (ctx) {
+                        ctx.drawImage(img, 0, 0);
+                        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                        const qrCodeData = jsQR(imageData.data, canvas.width, canvas.height);
 
-                    if (qrCodeData) {
-                        sendUrlToEndpoint(qrCodeData.data);
-                    } else {
-                        setResponses((prev) => [
-                            ...prev,
-                            {
-                                message: 'No se pudo leer el código QR de la imagen',
-                                time: new Date().toLocaleTimeString()
-                            },
-                        ]);
+                        if (qrCodeData) {
+                            sendUrlToEndpoint(qrCodeData.data)
+                                .finally(() => setText(''));
+                        } else {
+                            setResponses((prev) => [
+                                ...prev,
+                                {
+                                    message: 'No se pudo leer el código QR de la imagen',
+                                    time: new Date().toLocaleTimeString(),
+                                },
+                            ]);
+                        }
                     }
+                } catch (error) {
+                    console.error("Error al procesar el archivo:", error);
+                    setResponses((prev) => [
+                        ...prev,
+                        {
+                            message: 'Ocurrió un error al procesar la imagen',
+                            time: new Date().toLocaleTimeString(),
+                        },
+                    ]);
+                } finally {
+                    setIsLoadingFileUpload(false);
                 }
             };
+            img.onerror = () => {
+                setResponses((prev) => [
+                    ...prev,
+                    {
+                        message: 'No se pudo cargar la imagen proporcionada',
+                        time: new Date().toLocaleTimeString(),
+                    },
+                ]);
+                setIsLoadingFileUpload(false);
+            };
             img.src = typeof reader.result === 'string' ? reader.result : '';
+        };
+        reader.onerror = () => {
+            setResponses((prev) => [
+                ...prev,
+                {
+                    message: 'Ocurrió un error al leer el archivo',
+                    time: new Date().toLocaleTimeString(),
+                },
+            ]);
+            setIsLoadingFileUpload(false);
         };
         reader.readAsDataURL(file);
     };
 
     const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter' && text.trim()) {
-            sendUrlToEndpoint(text.trim());
+            sendUrlToEndpoint(text.trim())
+                .finally(() => setText(''));
         }
     };
 
@@ -221,11 +274,15 @@ export default function VerificadorDeLinks() {
                 const qrCodeData = jsQR(imageData.data, canvas.width, canvas.height);
 
                 if (qrCodeData) {
-                    sendUrlToEndpoint(qrCodeData.data);
+                    sendUrlToEndpoint(qrCodeData.data)
+                        .finally(() => setText(''));
                 } else {
                     setResponses((prev) => [
                         ...prev,
-                        {message: 'No se pudo leer el código QR de la imagen', time: new Date().toLocaleTimeString()},
+                        {
+                            message: 'No se pudo leer el código QR de la imagen',
+                            time: new Date().toLocaleTimeString()
+                        },
                     ]);
                 }
             }
@@ -253,6 +310,16 @@ export default function VerificadorDeLinks() {
         }
     }, [visibleElements, elements.length]);
 
+    useEffect(() => {
+        if (lastElementRef.current) {
+            lastElementRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    }, [visibleElements]);
+
+    useEffect(() => {
+        console.log(responses);
+    }, [responses]);
+
     return (
         <div className="flex flex-col h-full justify-between">
             <div className="p-4">
@@ -265,29 +332,67 @@ export default function VerificadorDeLinks() {
                             {element["content"]}
                         </div>
                     ))}
-                    {isLoading && (
-                        <div
-                            className={`w-full flex ${elements[visibleElements].alignment === "left" ? "justify-start" : "justify-end"}`}>
-                            <div className="flex items-end space-x-1 px-4 py-3 rounded-xl bg-gray-100 w-fit">
-                                <div className="h-2 w-2 rounded-full bg-gray-400 animate-pulse"></div>
-                                <div className="h-2 w-2 rounded-full bg-gray-400 animate-pulse"></div>
-                                <div className="h-2 w-2 rounded-full bg-gray-400 animate-pulse"></div>
+                    {
+                        isLoading && (
+                            <div
+                                className={`w-full flex py-2 ${elements[visibleElements].alignment === "left" ? "justify-start" : "justify-end"}`}>
+                                <div className="flex items-center space-x-1 px-4 py-3 rounded-xl bg-green-chat-box w-fit">
+                                    <div className="h-2 w-2 rounded-full bg-gray-400 animate-pulse"></div>
+                                    <div className="h-2 w-2 rounded-full bg-gray-400 animate-pulse"></div>
+                                    <div className="h-2 w-2 rounded-full bg-gray-400 animate-pulse"></div>
+                                </div>
                             </div>
-                        </div>
-                    )}
+                        )
+                    }
                 </div>
                 <div>
                     {responses.map((response, index) => (
-                        <div key={index} className="flex flex-col items-start mb-1">
+                        <div key={index} className="flex flex-col items-start mb-1 text-sm md:text-base w-3/4 md:max-w-xl">
                             <div className="bg-white shadow-md rounded-lg p-4 max-w-lg">
+                                <p>El reporte de la URL <strong className="text-green-dark">{response.url}</strong> es:</p>
                                 <p className="text-sm md:text-md">{response.message}</p>
-                                {response.details &&
-                                    <pre
-                                        className="text-xs md:text-sm">{JSON.stringify(response.details, null, 2)}</pre>}
+                                {
+                                    response.details &&
+                                    (
+                                        <div>
+                                            <pre className="text-xs md:text-sm">
+                                                {JSON.stringify(response.details, null, 2)}
+                                            </pre>
+                                        </div>
+                                    )
+                                }
                                 <small className="chat-time">{response.time}</small>
                             </div>
                         </div>
                     ))}
+                    {
+                        isLoadingFileUpload && (
+                            <div
+                                className={`w-full flex py-2 justify-end`}>
+                                <div className="flex items-center space-x-1 px-4 py-3 rounded-xl bg-white w-fit">
+                                    <p className="mr-4">Cargando archivo</p>
+                                    <div className="h-2 w-2 rounded-full bg-gray-400 animate-pulse"></div>
+                                    <div className="h-2 w-2 rounded-full bg-gray-400 animate-pulse"></div>
+                                    <div className="h-2 w-2 rounded-full bg-gray-400 animate-pulse"></div>
+                                </div>
+                            </div>
+                        )
+                    }
+                    {
+                        isFetchingResponse && (
+                            <div
+                                className={`w-full flex py-2 justify-start`}>
+                                <div className="flex items-center space-x-1 px-4 py-3 rounded-xl bg-gray-100 w-fit">
+                                    <div className="h-2 w-2 rounded-full bg-gray-400 animate-pulse"></div>
+                                    <div className="h-2 w-2 rounded-full bg-gray-400 animate-pulse"></div>
+                                    <div className="h-2 w-2 rounded-full bg-gray-400 animate-pulse"></div>
+                                    <p className="pl-4">
+                                        Analizando el enlace proporcionado. Por favor, espere un momento.
+                                    </p>
+                                </div>
+                            </div>
+                        )
+                    }
                     {cameraActive && (
                         <div
                             className="fixed inset-0 bg-black bg-opacity-75 flex flex-col items-center justify-center z-50">
@@ -312,7 +417,8 @@ export default function VerificadorDeLinks() {
                     <PrevFabButton url="prevencion-y-denuncia"/>
                     <NextFabButton url="creditos"/>
                 </div>
-                <div className="w-full bg-[#D1D7DB] shadow-lg p-3 md:p-4 flex items-center justify-between gap-2 md:gap-4">
+                <div
+                    className="w-full bg-[#D1D7DB] shadow-lg p-3 md:p-4 flex items-center justify-between gap-2 md:gap-4">
                     <div className="flex-1 items-center">
                         <div className="flex w-full border shadow-sm p-1 rounded-full bg-white">
                             <input
@@ -324,11 +430,25 @@ export default function VerificadorDeLinks() {
                                 className="w-full p-2 text-sm text-gray-700 placeholder-gray-500 rounded-full"
                             />
                             <button
-                                onClick={() => sendUrlToEndpoint(text)}
+                                onClick={() => sendUrlToEndpoint(text).finally(() => setText(''))}
                                 className="text-green-dark hover:text-green duration-200 p-3 rounded-full">
                                 <PaperAirplaneIcon className="w-4 h-4 md:w-6 md:h-6"/>
                             </button>
                         </div>
+                    </div>
+                    <div
+                        className="relative group flex flex-col items-center cursor-pointer"
+                        onMouseEnter={() => setShowTooltipQR(true)}
+                        onMouseLeave={() => setShowTooltipQR(false)}
+                        onClick={handleOpenCamera}
+                    >
+                        <button
+                            className="bg-green-dark hover:bg-green duration-200 text-white p-3 rounded-full shadow-lg">
+                            <QrCodeIcon className="w-4 h-4 md:w-6 md:h-6"/>
+                        </button>
+                        {showTooltipQR &&
+                            <div className="absolute -top-10 bg-white text-xs p-2 rounded shadow-md">Escanea un
+                                QR</div>}
                     </div>
                     <div
                         className="relative group flex flex-col items-center cursor-pointer"
@@ -337,21 +457,12 @@ export default function VerificadorDeLinks() {
                     >
                         <label
                             className="bg-green-dark hover:bg-green duration-200 text-white p-3 rounded-full shadow-lg cursor-pointer">
-                            <QrCodeIcon className="w-4 h-4 md:w-6 md:h-6"/>
+                            <PhotoIcon className="w-4 h-4 md:w-6 md:h-6"/>
                             <input type="file" accept="image/*" className="hidden" onChange={handleFileUpload}/>
                         </label>
-                        {showTooltipFile && <div className="absolute -top-10 bg-white text-xs p-2 rounded shadow-md">Sube un archivo</div>}
-                    </div>
-                    <div
-                        className="relative group flex flex-col items-center cursor-pointer"
-                        onMouseEnter={() => setShowTooltipQR(true)}
-                        onMouseLeave={() => setShowTooltipQR(false)}
-                        onClick={handleOpenCamera}
-                    >
-                        <button className="bg-green-dark hover:bg-green duration-200 text-white p-3 rounded-full shadow-lg">
-                            <PhotoIcon className="w-4 h-4 md:w-6 md:h-6"/>
-                        </button>
-                        {showTooltipQR && <div className="absolute -top-10 bg-white text-xs p-2 rounded shadow-md">Escanea un QR</div>}
+                        {showTooltipFile &&
+                            <div className="absolute -top-10 bg-white text-xs p-2 rounded shadow-md">Sube un
+                                archivo</div>}
                     </div>
                 </div>
             </div>
