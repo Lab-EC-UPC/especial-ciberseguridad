@@ -82,12 +82,22 @@ export default function UnPocoDeData () {
             </div>
         </div>,
 
-        // Cuarto CHAT DERECHA (CON ANIMACIÓN)
+        // Cuarto CHAT DERECHA (CON ANIMACIÓN) GRAFICO 1
         <div className="flex flex-col items-end animate-fade-in-fast">
             <div className="chat-box right">
                 <p className="text-sm md:text-md">
-                    GRAFICA
+                <span className="font-bold">Evolución del costo en daños de la ciberdelincuencia</span>
                 </p>
+                <iframe
+                    className="flourish-embed flourish-chart"
+                    src="https://public.flourish.studio/visualisation/20792110/embed"
+                    width="100%"
+                    height="300"
+                    frameBorder="0"
+                    allowFullScreen
+                    title="Flourish Chart"
+                />
+                <p className="text-sm md:text-md">Fuente: DIVINDAT</p>
                 <div className="flex items-center gap-1">
                     <small className="chat-time">18:50</small>
                     <img
@@ -98,7 +108,8 @@ export default function UnPocoDeData () {
                 </div>
             </div>
         </div>,
-// Cuarto CHAT IZQUIERDO (CON ANIMACIÓN)
+
+        // Cuarto CHAT IZQUIERDO (CON ANIMACIÓN)
         <div className="flex flex-col items-start animate-fade-in-fast">
             <div className="chat-box left">
                 <p className="text-sm md:text-md">
@@ -109,24 +120,34 @@ export default function UnPocoDeData () {
                 </p>
                 <small className="chat-time">18:50</small>
             </div>
-        </div>
-        ,
-// QUINTO CHAT Izquierda (CON ANIMACIÓN)
-        <div className="flex flex-col items-end animate-fade-in-fast">
+        </div>,
+
+        // QUINTO CHAT Izquierda (CON ANIMACIÓN) GRAFICO 2
+        <div className="flex flex-col items-start animate-fade-in-fast">
             <div className="chat-box left">
                 <p className="text-sm md:text-md">
-                    Grafico
-                </p>
-                <div className="flex items-center gap-1">
-                    <small className="chat-time">18:50</small>
-                    <img
-                        src="read-double-check-icon.svg"
-                        alt="Double check icon"
-                        className="h-4 w-4 md:h-6 md:w-6"
-                    />
-                </div>
-            </div>
-        </div>,
+                <span className="font-bold">Delitos informáticos en el Perú (reporte)</span>
+                <br></br>Reporte semestral y anual de los delitos informáticos entre 2020 y 2024 en el Perú</p>
+                <iframe
+                    className="flourish-embed flourish-chart"
+                    src="https://public.flourish.studio/visualisation/20785916/embed"
+                    width="100%"
+                    height="300"
+                    frameBorder="0"
+                    allowFullScreen
+                    title="Flourish Chart"
+                />
+                <p className="text-sm md:text-md">Fuente: DIVINDAT</p>
+        <div className="flex items-center gap-1">
+            <small className="chat-time">18:50</small>
+            <img
+                src="read-double-check-icon.svg"
+                alt="Double check icon"
+                className="h-4 w-4 md:h-6 md:w-6"
+            />
+        </div>
+    </div>
+    </div>,
         // Quinto CHAT DERECHA (CON ANIMACIÓN)
         <div className="flex flex-col items-end animate-fade-in-fast">
             <div className="chat-box right">
@@ -138,6 +159,7 @@ export default function UnPocoDeData () {
                 </div>
             </div>
         </div>,
+
         // Sexto CHAT DERECHA (CON ANIMACIÓN)
         <div className="flex flex-col items-end animate-fade-in-fast">
             <div className="chat-box right">
@@ -152,22 +174,34 @@ export default function UnPocoDeData () {
                 </div>
             </div>
         </div>,
-        // Setimo CHAT DERECHA (CON ANIMACIÓN)
-        <div className="flex flex-col items-end animate-fade-in-fast">
-            <div className="chat-box right">
-                <p className="text-sm md:text-md">
-                    GRAFICA
-                </p>
-                <div className="flex items-center gap-1">
+
+        // Setimo CHAT DERECHA (CON ANIMACIÓN) GRAFICO 3
+        <div className="flex flex-col items-start animate-fade-in-fast">
+        <div className="chat-box left">
+            <p className="text-sm md:text-md">
+                <span className="font-bold">Delitos informáticos más denunciados en 2024 en el Perú</span>
+                <br></br>Modalidades (enero a agosto del 2024)
+            </p>
+            <iframe
+                className="flourish-embed flourish-charts"
+                src="https://public.flourish.studio/visualisation/20801750/embed"
+                width="100%"
+                height="550"
+                frameBorder="0"
+                allowFullScreen
+                title="Flourish Chart"
+            />
+            <p className="text-sm md:text-md">Fuente: DIVINDAT</p>
+            <div className="flex items-center gap-1">
                     <small className="chat-time">18:50</small>
                     <img
-                        src="read-double-check-icon.svg"
-                        alt="Double check icon"
-                        className="h-4 w-4 md:h-6 md:w-6"
+                    src="read-double-check-icon.svg"
+                    alt="Double check icon"
+                    className="h-4 w-4 md:h-6 md:w-6"
                     />
-                </div>
             </div>
         </div>
+    </div>,
     ];
 
 
