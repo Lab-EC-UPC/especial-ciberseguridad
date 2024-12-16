@@ -48,7 +48,7 @@ export default {
       },
       animation: {
         'fade-in': 'fadeIn 1.0s ease-in-out',
-        'fade-in-fast': 'fadeIn 0.2s ease-in-out',
+        'fade-in-fast': 'fadeIn 0.5s ease-in-out',
         'left-to-right': 'leftToRightAndBack 2.0s ease-in-out infinite',
         'from-left': 'fromLeft 0.5s ease-in-out',
         'from-right': 'fromRight 0.5s ease-in-out',

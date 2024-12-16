@@ -29,8 +29,6 @@ export default function ElPhishing () {
                 <small className="chat-time">{getCurrentTime()}</small>
             </div>
         </div>,
-
-        //DERECHA
         <div className="flex flex-col items-end animate-fade-in-fast">
             <div className="chat-box right">
                 <p className="text-sm md:text-md">
@@ -69,9 +67,6 @@ export default function ElPhishing () {
                 </div>
             </div>
         </div>,
-
-        //Falta agregar el grafico de Flourish 
-        //GRÁFICO 4
         <div className="flex flex-col items-start animate-fade-in-fast">
             <div className="chat-box left">
                 <p className="text-sm md:text-md">
@@ -100,13 +95,10 @@ export default function ElPhishing () {
                 allowFullScreen
                 title="Flourish Chart"
             />
-            <p className="text-sm md:text-md">Fuente: </p>
+            <p className="text-sm md:text-md">Fuente: DIVINDAT</p>
                 <small className="chat-time">{getCurrentTime()}</small>
             </div>
         </div>,
-
-        //Falta colocar los iconos correspondientes a cada tipo de phishing
-        //GRUPO
         <div className="flex flex-col items-center animate-fade-in-fast">
             <div className="chat-box center">
                 <img src="el-phishing/1.webp"
@@ -124,7 +116,6 @@ export default function ElPhishing () {
                 </p>
             </div>
         </div>,
-        //VISHING
         <div className="flex flex-col items-center pt-3 animate-fade-in-fast">
             <img src="el-phishing/2.webp"
                  alt="Joined chat icon"
@@ -163,8 +154,6 @@ export default function ElPhishing () {
                 </div>
             </div>
         </div>,
-
-        //SMISHING
         <div className="flex flex-col items-center pt-3 animate-fade-in-fast">
             <img src="el-phishing/3.webp"
                  alt="Joined chat icon"
@@ -214,8 +203,6 @@ export default function ElPhishing () {
                 <small className="chat-time">{getCurrentTime()}</small>
             </div>
         </div>,
-
-        //PHARMING
         <div className="flex flex-col items-center pt-3 animate-fade-in-fast">
             <img src="el-phishing/4.webp"
                  alt="Joined chat icon"
@@ -261,7 +248,7 @@ export default function ElPhishing () {
         if (visibleElements < elements.length) {
             const timer = setTimeout(() => {
                 setVisibleElements(visibleElements + 1);
-            }, 800);
+            }, 1000);
             return () => clearTimeout(timer);
         }
     }, [visibleElements, elements.length]);
@@ -274,7 +261,7 @@ export default function ElPhishing () {
 
     return (
         <>
-            <div className="flex justify-center">
+            <div className="flex justify-center animate-fade-in-fast">
                 <h1 className="chat-title-box">
                     Uno de los delitos de mayor crecimiento
                 </h1>

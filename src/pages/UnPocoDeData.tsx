@@ -1,19 +1,20 @@
 import {useEffect, useState} from "react";
+import NextFabButton from "../components/NextFabButton.tsx";
+import getCurrentTime from "../components/CurrentTime.ts";
 
 export default function UnPocoDeData () {
     const [visibleElements, setVisibleElements] = useState(0);
 
     const elements = [
-        // CHAT DERECHA (CON ANIMACIÓN)
         <div className="flex flex-col items-end animate-fade-in-fast">
             <div className="chat-box right">
                 <p className="text-sm md:text-md">
                     Solo el <span className="font-bold">24% de usuarios en la región</span> (Latinoamérica)
-                    poseen un <span className="font-bold">software de seguridad instalado</span>
+                    poseen un <span className="font-bold">software de seguridad instalado </span>
                     en sus dispositivos. 🔒📉💻
                 </p>
                 <div className="flex items-center gap-1">
-                    <small className="chat-time">18:50</small>
+                    <small className="chat-time">{getCurrentTime()}</small>
                     <img
                         src="read-double-check-icon.svg"
                         alt="Double check icon"
@@ -22,19 +23,15 @@ export default function UnPocoDeData () {
                 </div>
             </div>
         </div>,
-
-        // 2do CHAT IZQUIERDO (CON ANIMACIÓN)
         <div className="flex flex-col items-start animate-fade-in-fast">
             <div className="chat-box left">
                 <p className="text-sm md:text-md">
                     Según Cybersecurity Ventures, en 2015 la ciberdelincuencia tenía un costo de
-                    <span className="font-bold">US$3 billones</span>. 💻💸
+                    <span className="font-bold"> US$3 billones</span>. 💻💸
                 </p>
-                <small className="chat-time">18:50</small>
+                <small className="chat-time">{getCurrentTime()}</small>
             </div>
-        </div>
-        ,
-        // SEGUNDO CHAT DERECHA (CON ANIMACIÓN)
+        </div>,
         <div className="flex flex-col items-end animate-fade-in-fast">
             <div className="chat-box right">
                 <p className="text-sm md:text-md">
@@ -42,7 +39,7 @@ export default function UnPocoDeData () {
                     de <span className="font-bold">US$10 billones</span>. 💰🌐⚠️
                 </p>
                 <div className="flex items-center gap-1">
-                    <small className="chat-time">18:50</small>
+                    <small className="chat-time">{getCurrentTime()}</small>
                     <img
                         src="read-double-check-icon.svg"
                         alt="Double check icon"
@@ -51,20 +48,17 @@ export default function UnPocoDeData () {
                 </div>
             </div>
         </div>,
-        // Tercer CHAT IZQUIERDO (CON ANIMACIÓN)
         <div className="flex flex-col items-start animate-fade-in-fast">
             <div className="chat-box left">
                 <p className="text-sm md:text-md">
                     Esto convierte a la ciberdelincuencia en la <span className="font-bold">tercera economía</span>
                     más grande del mundo 🌍, solo detrás de <span className="font-bold">Estados Unidos</span> 🇺🇸 y
-                    <span className="font-bold">China</span> 🇨🇳.
+                    <span className="font-bold"> China</span> 🇨🇳.
 
                 </p>
-                <small className="chat-time">18:50</small>
+                <small className="chat-time">{getCurrentTime()}</small>
             </div>
-        </div>
-        ,
-        // TERCER CHAT DERECHA (CON ANIMACIÓN)
+        </div>,
         <div className="flex flex-col items-end animate-fade-in-fast">
             <div className="chat-box right">
                 <p className="text-sm md:text-md">
@@ -72,7 +66,7 @@ export default function UnPocoDeData () {
                     al PIB combinado de Alemania, Italia y Canadá. 💰🌐📉
                 </p>
                 <div className="flex items-center gap-1">
-                    <small className="chat-time">18:50</small>
+                    <small className="chat-time">{getCurrentTime()}</small>
                     <img
                         src="read-double-check-icon.svg"
                         alt="Double check icon"
@@ -81,12 +75,10 @@ export default function UnPocoDeData () {
                 </div>
             </div>
         </div>,
-
-        // Cuarto CHAT DERECHA (CON ANIMACIÓN) GRAFICO 1
         <div className="flex flex-col items-end animate-fade-in-fast">
             <div className="chat-box right">
                 <p className="text-sm md:text-md">
-                <span className="font-bold">Evolución del costo en daños de la ciberdelincuencia</span>
+                    <span className="font-bold">Evolución del costo en daños de la ciberdelincuencia</span>
                 </p>
                 <iframe
                     className="flourish-embed flourish-chart"
@@ -99,7 +91,7 @@ export default function UnPocoDeData () {
                 />
                 <p className="text-sm md:text-md">Fuente: DIVINDAT</p>
                 <div className="flex items-center gap-1">
-                    <small className="chat-time">18:50</small>
+                    <small className="chat-time">{getCurrentTime()}</small>
                     <img
                         src="read-double-check-icon.svg"
                         alt="Double check icon"
@@ -108,8 +100,6 @@ export default function UnPocoDeData () {
                 </div>
             </div>
         </div>,
-
-        // Cuarto CHAT IZQUIERDO (CON ANIMACIÓN)
         <div className="flex flex-col items-start animate-fade-in-fast">
             <div className="chat-box left">
                 <p className="text-sm md:text-md">
@@ -118,16 +108,14 @@ export default function UnPocoDeData () {
                     que la registrada en el <span className="font-bold">mismo periodo del
                     2020</span>. ⚠️🌐
                 </p>
-                <small className="chat-time">18:50</small>
+                <small className="chat-time">{getCurrentTime()}</small>
             </div>
         </div>,
-
-        // QUINTO CHAT Izquierda (CON ANIMACIÓN) GRAFICO 2
         <div className="flex flex-col items-start animate-fade-in-fast">
             <div className="chat-box left">
                 <p className="text-sm md:text-md">
-                <span className="font-bold">Delitos informáticos en el Perú (reporte)</span>
-                <br></br>Reporte semestral y anual de los delitos informáticos entre 2020 y 2024 en el Perú</p>
+                    <span className="font-bold">Delitos informáticos en el Perú (reporte)</span>
+                    <br></br>Reporte semestral y anual de los delitos informáticos entre 2020 y 2024 en el Perú</p>
                 <iframe
                     className="flourish-embed flourish-chart"
                     src="https://public.flourish.studio/visualisation/20785916/embed"
@@ -138,29 +126,26 @@ export default function UnPocoDeData () {
                     title="Flourish Chart"
                 />
                 <p className="text-sm md:text-md">Fuente: DIVINDAT</p>
-        <div className="flex items-center gap-1">
-            <small className="chat-time">18:50</small>
-            <img
-                src="read-double-check-icon.svg"
-                alt="Double check icon"
-                className="h-4 w-4 md:h-6 md:w-6"
-            />
-        </div>
-    </div>
-    </div>,
-        // Quinto CHAT DERECHA (CON ANIMACIÓN)
+                <div className="flex items-center gap-1">
+                    <small className="chat-time">{getCurrentTime()}</small>
+                    <img
+                        src="read-double-check-icon.svg"
+                        alt="Double check icon"
+                        className="h-4 w-4 md:h-6 md:w-6"
+                    />
+                </div>
+            </div>
+        </div>,
         <div className="flex flex-col items-end animate-fade-in-fast">
             <div className="chat-box right">
                 <p className="text-sm md:text-md">
                     <span className="font-bold">¿Qué delito informático se denuncia más?</span>⚖️💻
                 </p>
                 <div className="flex items-center gap-1">
-                    <small className="chat-time">18:50</small>
+                    <small className="chat-time">{getCurrentTime()}</small>
                 </div>
             </div>
         </div>,
-
-        // Sexto CHAT DERECHA (CON ANIMACIÓN)
         <div className="flex flex-col items-end animate-fade-in-fast">
             <div className="chat-box right">
                 <p className="text-sm md:text-md">
@@ -170,77 +155,71 @@ export default function UnPocoDeData () {
                     <span className="font-bold">68.3% del total</span>. ⚠️📈
                 </p>
                 <div className="flex items-center gap-1">
-                    <small className="chat-time">18:50</small>
+                    <small className="chat-time">{getCurrentTime()}</small>
                 </div>
             </div>
         </div>,
-
-        // Setimo CHAT DERECHA (CON ANIMACIÓN) GRAFICO 3
         <div className="flex flex-col items-start animate-fade-in-fast">
-        <div className="chat-box left">
-            <p className="text-sm md:text-md">
-                <span className="font-bold">Delitos informáticos más denunciados en 2024 en el Perú</span>
-                <br></br>Modalidades (enero a agosto del 2024)
-            </p>
-            <iframe
-                className="flourish-embed flourish-charts"
-                src="https://public.flourish.studio/visualisation/20801750/embed"
-                width="100%"
-                height="550"
-                frameBorder="0"
-                allowFullScreen
-                title="Flourish Chart"
-            />
-            <p className="text-sm md:text-md">Fuente: DIVINDAT</p>
-            <div className="flex items-center gap-1">
-                    <small className="chat-time">18:50</small>
+            <div className="chat-box left">
+                <p className="text-sm md:text-md">
+                    <span className="font-bold">Delitos informáticos más denunciados en 2024 en el Perú</span>
+                    <br></br>Modalidades (enero a agosto del 2024)
+                </p>
+                <iframe
+                    className="flourish-embed flourish-charts"
+                    src="https://public.flourish.studio/visualisation/20801750/embed"
+                    width="100%"
+                    height="550"
+                    frameBorder="0"
+                    allowFullScreen
+                    title="Flourish Chart"
+                />
+                <p className="text-sm md:text-md">Fuente: DIVINDAT</p>
+                <div className="flex items-center gap-1">
+                    <small className="chat-time">{getCurrentTime()}</small>
                     <img
-                    src="read-double-check-icon.svg"
-                    alt="Double check icon"
-                    className="h-4 w-4 md:h-6 md:w-6"
+                        src="read-double-check-icon.svg"
+                        alt="Double check icon"
+                        className="h-4 w-4 md:h-6 md:w-6"
                     />
+                </div>
             </div>
-        </div>
-    </div>,
+        </div>,
     ];
-
 
     useEffect(() => {
         if (visibleElements < elements.length) {
             const timer = setTimeout(() => {
                 setVisibleElements(visibleElements + 1);
-            }, 800); // Cada elemento aparecerá con un retraso de 800 ms
+            }, 2000);
             return () => clearTimeout(timer);
         }
     }, [visibleElements, elements.length]);
 
     return (
-        <div className="p-4">
-            {/* TÍTULO (SIN ANIMACIÓN) */}
-            <div className="flex justify-center">
+        <div>
+            <div className="flex justify-center animate-fade-in-fast">
                 <h1 className="chat-title-box">
                     La ciberdelincuencia en cifras
                 </h1>
             </div>
-
-            {/* CHAT IZQUIERDO (SIN ANIMACIÓN) */}
-            <div className="flex flex-col items-start">
+            <div className="flex flex-col items-start animate-fade-in-fast">
                 <div className="chat-box left">
                     <p className="text-sm md:text-md">
-                        En el año 2023, la La <span className="font-bold">Policía Nacional del Perú (PNP)</span>
-                        registró un promedio de <span className="font-bold">107 intentos de ciberataques por minuto</span> . 💻⚠️👮‍♂️
+                        En el año 2023, la La <span className="font-bold">Policía Nacional del Perú (PNP) </span>
+                        registró un promedio de <span
+                        className="font-bold">107 intentos de ciberataques por minuto. </span>
+                        💻⚠️👮‍♂️
                     </p>
-                    <small className="chat-time">18:50</small>
+                    <small className="chat-time">{getCurrentTime()}</small>
                 </div>
             </div>
-
-
-            {/* Elementos con animación y retraso */}
             <div>
                 {elements.slice(0, visibleElements).map((element, index) => (
                     <div key={index}>{element}</div>
                 ))}
             </div>
+            <NextFabButton url="un-poco-de-data"/>
         </div>
     );
 }
