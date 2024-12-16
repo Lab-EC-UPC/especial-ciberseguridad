@@ -37,6 +37,14 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ audio, time }) => {
         setCurrentTime(newTime);
     };
 
+    const handleAudioEnd = () => {
+        setIsPlaying(false);
+        setCurrentTime(0);
+        if (audioRef.current) {
+            audioRef.current.currentTime = 0;
+        }
+    };
+
     const formatTime = (time) => {
         const minutes = Math.floor(time / 60);
         const seconds = Math.floor(time % 60);
@@ -74,11 +82,11 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ audio, time }) => {
                     </div>
                     <div className="flex justify-between items-center">
                         <p className="text-xs text-grey">
-                            {formatTime(currentTime)} / {formatTime(duration)}
+                            {formatTime(currentTime)}
                         </p>
-                        <small className="text-xs text-grey">
+                        <p className="text-xs text-grey">
                             {time}
-                        </small>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -88,6 +96,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ audio, time }) => {
                 src={audio}
                 onTimeUpdate={handleTimeUpdate}
                 onLoadedMetadata={handleLoadedMetadata}
+                onEnded={handleAudioEnd}
             />
         </div>
     );

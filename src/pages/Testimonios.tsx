@@ -34,8 +34,8 @@ export default function Testimonios () {
                         <div className="flex items-center">
                             <div className="flex-1">
                                 <AudioPlayer
-                                    audio="https://d38nvwmjovqyq6.cloudfront.net/va90web25003/companions/Foundations%20of%20Rock/13.01.mp3"
-                                    time="1:30"
+                                    audio="https://lab-ec-upc.github.io/assets/especial-ciberseguridad/audios-testimonios/jessica.mp3"
+                                    time="1.29"
                                 />
                             </div>
                             <div>
@@ -126,8 +126,8 @@ export default function Testimonios () {
                             </div>
                             <div className="flex-1">
                                 <AudioPlayer
-                                    audio="https://d38nvwmjovqyq6.cloudfront.net/va90web25003/companions/Foundations%20of%20Rock/13.01.mp3"
-                                    time="1:30"
+                                    audio="https://lab-ec-upc.github.io/assets/especial-ciberseguridad/audios-testimonios/irina.mp3"
+                                    time="00:43"
                                 />
                             </div>
                         </div>
@@ -200,8 +200,8 @@ export default function Testimonios () {
                         <div className="flex items-center">
                             <div className="flex-1">
                                 <AudioPlayer
-                                    audio="https://d38nvwmjovqyq6.cloudfront.net/va90web25003/companions/Foundations%20of%20Rock/13.01.mp3"
-                                    time="1:30"
+                                    audio="https://lab-ec-upc.github.io/assets/especial-ciberseguridad/audios-testimonios/ekaterina.m4a"
+                                    time="00:55"
                                 />
                             </div>
                             <div>
@@ -291,8 +291,8 @@ export default function Testimonios () {
                             </div>
                             <div className="flex-1">
                                 <AudioPlayer
-                                    audio="https://d38nvwmjovqyq6.cloudfront.net/va90web25003/companions/Foundations%20of%20Rock/13.01.mp3"
-                                    time="1:30"
+                                    audio="https://lab-ec-upc.github.io/assets/especial-ciberseguridad/audios-testimonios/sheila.mp3"
+                                    time="1:04"
                                 />
                             </div>
                         </div>
