@@ -32,7 +32,8 @@ const Layout: React.FC = () => {
                 </div>
 
                 <div className="flex-1 flex flex-col bg-cover bg-center">
-                    <div className="bg-white sticky top-0 flex justify-between w-full items-center p-4 h-20 z-10 border-b-2">
+                    <div
+                        className="bg-white sticky top-0 flex justify-between w-full items-center p-4 h-20 z-10 border-b-2">
                         <div className="flex items-center gap-4">
                             <button
                                 className="flex md:hidden text-grey py-2"
@@ -42,7 +43,8 @@ const Layout: React.FC = () => {
                                 <span className="font-bold">2</span>
                             </button>
                             <Link to="/creditos">
-                                <div className="flex items-center gap-2 md:gap-4 hover:text-green-dark hover:scale-95 duration-200">
+                                <div
+                                    className="flex items-center gap-2 md:gap-4 hover:text-green-dark hover:scale-95 duration-200">
                                     <img
                                         src={activeRoute.avatar}
                                         alt={activeRoute.title}
@@ -59,16 +61,16 @@ const Layout: React.FC = () => {
                                         <VideoCameraIcon className="h-6"/>
                                     </div>
                                     <div className="border border-grey-light py-2 px-3">
-                                        <PhoneIcon className="h-6" />
+                                        <PhoneIcon className="h-6"/>
                                     </div>
                                 </div>
-                                <MagnifyingGlassIcon className="h-6" />
+                                <MagnifyingGlassIcon className="h-6"/>
                             </div>
                         </div>
                     </div>
 
-                    <div className="flex-1 overflow-auto p-6 bg-wallpaper bg-chat">
-                        <Outlet context={{ toggleSidebar }} />
+                    <div className="flex-1 overflow-auto bg-wallpaper bg-chat">
+                        <Outlet context={{toggleSidebar}}/>
                     </div>
                 </div>
             </div>

@@ -1,225 +1,302 @@
-import {useEffect, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import NextFabButton from "../components/NextFabButton.tsx";
 import getCurrentTime from "../components/CurrentTime.ts";
+import PrevFabButton from "../components/PrevFabButton.tsx";
 
 export default function UnPocoDeData () {
     const [visibleElements, setVisibleElements] = useState(0);
+    const [isLoading, setIsLoading] = useState(false);
+    const lastElementRef = useRef<HTMLDivElement>(null);
 
     const elements = [
-        <div className="flex flex-col items-end animate-fade-in-fast">
-            <div className="chat-box right">
-                <p className="text-sm md:text-md">
-                    Solo el <span className="font-bold">24% de usuarios en la región</span> (Latinoamérica)
-                    poseen un <span className="font-bold">software de seguridad instalado </span>
-                    en sus dispositivos. 🔒📉💻
-                </p>
-                <div className="flex items-center gap-1">
-                    <small className="chat-time">{getCurrentTime()}</small>
-                    <img
-                        src="read-double-check-icon.svg"
-                        alt="Double check icon"
-                        className="h-4 w-4 md:h-6 md:w-6"
-                    />
+        {
+            cooldown: 2000,
+            alignment: "right",
+            content:
+                <div className="flex flex-col items-end animate-fade-in-fast">
+                    <div className="chat-box right">
+                        <p className="text-sm md:text-md">
+                            Solo el <span className="font-bold">24% de usuarios en la región</span> (Latinoamérica)
+                            poseen un <span className="font-bold">software de seguridad instalado </span>
+                            en sus dispositivos. 🔒📉💻
+                        </p>
+                        <div className="flex items-center gap-1">
+                            <small className="chat-time">{getCurrentTime()}</small>
+                            <img
+                                src="read-double-check-icon.svg"
+                                alt="Double check icon"
+                                className="h-4 w-4 md:h-6 md:w-6"
+                            />
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>,
-        <div className="flex flex-col items-start animate-fade-in-fast">
-            <div className="chat-box left">
-                <p className="text-sm md:text-md">
-                    Según Cybersecurity Ventures, en 2015 la ciberdelincuencia tenía un costo de
-                    <span className="font-bold"> US$3 billones</span>. 💻💸
-                </p>
-                <small className="chat-time">{getCurrentTime()}</small>
-            </div>
-        </div>,
-        <div className="flex flex-col items-end animate-fade-in-fast">
-            <div className="chat-box right">
-                <p className="text-sm md:text-md">
-                    Se estima que para el 2025, el costo de los daños de la ciberdelincuencia será
-                    de <span className="font-bold">US$10 billones</span>. 💰🌐⚠️
-                </p>
-                <div className="flex items-center gap-1">
-                    <small className="chat-time">{getCurrentTime()}</small>
-                    <img
-                        src="read-double-check-icon.svg"
-                        alt="Double check icon"
-                        className="h-4 w-4 md:h-6 md:w-6"
-                    />
+        },
+        {
+            cooldown: 2000,
+            alignment: "left",
+            content:
+                <div className="flex flex-col items-start animate-fade-in-fast">
+                    <div className="chat-box left">
+                        <p className="text-sm md:text-md">
+                            Según Cybersecurity Ventures, en 2015 la ciberdelincuencia tenía un costo de
+                            <span className="font-bold"> US$3 billones</span>. 💻💸
+                        </p>
+                        <small className="chat-time">{getCurrentTime()}</small>
+                    </div>
                 </div>
-            </div>
-        </div>,
-        <div className="flex flex-col items-start animate-fade-in-fast">
-            <div className="chat-box left">
-                <p className="text-sm md:text-md">
-                    Esto convierte a la ciberdelincuencia en la <span className="font-bold">tercera economía</span>
-                    más grande del mundo 🌍, solo detrás de <span className="font-bold">Estados Unidos</span> 🇺🇸 y
-                    <span className="font-bold"> China</span> 🇨🇳.
+        },
+        {
+            cooldown: 2000,
+            alignment: "right",
+            content:
+                <div className="flex flex-col items-end animate-fade-in-fast">
+                    <div className="chat-box right">
+                        <p className="text-sm md:text-md">
+                            Se estima que para el 2025, el costo de los daños de la ciberdelincuencia será
+                            de <span className="font-bold">US$10 billones</span>. 💰🌐⚠️
+                        </p>
+                        <div className="flex items-center gap-1">
+                            <small className="chat-time">{getCurrentTime()}</small>
+                            <img
+                                src="read-double-check-icon.svg"
+                                alt="Double check icon"
+                                className="h-4 w-4 md:h-6 md:w-6"
+                            />
+                        </div>
+                    </div>
+                </div>
+        },
+        {
+            cooldown: 2000,
+            alignment: "left",
+            content:
+                <div className="flex flex-col items-start animate-fade-in-fast">
+                    <div className="chat-box left">
+                        <p className="text-sm md:text-md">
+                            Esto convierte a la ciberdelincuencia en la <span className="font-bold">tercera economía</span>
+                            más grande del mundo 🌍, solo detrás de <span className="font-bold">Estados Unidos</span> 🇺🇸 y
+                            <span className="font-bold"> China</span> 🇨🇳.
 
-                </p>
-                <small className="chat-time">{getCurrentTime()}</small>
-            </div>
-        </div>,
-        <div className="flex flex-col items-end animate-fade-in-fast">
-            <div className="chat-box right">
-                <p className="text-sm md:text-md">
-                    En el 2025, el costo de los daños de la ciberdelincuencia será superior incluso
-                    al PIB combinado de Alemania, Italia y Canadá. 💰🌐📉
-                </p>
-                <div className="flex items-center gap-1">
-                    <small className="chat-time">{getCurrentTime()}</small>
-                    <img
-                        src="read-double-check-icon.svg"
-                        alt="Double check icon"
-                        className="h-4 w-4 md:h-6 md:w-6"
-                    />
+                        </p>
+                        <small className="chat-time">{getCurrentTime()}</small>
+                    </div>
                 </div>
-            </div>
-        </div>,
-        <div className="flex flex-col items-end animate-fade-in-fast">
-            <div className="chat-box right">
-                <p className="text-sm md:text-md">
-                    <span className="font-bold">Evolución del costo en daños de la ciberdelincuencia</span>
-                </p>
-                <iframe
-                    className="flourish-embed flourish-chart"
-                    src="https://public.flourish.studio/visualisation/20792110/embed"
-                    width="100%"
-                    height="300"
-                    frameBorder="0"
-                    allowFullScreen
-                    title="Flourish Chart"
-                />
-                <p className="text-sm md:text-md">Fuente: DIVINDAT</p>
-                <div className="flex items-center gap-1">
-                    <small className="chat-time">{getCurrentTime()}</small>
-                    <img
-                        src="read-double-check-icon.svg"
-                        alt="Double check icon"
-                        className="h-4 w-4 md:h-6 md:w-6"
-                    />
+        },
+        {
+            cooldown: 2000,
+            alignment: "right",
+            content:
+                <div className="flex flex-col items-end animate-fade-in-fast">
+                    <div className="chat-box right">
+                        <p className="text-sm md:text-md">
+                            En el 2025, el costo de los daños de la ciberdelincuencia será superior incluso
+                            al PIB combinado de Alemania, Italia y Canadá. 💰🌐📉
+                        </p>
+                        <div className="flex items-center gap-1">
+                            <small className="chat-time">{getCurrentTime()}</small>
+                            <img
+                                src="read-double-check-icon.svg"
+                                alt="Double check icon"
+                                className="h-4 w-4 md:h-6 md:w-6"
+                            />
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>,
-        <div className="flex flex-col items-start animate-fade-in-fast">
-            <div className="chat-box left">
-                <p className="text-sm md:text-md">
-                    Entre enero y junio de 2024, se reportaron <span className="font-bold">20,704 delitos
+        },
+        {
+            cooldown: 2000,
+            alignment: "right",
+            content:
+                <div className="flex flex-col items-end animate-fade-in-fast">
+                    <div className="chat-box right">
+                        <p className="text-sm md:text-md">
+                            <span className="font-bold">Evolución del costo en daños de la ciberdelincuencia</span>
+                        </p>
+                        <iframe
+                            className="flourish-embed flourish-chart"
+                            src="https://public.flourish.studio/visualisation/20792110/embed"
+                            width="100%"
+                            height="300"
+                            frameBorder="0"
+                            allowFullScreen
+                            title="Flourish Chart"
+                        />
+                        <p className="text-sm md:text-md">Fuente: DIVINDAT</p>
+                        <div className="flex items-center gap-1">
+                            <small className="chat-time">{getCurrentTime()}</small>
+                            <img
+                                src="read-double-check-icon.svg"
+                                alt="Double check icon"
+                                className="h-4 w-4 md:h-6 md:w-6"
+                            />
+                        </div>
+                    </div>
+                </div>
+        },
+        {
+            cooldown: 2000,
+            alignment: "left",
+            content:
+                <div className="flex flex-col items-start animate-fade-in-fast">
+                    <div className="chat-box left">
+                        <p className="text-sm md:text-md">
+                            Entre enero y junio de 2024, se reportaron <span className="font-bold">20,704 delitos
                     informáticos</span> en el Perú. 📈💻 Esta cifra es casi <span className="font-bold">seis veces más alta</span>
-                    que la registrada en el <span className="font-bold">mismo periodo del
+                            que la registrada en el <span className="font-bold">mismo periodo del
                     2020</span>. ⚠️🌐
-                </p>
-                <small className="chat-time">{getCurrentTime()}</small>
-            </div>
-        </div>,
-        <div className="flex flex-col items-start animate-fade-in-fast">
-            <div className="chat-box left">
-                <p className="text-sm md:text-md">
-                    <span className="font-bold">Delitos informáticos en el Perú (reporte)</span>
-                    <br></br>Reporte semestral y anual de los delitos informáticos entre 2020 y 2024 en el Perú</p>
-                <iframe
-                    className="flourish-embed flourish-chart"
-                    src="https://public.flourish.studio/visualisation/20785916/embed"
-                    width="100%"
-                    height="300"
-                    frameBorder="0"
-                    allowFullScreen
-                    title="Flourish Chart"
-                />
-                <p className="text-sm md:text-md">Fuente: DIVINDAT</p>
-                <div className="flex items-center gap-1">
-                    <small className="chat-time">{getCurrentTime()}</small>
-                    <img
-                        src="read-double-check-icon.svg"
-                        alt="Double check icon"
-                        className="h-4 w-4 md:h-6 md:w-6"
-                    />
+                        </p>
+                        <small className="chat-time">{getCurrentTime()}</small>
+                    </div>
                 </div>
-            </div>
-        </div>,
-        <div className="flex flex-col items-end animate-fade-in-fast">
-            <div className="chat-box right">
-                <p className="text-sm md:text-md">
-                    <span className="font-bold">¿Qué delito informático se denuncia más?</span>⚖️💻
-                </p>
-                <div className="flex items-center gap-1">
-                    <small className="chat-time">{getCurrentTime()}</small>
+        },
+        {
+            cooldown: 2000,
+            alignment: "left",
+            content:
+                <div className="flex flex-col items-start animate-fade-in-fast">
+                    <div className="chat-box left">
+                        <p className="text-sm md:text-md">
+                            <span className="font-bold">Delitos informáticos en el Perú (reporte)</span>
+                            <br></br>Reporte semestral y anual de los delitos informáticos entre 2020 y 2024 en el Perú</p>
+                        <iframe
+                            className="flourish-embed flourish-chart"
+                            src="https://public.flourish.studio/visualisation/20785916/embed"
+                            width="100%"
+                            height="300"
+                            frameBorder="0"
+                            allowFullScreen
+                            title="Flourish Chart"
+                        />
+                        <p className="text-sm md:text-md">Fuente: DIVINDAT</p>
+                        <div className="flex items-center gap-1">
+                            <small className="chat-time">{getCurrentTime()}</small>
+                            <img
+                                src="read-double-check-icon.svg"
+                                alt="Double check icon"
+                                className="h-4 w-4 md:h-6 md:w-6"
+                            />
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>,
-        <div className="flex flex-col items-end animate-fade-in-fast">
-            <div className="chat-box right">
-                <p className="text-sm md:text-md">
-                    La División de Investigación de Delitos de Alta Tecnología (Divindat) de la PNP 📊💻 recibió
-                    <span className="font-bold">27,934 casos de delitos informáticos</span> en 2024. De estos,
-                    <span className="font-bold">19,067 fueron fraudesinformáticos</span> 💳, representando el
-                    <span className="font-bold">68.3% del total</span>. ⚠️📈
-                </p>
-                <div className="flex items-center gap-1">
-                    <small className="chat-time">{getCurrentTime()}</small>
+        },
+        {
+            cooldown: 500,
+            alignment: "left",
+            content:
+                <div className="flex flex-col items-end animate-fade-in-fast">
+                    <div className="chat-box right">
+                        <p className="text-sm md:text-md">
+                            <span className="font-bold">¿Qué delito informático se denuncia más?</span>⚖️💻
+                        </p>
+                        <div className="flex items-center gap-1">
+                            <small className="chat-time">{getCurrentTime()}</small>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>,
-        <div className="flex flex-col items-start animate-fade-in-fast">
-            <div className="chat-box left">
-                <p className="text-sm md:text-md">
-                    <span className="font-bold">Delitos informáticos más denunciados en 2024 en el Perú</span>
-                    <br></br>Modalidades (enero a agosto del 2024)
-                </p>
-                <iframe
-                    className="flourish-embed flourish-charts"
-                    src="https://public.flourish.studio/visualisation/20801750/embed"
-                    width="100%"
-                    height="550"
-                    frameBorder="0"
-                    allowFullScreen
-                    title="Flourish Chart"
-                />
-                <p className="text-sm md:text-md">Fuente: DIVINDAT</p>
-                <div className="flex items-center gap-1">
-                    <small className="chat-time">{getCurrentTime()}</small>
-                    <img
-                        src="read-double-check-icon.svg"
-                        alt="Double check icon"
-                        className="h-4 w-4 md:h-6 md:w-6"
-                    />
+        },
+        {
+            cooldown: 2000,
+            alignment: "right",
+            content:
+                <div className="flex flex-col items-end animate-fade-in-fast">
+                    <div className="chat-box right">
+                        <p className="text-sm md:text-md">
+                            La División de Investigación de Delitos de Alta Tecnología (Divindat) de la PNP 📊💻 recibió
+                            <span className="font-bold"> 27,934 casos de delitos informáticos</span> en 2024. De estos,
+                            <span className="font-bold"> 19,067 fueron fraudesinformáticos</span> 💳, representando el
+                            <span className="font-bold"> 68.3% del total</span>. ⚠️📈
+                        </p>
+                        <div className="flex items-center gap-1">
+                            <small className="chat-time">{getCurrentTime()}</small>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>,
+        },
+        {
+            cooldown: 1000,
+            alignment: "left",
+            content:
+                <div className="flex flex-col items-start animate-fade-in-fast">
+                    <div className="chat-box left">
+                        <p className="text-sm md:text-md">
+                            <span className="font-bold">Delitos informáticos más denunciados en 2024 en el Perú</span>
+                            <br></br>Modalidades (enero a agosto del 2024)
+                        </p>
+                        <iframe
+                            className="flourish-embed flourish-charts"
+                            src="https://public.flourish.studio/visualisation/20801750/embed"
+                            width="100%"
+                            height="550"
+                            frameBorder="0"
+                            allowFullScreen
+                            title="Flourish Chart"
+                        />
+                        <p className="text-sm md:text-md">Fuente: DIVINDAT</p>
+                        <div className="flex items-center gap-1">
+                            <small className="chat-time">{getCurrentTime()}</small>
+                            <img
+                                src="read-double-check-icon.svg"
+                                alt="Double check icon"
+                                className="h-4 w-4 md:h-6 md:w-6"
+                            />
+                        </div>
+                    </div>
+                </div>
+        },
     ];
 
     useEffect(() => {
         if (visibleElements < elements.length) {
+            setIsLoading(true);
             const timer = setTimeout(() => {
+                setIsLoading(false);
                 setVisibleElements(visibleElements + 1);
-            }, 2000);
+            }, elements[visibleElements].cooldown);
             return () => clearTimeout(timer);
         }
     }, [visibleElements, elements.length]);
 
     return (
-        <div>
-            <div className="flex justify-center animate-fade-in-fast">
-                <h1 className="chat-title-box">
-                    La ciberdelincuencia en cifras
-                </h1>
-            </div>
-            <div className="flex flex-col items-start animate-fade-in-fast">
-                <div className="chat-box left">
-                    <p className="text-sm md:text-md">
-                        En el año 2023, la La <span className="font-bold">Policía Nacional del Perú (PNP) </span>
-                        registró un promedio de <span
-                        className="font-bold">107 intentos de ciberataques por minuto. </span>
-                        💻⚠️👮‍♂️
-                    </p>
-                    <small className="chat-time">{getCurrentTime()}</small>
+        <div className="flex flex-col h-full justify-between p-4">
+            <div>
+                <div className="flex justify-center animate-fade-in-fast">
+                    <h1 className="chat-title-box">
+                        La ciberdelincuencia en cifras
+                    </h1>
+                </div>
+                <div className="flex flex-col items-start animate-fade-in-fast">
+                    <div className="chat-box left">
+                        <p className="text-sm md:text-md">
+                            En el año 2023, la La <span className="font-bold">Policía Nacional del Perú (PNP) </span>
+                            registró un promedio de <span
+                            className="font-bold">107 intentos de ciberataques por minuto. </span>
+                            💻⚠️👮‍♂️
+                        </p>
+                        <small className="chat-time">{getCurrentTime()}</small>
+                    </div>
+                </div>
+                <div>
+                    {elements.slice(0, visibleElements).map((element, index) => (
+                        <div key={index} ref={index === visibleElements - 1 ? lastElementRef : null}>
+                            {element["content"]}
+                        </div>
+                    ))}
+                    {isLoading && (
+                        <div
+                            className={`w-full flex ${elements[visibleElements].alignment === "left" ? "justify-start" : "justify-end"}`}>
+                            <div className="flex items-end space-x-1 px-4 py-3 rounded-xl bg-gray-100 w-fit">
+                                <div className="h-2 w-2 rounded-full bg-gray-400 animate-pulse"></div>
+                                <div className="h-2 w-2 rounded-full bg-gray-400 animate-pulse"></div>
+                                <div className="h-2 w-2 rounded-full bg-gray-400 animate-pulse"></div>
+                            </div>
+                        </div>
+                    )}
                 </div>
             </div>
-            <div>
-                {elements.slice(0, visibleElements).map((element, index) => (
-                    <div key={index}>{element}</div>
-                ))}
+            <div className="sticky bottom-0 flex justify-between w-full items-center z-10">
+                <PrevFabButton url="ciberdelincuencia"/>
+                <NextFabButton url="el-phishing"/>
             </div>
-            <NextFabButton url="un-poco-de-data"/>
         </div>
     );
 }

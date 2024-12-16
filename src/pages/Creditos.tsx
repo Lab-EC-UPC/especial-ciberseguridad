@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import {Participants} from "../content/Participants.ts";
+import PrevFabButton from "../components/PrevFabButton.tsx";
 
 interface Participant {
     name: string;
@@ -34,52 +35,60 @@ export default function Creditos () {
         if (visibleElements < participants.length) {
             const timer = setTimeout(() => {
                 setVisibleElements(visibleElements + 1);
-            }, 100);
+            }, 200);
             return () => clearTimeout(timer);
         }
     }, [visibleElements, participants.length]);
 
     return (
-        <div>
-            <div className="flex flex-col items-center">
-                <div className="flex flex-col gap-2 md:gap-4 chat-box center">
-                    <img src="https://github.com/Lab-EC-UPC/assets/blob/main/logo-ec-data.png?raw=true"
-                         alt="ECDATA-UPC"
-                         className="w-16 h-16 md:w-32 md:h-32 border rounded-full"
-                    />
-                    <h1 className="text-lg font-medium">
-                        ECDATA - UPC
-                    </h1>
-                    <small>
-                        <strong>Grupo 22 miembros</strong>
-                    </small>
-                    <p className="text-sm md:text-md">
-                        Este informe fue elaborado por los alumnos del Laboratorio de Periodismo Innovador de ECData y
-                        la Universidad Peruana de Ciencias Aplicadas, bajo la supervisión y guía de periodistas de El
-                        Comercio.
-                    </p>
-                </div>
-            </div>
-            <div className="flex flex-col items-center">
-                <div className="flex flex-col gap-2 md:gap-4 chat-box center">
-                    <div className="flex flex-col items-start gap-3 md:gap-4">
-                        <small className="text-grey text-justify">22 miembros</small>
-                        {participants.slice(0, visibleElements).map((participant, index) => (
-                            <div
-                                key={index}
-                                className={`flex bg-white items-center gap-6 ${
-                                    index % 2 === 0 ? "animate-from-left" : "animate-from-right"
-                                }`}
-                            >
-                                <ParticipantCard
-                                    name={participant.name}
-                                    subtitle={participant.subtitle}
-                                    avatar={participant.avatar}
-                                />
-                            </div>
-                        ))}
+        <div className="flex flex-col h-full justify-between p-4">
+            <div>
+                <div className="flex flex-col items-center animate-fade-in-fast">
+                    <div className="flex flex-col gap-2 md:gap-4 chat-box center">
+                        <img src="https://github.com/Lab-EC-UPC/assets/blob/main/logo-ec-data.png?raw=true"
+                             alt="ECDATA-UPC"
+                             className="w-16 h-16 md:w-32 md:h-32 border rounded-full"
+                        />
+                        <h1 className="text-lg font-medium">
+                            ECDATA - UPC
+                        </h1>
+                        <small>
+                            <strong>Grupo 22 miembros</strong>
+                        </small>
+                        <p className="text-sm md:text-md">
+                            Este informe fue elaborado por los alumnos del Laboratorio de Periodismo Innovador de ECData
+                            y
+                            la Universidad Peruana de Ciencias Aplicadas, bajo la supervisión y guía de periodistas de
+                            El
+                            Comercio.
+                        </p>
                     </div>
                 </div>
+                <div className="flex flex-col items-center">
+                    <div className="flex flex-col gap-2 md:gap-4 chat-box center">
+                        <div className="flex flex-col items-start gap-3 md:gap-4">
+                            <small className="text-grey text-justify">22 miembros</small>
+                            {participants.slice(0, visibleElements).map((participant, index) => (
+                                <div
+                                    key={index}
+                                    className={`flex bg-white items-center gap-6 ${
+                                        index % 2 === 0 ? "animate-from-left" : "animate-from-right"
+                                    }`}
+                                >
+                                    <ParticipantCard
+                                        name={participant.name}
+                                        subtitle={participant.subtitle}
+                                        avatar={participant.avatar}
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="sticky bottom-0 flex justify-between w-full items-center z-10">
+                <PrevFabButton url="verificador-de-links"/>
+                <></>
             </div>
         </div>
     )
