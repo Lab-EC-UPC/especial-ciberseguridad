@@ -208,27 +208,29 @@ export default function PrevencionYDenuncia() {
 
     return (
         <div className="flex flex-col h-full justify-between p-4">
-            <div className="flex justify-center animate-fade-in-fast">
-                <h1 className="chat-title-box">
-                    ¿Cómo prevenir estos ciberdelitos?
-                </h1>
-            </div>
             <div>
-                {elements.slice(0, visibleElements).map((element, index) => (
-                    <div key={index} ref={index === visibleElements - 1 ? lastElementRef : null}>
-                        {element["content"]}
-                    </div>
-                ))}
-                {isLoading && (
-                    <div
-                        className={`w-full flex ${elements[visibleElements].alignment === "left" ? "justify-start" : "justify-end"}`}>
-                        <div className="flex items-end space-x-1 px-4 py-3 rounded-xl bg-gray-100 w-fit">
-                            <div className="h-2 w-2 rounded-full bg-gray-400 animate-pulse"></div>
-                            <div className="h-2 w-2 rounded-full bg-gray-400 animate-pulse"></div>
-                            <div className="h-2 w-2 rounded-full bg-gray-400 animate-pulse"></div>
+                <div className="flex justify-center animate-fade-in-fast">
+                    <h1 className="chat-title-box">
+                        ¿Cómo prevenir estos ciberdelitos?
+                    </h1>
+                </div>
+                <div>
+                    {elements.slice(0, visibleElements).map((element, index) => (
+                        <div key={index} ref={index === visibleElements - 1 ? lastElementRef : null}>
+                            {element["content"]}
                         </div>
-                    </div>
-                )}
+                    ))}
+                    {isLoading && (
+                        <div
+                            className={`w-full flex ${elements[visibleElements].alignment === "left" ? "justify-start" : "justify-end"}`}>
+                            <div className="flex items-end space-x-1 px-4 py-3 rounded-xl bg-gray-100 w-fit">
+                                <div className="h-2 w-2 rounded-full bg-gray-400 animate-pulse"></div>
+                                <div className="h-2 w-2 rounded-full bg-gray-400 animate-pulse"></div>
+                                <div className="h-2 w-2 rounded-full bg-gray-400 animate-pulse"></div>
+                            </div>
+                        </div>
+                    )}
+                </div>
             </div>
             <div className="sticky bottom-0 flex justify-between w-full items-center z-10">
                 <PrevFabButton url="opiniones-sobre-la-ciberdelincuencia"/>
