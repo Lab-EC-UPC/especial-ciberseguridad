@@ -18,7 +18,7 @@ export default function CiberAlertaPeru({visibleElements,setVisibleElements} :  
             alignment: "left",
             content:
                 <div className="flex flex-col items-start animate-fade-in-fast">
-                    <div className="chat-box right">
+                    <div className="chat-box left">
                         <video
                             controls
                             autoPlay
@@ -32,11 +32,6 @@ export default function CiberAlertaPeru({visibleElements,setVisibleElements} :  
                         </video>
                         <div className="flex items-center gap-1">
                             <small className="chat-time">{getCurrentTime()}</small>
-                            <img
-                                src="read-double-check-icon.svg"
-                                alt="Double check icon"
-                                className="h-4 w-4 md:h-6 md:w-6"
-                            />
                         </div>
                     </div>
                 </div>
