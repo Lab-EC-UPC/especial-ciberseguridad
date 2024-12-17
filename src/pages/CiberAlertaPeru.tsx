@@ -32,11 +32,6 @@ export default function CiberAlertaPeru({visibleElements,setVisibleElements} :  
                         </video>
                         <div className="flex items-center gap-1">
                             <small className="chat-time">{getCurrentTime()}</small>
-                            <img
-                                src="read-double-check-icon.svg"
-                                alt="Double check icon"
-                                className="h-4 w-4 md:h-6 md:w-6"
-                            />
                         </div>
                     </div>
                 </div>
