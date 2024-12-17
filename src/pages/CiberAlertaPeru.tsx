@@ -18,7 +18,7 @@ export default function CiberAlertaPeru({visibleElements,setVisibleElements} :  
             alignment: "left",
             content:
                 <div className="flex flex-col items-start animate-fade-in-fast">
-                    <div className="chat-box right">
+                    <div className="chat-box left">
                         <video
                             controls
                             autoPlay
