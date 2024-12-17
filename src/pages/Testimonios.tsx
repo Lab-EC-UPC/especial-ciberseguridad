@@ -24,11 +24,11 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
                     <div className="chat-box left relative p-3 bg-white shadow-lg rounded-lg">
                         {/* Encabezado: Nombre y Foto en el extremo izquierdo */}
                         <div className="flex justify-start items-center gap-2 mb-2">
-                            <div className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden">
+                            <div className="rounded-full bg-gray-300 overflow-hidden aspect-square w-10 min-w-[40px] min-h-[40px]">
                                 <img
                                     src="testimonios/1.webp" // Reemplazar con URL dinámica
                                     alt="Avatar Jessica"
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-full object-cover aspect-square"
                                 />
                             </div>
                             <span className="text-sm font-bold text-gray-700">Jessica Rojas, 43 años (Víctima de Vishing)</span>
@@ -67,11 +67,11 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
                 <div className="flex flex-col items-start animate-fade-in-fast">
                     <div className="chat-box left">
                         <div className="flex items-center gap-2 mb-1">
-                            <div className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden">
+                            <div className="rounded-full bg-gray-300 overflow-hidden aspect-square w-10 min-w-[40px] min-h-[40px]">
                                 <img
                                     src="testimonios/1.webp" // Reemplazar con URL dinámica
                                     alt="Avatar Usuario 1"
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-full object-cover aspect-square"
                                 />
                             </div>
                             <span className="text-sm font-bold text-gray-700">Jessica Rojas, 43 años (Víctima de Vishing)</span>
@@ -114,11 +114,11 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
                         {/* Encabezado: Nombre y Foto en el extremo derecho */}
                         <div className="flex justify-end items-center gap-2 mb-2">
                             <span className="text-sm font-bold text-gray-700">Irina Gonzales García, 40 años (Víctima de Smishing y Phishing)</span>
-                            <div className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden">
+                            <div className="rounded-full bg-gray-300 overflow-hidden aspect-square w-10 min-w-[40px] min-h-[40px]">
                                 <img
                                     src="testimonios/2.webp" // Reemplazar con URL dinámica
                                     alt="Avatar Tú"
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-full object-cover aspect-square"
                                 />
                             </div>
                         </div>
@@ -164,11 +164,11 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
                     <div className="chat-box right">
                         <div className="flex items-center gap-2 mb-1 justify-end">
                             <span className="text-sm font-bold text-gray-700">Irina Gonzales García, 40 años (Víctima de Smishing y Phishing)</span>
-                            <div className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden">
+                            <div className="rounded-full bg-gray-300 overflow-hidden aspect-square w-10 min-w-[40px] min-h-[40px]">
                                 <img
                                     src="testimonios/2.webp" // Reemplazar con URL dinámica
                                     alt="Avatar Tú"
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-full object-cover aspect-square"
                                 />
                             </div>
                         </div>
@@ -212,11 +212,11 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
                     <div className="chat-box left relative p-3 bg-white shadow-lg rounded-lg">
                         {/* Encabezado: Nombre y Foto en el extremo izquierdo */}
                         <div className="flex justify-start items-center gap-2 mb-2">
-                            <div className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden">
+                            <div className="rounded-full bg-gray-300 overflow-hidden aspect-square w-10 min-w-[40px] min-h-[40px]">
                                 <img
                                     src="testimonios/3.webp" // Reemplazar con URL dinámica
                                     alt="Avatar"
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-full object-cover aspect-square"
                                 />
                             </div>
                             <span className="text-sm font-bold text-gray-700">Ekaterina Zakharova, 44 años (Víctima de Phishing en comercio electrónico)</span>
@@ -255,11 +255,11 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
                 <div className="flex flex-col items-start animate-fade-in-fast">
                     <div className="chat-box left">
                         <div className="flex items-center gap-2 mb-1">
-                            <div className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden">
+                            <div className="rounded-full bg-gray-300 overflow-hidden aspect-square w-10 min-w-[40px] min-h-[40px]">
                                 <img
                                     src="testimonios/3.webp" // Reemplazar con URL dinámica
                                     alt="Avatar Usuario 1"
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-full object-cover aspect-square"
                                 />
                             </div>
                             <span className="text-sm font-bold text-gray-700">Ekaterina Zakharova, 44 años (Víctima de Phishing en comercio electrónico)</span>
@@ -301,11 +301,11 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
                         {/* Encabezado: Nombre y Foto en el extremo derecho */}
                         <div className="flex justify-end items-center gap-2 mb-2">
                             <span className="text-sm font-bold text-gray-700">Sheyla Choque Vizcarra, 23 años (Víctima de Phishing y Vishing)</span>
-                            <div className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden">
+                            <div className="rounded-full bg-gray-300 overflow-hidden aspect-square w-10 min-w-[40px] min-h-[40px]">
                                 <img
                                     src="testimonios/4.webp" // Reemplazar con URL dinámica
                                     alt="Avatar Tú"
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-full object-cover aspect-square"
                                 />
                             </div>
                         </div>
@@ -351,11 +351,11 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
                     <div className="chat-box right">
                         <div className="flex items-center gap-2 mb-1 justify-end">
                             <span className="text-sm font-bold text-gray-700">Sheyla Choque Vizcarra, 23 años (Víctima de Phishing y Vishing)</span>
-                            <div className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden">
+                            <div className="rounded-full bg-gray-300 overflow-hidden aspect-square w-10 min-w-[40px] min-h-[40px]">
                                 <img
                                     src="testimonios/4.webp" // Reemplazar con URL dinámica
                                     alt="Avatar Tú"
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-full object-cover aspect-square"
                                 />
                             </div>
                         </div>

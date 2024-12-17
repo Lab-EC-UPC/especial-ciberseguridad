@@ -22,11 +22,11 @@ export default function OpinionesSobreLaCiberdelincuencia({visibleElements,setVi
                     <div className="chat-box left relative">
                         {/* Nueva área de imagen circular y nombre */}
                         <div className="flex items-center gap-2 mb-1">
-                            <div className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden">
+                            <div className="rounded-full bg-gray-300 overflow-hidden aspect-square w-10 min-w-[40px] min-h-[40px] ">
                                 <img
                                     src="https://github.com/Lab-EC-UPC/assets/blob/main/especial-ciberseguridad/especialistas/Diego%20Oviedo.jpeg?raw=true" // Reemplazar con URL dinámica
                                     alt="Avatar Usuario 1"
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-full object-cover aspect-square"
                                 />
                             </div>
                             <span className="text-sm font-bold text-gray-700">Diego Oviedo (Especialista en Ciberseguridad)</span>
@@ -64,11 +64,11 @@ export default function OpinionesSobreLaCiberdelincuencia({visibleElements,setVi
                         <div className="flex items-center gap-2 mb-1 justify-end">
                             <span
                                 className="text-sm font-bold text-gray-700">Jose Carlos Vargas (Presidente de ISACA)</span>
-                            <div className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden">
+                            <div className="rounded-full bg-gray-300 overflow-hidden aspect-square w-10 min-w-[40px] min-h-[40px]">
                                 <img
                                     src="https://github.com/Lab-EC-UPC/assets/blob/main/especial-ciberseguridad/especialistas/Jose%20Carlos%20Vargas.jpeg?raw=true" // Reemplazar con URL dinámica
                                     alt="Avatar Tú"
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-full object-cover aspect-square"
                                 />
                             </div>
                         </div>
@@ -107,11 +107,11 @@ export default function OpinionesSobreLaCiberdelincuencia({visibleElements,setVi
                     <div className="chat-box left relative">
                         {/* Nueva área de imagen circular y nombre */}
                         <div className="flex items-center gap-2 mb-1">
-                            <div className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden">
+                            <div className="rounded-full bg-gray-300 overflow-hidden aspect-square w-10 min-w-[40px] min-h-[40px]">
                                 <img
                                     src="https://github.com/Lab-EC-UPC/assets/blob/main/especial-ciberseguridad/especialistas/VictorRuiz_squared.jpg?raw=true" // Reemplazar con URL dinámica
                                     alt="Avatar Usuario 1"
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-full object-cover aspect-square"
                                 />
                             </div>
                             <span className="text-sm font-bold text-gray-700">Victor Ruiz (Especialista en Ciberseguridad)</span>
@@ -146,11 +146,11 @@ export default function OpinionesSobreLaCiberdelincuencia({visibleElements,setVi
                         <div className="flex items-center gap-2 mb-1 justify-end">
                             <span
                                 className="text-sm font-bold text-gray-700">Erick Iriarte (Especialista en Derecho Digital)</span>
-                            <div className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden">
+                            <div className="rounded-full bg-gray-300 overflow-hidden aspect-square w-10 min-w-[40px] min-h-[40px]">
                                 <img
                                     src="https://github.com/Lab-EC-UPC/assets/blob/main/especial-ciberseguridad/especialistas/ErickIriarte_squared.jpg?raw=true" // Reemplazar con URL dinámica
                                     alt="Avatar Tú"
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-full object-cover aspect-square"
                                 />
                             </div>
                         </div>
@@ -189,11 +189,11 @@ export default function OpinionesSobreLaCiberdelincuencia({visibleElements,setVi
                     <div className="chat-box left relative">
                         {/* Nueva área de imagen circular y nombre */}
                         <div className="flex items-center gap-2 mb-1">
-                            <div className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden">
+                            <div className="rounded-full bg-gray-300 overflow-hidden aspect-square w-10 min-w-[40px] min-h-[40px]">
                                 <img
                                     src="https://github.com/Lab-EC-UPC/assets/blob/main/especial-ciberseguridad/especialistas/JorgeZeballos_squared.jpg?raw=true" // Reemplazar con URL dinámica
                                     alt="Avatar Usuario 1"
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-full object-cover aspect-square"
                                 />
                             </div>
                             <span className="text-sm font-bold text-gray-700">Jorge Zeballos (Gerente General de ESET Perú)</span>
