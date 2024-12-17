@@ -232,7 +232,7 @@ export default function OpinionesSobreLaCiberdelincuencia({visibleElements,setVi
                 </div>
                 <div className="flex flex-col items-center animate-fade-in-fast">
                     <div className="chat-box center">
-                        <img src="joined-chat-icon-specialists.svg"
+                        <img src="chat-icons/6.webp"
                              alt="Joined chat icon"
                              className="w-16 h-16 md:w-24 md:h-24"
                         />
