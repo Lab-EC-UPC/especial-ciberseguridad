@@ -26,7 +26,7 @@ export const Participants = [
     },
     {
         name: "María Belén Pérez Bless",
-        subtitle: "Editora Periodística",
+        subtitle: "Editora Periodística y Traductora",
         avatar: "https://lab-ec-upc.github.io/assets/integrantes/Mabe.png",
     },
     {
