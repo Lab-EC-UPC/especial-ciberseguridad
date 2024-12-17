@@ -13,7 +13,7 @@ const ParticipantCard = (participant: Participant) => {
         <div className="flex bg-white items-center gap-6">
             <img src={participant.avatar || "https://github.com/Lab-EC-UPC/assets/blob/main/especial-ciberseguridad/creditos/placeholder-photo.png?raw=true"}
                  alt={participant.name}
-                 className="w-10 h-10 md:w-14 md:h-14 rounded-full object-cover"
+                 className="w-10 h-10 md:w-16 md:h-16 rounded-full object-cover"
             />
             <div className="grid text-justify">
                 <h1 className="font-medium">
