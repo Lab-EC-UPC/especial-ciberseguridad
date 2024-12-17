@@ -15,7 +15,7 @@ export default function OpinionesSobreLaCiberdelincuencia({visibleElements,setVi
     const elements = [
 
         {
-            cooldown: 500,
+            cooldown: 1000,
             alignment: "left",
             content:
                 <div className="flex flex-col items-start animate-fade-in-fast">
@@ -44,7 +44,7 @@ export default function OpinionesSobreLaCiberdelincuencia({visibleElements,setVi
                 </div>
         },
         {
-            cooldown: 500,
+            cooldown: 5000,
             alignment: "center",
             content:
                 <div className="flex flex-col items-center animate-fade-in-fast">
@@ -56,7 +56,7 @@ export default function OpinionesSobreLaCiberdelincuencia({visibleElements,setVi
                 </div>
         },
         {
-            cooldown: 5000,
+            cooldown: 2000,
             alignment: "right",
             content:
                 <div className="flex flex-col items-end animate-fade-in-fast">
@@ -88,7 +88,7 @@ export default function OpinionesSobreLaCiberdelincuencia({visibleElements,setVi
         },
 
         {
-            cooldown: 500,
+            cooldown: 5000,
             alignment: "center",
             content:
                 <div className="flex flex-col items-center animate-fade-in-fast">
@@ -126,7 +126,7 @@ export default function OpinionesSobreLaCiberdelincuencia({visibleElements,setVi
                 </div>
         },
         {
-            cooldown: 500,
+            cooldown: 2000,
             alignment: "center",
             content:
                 <div className="flex flex-col items-center animate-fade-in-fast">
@@ -169,7 +169,7 @@ export default function OpinionesSobreLaCiberdelincuencia({visibleElements,setVi
                 </div>
         },
         {
-            cooldown: 500,
+            cooldown: 2000,
             alignment: "center",
             content:
                 <div className="flex flex-col items-center animate-fade-in-fast">

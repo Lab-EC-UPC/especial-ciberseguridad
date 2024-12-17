@@ -15,26 +15,25 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
     const lastElementRef = useRef<HTMLDivElement>(null);
 
     const elements = [
-        {
-            cooldown: 100,
-            alignment: "left",
-            content:
-                <div className="flex flex-col items-start animate-fade-in-fast">
-                    <div className="chat-box left">
-                        <p className="text-sm md:text-md">
-                            <strong>Jessica Rojas (43 años)</strong> <br/>
-                            Víctima de Vishing
-                        </p>
-                        <small className="chat-time">{getCurrentTime()}</small>
-                    </div>
-                </div>
-        },
+
         {
             cooldown: 1000,
             alignment: "left",
-            content:
+            content: (
                 <div className="flex flex-col items-start animate-fade-in-fast">
-                    <div className="chat-box left">
+                    <div className="chat-box left relative p-3 bg-white shadow-lg rounded-lg">
+                        {/* Encabezado: Nombre y Foto en el extremo izquierdo */}
+                        <div className="flex justify-start items-center gap-2 mb-2">
+                            <div className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden">
+                                <img
+                                    src="testimonios/1.webp" // Reemplazar con URL dinámica
+                                    alt="Avatar Jessica"
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+                            <span className="text-sm font-bold text-gray-700">Jessica Rojas, 43 años (Víctima de Vishing)</span>
+                        </div>
+                        {/* Contenido del mensaje */}
                         <div className="flex items-center">
                             <div className="flex-1">
                                 <AudioPlayer
@@ -50,28 +49,43 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
                                         className="w-12 h-12 md:w-24 md:h-24 rounded-full object-cover"
                                     />
                                     <span className="absolute bottom-0 left-0 flex p-2 bg-green-dark rounded-full">
-                                    <MicrophoneIcon className="h-2 w-2 md:h-4 md:w-4 text-white"/>
+                                <MicrophoneIcon className="h-2 w-2 md:h-4 md:w-4 text-white" />
                             </span>
                                 </div>
                                 <small className="chat-time">{getCurrentTime()}</small>
                             </div>
                         </div>
                     </div>
-                </div>,
+                </div>
+            ),
         },
+
         {
             cooldown: 2000,
             alignment: "left",
             content:
                 <div className="flex flex-col items-start animate-fade-in-fast">
                     <div className="chat-box left">
+                        <div className="flex items-center gap-2 mb-1">
+                            <div className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden">
+                                <img
+                                    src="testimonios/1.webp" // Reemplazar con URL dinámica
+                                    alt="Avatar Usuario 1"
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+                            <span className="text-sm font-bold text-gray-700">Jessica Rojas, 43 años (Víctima de Vishing)</span>
+                        </div>
                         <p className="text-sm md:text-md">
                             Jessica recibió una <strong> llamada 📞 </strong> que simulaba ser de su
-                            <strong> instituto educativo 🎓. </strong> Tras facilitarles un código de validación 🔑, los atacantes
+                            <strong> instituto educativo 🎓. </strong> Tras facilitarles un código de validación 🔑, los
+                            atacantes
                             accedieron a su
-                            <strong> cuenta de WhatsApp 📱 </strong> y la utilizaron para <strong> estafar a sus contactos
+                            <strong> cuenta de WhatsApp 📱 </strong> y la utilizaron para <strong> estafar a sus
+                            contactos
                             💸. </strong> El delito
-                            <strong> impactó su vida personal 👩‍💼, laboral 💼 y su negocio 🏢, </strong> ya que, como muchos,
+                            <strong> impactó su vida personal 👩‍💼, laboral 💼 y su negocio 🏢, </strong> ya que, como
+                            muchos,
                             usaba la aplicación como herramienta clave de comunicación 📲.
                         </p>
                         <small className="chat-time">{getCurrentTime()}</small>
@@ -90,33 +104,25 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
                     </div>
                 </div>
         },
-        {
-            cooldown: 1000,
-            alignment: "right",
-            content:
-                <div className="flex flex-col items-end animate-fade-in-fast">
-                    <div className="chat-box right">
-                        <p className="text-sm md:text-md">
-                            <strong>Irina Gonzales García (40 años)</strong> <br/>
-                            Víctima de Smishing y Phishing
-                        </p>
-                        <div className="flex items-center gap-1">
-                            <small className="chat-time">{getCurrentTime()}</small>
-                            <img
-                                src="read-double-check-icon.svg"
-                                alt="Double check icon"
-                                className="h-4 w-4 md:h-6 md:w-6"
-                            />
-                        </div>
-                    </div>
-                </div>
-        },
+
         {
             cooldown: 2000,
             alignment: "right",
-            content:
+            content: (
                 <div className="flex flex-col items-end animate-fade-in-fast">
-                    <div className="chat-box right">
+                    <div className="chat-box right relative p-3 bg-white shadow-lg rounded-lg">
+                        {/* Encabezado: Nombre y Foto en el extremo derecho */}
+                        <div className="flex justify-end items-center gap-2 mb-2">
+                            <span className="text-sm font-bold text-gray-700">Irina Gonzales García, 40 años (Víctima de Smishing y Phishing)</span>
+                            <div className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden">
+                                <img
+                                    src="testimonios/2.webp" // Reemplazar con URL dinámica
+                                    alt="Avatar Tú"
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+                        </div>
+                        {/* Contenido del mensaje */}
                         <div className="flex items-center">
                             <div className="relative flex-shrink-0">
                                 <img
@@ -125,8 +131,8 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
                                     className="w-12 h-12 md:w-24 md:h-24 rounded-full object-cover"
                                 />
                                 <span className="absolute bottom-0 right-0 flex p-2 bg-green-dark rounded-full">
-                                    <MicrophoneIcon className="h-2 w-2 md:h-4 md:w-4 text-white"/>
-                                </span>
+                            <MicrophoneIcon className="h-2 w-2 md:h-4 md:w-4 text-white" />
+                        </span>
                             </div>
                             <div className="flex-1">
                                 <AudioPlayer
@@ -135,7 +141,8 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
                                 />
                             </div>
                         </div>
-                        <div className="flex items-center gap-1">
+                        {/* Footer con hora e ícono */}
+                        <div className="flex items-center gap-1 mt-2">
                             <small className="chat-time">{getCurrentTime()}</small>
                             <img
                                 src="read-double-check-icon.svg"
@@ -145,17 +152,33 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
                         </div>
                     </div>
                 </div>
+            ),
         },
+
+
         {
             cooldown: 2000,
             alignment: "right",
             content:
                 <div className="flex flex-col items-end animate-fade-in-fast">
                     <div className="chat-box right">
+                        <div className="flex items-center gap-2 mb-1 justify-end">
+                            <span className="text-sm font-bold text-gray-700">Irina Gonzales García, 40 años (Víctima de Smishing y Phishing)</span>
+                            <div className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden">
+                                <img
+                                    src="testimonios/2.webp" // Reemplazar con URL dinámica
+                                    alt="Avatar Tú"
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+                        </div>
+
                         <p className="text-sm md:text-md">
                             Irina fue engañada por un <strong> mensaje directo </strong> de Instagram 📩 que
-                            <strong> parecía de un amigo 🧑‍🤝‍🧑. </strong> Compartió un <strong> código de SMS 📲 </strong>
-                            y los estafadores <strong> tomaron sus cuentas 🌐, enviando mensajes fraudulentos 🛑 </strong> a su
+                            <strong> parecía de un amigo 🧑‍🤝‍🧑. </strong> Compartió un <strong> código de SMS
+                            📲 </strong>
+                            y los estafadores <strong> tomaron sus cuentas 🌐, enviando mensajes fraudulentos
+                            🛑 </strong> a su
                             círculo cercano 👥.
                         </p>
                         <div className="flex items-center gap-1">
@@ -182,25 +205,23 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
                 </div>
         },
         {
-            cooldown: 100,
-            alignment: "left",
-            content:
-                <div className="flex flex-col items-start animate-fade-in-fast">
-                    <div className="chat-box left">
-                        <p className="text-sm md:text-md">
-                            <strong>Ekaterina Zakharova (44 años)</strong> <br/>
-                            Víctima de Phishing en comercio electrónico
-                        </p>
-                        <small className="chat-time">{getCurrentTime()}</small>
-                    </div>
-                </div>
-        },
-        {
             cooldown: 2000,
             alignment: "left",
-            content:
+            content: (
                 <div className="flex flex-col items-start animate-fade-in-fast">
-                    <div className="chat-box left">
+                    <div className="chat-box left relative p-3 bg-white shadow-lg rounded-lg">
+                        {/* Encabezado: Nombre y Foto en el extremo izquierdo */}
+                        <div className="flex justify-start items-center gap-2 mb-2">
+                            <div className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden">
+                                <img
+                                    src="testimonios/3.webp" // Reemplazar con URL dinámica
+                                    alt="Avatar"
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+                            <span className="text-sm font-bold text-gray-700">Ekaterina Zakharova, 44 años (Víctima de Phishing en comercio electrónico)</span>
+                        </div>
+                        {/* Contenido del mensaje */}
                         <div className="flex items-center">
                             <div className="flex-1">
                                 <AudioPlayer
@@ -224,20 +245,36 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
                         </div>
                     </div>
                 </div>
+            ),
         },
+
         {
             cooldown: 2000,
             alignment: "left",
             content:
                 <div className="flex flex-col items-start animate-fade-in-fast">
                     <div className="chat-box left">
+                        <div className="flex items-center gap-2 mb-1">
+                            <div className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden">
+                                <img
+                                    src="testimonios/3.webp" // Reemplazar con URL dinámica
+                                    alt="Avatar Usuario 1"
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+                            <span className="text-sm font-bold text-gray-700">Ekaterina Zakharova, 44 años (Víctima de Phishing en comercio electrónico)</span>
+                        </div>
+
                         <p className="text-sm md:text-md">
                             Ekaterina, al realizar compras en Alibaba, una <strong> plataforma de comercio en internet
                             🌐🛒, </strong>
-                            fue estafada por un <strong> supuesto proveedor </strong> que presentó <strong> documentos falsos.
+                            fue estafada por un <strong> supuesto proveedor </strong> que presentó <strong> documentos
+                            falsos.
                             📄❌ </strong>
-                            Como consecuencia, realizó <strong> pagos por un pedido que nunca llegó. 💸🚫  </strong> Los estafadores crearon
-                            <strong> perfiles y páginas de seguimiento fraudulentas, simulando ser legítimos </strong>  dentro de la plataforma confiable. 🔍🎭
+                            Como consecuencia, realizó <strong> pagos por un pedido que nunca llegó. 💸🚫 </strong> Los
+                            estafadores crearon
+                            <strong> perfiles y páginas de seguimiento fraudulentas, simulando ser
+                                legítimos </strong> dentro de la plataforma confiable. 🔍🎭
                         </p>
                         <small className="chat-time">{getCurrentTime()}</small>
                     </div>
@@ -256,32 +293,23 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
                 </div>
         },
         {
-            cooldown: 100,
-            alignment: "right",
-            content:
-                <div className="flex flex-col items-end animate-fade-in-fast">
-                    <div className="chat-box right">
-                        <p className="text-sm md:text-md">
-                            <strong>Sheyla Choque Vizcarra (23 años)</strong> <br/>
-                            Víctima de Phishing y Vishing
-                        </p>
-                        <div className="flex items-center gap-1">
-                            <small className="chat-time">{getCurrentTime()}</small>
-                            <img
-                                src="read-double-check-icon.svg"
-                                alt="Double check icon"
-                                className="h-4 w-4 md:h-6 md:w-6"
-                            />
-                        </div>
-                    </div>
-                </div>
-        },
-        {
             cooldown: 2000,
             alignment: "right",
-            content:
+            content: (
                 <div className="flex flex-col items-end animate-fade-in-fast">
-                    <div className="chat-box right">
+                    <div className="chat-box right relative p-3 bg-white shadow-lg rounded-lg">
+                        {/* Encabezado: Nombre y Foto en el extremo derecho */}
+                        <div className="flex justify-end items-center gap-2 mb-2">
+                            <span className="text-sm font-bold text-gray-700">Sheyla Choque Vizcarra, 23 años (Víctima de Phishing y Vishing)</span>
+                            <div className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden">
+                                <img
+                                    src="testimonios/4.webp" // Reemplazar con URL dinámica
+                                    alt="Avatar Tú"
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+                        </div>
+                        {/* Contenido del mensaje */}
                         <div className="flex items-center">
                             <div className="relative flex-shrink-0">
                                 <img
@@ -300,7 +328,8 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
                                 />
                             </div>
                         </div>
-                        <div className="flex items-center gap-1">
+                        {/* Footer con hora e ícono */}
+                        <div className="flex items-center gap-1 mt-2">
                             <small className="chat-time">{getCurrentTime()}</small>
                             <img
                                 src="read-double-check-icon.svg"
@@ -310,16 +339,31 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
                         </div>
                     </div>
                 </div>
+            ),
         },
+
+
         {
             cooldown: 2000,
             alignment: "right",
             content:
                 <div className="flex flex-col items-end animate-fade-in-fast">
                     <div className="chat-box right">
+                        <div className="flex items-center gap-2 mb-1 justify-end">
+                            <span className="text-sm font-bold text-gray-700">Sheyla Choque Vizcarra, 23 años (Víctima de Phishing y Vishing)</span>
+                            <div className="w-8 h-8 rounded-full bg-gray-300 overflow-hidden">
+                                <img
+                                    src="testimonios/4.webp" // Reemplazar con URL dinámica
+                                    alt="Avatar Tú"
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+                        </div>
+
                         <p className="text-sm md:text-md">
                             Sheyla ingresó datos en una <strong> página falsa del BCP 🏦 </strong> y recibió una
-                            <strong> llamada 📞 </strong> del supuesto banco. Proporcionó <strong> códigos de seguridad (TOKEN) 🔑 y perdió 5,000 soles 💸. </strong>
+                            <strong> llamada 📞 </strong> del supuesto banco. Proporcionó <strong> códigos de seguridad
+                            (TOKEN) 🔑 y perdió 5,000 soles 💸. </strong>
                             Tras denunciar, logró recuperar su dinero ✅.
                         </p>
                         <div className="flex items-center gap-1">
@@ -350,7 +394,7 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
         <div className="flex flex-col h-full justify-between p-4">
             <div>
                 <div className="flex justify-center animate-fade-in-fast">
-                    <h1 className="chat-title-box">
+                <h1 className="chat-title-box">
                         Uno de los delitos de mayor crecimiento
                     </h1>
                 </div>
