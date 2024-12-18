@@ -75,7 +75,7 @@ export const Participants = [
         id: 13,
         name: "Sofía Enciso Goicochea",
         subtitle: "Investigación y análisis de datos",
-        avatar: "https://lab-ec-upc.github.io/assets/integrantes/Fotos%20Lab%20Brenda/Sofia.jpg",
+        avatar: "https://media.licdn.com/dms/image/v2/D5603AQGfO3VPB7__kQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1701676111664?e=1740009600&v=beta&t=NsNXkaFBCYQb8EAI7pK8cl7_bL4S_bU69-oTA2Yl3IM",
     },
     {
         id: 14,
