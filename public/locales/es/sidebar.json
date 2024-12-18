@@ -1,0 +1,56 @@
+{
+  "inicio": {
+    "title": "CiberAlerta Perú",
+    "subtitle": "Bienvenidos...",
+    "message": "Bienvenidos al nuevo especial",
+    "time": "Jueves"
+  },
+  "ciberalerta-peru": {
+    "title": "Ciberdelincuencia",
+    "subtitle": "Ciberdelincuencia",
+    "message": "¿Qué es la ciberdelincuencia?",
+    "time": "18:18"
+  },
+  "un-poco-de-data": {
+    "title": "Un poco de data",
+    "subtitle": "Un poco de data",
+    "message": "La ciberdelincuencia en cifras",
+    "time": "18:16"
+  },
+  "el-phishing": {
+    "title": "El “Phishing”",
+    "subtitle": "El “Phishing”",
+    "message": "Uno de los ciberdelitos con mayor crecimiento",
+    "time": "18:10"
+  },
+  "testimonios": {
+    "title": "Testimonios",
+    "subtitle": "Testimonios",
+    "message": "Algunas víctimas de ciberdelitos y sus historias",
+    "time": "17:38"
+  },
+  "opiniones-sobre-la-ciberdelincuencia": {
+    "title": "Opiniones sobre la ciberdelincuencia",
+    "subtitle": "Especialistas",
+    "message": "¿Qué dicen los especialistas?",
+    "time": "17:35"
+  },
+  "prevencion-y-denuncia": {
+    "title": "Prevención y denuncia",
+    "subtitle": "Prevención y denuncia",
+    "message": "¿Cómo prevenir estos ciberdelitos?",
+    "time": "17:26"
+  },
+  "verificador-de-links": {
+    "title": "Verificador de enlaces",
+    "subtitle": "Verificador de enlaces",
+    "message": "¡Descubre a la nueva verificadora de enlaces!",
+    "time": "16:11"
+  },
+  "creditos": {
+    "title": "Créditos",
+    "subtitle": "Créditos",
+    "message": "Este especial fue hecho por...",
+    "time": "00:08"
+  }
+}

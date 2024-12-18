@@ -4,6 +4,7 @@ import AudioPlayer from "../components/AudioPlayer.tsx";
 import getCurrentTime from "../components/CurrentTime.ts";
 import PrevFabButton from "../components/PrevFabButton.tsx";
 import NextFabButton from "../components/NextFabButton.tsx";
+import LoadingDots from "../components/LoadingDots.tsx";
 
 interface Props {
     visibleElements: number;
@@ -17,7 +18,7 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
     const elements = [
 
         {
-            cooldown: 1000,
+            cooldown: 800,
             alignment: "left",
             content: (
                 <div className="flex flex-col items-start animate-fade-in-fast">
@@ -61,7 +62,7 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
         },
 
         {
-            cooldown: 2000,
+            cooldown: 800,
             alignment: "left",
             content:
                 <div className="flex flex-col items-start animate-fade-in-fast">
@@ -93,7 +94,7 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
                 </div>
         },
         {
-            cooldown: 12000,
+            cooldown: 800,
             alignment: "center",
             content:
                 <div className="flex flex-col items-center animate-fade-in-fast">
@@ -106,7 +107,7 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
         },
 
         {
-            cooldown: 2000,
+            cooldown: 800,
             alignment: "right",
             content: (
                 <div className="flex flex-col items-end animate-fade-in-fast">
@@ -154,10 +155,8 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
                 </div>
             ),
         },
-
-
         {
-            cooldown: 2000,
+            cooldown: 800,
             alignment: "right",
             content:
                 <div className="flex flex-col items-end animate-fade-in-fast">
@@ -205,7 +204,7 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
                 </div>
         },
         {
-            cooldown: 2000,
+            cooldown: 800,
             alignment: "left",
             content: (
                 <div className="flex flex-col items-start animate-fade-in-fast">
@@ -247,9 +246,8 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
                 </div>
             ),
         },
-
         {
-            cooldown: 2000,
+            cooldown: 800,
             alignment: "left",
             content:
                 <div className="flex flex-col items-start animate-fade-in-fast">
@@ -293,7 +291,7 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
                 </div>
         },
         {
-            cooldown: 2000,
+            cooldown: 800,
             alignment: "right",
             content: (
                 <div className="flex flex-col items-end animate-fade-in-fast">
@@ -341,10 +339,8 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
                 </div>
             ),
         },
-
-
         {
-            cooldown: 2000,
+            cooldown: 800,
             alignment: "right",
             content:
                 <div className="flex flex-col items-end animate-fade-in-fast">
@@ -429,14 +425,7 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
                         </div>
                     ))}
                     {isLoading && (
-                        <div
-                            className={`w-full flex ${elements[visibleElements].alignment === "left" ? "justify-start" : "justify-end"}`}>
-                            <div className="flex items-end space-x-1 px-4 py-3 rounded-xl bg-gray-100 w-fit">
-                                <div className="h-2 w-2 rounded-full bg-gray-400 animate-pulse"></div>
-                                <div className="h-2 w-2 rounded-full bg-gray-400 animate-pulse"></div>
-                                <div className="h-2 w-2 rounded-full bg-gray-400 animate-pulse"></div>
-                            </div>
-                        </div>
+                        <LoadingDots alignment={elements[visibleElements].alignment} />
                     )}
                 </div>
             </div>

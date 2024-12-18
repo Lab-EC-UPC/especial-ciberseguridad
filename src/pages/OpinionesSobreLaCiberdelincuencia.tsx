@@ -2,6 +2,7 @@ import {useEffect, useRef, useState} from "react";
 import getCurrentTime from "../components/CurrentTime.ts";
 import PrevFabButton from "../components/PrevFabButton.tsx";
 import NextFabButton from "../components/NextFabButton.tsx";
+import LoadingDots from "../components/LoadingDots.tsx";
 
 interface Props {
     visibleElements: number;
@@ -15,7 +16,7 @@ export default function OpinionesSobreLaCiberdelincuencia({visibleElements,setVi
     const elements = [
 
         {
-            cooldown: 1000,
+            cooldown: 800,
             alignment: "left",
             content:
                 <div className="flex flex-col items-start animate-fade-in-fast">
@@ -24,7 +25,7 @@ export default function OpinionesSobreLaCiberdelincuencia({visibleElements,setVi
                         <div className="flex items-center gap-2 mb-1">
                             <div className="rounded-full bg-gray-300 overflow-hidden aspect-square w-10 min-w-[40px] min-h-[40px] ">
                                 <img
-                                    src="https://github.com/Lab-EC-UPC/assets/blob/main/especial-ciberseguridad/especialistas/Diego%20Oviedo.jpeg?raw=true" // Reemplazar con URL dinámica
+                                    src="especialistas/diego.webp" // Reemplazar con URL dinámica
                                     alt="Avatar Usuario 1"
                                     className="w-full h-full object-cover aspect-square"
                                 />
@@ -44,7 +45,7 @@ export default function OpinionesSobreLaCiberdelincuencia({visibleElements,setVi
                 </div>
         },
         {
-            cooldown: 5000,
+            cooldown: 2000,
             alignment: "center",
             content:
                 <div className="flex flex-col items-center animate-fade-in-fast">
@@ -56,7 +57,7 @@ export default function OpinionesSobreLaCiberdelincuencia({visibleElements,setVi
                 </div>
         },
         {
-            cooldown: 2000,
+            cooldown: 800,
             alignment: "right",
             content:
                 <div className="flex flex-col items-end animate-fade-in-fast">
@@ -66,7 +67,7 @@ export default function OpinionesSobreLaCiberdelincuencia({visibleElements,setVi
                                 className="text-sm font-bold text-gray-700">Jose Carlos Vargas (Presidente de ISACA)</span>
                             <div className="rounded-full bg-gray-300 overflow-hidden aspect-square w-10 min-w-[40px] min-h-[40px]">
                                 <img
-                                    src="https://github.com/Lab-EC-UPC/assets/blob/main/especial-ciberseguridad/especialistas/Jose%20Carlos%20Vargas.jpeg?raw=true" // Reemplazar con URL dinámica
+                                    src="especialistas/diego.webp" // Reemplazar con URL dinámica
                                     alt="Avatar Tú"
                                     className="w-full h-full object-cover aspect-square"
                                 />
@@ -88,7 +89,7 @@ export default function OpinionesSobreLaCiberdelincuencia({visibleElements,setVi
         },
 
         {
-            cooldown: 5000,
+            cooldown: 2000,
             alignment: "center",
             content:
                 <div className="flex flex-col items-center animate-fade-in-fast">
@@ -100,7 +101,7 @@ export default function OpinionesSobreLaCiberdelincuencia({visibleElements,setVi
                 </div>
         },
         {
-            cooldown: 5000,
+            cooldown: 800,
             alignment: "left",
             content:
                 <div className="flex flex-col items-start animate-fade-in-fast">
@@ -109,7 +110,7 @@ export default function OpinionesSobreLaCiberdelincuencia({visibleElements,setVi
                         <div className="flex items-center gap-2 mb-1">
                             <div className="rounded-full bg-gray-300 overflow-hidden aspect-square w-10 min-w-[40px] min-h-[40px]">
                                 <img
-                                    src="https://github.com/Lab-EC-UPC/assets/blob/main/especial-ciberseguridad/especialistas/VictorRuiz_squared.jpg?raw=true" // Reemplazar con URL dinámica
+                                    src="especialistas/victor.webp" // Reemplazar con URL dinámica
                                     alt="Avatar Usuario 1"
                                     className="w-full h-full object-cover aspect-square"
                                 />
@@ -138,7 +139,7 @@ export default function OpinionesSobreLaCiberdelincuencia({visibleElements,setVi
                 </div>
         },
         {
-            cooldown: 5000,
+            cooldown: 800,
             alignment: "right",
             content:
                 <div className="flex flex-col items-end animate-fade-in-fast">
@@ -148,7 +149,7 @@ export default function OpinionesSobreLaCiberdelincuencia({visibleElements,setVi
                                 className="text-sm font-bold text-gray-700">Erick Iriarte (Especialista en Derecho Digital)</span>
                             <div className="rounded-full bg-gray-300 overflow-hidden aspect-square w-10 min-w-[40px] min-h-[40px]">
                                 <img
-                                    src="https://github.com/Lab-EC-UPC/assets/blob/main/especial-ciberseguridad/especialistas/ErickIriarte_squared.jpg?raw=true" // Reemplazar con URL dinámica
+                                    src="especialistas/erick.webp" // Reemplazar con URL dinámica
                                     alt="Avatar Tú"
                                     className="w-full h-full object-cover aspect-square"
                                 />
@@ -182,7 +183,7 @@ export default function OpinionesSobreLaCiberdelincuencia({visibleElements,setVi
         },
 
         {
-            cooldown: 5000,
+            cooldown: 800,
             alignment: "left",
             content:
                 <div className="flex flex-col items-start animate-fade-in-fast">
@@ -191,7 +192,7 @@ export default function OpinionesSobreLaCiberdelincuencia({visibleElements,setVi
                         <div className="flex items-center gap-2 mb-1">
                             <div className="rounded-full bg-gray-300 overflow-hidden aspect-square w-10 min-w-[40px] min-h-[40px]">
                                 <img
-                                    src="https://github.com/Lab-EC-UPC/assets/blob/main/especial-ciberseguridad/especialistas/JorgeZeballos_squared.jpg?raw=true" // Reemplazar con URL dinámica
+                                    src="especialistas/jorge.webp" // Reemplazar con URL dinámica
                                     alt="Avatar Usuario 1"
                                     className="w-full h-full object-cover aspect-square"
                                 />
@@ -259,14 +260,7 @@ export default function OpinionesSobreLaCiberdelincuencia({visibleElements,setVi
                         </div>
                     ))}
                     {isLoading && (
-                        <div
-                            className={`w-full flex ${elements[visibleElements].alignment === "left" ? "justify-start" : "justify-end"}`}>
-                            <div className="flex items-end space-x-1 px-4 py-3 rounded-xl bg-gray-100 w-fit">
-                                <div className="h-2 w-2 rounded-full bg-gray-400 animate-pulse"></div>
-                                <div className="h-2 w-2 rounded-full bg-gray-400 animate-pulse"></div>
-                                <div className="h-2 w-2 rounded-full bg-gray-400 animate-pulse"></div>
-                            </div>
-                        </div>
+                        <LoadingDots alignment={elements[visibleElements].alignment} />
                     )}
                 </div>
             </div>

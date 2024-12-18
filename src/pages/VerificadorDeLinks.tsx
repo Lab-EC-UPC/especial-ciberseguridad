@@ -3,6 +3,7 @@ import jsQR from 'jsqr';
 import PrevFabButton from "../components/PrevFabButton.tsx";
 import NextFabButton from "../components/NextFabButton.tsx";
 import {PaperAirplaneIcon, PhotoIcon, QrCodeIcon} from "@heroicons/react/24/solid";
+import LoadingDots from "../components/LoadingDots.tsx";
 
 interface Props {
     visibleElements: number;
@@ -31,7 +32,7 @@ export default function VerificadorDeLinks({visibleElements,setVisibleElements,r
                 </div>
         },
         {
-            cooldown: 1000,
+            cooldown: 500,
             alignment: "right",
             content:
                 <div className="flex flex-col items-end">
@@ -50,7 +51,7 @@ export default function VerificadorDeLinks({visibleElements,setVisibleElements,r
                 </div>
         },
         {
-            cooldown: 1000,
+            cooldown: 500,
             alignment: "right",
             content:
                 <div className="flex flex-col items-end">
@@ -86,7 +87,7 @@ export default function VerificadorDeLinks({visibleElements,setVisibleElements,r
                 </div>
         },
         {
-            cooldown: 1000,
+            cooldown: 500,
             alignment: "center",
             content:
                 <div className="flex flex-col items-center">
@@ -339,14 +340,7 @@ export default function VerificadorDeLinks({visibleElements,setVisibleElements,r
                     ))}
                     {
                         isLoading && (
-                            <div
-                                className={`w-full flex py-2 ${elements[visibleElements].alignment === "left" ? "justify-start" : "justify-end"}`}>
-                                <div className="flex items-center space-x-1 px-4 py-3 rounded-xl bg-green-chat-box w-fit">
-                                    <div className="h-2 w-2 rounded-full bg-gray-400 animate-pulse"></div>
-                                    <div className="h-2 w-2 rounded-full bg-gray-400 animate-pulse"></div>
-                                    <div className="h-2 w-2 rounded-full bg-gray-400 animate-pulse"></div>
-                                </div>
-                            </div>
+                            <LoadingDots alignment={elements[visibleElements].alignment} />
                         )
                     }
                 </div>
@@ -438,7 +432,7 @@ export default function VerificadorDeLinks({visibleElements,setVisibleElements,r
                             <button
                                 disabled={isFetchingResponse || isLoadingFileUpload}
                                 onClick={() => sendUrlToEndpoint(text).finally(() => setText(''))}
-                                className="text-green-dark hover:text-green duration-200 p-3 rounded-full">
+                                className="bg-green-dark hover:bg-green duration-200 text-white p-3 rounded-full shadow-lg">
                                 <PaperAirplaneIcon className="w-4 h-4 md:w-6 md:h-6"/>
                             </button>
                         </div>

@@ -1,4 +1,5 @@
 import {Link} from "react-router";
+import {useTranslation} from "react-i18next";
 
 // interface OutletContext {
 //     toggleSidebar: () => void;
@@ -6,6 +7,8 @@ import {Link} from "react-router";
 
 export default function Inicio() {
     // const { toggleSidebar } = useOutletContext<OutletContext>();
+
+    const { t } = useTranslation(["general"]);
 
     return (
         <div className="grid gap-56 p-4">
@@ -20,22 +23,22 @@ export default function Inicio() {
                     </div>
                     <div className="bg-green-light text-white px-8 md:px-24 py-4">
                         <h1 className="md:text-2xl text-center">
-                            Mantente alerta ante los
+                            {t("title")}
                             <br/>
-                            <span className="font-bold">peligros online</span>
+                            <span className="font-bold">{t("title-2")}</span>
                         </h1>
                     </div>
                     <div className="grid gap-2 w-full max-w-xs">
                         <Link to="/ciberdelincuencia">
                             <button
                                 className="button-green grid gap-2 w-full max-w-xs animate-scale-loop">
-                                Comenzar 🚀
+                                {t("start")} 🚀
                             </button>
                         </Link>
                         <Link to="/verificador-de-links">
                             <button
                                 className="button-green grid gap-2 w-full max-w-xs">
-                                Verificador de links 🔗
+                                {t("link-verifier")} 🔗
                             </button>
                         </Link>
                     </div>

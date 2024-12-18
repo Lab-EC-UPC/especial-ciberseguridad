@@ -1,0 +1,56 @@
+{
+  "inicio": {
+    "title": "CyberAlert Peru",
+    "subtitle": "Welcome...",
+    "message": "Welcome to the new special",
+    "time": "Thursday"
+  },
+  "ciberalerta-peru": {
+    "title": "Cybercrime",
+    "subtitle": "Cybercrime",
+    "message": "What is cybercrime?",
+    "time": "18:18"
+  },
+  "un-poco-de-data": {
+    "title": "A bit of data",
+    "subtitle": "A bit of data",
+    "message": "Cybercrime in numbers",
+    "time": "18:16"
+  },
+  "el-phishing": {
+    "title": "Phishing",
+    "subtitle": "Phishing",
+    "message": "One of the fastest-growing cybercrimes",
+    "time": "18:10"
+  },
+  "testimonios": {
+    "title": "Testimonials",
+    "subtitle": "Testimonials",
+    "message": "Some victims of cybercrimes and their stories",
+    "time": "17:38"
+  },
+  "opiniones-sobre-la-ciberdelincuencia": {
+    "title": "Opinions on cybercrime",
+    "subtitle": "Specialists",
+    "message": "What do the experts say?",
+    "time": "17:35"
+  },
+  "prevencion-y-denuncia": {
+    "title": "Prevention and reporting",
+    "subtitle": "Prevention and reporting",
+    "message": "How to prevent these cybercrimes?",
+    "time": "17:26"
+  },
+  "verificador-de-links": {
+    "title": "Link verifier",
+    "subtitle": "Link verifier",
+    "message": "Meet the new link verifier!",
+    "time": "16:11"
+  },
+  "creditos": {
+    "title": "Credits",
+    "subtitle": "Credits",
+    "message": "This special was created by...",
+    "time": "00:08"
+  }
+}

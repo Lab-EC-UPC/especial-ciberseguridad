@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import {Participants} from "../content/Participants.ts";
 import PrevFabButton from "../components/PrevFabButton.tsx";
+import {useTranslation} from "react-i18next";
 
 interface Participant {
     name: string;
@@ -30,6 +31,7 @@ const ParticipantCard = (participant: Participant) => {
 export default function Creditos () {
     const [visibleElements, setVisibleElements] = useState(0);
     const participants = Participants;
+    const { t } = useTranslation(["creditos"])
 
     useEffect(() => {
         if (visibleElements < participants.length) {
@@ -53,14 +55,12 @@ export default function Creditos () {
                             ECDATA - UPC
                         </h1>
                         <small>
-                            <strong>Grupo 22 miembros</strong>
+                            <strong>
+                                {t("grupo")}
+                            </strong>
                         </small>
                         <p className="text-sm md:text-md">
-                            Este informe fue elaborado por los alumnos del Laboratorio de Periodismo Innovador de ECData
-                            y
-                            la Universidad Peruana de Ciencias Aplicadas, bajo la supervisión y guía de periodistas de
-                            El
-                            Comercio.
+                            {t("descripcion")}
                         </p>
                     </div>
                 </div>
@@ -77,7 +77,7 @@ export default function Creditos () {
                                 >
                                     <ParticipantCard
                                         name={participant.name}
-                                        subtitle={participant.subtitle}
+                                        subtitle={t(`${participant.id}`)}
                                         avatar={participant.avatar}
                                     />
                                 </div>

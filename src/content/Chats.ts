@@ -1,26 +1,6 @@
-export const Chats = [
-    // {
-    //     id: '',
-    //     link: "/formatos-ejemplo-para-borrar",
-    //     title: "Formatos para borrar",
-    //     message: "Esto es para guiarse, al final se borra",
-    //     time: "18:16",
-    //     avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUJHEpo9ACG4d7XCFxS3pRgteZg4gb64dKIg&s",
-    //     isPinned: true,
-    //     isMute: false,
-    //     isRead: false,
-    // },
-    // {
-    //     id: '',
-    //     link: "/ejemplo-chat",
-    //     title: "Ejemplo Chat",
-    //     message: "Esto es para guiarse, al final se borra",
-    //     time: "18:16",
-    //     avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUJHEpo9ACG4d7XCFxS3pRgteZg4gb64dKIg&s",
-    //     isPinned: true,
-    //     isMute: false,
-    //     isRead: false,
-    // },
+import {Route} from "../utils/Route.ts";
+
+export const Chats: Route[] = [
     {
         id: 'inicio',
         link: "/",
@@ -118,6 +98,7 @@ export const Chats = [
         isRead: false,
     },
     {
+        id: 'creditos',
         link: "/creditos",
         title: "Créditos",
         subtitle: "Créditos",

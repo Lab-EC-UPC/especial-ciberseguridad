@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
+import {useTranslation} from "react-i18next";
 
 export default function TeaserSplashScreen({ onSkip }: { onSkip: () => void }) {
     const [isMuted, setIsMuted] = useState(true);
     const [videoSrc, setVideoSrc] = useState("");
+    const { t } = useTranslation(["general"]);
 
     const desktopVideo =
         "https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/ec-ciberseguridad-horizontal_webm_hd.webm";
@@ -53,7 +55,7 @@ export default function TeaserSplashScreen({ onSkip }: { onSkip: () => void }) {
                     onClick={onSkip}
                     className="button-green animate-scale-loop"
                 >
-                    Ver especial
+                    {t("btn-skip-splash")}
                 </button>
                 <button
                     onClick={() => setIsMuted(!isMuted)}

@@ -1,26 +1,20 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { XMarkIcon, PencilIcon, ChatBubbleBottomCenterIcon } from "@heroicons/react/24/outline";
-import { SpeakerXMarkIcon} from "@heroicons/react/24/solid";
-
-
-interface Route {
-    link: string;
-    title: string;
-    message: string;
-    time: string;
-    avatar: string;
-    isPinned: boolean;
-    isMute: boolean;
-    isRead: boolean;
-}
+import { XMarkIcon } from "@heroicons/react/24/outline";
+import {LanguageIcon, SpeakerXMarkIcon} from "@heroicons/react/24/solid";
+import {Dropdown, DropdownItem, DropdownMenu, DropdownTrigger} from "@nextui-org/dropdown";
+import {useTranslation} from "react-i18next";
+import {Route} from "../utils/Route.ts";
 
 interface SidebarProps {
     routes: Route[];
     toggleSidebar: () => void;
+    switchLanguage: (lang: string) => void;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ routes, toggleSidebar }) => {
+const Sidebar: React.FC<SidebarProps> = ({ routes, toggleSidebar, switchLanguage }) => {
+    const { t } = useTranslation(["sidebar"]);
+
     const [readStatus, setReadStatus] = useState<Record<string, boolean>>(
         routes.reduce((acc, route) => {
             acc[route.link] = route.isRead || false;
@@ -43,16 +37,33 @@ const Sidebar: React.FC<SidebarProps> = ({ routes, toggleSidebar }) => {
                     Chats
                 </h1>
                 <div className="hidden md:block">
-                    <div className="flex gap-2 h-6 text-grey">
-                        <PencilIcon />
-                        <ChatBubbleBottomCenterIcon />
+                    <div className="flex gap-2">
+                        <Dropdown className="bg-white p-4 shadow">
+                            <DropdownTrigger>
+                                <LanguageIcon className="h-6 text-grey hover:text-green-dark hover:scale-90 duration-200 hover:cursor-pointer" />
+                            </DropdownTrigger>
+                            <DropdownMenu>
+                                <DropdownItem key="es">
+                                    <button onClick={() => switchLanguage("es")}
+                                            className="p-2 hover:scale-95 duration-300">
+                                        <img src="language/spanish-flag.svg" alt="Spanish" className="h-8 w-8"/>
+                                    </button>
+                                </DropdownItem>
+                                <DropdownItem key="en">
+                                    <button onClick={() => switchLanguage("en")}
+                                            className="p-2 hover:scale-95 duration-300">
+                                    <img src="language/english-flag.svg" alt="English" className="h-8 w-8"/>
+                                    </button>
+                                </DropdownItem>
+                            </DropdownMenu>
+                        </Dropdown>
                     </div>
                 </div>
                 <button
                     className="md:hidden"
                     onClick={toggleSidebar}
                 >
-                    <XMarkIcon className="h-6 text-grey"/>
+                <XMarkIcon className="h-6 text-grey"/>
                 </button>
             </div>
             <div className="flex-1 overflow-auto">
@@ -76,10 +87,12 @@ const Sidebar: React.FC<SidebarProps> = ({ routes, toggleSidebar }) => {
                             <div className="flex-1 border-b border-grey-light">
                                 <div className="pb-4">
                                     <div className="flex justify-between items-center">
-                                        <h2 className="font-medium font-tomorrow text-lg md:text-xl">{route.title}</h2>
+                                        <h2 className="font-medium font-tomorrow text-lg md:text-xl">
+                                            {t(`${route.id}.title`)}
+                                        </h2>
                                         <div className="grid items-center">
                                         <span className="text-xs text-gray-400 ml-2">
-                                            {route.time}
+                                            {t(`${route.id}.time`)}
                                         </span>
                                         </div>
                                     </div>
@@ -98,7 +111,9 @@ const Sidebar: React.FC<SidebarProps> = ({ routes, toggleSidebar }) => {
                                                     className="h-4 w-4 md:h-6 md:w-6"
                                                 />
                                             )}
-                                            <p className="text-sm text-gray-500 truncate">{route.message}</p>
+                                            <p className="text-sm text-gray-500 truncate">
+                                                {t(`${route.id}.message`)}
+                                            </p>
                                         </div>
                                         <div className="flex gap-1">
                                             {
