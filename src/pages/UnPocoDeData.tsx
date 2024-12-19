@@ -3,6 +3,8 @@ import NextFabButton from "../components/NextFabButton.tsx";
 import getCurrentTime from "../components/CurrentTime.ts";
 import PrevFabButton from "../components/PrevFabButton.tsx";
 import LoadingDots from "../components/LoadingDots.tsx";
+import {useTranslation} from "react-i18next";
+
 
 interface Props {
     visibleElements: number;
@@ -12,7 +14,7 @@ interface Props {
 export default function UnPocoDeData ({visibleElements,setVisibleElements} :  Props) {
     const [isLoading, setIsLoading] = useState(false);
     const lastElementRef = useRef<HTMLDivElement>(null);
-
+    const{ t } = useTranslation(["data"])
     const elements = [
         {
             cooldown: 800,
@@ -21,9 +23,9 @@ export default function UnPocoDeData ({visibleElements,setVisibleElements} :  Pr
                 <div className="flex flex-col items-end animate-fade-in-fast">
                     <div className="chat-box right">
                         <p className="text-sm md:text-md">
-                            Solo el <span className="font-bold">24% de usuarios en la región</span> (Latinoamérica)
-                            poseen un <span className="font-bold">software de seguridad instalado </span>
-                            en sus dispositivos. 🔒📉💻
+                            {t("SegundoChat1")} <span className="font-bold">{t("SegundoChat2")}</span>
+                            {t("SegundoChat3")} <span className="font-bold">{t("SegundoChat4")} </span>
+                            {t("SegundoChat5")}. 🔒📉💻
                         </p>
                         <div className="flex items-center gap-1">
                             <small className="chat-time">{getCurrentTime()}</small>
@@ -43,8 +45,8 @@ export default function UnPocoDeData ({visibleElements,setVisibleElements} :  Pr
                 <div className="flex flex-col items-start animate-fade-in-fast">
                     <div className="chat-box left">
                         <p className="text-sm md:text-md">
-                            Según Cybersecurity Ventures, en 2015 la ciberdelincuencia tenía un costo de
-                            <span className="font-bold"> US$3 billones</span>. 💻💸
+                            {t("TercerChat1")}
+                            <span className="font-bold"> {t("TercerChat2")}</span>. 💻💸
                         </p>
                         <small className="chat-time">{getCurrentTime()}</small>
                     </div>
@@ -57,8 +59,7 @@ export default function UnPocoDeData ({visibleElements,setVisibleElements} :  Pr
                 <div className="flex flex-col items-end animate-fade-in-fast">
                     <div className="chat-box right">
                         <p className="text-sm md:text-md">
-                            Se estima que para el 2025, el costo de los daños de la ciberdelincuencia será
-                            de <span className="font-bold">US$10 billones</span>. 💰🌐⚠️
+                            {t("CuartoChat1")} <span className="font-bold">{t("CuartoChat2")}</span>. 💰🌐⚠️
                         </p>
                         <div className="flex items-center gap-1">
                             <small className="chat-time">{getCurrentTime()}</small>
@@ -78,9 +79,9 @@ export default function UnPocoDeData ({visibleElements,setVisibleElements} :  Pr
                 <div className="flex flex-col items-start animate-fade-in-fast">
                     <div className="chat-box left">
                         <p className="text-sm md:text-md">
-                            Esto convierte a la ciberdelincuencia en la <span className="font-bold">tercera economía</span>
-                            más grande del mundo 🌍, solo detrás de <span className="font-bold">Estados Unidos</span> 🇺🇸 y
-                            <span className="font-bold"> China</span> 🇨🇳.
+                            {t("QuintoChat1")} <span className="font-bold">{t("QuintoChat2")} </span>
+                             🌍, {t("QuintoChat3")} <span className="font-bold">{t("QuintoChat4")}</span> 🇺🇸 {t("QuintoChat6")}
+                            <span className="font-bold"> {t("QuintoChat5")}</span> 🇨🇳.
 
                         </p>
                         <small className="chat-time">{getCurrentTime()}</small>
@@ -94,8 +95,7 @@ export default function UnPocoDeData ({visibleElements,setVisibleElements} :  Pr
                 <div className="flex flex-col items-end animate-fade-in-fast">
                     <div className="chat-box right">
                         <p className="text-sm md:text-md">
-                            En el 2025, el costo de los daños de la ciberdelincuencia será superior incluso
-                            al PIB combinado de Alemania, Italia y Canadá. 💰🌐📉
+                            {t("SextoChat1")} 💰🌐📉
                         </p>
                         <div className="flex items-center gap-1">
                             <small className="chat-time">{getCurrentTime()}</small>
@@ -115,7 +115,7 @@ export default function UnPocoDeData ({visibleElements,setVisibleElements} :  Pr
                 <div className="flex flex-col items-end animate-fade-in-fast">
                     <div className="chat-box right">
                         <p className="text-sm md:text-md">
-                            <span className="font-bold">Evolución del costo en daños de la ciberdelincuencia</span>
+                            <span className="font-bold">{t("Grafico1")}</span>
                         </p>
                         <iframe
                             className="flourish-embed flourish-chart"
@@ -126,7 +126,7 @@ export default function UnPocoDeData ({visibleElements,setVisibleElements} :  Pr
                             allowFullScreen
                             title="Flourish Chart"
                         />
-                        <p className="text-sm md:text-md">Fuente: DIVINDAT</p>
+                        <p className="text-sm md:text-md">{t("Grafico1.1")}</p>
                         <div className="flex items-center gap-1">
                             <small className="chat-time">{getCurrentTime()}</small>
                             <img
@@ -145,10 +145,8 @@ export default function UnPocoDeData ({visibleElements,setVisibleElements} :  Pr
                 <div className="flex flex-col items-start animate-fade-in-fast">
                     <div className="chat-box left">
                         <p className="text-sm md:text-md">
-                            Entre enero y junio de 2024, se reportaron <span className="font-bold">20,704 delitos
-                    informáticos</span> en el Perú. 📈💻 Esta cifra es casi <span className="font-bold">seis veces más alta</span>
-                            que la registrada en el <span className="font-bold">mismo periodo del
-                    2020</span>. ⚠️🌐
+                            {t("SepChat1")} <span className="font-bold">{t("SepChat2")}</span> {t("SepChat3")}. 📈💻 {t("SepChat4")} <span className="font-bold">{t("SepChat5")}</span>
+                            {t("SepChat6")} <span className="font-bold">{t("SepChat7")}</span>. ⚠️🌐
                         </p>
                         <small className="chat-time">{getCurrentTime()}</small>
                     </div>
@@ -161,8 +159,8 @@ export default function UnPocoDeData ({visibleElements,setVisibleElements} :  Pr
                 <div className="flex flex-col items-start animate-fade-in-fast">
                     <div className="chat-box left">
                         <p className="text-sm md:text-md">
-                            <span className="font-bold">Delitos informáticos en el Perú (reporte)</span>
-                            <br></br>Reporte semestral y anual de los delitos informáticos entre 2020 y 2024 en el Perú</p>
+                            <span className="font-bold">{t("Grafico2")}</span>
+                            <br></br>{t("Grafico2.1")}</p>
                         <iframe
                             className="flourish-embed flourish-chart"
                             src="https://public.flourish.studio/visualisation/20785916/embed"
@@ -172,7 +170,7 @@ export default function UnPocoDeData ({visibleElements,setVisibleElements} :  Pr
                             allowFullScreen
                             title="Flourish Chart"
                         />
-                        <p className="text-sm md:text-md">Fuente: DIVINDAT</p>
+                        <p className="text-sm md:text-md">{t("Grafico2.2")}</p>
                         <div className="flex items-center gap-1">
                             <small className="chat-time">{getCurrentTime()}</small>
                             <img
@@ -191,7 +189,7 @@ export default function UnPocoDeData ({visibleElements,setVisibleElements} :  Pr
                 <div className="flex flex-col items-end animate-fade-in-fast">
                     <div className="chat-box right">
                         <p className="text-sm md:text-md">
-                            <span className="font-bold">¿Qué delito informático se denuncia más?</span>⚖️💻
+                            <span className="font-bold">{t("OctChat1")}</span>⚖️💻
                         </p>
                         <div className="flex items-center gap-1">
                             <small className="chat-time">{getCurrentTime()}</small>
@@ -206,10 +204,10 @@ export default function UnPocoDeData ({visibleElements,setVisibleElements} :  Pr
                 <div className="flex flex-col items-end animate-fade-in-fast">
                     <div className="chat-box right">
                         <p className="text-sm md:text-md">
-                            La División de Investigación de Delitos de Alta Tecnología (Divindat) de la PNP 📊💻 recibió
-                            <span className="font-bold"> 27,934 casos de delitos informáticos</span> en 2024. De estos,
-                            <span className="font-bold"> 19,067 fueron fraudesinformáticos</span> 💳, representando el
-                            <span className="font-bold"> 68.3% del total</span>. ⚠️📈
+                            {t("NonChat1")}
+                            <span className="font-bold"> {t("NonChat2")}</span> {t("NonChat3")}
+                            <span className="font-bold"> {t("NonChat4")}</span> 💳, {t("NonChat5")}
+                            <span className="font-bold"> {t("NonChat6")}</span>. ⚠️📈
                         </p>
                         <div className="flex items-center gap-1">
                             <small className="chat-time">{getCurrentTime()}</small>
@@ -224,8 +222,8 @@ export default function UnPocoDeData ({visibleElements,setVisibleElements} :  Pr
                 <div className="flex flex-col items-start animate-fade-in-fast">
                     <div className="chat-box left">
                         <p className="text-sm md:text-md">
-                            <span className="font-bold">Delitos informáticos más denunciados en 2024 en el Perú</span>
-                            <br></br>Modalidades (enero a agosto del 2024)
+                            <span className="font-bold">{t("Grafico3")}</span>
+                            <br></br>{t("Grafico3.1")}
                         </p>
                         <iframe
                             className="flourish-embed flourish-charts"
@@ -266,16 +264,16 @@ export default function UnPocoDeData ({visibleElements,setVisibleElements} :  Pr
             <div>
                 <div className="flex justify-center animate-fade-in-fast">
                     <h1 className="chat-title-box">
-                        La ciberdelincuencia en cifras
+                        {t("tituloData")}
                     </h1>
                 </div>
                 <div className="flex flex-col items-start animate-fade-in-fast">
                     <div className="chat-box left">
                         <p className="text-sm md:text-md">
-                            En el año 2023, la La <span className="font-bold">Policía Nacional del Perú (PNP) </span>
-                            registró un promedio de <span
-                            className="font-bold">107 intentos de ciberataques por minuto. </span>
-                            💻⚠️👮‍♂️
+                            {t("PrimerChat1")} <span className="font-bold">{t("PrimerChat2")} </span>
+                            {t("PrimerChat3")} <span
+                            className="font-bold">{t("PrimerChat4")} </span>
+                            .💻⚠️👮‍♂️
                         </p>
                         <small className="chat-time">{getCurrentTime()}</small>
                     </div>

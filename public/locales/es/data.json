@@ -1,0 +1,58 @@
+{
+  "tituloData": "La ciberdelincuencia en cifras",
+  "PrimerChat1": "En el año 2023, la",
+  "PrimerChat2": "Policía Nacional del Perú (PNP)",
+  "PrimerChat3": "registró un promedio de",
+  "PrimerChat4": "107 intentos de ciberataques por minuto",
+
+  "SegundoChat1": "Solo el",
+  "SegundoChat2": "24% de usuarios en la región (Latinoamérica) ",
+  "SegundoChat3": "poseen un",
+  "SegundoChat4": "software de seguridad instalado",
+  "SegundoChat5": "en sus dispositivos",
+
+  "TercerChat1": "Según Cybersecurity Ventures, en 2015 la ciberdelincuencia tenía un costo de",
+  "TercerChat2": "US$3 billones",
+
+  "CuartoChat1": "Se estima que para el 2025, el costo de los daños de la ciberdelincuencia será de",
+  "CuartoChat2": "US$10 billones",
+
+  "QuintoChat1": "Esto convierte a la ciberdelincuencia en la",
+  "QuintoChat2": "tercera economía más grande del mundo solo detrás de",
+  "QuintoChat3": "solo detrás de",
+  "QuintoChat4": "Estados Unidos",
+  "QuintoChat5": "China",
+  "QuintoChat6": "y",
+
+  "SextoChat1": "En el 2025, el costo de los daños de la ciberdelincuencia será superior incluso al PIB combinado de Alemania, Italia y Canadá.",
+
+  "SepChat1": "Entre enero y junio de 2024, se reportaron",
+  "SepChat2": "20,704 delitos informáticos",
+  "SepChat3": "en el Perú",
+  "SepChat4": "Esta cifra es casi",
+  "SepChat5": "seis veces más alta ",
+  "SepChat6": "que la registrada en el ",
+  "SepChat7": "mismo periodo del 2020",
+
+  "OctChat1": "¿Qué delito informático se denuncia más?",
+
+  "NonChat1": "La División de Investigación de Delitos de Alta Tecnología (Divindat) de la PNP \uD83D\uDCCA\uD83D\uDCBB recibió",
+  "NonChat2": "27,934 casos de delitos informáticos",
+  "NonChat3": "en 2024. De estos,",
+  "NonChat4": "19,067 fueron fraudes informáticos",
+  "NonChat5": "representando el",
+  "NonChat6": "68.3% del total",
+
+
+
+  "Grafico1": "Evolución del costo en daños de la ciberdelincuencia",
+  "Grafico1.1": "Fuente: DIVINDAT",
+
+  "Grafico2": "Delitos informáticos en el Perú (reporte)",
+  "Grafico2.1": "Reporte semestral y anual de los delitos informáticos entre 2020 y 2024 en el Perú",
+  "Grafico2.2": "Fuente: DIVINDAT",
+
+  "Grafico3": "Delitos informáticos más denunciados en 2024 en el Perú",
+  "Grafico3.1": "Modalidades (enero a agosto del 2024)",
+  "Grafico3.2": "Fuente: DIVINDAT"
+}
