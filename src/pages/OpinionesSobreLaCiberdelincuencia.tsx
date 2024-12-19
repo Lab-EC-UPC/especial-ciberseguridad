@@ -3,6 +3,7 @@ import getCurrentTime from "../components/CurrentTime.ts";
 import PrevFabButton from "../components/PrevFabButton.tsx";
 import NextFabButton from "../components/NextFabButton.tsx";
 import LoadingDots from "../components/LoadingDots.tsx";
+import { useTranslation } from "react-i18next";
 
 interface Props {
     visibleElements: number;
@@ -12,6 +13,8 @@ interface Props {
 export default function OpinionesSobreLaCiberdelincuencia({visibleElements,setVisibleElements} :  Props) {
     const [isLoading, setIsLoading] = useState(false);
     const lastElementRef = useRef<HTMLDivElement>(null);
+
+    const { t } = useTranslation(["opiniones"]);
 
     const elements = [
 
@@ -30,13 +33,10 @@ export default function OpinionesSobreLaCiberdelincuencia({visibleElements,setVi
                                     className="w-full h-full object-cover aspect-square"
                                 />
                             </div>
-                            <span className="text-sm font-bold text-gray-700">Diego Oviedo (Especialista en Ciberseguridad)</span>
+                            <span className="text-sm font-bold text-gray-700">{t("nameDiego")}</span>
                         </div>
                         <p className="text-sm md:text-md">
-                            “Cuando tú le preguntas a un delincuente ‘¿por qué el mundo de la ciberdelincuencia es
-                            atractivo para ti?’, lo primero que te va a decir, probablemente, es que en esta forma de
-                            delinquir uno no tiene que exponer la vida. Para un delincuente es un mundo donde puedes
-                            generar mucho impacto negativo con simplemente algunos clics”
+                        {t("txtDiego")}
                         </p>
                         <div className="flex items-center gap-1">
                             <small className="chat-time">{getCurrentTime()}</small>
@@ -51,7 +51,7 @@ export default function OpinionesSobreLaCiberdelincuencia({visibleElements,setVi
                 <div className="flex flex-col items-center animate-fade-in-fast">
                     <div className="chat-box center">
                         <p className="text-sm md:text-md">
-                            Jose Carlos Vargas se unió usando el enlace de invitación
+                        {t("joinJoseCarlos")}
                         </p>
                     </div>
                 </div>
@@ -64,17 +64,17 @@ export default function OpinionesSobreLaCiberdelincuencia({visibleElements,setVi
                     <div className="chat-box right">
                         <div className="flex items-center gap-2 mb-1 justify-end">
                             <span
-                                className="text-sm font-bold text-gray-700">Jose Carlos Vargas (Presidente de ISACA)</span>
+                                className="text-sm font-bold text-gray-700">{t("nameJoseCarlos")}</span>
                             <div className="rounded-full bg-gray-300 overflow-hidden aspect-square w-10 min-w-[40px] min-h-[40px]">
                                 <img
-                                    src="especialistas/diego.webp" // Reemplazar con URL dinámica
+                                    src="especialistas/jose.webp" // Reemplazar con URL dinámica
                                     alt="Avatar Tú"
                                     className="w-full h-full object-cover aspect-square"
                                 />
                             </div>
                         </div>
                         <p className="text-sm md:text-md">
-                            “Nunca antes el saber cómo protegerte en el mundo digital ha marcado tanto impacto en la calidad de vida de todas las personas. (…) En temas de ciberseguridad, ahora mismo hay un fenómeno que es mundial: la ausencia de perfiles profesionales para poder abordar los retos de la ciberseguridad. No hay profesionales”
+                        {t("txtJoseCarlos")}
                         </p>
                         <div className="flex items-center gap-1">
                             <small className="chat-time">{getCurrentTime()}</small>
@@ -95,7 +95,7 @@ export default function OpinionesSobreLaCiberdelincuencia({visibleElements,setVi
                 <div className="flex flex-col items-center animate-fade-in-fast">
                     <div className="chat-box center">
                         <p className="text-sm md:text-md">
-                            Victor Ruiz se unió usando el enlace de invitación
+                        {t("joinVictor")}
                         </p>
                     </div>
                 </div>
@@ -115,10 +115,10 @@ export default function OpinionesSobreLaCiberdelincuencia({visibleElements,setVi
                                     className="w-full h-full object-cover aspect-square"
                                 />
                             </div>
-                            <span className="text-sm font-bold text-gray-700">Victor Ruiz (Especialista en Ciberseguridad)</span>
+                            <span className="text-sm font-bold text-gray-700">{t("nameVictor")}</span>
                         </div>
                         <p className="text-sm md:text-md">
-                            “Es muy importante que se integre la ciberseguridad como parte del desarrollo económico. Recientemente, hablábamos con algunas empresas y les decíamos: ‘tú ya tienes que considerar en tu empresa tener un área de ciberseguridad que le dé seguridad tanto a sus colaboradores y clientes, así como tienes tu área legal, tu área de finanzas y tu área de recursos humanos”
+                        {t("txtVictor")}
                         </p>
                         <div className="flex items-center gap-1">
                             <small className="chat-time">{getCurrentTime()}</small>
@@ -133,7 +133,7 @@ export default function OpinionesSobreLaCiberdelincuencia({visibleElements,setVi
                 <div className="flex flex-col items-center animate-fade-in-fast">
                     <div className="chat-box center">
                         <p className="text-sm md:text-md">
-                            Erick Iriarte se unió usando el enlace de invitación
+                        {t("joinErick")}
                         </p>
                     </div>
                 </div>
@@ -146,7 +146,7 @@ export default function OpinionesSobreLaCiberdelincuencia({visibleElements,setVi
                     <div className="chat-box right">
                         <div className="flex items-center gap-2 mb-1 justify-end">
                             <span
-                                className="text-sm font-bold text-gray-700">Erick Iriarte (Especialista en Derecho Digital)</span>
+                                className="text-sm font-bold text-gray-700">{t("nameErick")}</span>
                             <div className="rounded-full bg-gray-300 overflow-hidden aspect-square w-10 min-w-[40px] min-h-[40px]">
                                 <img
                                     src="especialistas/erick.webp" // Reemplazar con URL dinámica
@@ -156,7 +156,7 @@ export default function OpinionesSobreLaCiberdelincuencia({visibleElements,setVi
                             </div>
                         </div>
                         <p className="text-sm md:text-md">
-                            “En el Perú, no tenemos cultura de ciberseguridad ni protección de datos. Ni siquiera los niños en las escuelas aprenden cómo cuidar su información o la de sus familias. (...) El reglamento de protección de datos tiene más de una década y no se ajusta a las dinámicas actuales. Un nuevo reglamento es urgente para dar más herramientas a los ciudadanos"
+                        {t("txtErick")}
                         </p>
                         <div className="flex items-center gap-1">
                             <small className="chat-time">{getCurrentTime()}</small>
@@ -176,7 +176,7 @@ export default function OpinionesSobreLaCiberdelincuencia({visibleElements,setVi
                 <div className="flex flex-col items-center animate-fade-in-fast">
                     <div className="chat-box center">
                         <p className="text-sm md:text-md">
-                            Jorge Zeballos se unió usando el enlace de invitación
+                        {t("joinJorge")}
                         </p>
                     </div>
                 </div>
@@ -197,10 +197,10 @@ export default function OpinionesSobreLaCiberdelincuencia({visibleElements,setVi
                                     className="w-full h-full object-cover aspect-square"
                                 />
                             </div>
-                            <span className="text-sm font-bold text-gray-700">Jorge Zeballos (Gerente General de ESET Perú)</span>
+                            <span className="text-sm font-bold text-gray-700">{t("nameJorge")}</span>
                         </div>
                         <p className="text-sm md:text-md">
-                            “Como ciudadanos, necesitamos que el tema de la protección de los datos personales esté mejor regulado. Mi dato no puede caminar libremente, ellos saben dónde trabajas, cuánto ganas, qué tarjetas usas, etc., y eso no está bien. Es parte de mi derecho fundamental, y está establecido hasta en la Constitución”
+                        {t("txtJorge")}
                         </p>
                         <div className="flex items-center gap-1">
                             <small className="chat-time">{getCurrentTime()}</small>
@@ -227,7 +227,7 @@ export default function OpinionesSobreLaCiberdelincuencia({visibleElements,setVi
             <div className="p-4">
                 <div className="flex justify-center animate-fade-in-fast">
                     <h1 className="chat-title-box">
-                        ¿Qué dicen los especialistas?
+                    {t("titulo")}
                     </h1>
                 </div>
                 <div className="flex flex-col items-center animate-fade-in-fast">
@@ -237,18 +237,18 @@ export default function OpinionesSobreLaCiberdelincuencia({visibleElements,setVi
                              className="w-16 h-16 md:w-24 md:h-24"
                         />
                         <h1 className="text-lg font-medium">
-                            Se ha creado el grupo: Opiniones sobre la ciberdelincuencia
+                        {t("lead1")}
                         </h1>
                         <small>
-                            Grupo 5 miembros
+                        {t("lead2")}
                         </small>
                         <p className="text-sm md:text-md">
-                            Descubre las perspectivas de los especialistas en ciberseguridad sobre la ciberdelincuencia
+                        {t("lead3")}
                         </p>
                     </div>
                     <div className="chat-box center">
                         <p className="text-sm md:text-md">
-                            Diego Oviedo se unió usando el enlace de invitación
+                        {t("joinDiego")}
                         </p>
                     </div>
                 </div>
