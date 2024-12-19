@@ -1,17 +1,20 @@
-import {useEffect, useRef, useState} from "react";
+import { useEffect, useRef, useState } from "react";
 import getCurrentTime from "../components/CurrentTime.ts";
 import PrevFabButton from "../components/PrevFabButton.tsx";
 import NextFabButton from "../components/NextFabButton.tsx";
 import LoadingDots from "../components/LoadingDots.tsx";
+import { useTranslation } from "react-i18next";
 
 interface Props {
     visibleElements: number;
     setVisibleElements: (index: number) => void;
 }
 
-export default function PrevencionYDenuncia({visibleElements,setVisibleElements} :  Props) {
+export default function PrevencionYDenuncia({ visibleElements, setVisibleElements }: Props) {
     const [isLoading, setIsLoading] = useState(false);
     const lastElementRef = useRef<HTMLDivElement>(null);
+
+    const { t } = useTranslation(["prevencion"]);
 
     const elements = [
         {
@@ -21,11 +24,14 @@ export default function PrevencionYDenuncia({visibleElements,setVisibleElements}
                 <div className="flex flex-col items-start animate-fade-in-fast">
                     <div className="chat-box left">
                         <p className="text-sm md:text-md">
-                            Según un estudio de <span className="font-bold">Kaspersky 📊, aunque el 69% de los peruanos</span> se preocupa
-                            por revisar la <span className="font-bold">legitimidad de los sitios web</span> 🌐 antes de ingresar sus <span className="font-bold">datos
-                        personales</span> 🔐, el <span className="font-bold">77% reconoce que no sabe
-                            cómo identificar una página falsa.</span> ⚠️❌
-
+                            {t("primer1")}
+                            <span className="font-bold">{t("primer2")}</span>
+                            {t("primer3")}
+                            <span className="font-bold">{t("primer4")}</span>
+                            {t("primer5")}
+                            <span className="font-bold">{t("primer6")}</span>
+                            {t("primer7")}
+                            <span className="font-bold">{t("primer8")}</span> ⚠️❌
                         </p>
                         <div className="flex items-center gap-1">
                             <small className="chat-time">{getCurrentTime()}</small>
@@ -40,7 +46,7 @@ export default function PrevencionYDenuncia({visibleElements,setVisibleElements}
             content:
                 <div className="flex justify-center">
                     <h1 className="chat-title-box">
-                        Canales y vías de denuncia
+                        {t("titulo2")}
                     </h1>
                 </div>
         },
@@ -51,11 +57,14 @@ export default function PrevencionYDenuncia({visibleElements,setVisibleElements}
                 <div className="flex flex-col items-start animate-fade-in-fast">
                     <div className="chat-box left">
                         <p className="text-sm md:text-md">
-                            En esta sección podrás encontrar los <span className="font-bold">principales medios para
-                        denunciar ciberdelitos</span> en el Perú. En caso hayas sido
-                            <span className="font-bold">víctima de un ciberdelito</span> 🖥️🔒 o busques <span className="font-bold">reportar una actividad
-                        sospechosa</span> ⚠️, puedes ponerte en <span className="font-bold">contacto con las siguientes
-                            entidades responsables:</span> 📞📧.
+                        {t("segundo1")}
+                            <span className="font-bold">{t("segundo2")}</span> 
+                            {t("segundo3")}
+                            <span className="font-bold">{t("segundo4")}</span>
+                            {t("segundo5")}
+                            <span className="font-bold">{t("segundo6")}</span> 
+                            {t("segundo7")}
+                            <span className="font-bold">{t("segundo8")}</span> 📞📧.
                         </p>
                         <div className="flex items-center gap-1">
                             <small className="chat-time">{getCurrentTime()}</small>
@@ -70,7 +79,7 @@ export default function PrevencionYDenuncia({visibleElements,setVisibleElements}
                 <div className="flex flex-col items-end animate-fade-in-fast">
                     <div className="chat-box right">
                         <p className="text-sm md:text-md">
-                            📞 <span className="font-bold">División de Investigación de Delitos de Alta Tecnología (DIVINDAT)</span> 💻🔍
+                            📞 <span className="font-bold">{t("tercero")}</span> 💻🔍
                         </p>
                         <div className="flex items-center gap-1">
                             <small className="chat-time">{getCurrentTime()}</small>
@@ -90,8 +99,7 @@ export default function PrevencionYDenuncia({visibleElements,setVisibleElements}
                 <div className="flex flex-col items-end animate-fade-in-fast">
                     <div className="chat-box right">
                         <p className="text-sm md:text-md">
-                            Esta es la unidad especializada de la Policía Nacional del Perú (PNP)
-                            que atiende delitos informáticos.
+                        {t("cuarto")}
                         </p>
                         <div className="flex items-center gap-1">
                             <small className="chat-time">{getCurrentTime()}</small>
@@ -111,9 +119,11 @@ export default function PrevencionYDenuncia({visibleElements,setVisibleElements}
                 <div className="flex flex-col items-end animate-fade-in-fast">
                     <div className="chat-box right">
                         <p className="text-sm md:text-md">
-                            ☎️ Teléfonos: (01) 431-8898 o línea gratuita 1818<br></br>
-                            📧 Correo: divindat.depcpi@policia.gob.pe<br></br>
-                            📍 Dirección: Piso 9, Dirección de Investigación Criminal (DIRINCRI), Av. España 323, Cercado de Lima.
+                        {t("quinto1")}
+                            <br></br>
+                            {t("quinto2")}
+                            <br></br>
+                            {t("quinto3")}
                         </p>
                         <div className="flex items-center gap-1">
                             <small className="chat-time">{getCurrentTime()}</small>
@@ -133,7 +143,7 @@ export default function PrevencionYDenuncia({visibleElements,setVisibleElements}
                 <div className="flex flex-col items-start animate-fade-in-fast">
                     <div className="chat-box left">
                         <p className="text-sm md:text-md">
-                            📞 <span className="font-bold">Ministerio Público - Fiscalía de la Nación ⚖️💻</span>
+                            📞 <span className="font-bold">{t("sexto")}</span>
                         </p>
                         <div className="flex items-center gap-1">
                             <small className="chat-time">{getCurrentTime()}</small>
@@ -149,10 +159,15 @@ export default function PrevencionYDenuncia({visibleElements,setVisibleElements}
                 <div className="flex flex-col items-start animate-fade-in-fast">
                     <div className="chat-box left">
                         <p className="text-sm md:text-md">
-                            📞 En su portal puedes <span className="font-bold">presentar
-                        denuncias</span> sobre cualquier tipo de delito, incluidos los
-                            ciberdelitos. <br></br>🌐✅Es necesario <span className="font-bold">identificarte con tu DNI
-                        🆔 y proporcionar pruebas claras 📂.</span>
+                            📞 {t("septimo1")}<span className="font-bold">
+                            {t("septimo2")}
+                                </span> 
+                                {t("septimo3")}
+                                <br></br>
+                            {t("septimo4")}
+                            
+                            <span className="font-bold">
+                                {t("septimo5")}</span>
                         </p>
                         <div className="flex items-center gap-1">
                             <small className="chat-time">{getCurrentTime()}</small>
@@ -167,7 +182,7 @@ export default function PrevencionYDenuncia({visibleElements,setVisibleElements}
                 <div className="flex flex-col items-start animate-fade-in-fast">
                     <div className="chat-box left">
                         <p className="text-sm md:text-md">
-                            <span className="font-bold">🔗 Enlace:</span> <a href="https://portal.mpfn.gob.pe/denuncias-en-linea" target="_blank" style={{color: "#3497f9", textDecoration: "underline"}}>Denuncias en línea</a>
+                            <span className="font-bold">🔗 {t("octavo1")}</span> <a href="https://portal.mpfn.gob.pe/denuncias-en-linea" target="_blank" style={{ color: "#3497f9", textDecoration: "underline" }}>{t("octavo2")}</a>
                         </p>
                         <div className="flex items-center gap-1">
                             <small className="chat-time">{getCurrentTime()}</small>
@@ -193,7 +208,7 @@ export default function PrevencionYDenuncia({visibleElements,setVisibleElements}
             <div className="p-4">
                 <div className="flex justify-center animate-fade-in-fast">
                     <h1 className="chat-title-box">
-                        ¿Cómo prevenir estos ciberdelitos?
+                        {t("titulo1")}
                     </h1>
                 </div>
                 <div>
@@ -208,8 +223,8 @@ export default function PrevencionYDenuncia({visibleElements,setVisibleElements}
                 </div>
             </div>
             <div className="sticky bottom-0 flex justify-between w-full items-center z-10 p-2">
-                <PrevFabButton url="opiniones-sobre-la-ciberdelincuencia"/>
-                <NextFabButton url="verificador-de-links"/>
+                <PrevFabButton url="opiniones-sobre-la-ciberdelincuencia" />
+                <NextFabButton url="verificador-de-links" />
             </div>
         </div>
     )

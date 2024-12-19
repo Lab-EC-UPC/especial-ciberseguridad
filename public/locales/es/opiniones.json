@@ -1,0 +1,28 @@
+{
+    "titulo":"¿Qué dicen los especialistas?",
+
+    "lead1": "Se ha creado el grupo: Opiniones sobre la ciberdelincuencia",
+    "lead2": "Grupo 5 miembros",
+    "lead3": "Descubre las perspectivas de los especialistas en ciberseguridad sobre la ciberdelincuencia",
+
+    "joinDiego": "Diego Oviedo se unió usando el enlace de invitación",
+    "nameDiego": "Diego Oviedo (Especialista en Ciberseguridad)",
+    "txtDiego": "“Cuando tú le preguntas a un delincuente ‘¿por qué el mundo de la ciberdelincuencia es atractivo para ti?’, lo primero que te va a decir, probablemente, es que en esta forma de delinquir uno no tiene que exponer la vida. Para un delincuente es un mundo donde puedes generar mucho impacto negativo con simplemente algunos clics”",
+
+    "joinJoseCarlos": "Jose Carlos Vargas se unió usando el enlace de invitación",
+    "nameJoseCarlos": "Jose Carlos Vargas (Presidente de ISACA)",
+    "txtJoseCarlos": "“Nunca antes el saber cómo protegerte en el mundo digital ha marcado tanto impacto en la calidad de vida de todas las personas. (…) En temas de ciberseguridad, ahora mismo hay un fenómeno que es mundial: la ausencia de perfiles profesionales para poder abordar los retos de la ciberseguridad. No hay profesionales”",
+
+    "joinVictor": "Victor Ruiz se unió usando el enlace de invitación",
+    "nameVictor": "Victor Ruiz (Especialista en Ciberseguridad)",
+    "txtVictor": "“Es muy importante que se integre la ciberseguridad como parte del desarrollo económico. Recientemente, hablábamos con algunas empresas y les decíamos: ‘tú ya tienes que considerar en tu empresa tener un área de ciberseguridad que le dé seguridad tanto a sus colaboradores y clientes, así como tienes tu área legal, tu área de finanzas y tu área de recursos humanos”",
+
+    "joinErick": "Erick Iriarte se unió usando el enlace de invitación",
+    "nameErick": "Erick Iriarte (Especialista en Derecho Digital)",
+    "txtErick": "“En el Perú, no tenemos cultura de ciberseguridad ni protección de datos. Ni siquiera los niños en las escuelas aprenden cómo cuidar su información o la de sus familias. (...) El reglamento de protección de datos tiene más de una década y no se ajusta a las dinámicas actuales. Un nuevo reglamento es urgente para dar más herramientas a los ciudadanos”",
+
+    "joinJorge": "Jorge Zeballos se unió usando el enlace de invitación",
+    "nameJorge": "Jorge Zeballos (Gerente General de ESET Perú)",
+    "txtJorge": "“Como ciudadanos, necesitamos que el tema de la protección de los datos personales esté mejor regulado. Mi dato no puede caminar libremente, ellos saben dónde trabajas, cuánto ganas, qué tarjetas usas, etc., y eso no está bien. Es parte de mi derecho fundamental, y está establecido hasta en la Constitución”"
+
+}
