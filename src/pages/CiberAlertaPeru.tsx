@@ -79,8 +79,8 @@ export default function CiberAlertaPeru({visibleElements,setVisibleElements} :  
     // }, [visibleElements]);
 
     return (
-        <div className="flex flex-col h-full justify-between p-4">
-            <div>
+        <div className="flex flex-col h-full justify-between">
+            <div className="p-4">
                 <div className="flex justify-center animate-fade-in-fast">
                     <h1 className="chat-title-box">
                         {t("tituloCiber")}
@@ -108,7 +108,7 @@ export default function CiberAlertaPeru({visibleElements,setVisibleElements} :  
                     )}
                 </div>
             </div>
-            <div className="sticky bottom-0 flex justify-between w-full items-center z-10">
+            <div className="sticky bottom-0 flex justify-between w-full items-center z-10 p-2">
                 <PrevFabButton url=""/>
                 <NextFabButton url="un-poco-de-data"/>
             </div>

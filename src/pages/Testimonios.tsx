@@ -399,8 +399,8 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
     }, [visibleElements, elements.length]);
 
     return (
-        <div className="flex flex-col h-full justify-between p-4">
-            <div>
+        <div className="flex flex-col h-full justify-between">
+            <div className="p-4">
                 <div className="flex justify-center animate-fade-in-fast">
                 <h1 className="chat-title-box">
                         Uno de los delitos de mayor crecimiento
@@ -441,7 +441,7 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
                     )}
                 </div>
             </div>
-            <div className="sticky bottom-0 flex justify-between w-full items-center">
+            <div className="sticky bottom-0 flex justify-between w-full items-center p-2">
                 <PrevFabButton url="el-phishing"/>
                 <NextFabButton url="opiniones-sobre-la-ciberdelincuencia"/>
             </div>
