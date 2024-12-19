@@ -28,7 +28,7 @@ export default function CiberAlertaPeru({visibleElements,setVisibleElements} :  
                             playsInline
                         >
                             <source
-                                src="https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/video_teaser_recortado.webm"
+                                src="https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/teaser_v2.webm"
                                 type="video/webm"
                             />
                         </video>
