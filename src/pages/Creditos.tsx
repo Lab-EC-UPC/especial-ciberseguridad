@@ -17,12 +17,12 @@ const ParticipantCard = (participant: Participant) => {
                  className="w-10 h-10 md:w-16 md:h-16 rounded-full object-cover"
             />
             <div className="grid text-justify">
-                <h1 className="font-medium">
+                <h1 className="font-medium text-lg">
                     {participant.name}
                 </h1>
-                <small className="text-grey">
+                <p className="text-sm text-grey">
                     {participant.subtitle}
-                </small>
+                </p>
             </div>
         </div>
     );
@@ -43,8 +43,8 @@ export default function Creditos () {
     }, [visibleElements, participants.length]);
 
     return (
-        <div className="flex flex-col h-full justify-between p-4">
-            <div>
+        <div className="flex flex-col h-full justify-between">
+            <div className="p-4">
                 <div className="flex flex-col items-center animate-fade-in-fast">
                     <div className="flex flex-col gap-2 md:gap-4 chat-box center">
                         <img src="https://github.com/Lab-EC-UPC/assets/blob/main/logo-ec-data.png?raw=true"
@@ -86,7 +86,7 @@ export default function Creditos () {
                     </div>
                 </div>
             </div>
-            <div className="sticky bottom-0 flex justify-between w-full items-center z-10">
+            <div className="sticky bottom-0 flex justify-between w-full items-center z-10 p-2">
                 <PrevFabButton url="verificador-de-links"/>
                 <></>
             </div>

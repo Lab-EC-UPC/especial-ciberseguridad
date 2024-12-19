@@ -111,7 +111,7 @@ const Sidebar: React.FC<SidebarProps> = ({ routes, toggleSidebar, switchLanguage
                                                     className="h-4 w-4 md:h-6 md:w-6"
                                                 />
                                             )}
-                                            <p className="text-sm text-gray-500 truncate">
+                                            <p className="text-md text-gray-500 truncate">
                                                 {t(`${route.id}.message`)}
                                             </p>
                                         </div>

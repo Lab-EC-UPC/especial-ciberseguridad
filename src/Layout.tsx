@@ -52,13 +52,13 @@ const Layout: React.FC = () => {
                                 </button>
                                 <Link to="/creditos">
                                     <div
-                                        className="flex items-center gap-2 md:gap-4 hover:text-green-dark hover:scale-95 duration-200">
+                                        className="flex items-center gap-1 md:gap-2 hover:text-green-dark hover:scale-95 duration-200">
                                         <img
                                             src={activeRoute.avatar}
                                             alt={activeRoute.title}
                                             className="h-8 w-8 md:h-12 md:w-12 object-cover rounded-full"
                                         />
-                                        <h1 className="text-lg md:text-2xl font-medium font-tomorrow">
+                                        <h1 className="text-lg md:text-xl font-medium font-tomorrow">
                                             {t(`${activeRoute.id}.subtitle`)}
                                         </h1>
                                     </div>

@@ -13,6 +13,7 @@ interface Props {
 
 export default function Testimonios ({visibleElements,setVisibleElements} :  Props) {
     const [isLoading, setIsLoading] = useState(false);
+    const [currentAudioId, setCurrentAudioId] = useState<string | null>(null);
     const lastElementRef = useRef<HTMLDivElement>(null);
 
     const elements = [
@@ -40,6 +41,9 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
                                 <AudioPlayer
                                     audio="https://lab-ec-upc.github.io/assets/especial-ciberseguridad/audios-testimonios/jessica.mp3"
                                     time="1.29"
+                                    currentAudioId={currentAudioId}
+                                    setCurrentAudioId={setCurrentAudioId}
+                                    audioId="1"
                                 />
                             </div>
                             <div>
@@ -60,7 +64,6 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
                 </div>
             ),
         },
-
         {
             cooldown: 800,
             alignment: "left",
@@ -138,7 +141,10 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
                             <div className="flex-1">
                                 <AudioPlayer
                                     audio="https://lab-ec-upc.github.io/assets/especial-ciberseguridad/audios-testimonios/irina.mp3"
-                                    time="00:43"
+                                    time="0:43"
+                                    currentAudioId={currentAudioId}
+                                    setCurrentAudioId={setCurrentAudioId}
+                                    audioId="2"
                                 />
                             </div>
                         </div>
@@ -226,6 +232,9 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
                                 <AudioPlayer
                                     audio="https://lab-ec-upc.github.io/assets/especial-ciberseguridad/audios-testimonios/ekaterina.m4a"
                                     time="00:55"
+                                    currentAudioId={currentAudioId}
+                                    setCurrentAudioId={setCurrentAudioId}
+                                    audioId="3"
                                 />
                             </div>
                             <div>
@@ -323,6 +332,9 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
                                 <AudioPlayer
                                     audio="https://lab-ec-upc.github.io/assets/especial-ciberseguridad/audios-testimonios/sheila.mp3"
                                     time="1:04"
+                                    currentAudioId={currentAudioId}
+                                    setCurrentAudioId={setCurrentAudioId}
+                                    audioId="4"
                                 />
                             </div>
                         </div>

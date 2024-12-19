@@ -5,6 +5,27 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontSize: {
+      // 'xs': '0.75rem',
+      // sm: '0.8rem',
+      // base: '1rem',
+      // lg : '1.125rem',
+      // xl: '1.25rem',
+      // '2xl': '1.563rem',
+      // '3xl': '1.953rem',
+      // '4xl': '2.441rem',
+      // '5xl': '3.052rem',
+      xs: '16px',
+      sm: '16px',
+      md: '18px',
+      base: '18px',
+      lg : '20px',
+      xl: '22px',
+      '2xl': '26px',
+      '3xl': '32px',
+      '4xl': '38px',
+      '5xl': '50px',
+    },
     extend: {
       fontFamily: {
         sans: ['Agdasima', 'sans-serif'],
