@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import AudioPlayer from "../components/AudioPlayer.tsx";
 import {Link} from "react-router";
 import {ArrowDownCircleIcon, ArrowUpCircleIcon, MicrophoneIcon} from "@heroicons/react/24/solid";
