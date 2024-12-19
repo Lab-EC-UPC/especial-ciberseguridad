@@ -67,7 +67,7 @@ export default function OpinionesSobreLaCiberdelincuencia({visibleElements,setVi
                                 className="text-sm font-bold text-gray-700">Jose Carlos Vargas (Presidente de ISACA)</span>
                             <div className="rounded-full bg-gray-300 overflow-hidden aspect-square w-10 min-w-[40px] min-h-[40px]">
                                 <img
-                                    src="especialistas/diego.webp" // Reemplazar con URL dinámica
+                                    src="especialistas/jose.webp" // Reemplazar con URL dinámica
                                     alt="Avatar Tú"
                                     className="w-full h-full object-cover aspect-square"
                                 />
