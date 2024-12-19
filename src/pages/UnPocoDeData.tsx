@@ -4,6 +4,8 @@ import getCurrentTime from "../components/CurrentTime.ts";
 import PrevFabButton from "../components/PrevFabButton.tsx";
 import LoadingDots from "../components/LoadingDots.tsx";
 
+
+
 interface Props {
     visibleElements: number;
     setVisibleElements: (index: number) => void;
