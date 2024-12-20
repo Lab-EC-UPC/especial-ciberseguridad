@@ -42,10 +42,6 @@ export default {
         'green-light': '#35867E',
         'green-dark': '#215C54',
         'green-chat-box': '#E0F6CA',
-        safe: '#ecfccb',
-        warning: '#fef9c3',
-        insecure: '#fecaca',
-        neutral: '#ffffff'
       },
       backgroundImage: {
         'chat': "url('https://i.imgur.com/24aAqXh.png')",
