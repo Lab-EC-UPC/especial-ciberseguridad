@@ -7,9 +7,9 @@ export default function TeaserSplashScreen({ onSkip }: { onSkip: () => void }) {
     const { t } = useTranslation(["general"]);
 
     const desktopVideo =
-        "https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/ec-ciberseguridad-horizontal_webm_hd.webm";
+        "https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/inicio-horizontal-logo.webm";
     const mobileVideo =
-        "https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/ec-ciberseguridad-vertical_webm_hd.webm";
+        "https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/inicio-vertical-logo.webm";
 
     useEffect(() => {
         const updateVideoSrc = () => {
@@ -39,13 +39,13 @@ export default function TeaserSplashScreen({ onSkip }: { onSkip: () => void }) {
                 className="object-fit h-full w-full"
             >
                 <source
-                    src={videoSrc || "https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/ec-ciberseguridad-vertical_webm_hd.webm"}
+                    src={videoSrc || "https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/inicio-vertical-logo.webm"}
                     type="video/webm"/>
                 <source
-                    src={videoSrc || "https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/ec-ciberseguridad-vertical_webm_hd.webm"}
+                    src={videoSrc || "https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/inicio-vertical-logo.webm"}
                     type="video/mp4"/>
                 <source
-                    src={videoSrc || "https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/ec-ciberseguridad-vertical_webm_hd.webm"}
+                    src={videoSrc || "https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/inicio-vertical-logo.webm"}
                     type="video/ogg"/>
                 Your browser does not support HTML video.
             </video>
