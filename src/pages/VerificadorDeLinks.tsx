@@ -1,175 +1,67 @@
-import {useRef, useState, ChangeEvent, KeyboardEvent, useEffect} from 'react';
+import React, {useRef, useState, ChangeEvent, KeyboardEvent, useEffect} from 'react';
 import jsQR from 'jsqr';
 import PrevFabButton from "../components/PrevFabButton.tsx";
 import NextFabButton from "../components/NextFabButton.tsx";
 import {PaperAirplaneIcon, PhotoIcon, QrCodeIcon} from "@heroicons/react/24/solid";
 import LoadingDots from "../components/LoadingDots.tsx";
+import {LinkVerifierContent} from "../content/LinkVerifierContent.tsx";
+import getCurrentTime from "../components/CurrentTime.ts";
+import {Tooltip} from "@nextui-org/tooltip";
+import {fetchUrlRiskScore, getChatColor, LinkVerifierChat} from "../utils/UrlRiskScoreService.ts";
+import {useTranslation} from "react-i18next";
 
 interface Props {
     visibleElements: number;
     setVisibleElements: (index: number) => void;
-    responses: { message: string; details?: string; time: string; url?: string }[];
-    setResponses: (responses: (prev:any) => any[]) => void;
+    chats: LinkVerifierChat[];
+    setChats: React.Dispatch<React.SetStateAction<LinkVerifierChat[]>>;
 }
 
-export default function VerificadorDeLinks({visibleElements,setVisibleElements,responses,setResponses} :  Props) {
+export default function VerificadorDeLinks({visibleElements,setVisibleElements,chats,setChats} :  Props) {
     const [isLoading, setIsLoading] = useState(false);
     const lastElementRef = useRef<HTMLDivElement>(null);
-
-    const elements = [
-        {
-            cooldown: 100,
-            alignment: "left",
-            content:
-                <div className="flex flex-col items-start animate-fade-in-fast">
-                    <div className="bg-white shadow-md rounded-lg p-4 max-w-lg">
-                        <p className="text-sm md:text-md">
-                            Debido al auge de los ciberdelitos, presentamos el <span className="font-bold">Verificador de Links y QR de El Comercio</span>:
-                            tu aliado para detectar enlaces maliciosos ⚠️ y códigos QR sospechosos 🔍.
-                        </p>
-                        <small className="chat-time">18:50</small>
-                    </div>
-                </div>
-        },
-        {
-            cooldown: 500,
-            alignment: "right",
-            content:
-                <div className="flex flex-col items-end">
-                    <div className="chat-box right">
-                        <p className="text-sm md:text-md">
-                            Este verificador 🔍<span
-                            className="font-bold"> no garantiza una seguridad absoluta 🛡️</span>,
-                            pero es un recurso útil para <span className="font-bold">identificar posibles riesgos ⚠️ y prevenir incidentes 🚨.</span>
-                        </p>
-                        <div className="flex items-center gap-1">
-                            <small className="chat-time">18:50</small>
-                            <img src="read-double-check-icon.svg" alt="Double check icon"
-                                 className="h-4 w-4 md:h-6 md:w-6"/>
-                        </div>
-                    </div>
-                </div>
-        },
-        {
-            cooldown: 500,
-            alignment: "right",
-            content:
-                <div className="flex flex-col items-end">
-                    <div className="chat-box right">
-                        <p className="text-sm md:text-md">
-                            Úsalo como tu <span className="font-bold">primera línea de defensa 🛡️</span> y
-                            complementa
-                            tu <span className="font-bold">navegación segura 🌐</span> con <span
-                            className="font-bold">hábitos responsables en el mundo digital 📱.</span>
-                        </p>
-                        <div className="flex items-center gap-1">
-                            <small className="chat-time">18:50</small>
-                            <img src="read-double-check-icon.svg" alt="Double check icon"
-                                 className="h-4 w-4 md:h-6 md:w-6"/>
-                        </div>
-                    </div>
-                </div>
-        },
-        {
-            cooldown: 500,
-            alignment: "center",
-            content:
-                <div className="flex flex-col items-center">
-                    <div className="chat-box center">
-                        <img src="chat-icons/8.webp" alt="Ícono de verificador de enlaces"
-                             className="w-16 h-16 md:w-24 md:h-24"/>
-                        <h1 className="text-lg font-medium">Se ha creado la herramienta</h1>
-                        <small className="font-medium">Verificador de Enlaces</small>
-                        <p className="text-sm md:text-md">
-                            ¡Puedes estar un paso adelante de los ciberdelincuentes 🚨!
-                        </p>
-                    </div>
-                </div>
-        },
-        {
-            cooldown: 500,
-            alignment: "center",
-            content:
-                <div className="flex flex-col items-center">
-                    <div className="chat-box center">
-                        <small className="font-medium">Recuerda...</small>
-                        <p className="text-sm md:text-md mb-4">
-                            🌐🔒 Ten en cuenta que nuestro verificador <span className="font-bold">no identifica si las páginas de redes sociales son falsas.</span>
-                        </p>
-                        <p className="text-sm md:text-md mb-4">
-                            Por eso, cuando navegues en <span className="font-bold">redes sociales </span> Facebook,
-                            TikTok o Instagram y visites la página de una empresa, <span className="font-bold">asegúrate de que cuente con el check azul de verificación ✅.</span> Este
-                            símbolo confirma que es un <span
-                            className="font-bold">medio oficial de la compañía.</span>
-                        </p>
-                        <p className="text-sm md:text-md">
-                            <span className="font-bold"> 🚫 Evita confiar en páginas que no estén verificadas</span>,
-                            ya
-                            que podrían ser<span className="font-bold"> falsas o fraudulentas. ⚠️</span>
-                        </p>
-                    </div>
-                </div>
-        },
-        {
-            cooldown: 500,
-            alignment: "center",
-            content:
-                <div className="flex flex-col items-center">
-                    <div className="chat-box center">
-                        <p className="text-sm md:text-md">
-                            Introduce el enlace o escanea el código QR sospechoso para proceder con su verificación.
-                        </p>
-                    </div>
-                </div>
-        },
-    ];
-
+    const elements = LinkVerifierContent();
     const [text, setText] = useState('');
-    const [showTooltipQR, setShowTooltipQR] = useState(false);
-    const [showTooltipFile, setShowTooltipFile] = useState(false);
     const [cameraActive, setCameraActive] = useState(false);
     const videoRef = useRef<HTMLVideoElement | null>(null);
     const canvasRef = useRef<HTMLCanvasElement | null>(null);
     const [isLoadingFileUpload, setIsLoadingFileUpload] = useState(false);
     const [isFetchingResponse, setIsFetchingResponse] = useState(false);
+    const { t } = useTranslation(["verificador"]);
+
+    const appendChat = (chat: LinkVerifierChat) => {
+        setChats((prev) => [...prev, chat]);
+    };
 
     const sendUrlToEndpoint = async (urlToCheck: string) => {
+        appendChat({
+            message: urlToCheck,
+            time: getCurrentTime(),
+            alignment: 'right',
+            color: 'neutral'
+        });
+
         setIsFetchingResponse(true);
-        try {
-            const response = await fetch('https://link-validator-api.up.railway.app/api/v1/webrisk/verify', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({url: urlToCheck}),
-            });
-
-            if (!response.ok) {
-                throw new Error('Error al conectar con el backend');
-            }
-
-            const result = await response.json();
-            setResponses((prev) => [
-                ...prev,
-                {
-                    message: result.message,
-                    details: result.details || '',
-                    time: new Date().toLocaleTimeString(),
-                    url: urlToCheck
-                },
-            ]);
-        } catch (error) {
-            setResponses((prev) => [
-                ...prev,
-                {
-                    message: (error as Error).message || 'Error desconocido',
-                    time: new Date().toLocaleTimeString(),
-                    url: urlToCheck
-                },
-            ]);
-        } finally {
-            setIsFetchingResponse(false);
-        }
+        await fetchUrlRiskScore(urlToCheck, t)
+            .then((response)=>{
+                if (response) {
+                    appendChat({
+                        message: response.message,
+                        time: response.time,
+                        alignment: response.alignment,
+                        color: response.color
+                    });
+                }
+                else {
+                    appendChat({
+                        message: t("message-1"),
+                        time: getCurrentTime(),
+                        alignment: 'left',
+                        color: 'neutral'
+                    });
+                }
+            })
+            .finally(()=>setIsFetchingResponse(false));
     };
 
     const handleFileUpload = (e: ChangeEvent<HTMLInputElement>) => {
@@ -180,11 +72,31 @@ export default function VerificadorDeLinks({visibleElements,setVisibleElements,r
             return;
         }
 
+        const validImageTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
+        if (!validImageTypes.includes(file.type)) {
+            appendChat({
+                message: t("message-2"),
+                time: getCurrentTime(),
+                alignment: 'left',
+                color: 'neutral'
+            });
+            setIsLoadingFileUpload(false);
+            return;
+        }
+
         const reader = new FileReader();
         reader.onload = () => {
-            const img = new Image();
-            img.onload = () => {
-                try {
+            if (typeof reader.result === 'string') {
+                appendChat({
+                    message: t("message-3"),
+                    time: getCurrentTime(),
+                    alignment: 'right',
+                    color: 'neutral',
+                    image: reader.result
+                });
+
+                const img = new Image();
+                img.onload = () => {
                     const canvas = document.createElement('canvas');
                     canvas.width = img.width;
                     canvas.height = img.height;
@@ -195,54 +107,39 @@ export default function VerificadorDeLinks({visibleElements,setVisibleElements,r
                         const qrCodeData = jsQR(imageData.data, canvas.width, canvas.height);
 
                         if (qrCodeData) {
-                            sendUrlToEndpoint(qrCodeData.data)
-                                .finally(() => setText(''));
+                            sendUrlToEndpoint(qrCodeData.data).finally(() => setText(''));
                         } else {
-                            setResponses((prev) => [
-                                ...prev,
-                                {
-                                    message: 'No se pudo leer el código QR de la imagen',
-                                    time: new Date().toLocaleTimeString(),
-                                },
-                            ]);
+                            appendChat({
+                                message: t("message-4"),
+                                time: getCurrentTime(),
+                                alignment: 'left',
+                                color: 'neutral'
+                            });
                         }
                     }
-                } catch (error) {
-                    console.error("Error al procesar el archivo:", error);
-                    setResponses((prev) => [
-                        ...prev,
-                        {
-                            message: 'Ocurrió un error al procesar la imagen',
-                            time: new Date().toLocaleTimeString(),
-                        },
-                    ]);
-                } finally {
-                    setIsLoadingFileUpload(false);
-                }
-            };
-            img.onerror = () => {
-                setResponses((prev) => [
-                    ...prev,
-                    {
-                        message: 'No se pudo cargar la imagen proporcionada',
-                        time: new Date().toLocaleTimeString(),
-                    },
-                ]);
-                setIsLoadingFileUpload(false);
-            };
-            img.src = typeof reader.result === 'string' ? reader.result : '';
+                };
+                img.onerror = () => {
+                    appendChat({
+                        message: t("message-5"),
+                        time: getCurrentTime(),
+                        alignment: 'left',
+                        color: 'neutral'
+                    });
+                };
+                img.src = reader.result;
+            }
         };
         reader.onerror = () => {
-            setResponses((prev) => [
-                ...prev,
-                {
-                    message: 'Ocurrió un error al leer el archivo',
-                    time: new Date().toLocaleTimeString(),
-                },
-            ]);
-            setIsLoadingFileUpload(false);
+            appendChat({
+                message: t("message-6"),
+                time: getCurrentTime(),
+                alignment: 'left',
+                color: 'neutral'
+            });
         };
         reader.readAsDataURL(file);
+
+        setIsLoadingFileUpload(false);
     };
 
     const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
@@ -263,7 +160,12 @@ export default function VerificadorDeLinks({visibleElements,setVisibleElements,r
                 await videoRef.current.play();
             }
         } catch (error) {
-            console.error('No se pudo acceder a la cámara:', error);
+            appendChat({
+                message: t("message-7"),
+                time: getCurrentTime(),
+                alignment: 'left',
+                color: 'neutral'
+            });
         }
     };
 
@@ -276,20 +178,32 @@ export default function VerificadorDeLinks({visibleElements,setVisibleElements,r
                 canvas.width = video.videoWidth;
                 canvas.height = video.videoHeight;
                 ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-                const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-                const qrCodeData = jsQR(imageData.data, canvas.width, canvas.height);
+
+                const imageData = canvas.toDataURL('image/png');
+                appendChat({
+                    message: t("message-8"),
+                    time: getCurrentTime(),
+                    alignment: 'right',
+                    color: 'neutral',
+                    image: imageData
+                });
+
+                const qrCodeData = jsQR(
+                    ctx.getImageData(0, 0, canvas.width, canvas.height).data,
+                    canvas.width,
+                    canvas.height
+                );
 
                 if (qrCodeData) {
                     sendUrlToEndpoint(qrCodeData.data)
                         .finally(() => setText(''));
                 } else {
-                    setResponses((prev) => [
-                        ...prev,
-                        {
-                            message: 'No se pudo leer el código QR de la imagen',
-                            time: new Date().toLocaleTimeString()
-                        },
-                    ]);
+                    appendChat({
+                        message: t("message-9"),
+                        time: getCurrentTime(),
+                        alignment: 'left',
+                        color: 'neutral'
+                    });
                 }
             }
         }
@@ -322,16 +236,9 @@ export default function VerificadorDeLinks({visibleElements,setVisibleElements,r
         }
     }, [visibleElements]);
 
-    useEffect(() => {
-        console.log(responses);
-    }, [responses]);
-
     return (
         <div className="flex flex-col h-full justify-between">
             <div className="p-4">
-                <div className="flex justify-center mb-6 animate-fade-in-fast">
-                    <h1 className="chat-title-box">¡Descubre el nuevo verificador de enlaces!</h1>
-                </div>
                 <div>
                     {elements.slice(0, visibleElements).map((element, index) => (
                         <div key={index} ref={index === visibleElements - 1 ? lastElementRef : null}>
@@ -345,22 +252,31 @@ export default function VerificadorDeLinks({visibleElements,setVisibleElements,r
                     }
                 </div>
                 <div>
-                    {responses.map((response, index) => (
-                        <div key={index} className="flex flex-col items-start mb-1 text-sm md:text-base w-3/4 md:max-w-xl">
-                            <div className="bg-white shadow-md rounded-lg p-4 max-w-lg">
-                                <p>El reporte de la URL <strong className="text-green-dark">{response.url}</strong> es:</p>
-                                <p className="text-sm md:text-md">{response.message}</p>
-                                {
-                                    response.details &&
-                                    (
-                                        <div>
-                                            <pre className="text-xs md:text-sm">
-                                                {JSON.stringify(response.details, null, 2)}
-                                            </pre>
-                                        </div>
-                                    )
-                                }
-                                <small className="chat-time">{response.time}</small>
+                    {chats.map((chat, index) => (
+                        <div key={index}>
+                            <div
+                                className={`flex flex-col ${chat.alignment === 'right' ? 'items-end' : 'items-start'}`}>
+                                <div
+                                    className={`chat-box ${chat.color === 'neutral' ? chat.alignment : `bg-${getChatColor(chat.color)}`}`}>
+                                    {chat.image ? (
+                                        <img
+                                            src={chat.image}
+                                            alt={t("message-8")}
+                                            className="rounded-lg shadow-md"
+                                        />
+                                    ) : (
+                                        <p className="text-sm md:text-md">{chat.message}</p>
+                                    )}
+                                    <div className="flex items-center gap-1">
+                                        <small className="chat-time">{chat.time}</small>
+                                        {
+                                            chat.alignment === 'right' && (
+                                                <img src="read-double-check-icon.svg" alt="Double check icon"
+                                                     className="h-4 w-4 md:h-6 md:w-6"/>
+                                            )
+                                        }
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     ))}
@@ -369,7 +285,7 @@ export default function VerificadorDeLinks({visibleElements,setVisibleElements,r
                             <div
                                 className={`w-full flex py-2 justify-end`}>
                                 <div className="flex items-center space-x-1 px-4 py-3 rounded-xl bg-white w-fit">
-                                    <p className="mr-4">Cargando archivo</p>
+                                    <p className="mr-4">{t("loading-file")}</p>
                                     <div className="h-2 w-2 rounded-full bg-gray-400 animate-pulse"></div>
                                     <div className="h-2 w-2 rounded-full bg-gray-400 animate-pulse"></div>
                                     <div className="h-2 w-2 rounded-full bg-gray-400 animate-pulse"></div>
@@ -381,12 +297,12 @@ export default function VerificadorDeLinks({visibleElements,setVisibleElements,r
                         isFetchingResponse && (
                             <div
                                 className={`w-full flex py-2 justify-start`}>
-                                <div className="flex items-center space-x-1 px-4 py-3 rounded-xl bg-gray-100 w-fit">
+                                <div className="flex items-center space-x-1 px-4 py-3 rounded-xl bg-white w-fit">
                                     <div className="h-2 w-2 rounded-full bg-gray-400 animate-pulse"></div>
                                     <div className="h-2 w-2 rounded-full bg-gray-400 animate-pulse"></div>
                                     <div className="h-2 w-2 rounded-full bg-gray-400 animate-pulse"></div>
                                     <p className="pl-4">
-                                        Analizando el enlace proporcionado. Por favor, espere un momento.
+                                        {t("analyzing")}
                                     </p>
                                 </div>
                             </div>
@@ -400,11 +316,11 @@ export default function VerificadorDeLinks({visibleElements,setVisibleElements,r
                             <div className="mt-4 space-x-4">
                                 <button onClick={handleTakePhoto}
                                         className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md">
-                                    Tomar Foto
+                                    {t("scan-qr")}
                                 </button>
                                 <button onClick={handleCloseCamera}
                                         className="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-md">
-                                    Cerrar Cámara
+                                    {t("close-camera")}
                                 </button>
                             </div>
                         </div>
@@ -426,7 +342,7 @@ export default function VerificadorDeLinks({visibleElements,setVisibleElements,r
                                 value={text}
                                 onChange={(e) => setText(e.target.value)}
                                 onKeyDown={handleKeyDown}
-                                placeholder="Ingrese aquí su enlace, por favor"
+                                placeholder={t("input")}
                                 className="w-full p-2 text-sm text-gray-700 placeholder-gray-500 rounded-full"
                             />
                             <button
@@ -437,37 +353,26 @@ export default function VerificadorDeLinks({visibleElements,setVisibleElements,r
                             </button>
                         </div>
                     </div>
-                    <div
-                        className="relative group flex flex-col items-center cursor-pointer"
-                        onMouseEnter={() => setShowTooltipQR(true)}
-                        onMouseLeave={() => setShowTooltipQR(false)}
-                    >
-                        <button
-                            onClick={handleOpenCamera}
-                            disabled={isFetchingResponse || isLoadingFileUpload}
-                            className="bg-green-dark hover:bg-green duration-200 text-white p-3 rounded-full shadow-lg">
-                            <QrCodeIcon className="w-4 h-4 md:w-6 md:h-6"/>
-                        </button>
-                        {
-                            showTooltipQR &&
-                                <div className="absolute -top-10 bg-white text-xs p-2 rounded shadow-md">Escanea un QR</div>
-                        }
-                    </div>
-                    <div
-                        className="relative group flex flex-col items-center cursor-pointer"
-                        onMouseEnter={() => setShowTooltipFile(true)}
-                        onMouseLeave={() => setShowTooltipFile(false)}
-                    >
-                        <label
-                            className="bg-green-dark hover:bg-green duration-200 text-white p-3 rounded-full shadow-lg cursor-pointer">
-                            <PhotoIcon className="w-4 h-4 md:w-6 md:h-6"/>
-                            <input type="file" accept="image/*" className="hidden" onChange={handleFileUpload} disabled={isFetchingResponse || isLoadingFileUpload} />
-                        </label>
-                        {
-                            showTooltipFile &&
-                                <div className="absolute -top-10 bg-white text-xs p-2 rounded shadow-md">Sube un archivo</div>
-                        }
-                    </div>
+                    <Tooltip content={t("scan-qr")}>
+                        <div className="relative group flex flex-col items-center cursor-pointer">
+                            <button
+                                onClick={handleOpenCamera}
+                                disabled={isFetchingResponse || isLoadingFileUpload}
+                                className="bg-green-dark hover:bg-green duration-200 text-white p-3 rounded-full shadow-lg">
+                                <QrCodeIcon className="w-4 h-4 md:w-6 md:h-6"/>
+                            </button>
+                        </div>
+                    </Tooltip>
+                    <Tooltip content={t("upload-file")}>
+                        <div className="relative group flex flex-col items-center cursor-pointer">
+                            <label
+                                className="bg-green-dark hover:bg-green duration-200 text-white p-3 rounded-full shadow-lg cursor-pointer">
+                                <PhotoIcon className="w-4 h-4 md:w-6 md:h-6"/>
+                                <input type="file" accept="image/*" className="hidden" onChange={handleFileUpload}
+                                       disabled={isFetchingResponse || isLoadingFileUpload}/>
+                            </label>
+                        </div>
+                    </Tooltip>
                 </div>
             </div>
         </div>
