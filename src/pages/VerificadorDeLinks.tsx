@@ -257,7 +257,10 @@ export default function VerificadorDeLinks({visibleElements,setVisibleElements,c
                             <div
                                 className={`flex flex-col ${chat.alignment === 'right' ? 'items-end' : 'items-start'}`}>
                                 <div
-                                    className={`chat-box ${chat.color === 'neutral' ? chat.alignment : `bg-${getChatColor(chat.color)}`}`}>
+                                    className={`chat-box ${
+                                        chat.color === 'neutral' ? chat.alignment : `bg-${chat.color}`
+                                    }`}
+                                >
                                     {chat.image ? (
                                         <img
                                             src={chat.image}
