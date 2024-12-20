@@ -24,8 +24,16 @@ const Layout: React.FC = () => {
         localStorage.setItem("language", lang);
     }
 
+    const Loader: React.FC = () => {
+        return (
+            <div className="flex items-center justify-center h-screen">
+                <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-green-dark"></div>
+            </div>
+        );
+    };
+
     return (
-        <Suspense fallback="Loading...">
+        <Suspense fallback={<Loader/>}>
             <div className="relative h-screen">
                 <div className="absolute top-0 left-0 w-full h-1/5 bg-green"></div>
                 <div className="absolute bottom-0 left-0 w-full h-4/5 bg-grey-light"></div>
