@@ -269,10 +269,10 @@ export default function VerificadorDeLinks({visibleElements,setVisibleElements,c
                                         <img
                                             src={chat.image}
                                             alt={t("message-8")}
-                                            className="rounded-lg shadow-md"
+                                            className="rounded-lg shadow-md max-h-96 justify-end items-end flex"
                                         />
                                     ) : (
-                                        <p className="text-sm md:text-md">{chat.message}</p>
+                                        <p className="text-sm md:text-md break-words overflow-hidden text-wrap">{chat.message}</p>
                                     )}
                                     <div className="flex items-center gap-1">
                                         <small className="chat-time">{chat.time}</small>

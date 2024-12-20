@@ -3,7 +3,7 @@ export const Participants = [
         id: 1,
         name: "Sebastian Fernandez - Moris",
         subtitle: "Coordinador de Proyectos",
-        avatar: "https://media.licdn.com/dms/image/v2/D4E03AQFUEOhuM8r6vA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1700267567541?e=1740009600&v=beta&t=bN-bkU-p_OagsSMqq9Zz-cfKB8WbJcHn_8f6zNkBZxo",
+        avatar: "https://lab-ec-upc.github.io/assets/integrantes/moris-link.jpg",
     },
     {
         id: 2,
@@ -39,7 +39,7 @@ export const Participants = [
         id: 7,
         name: "Rosario Arribasplata",
         subtitle: "Diseño",
-        avatar: "https://media.licdn.com/dms/image/v2/D4E03AQGxdI5GZm0qbA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728940020012?e=1740009600&v=beta&t=Mghn7YTp-yQnOjjWjhD04cHt_BM1-binyJNT40JieNI",
+        avatar: "https://lab-ec-upc.github.io/assets/integrantes/rosario-link.jpg",
     },
     {
         id: 8,
@@ -51,13 +51,13 @@ export const Participants = [
         id: 9,
         name: "Danny Dávila",
         subtitle: "Audiovisuales",
-        avatar: "https://lab-ec-upc.github.io/assets/integrantes/Danny Dávila.jpg",
+        avatar: "https://lab-ec-upc.github.io/assets/integrantes/Danny%20Dávila.jpg",
     },
     {
         id: 10,
         name: "Antuanet Cordova",
         subtitle: "Audiovisuales",
-        avatar: "https://lab-ec-upc.github.io/assets/integrantes/Antuanet Cordova Reategui.jpeg",
+        avatar: "https://lab-ec-upc.github.io/assets/integrantes/Antuanet%20Cordova%20Reategui.jpeg",
     },
     {
         id: 11,
@@ -75,7 +75,7 @@ export const Participants = [
         id: 13,
         name: "Sofía Enciso Goicochea",
         subtitle: "Investigación y análisis de datos",
-        avatar: "https://media.licdn.com/dms/image/v2/D5603AQGfO3VPB7__kQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1701676111664?e=1740009600&v=beta&t=NsNXkaFBCYQb8EAI7pK8cl7_bL4S_bU69-oTA2Yl3IM",
+        avatar: "https://lab-ec-upc.github.io/assets/integrantes/sofia-link.jpg",
     },
     {
         id: 14,
@@ -93,7 +93,7 @@ export const Participants = [
         id: 16,
         name: "William Ramos",
         subtitle: "Desarrollo",
-        avatar: "https://media.licdn.com/dms/image/v2/D4E03AQHteEe5AJPWkA/profile-displayphoto-shrink_800_800/B4EZPBAGfrGQAg-/0/1734109850650?e=1740009600&v=beta&t=j40fQThaWrONFxmgqAQ2_6xy7Zf84wUNQeZ5UVn6KzU",
+        avatar: "https://lab-ec-upc.github.io/assets/integrantes/william-link.jpg",
     },
     {
         id: 17,
@@ -123,13 +123,13 @@ export const Participants = [
         id: 21,
         name: "Mayté Ciriaco",
         subtitle: "Supervisión, Coordinación y Edición",
-        avatar: "https://media.licdn.com/dms/image/v2/C4E03AQGfkDyzrLyJ9g/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1660609177388?e=1740009600&v=beta&t=ad0OxNkWn-Dw6nC9eM1mcm4fVfimKa4c83azVQWUPIs",
+        avatar: "https://lab-ec-upc.github.io/assets/integrantes/mayte-link.jpg",
     },
     {
         id: 22,
         name: "Ariana Lira",
         subtitle: "Supervisión, Coordinación y Edición",
-        avatar: "https://media.licdn.com/dms/image/v2/C5603AQEXwsbCk3XxjA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1628725096268?e=1740009600&v=beta&t=TGrhPnE7f8TLDUXzENIbikhiKWMbQ0mLBsULIK7lmGs",
+        avatar: "https://lab-ec-upc.github.io/assets/integrantes/ariana-link.jpg",
     },
     {
         id: 23,
