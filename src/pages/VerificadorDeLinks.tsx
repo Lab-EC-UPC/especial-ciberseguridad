@@ -7,7 +7,7 @@ import LoadingDots from "../components/LoadingDots.tsx";
 import {LinkVerifierContent} from "../content/LinkVerifierContent.tsx";
 import getCurrentTime from "../components/CurrentTime.ts";
 import {Tooltip} from "@nextui-org/tooltip";
-import {fetchUrlRiskScore, getChatColor, LinkVerifierChat} from "../utils/UrlRiskScoreService.ts";
+import {fetchUrlRiskScore, LinkVerifierChat} from "../utils/UrlRiskScoreService.ts";
 import {useTranslation} from "react-i18next";
 
 interface Props {
