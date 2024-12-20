@@ -13,11 +13,11 @@ import ElPhishing from "./pages/ElPhishing.tsx";
 import Testimonios from "./pages/Testimonios.tsx";
 import OpinionesSobreLaCiberdelincuencia from "./pages/OpinionesSobreLaCiberdelincuencia.tsx";
 import PrevencionYDenuncia from "./pages/PrevencionYDenuncia.tsx";
+import {LinkVerifierChat} from "./utils/UrlRiskScoreService.ts";
 
 function App() {
     const [screen, setScreen] = useState(1);
     const [transitionClass, setTransitionClass] = useState("");
-
     const [elementsCiberdelincuencia, setElementsCiberdelincuenciaCiberdelincuencia] = useState(0);
     const [elementsUnPocoDeData, setElementsUnPocoDeData] = useState(0);
     const [elementsElPhishing, setElementsElPhishing] = useState(0);
@@ -25,7 +25,7 @@ function App() {
     const [elementsOpiniones, setElementsOpiniones] = useState(0);
     const [elementsPrevencion, setElementsPrevencion] = useState(0);
     const [elementsVerificador, setElementsVerificador] = useState(0);
-    const [responses, setResponses] = useState<{ message: string; details?: string; time: string; url?: string }[]>([]);
+    const [chats, setChats] = useState<LinkVerifierChat[]>([]);
 
     const skipTeaserSplashScreen = () => {
         setTransitionClass("fade-out");
@@ -91,8 +91,8 @@ function App() {
                         <VerificadorDeLinks
                             visibleElements={elementsVerificador}
                             setVisibleElements={setElementsVerificador}
-                            responses={responses}
-                            setResponses={setResponses}
+                            chats={chats}
+                            setChats={setChats}
                         />
                 },
                 { path: "/creditos", element: <Creditos /> },

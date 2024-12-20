@@ -36,35 +36,38 @@ const Sidebar: React.FC<SidebarProps> = ({ routes, toggleSidebar, switchLanguage
                 <h1 className="text-2xl md:text-5xl font-bold font-tomorrow">
                     Chats
                 </h1>
-                <div className="hidden md:block">
+                <div className="flex gap-4">
                     <div className="flex gap-2">
                         <Dropdown className="bg-white p-4 shadow">
                             <DropdownTrigger>
-                                <LanguageIcon className="h-6 text-grey hover:text-green-dark hover:scale-90 duration-200 hover:cursor-pointer" />
+                                <LanguageIcon
+                                    className="h-6 text-grey hover:text-green-dark hover:scale-90 duration-200 hover:cursor-pointer"/>
                             </DropdownTrigger>
                             <DropdownMenu>
                                 <DropdownItem key="es">
                                     <button onClick={() => switchLanguage("es")}
-                                            className="p-2 hover:scale-95 duration-300">
+                                            className="p-2 hover:scale-95 duration-300 flex items-center gap-2">
                                         <img src="language/spanish-flag.svg" alt="Spanish" className="h-8 w-8"/>
+                                        <p className="text-xs md:text-md">Español</p>
                                     </button>
                                 </DropdownItem>
                                 <DropdownItem key="en">
                                     <button onClick={() => switchLanguage("en")}
-                                            className="p-2 hover:scale-95 duration-300">
-                                    <img src="language/english-flag.svg" alt="English" className="h-8 w-8"/>
+                                            className="p-2 hover:scale-95 duration-300 flex items-center gap-2">
+                                        <img src="language/english-flag.svg" alt="English" className="h-8 w-8"/>
+                                        <p className="text-xs md:text-md">English</p>
                                     </button>
                                 </DropdownItem>
                             </DropdownMenu>
                         </Dropdown>
                     </div>
+                    <button
+                        className="md:hidden"
+                        onClick={toggleSidebar}
+                    >
+                        <XMarkIcon className="h-6 text-grey"/>
+                    </button>
                 </div>
-                <button
-                    className="md:hidden"
-                    onClick={toggleSidebar}
-                >
-                <XMarkIcon className="h-6 text-grey"/>
-                </button>
             </div>
             <div className="flex-1 overflow-auto">
                 <ul className="">
