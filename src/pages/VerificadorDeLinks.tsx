@@ -7,7 +7,7 @@ import LoadingDots from "../components/LoadingDots.tsx";
 import {LinkVerifierContent} from "../content/LinkVerifierContent.tsx";
 import getCurrentTime from "../components/CurrentTime.ts";
 import {Tooltip} from "@nextui-org/tooltip";
-import {fetchUrlRiskScore, getChatColor, LinkVerifierChat} from "../utils/UrlRiskScoreService.ts";
+import {fetchUrlRiskScore, LinkVerifierChat} from "../utils/UrlRiskScoreService.ts";
 import {useTranslation} from "react-i18next";
 
 interface Props {
@@ -257,7 +257,10 @@ export default function VerificadorDeLinks({visibleElements,setVisibleElements,c
                             <div
                                 className={`flex flex-col ${chat.alignment === 'right' ? 'items-end' : 'items-start'}`}>
                                 <div
-                                    className={`chat-box ${chat.color === 'neutral' ? chat.alignment : `bg-${getChatColor(chat.color)}`}`}>
+                                    className={`chat-box ${
+                                        chat.color === 'neutral' ? chat.alignment : `bg-${chat.color}`
+                                    }`}
+                                >
                                     {chat.image ? (
                                         <img
                                             src={chat.image}

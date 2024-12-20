@@ -8,19 +8,6 @@ export interface LinkVerifierChat {
     image?: string;
 }
 
-export const getChatColor = (color: string) => {
-    switch (color) {
-        case 'safe':
-            return 'lime-100';
-        case 'warning':
-            return 'yellow-100';
-        case 'insecure':
-            return 'red-200';
-        default:
-            return 'white';
-    }
-}
-
 export const fetchUrlRiskScore = async (url: string, t: (key: string) => string): Promise<LinkVerifierChat | undefined> => {
     const getUrlMessage = (brief: string) => {
         switch (brief) {
