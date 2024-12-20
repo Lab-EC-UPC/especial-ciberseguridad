@@ -1,0 +1,27 @@
+{
+    "titulo":"What do the specialists think?",
+
+    "lead1": "The group has been created: Opinions on Cybercrime",
+    "lead2": "Group of 5 members",
+    "lead3": "Discover the perspectives of cybersecurity specialists on cybercrime",
+
+    "joinDiego": "Diego Oviedo joined using the invitation link",
+    "nameDiego": "Diego Oviedo (Specialist in Cybersecurity)",
+    "txtDiego": "“When you ask a cybercriminal ‘why is the cybercrime world attractive to you?’, the first thing this person probably will say is that you do not expose your life by committing this crime. For a criminal, this is a world where you can generate a lot of damage with only some clicks”",
+
+    "joinJoseCarlos": "Jose Carlos Vargas joined using the invitation link",
+    "nameJoseCarlos": "Jose Carlos Vargas (President of ISACA)",
+    "txtJoseCarlos": "“Never before, knowing how to protect yourself in the digital world had such an impact on people's quality of life.  (…)  In terms of cybersecurity, right now there is a global phenomenon: the absence of professional profiles to be able to address the challenges of cybersecurity. There are no professionals”",
+
+    "joinVictor": "Victor Ruiz joined using the invitation link",
+    "nameVictor": "Victor Ruiz (Specialist in Cybersecurity)",
+    "txtVictor": "“It is very important that cybersecurity is integrated as a part of economic development. Recently, we have spoken with some companies and said to them: “you already have to consider to have a cybersecurity area in your company that provides security to both your collaborators and clients, just as you have your legal area, your finance area and your human resources area”",
+
+    "joinErick": "Erick Iriarte joined using the invitation link",
+    "nameErick": "Erick Iriarte (Specialist in Digital Law)",
+    "txtErick": "“In Peru, we do not have neither a cybersecurity culture nor data protection. Not even the kids in their schools learn how to take care of their information or that of their families. (...) The data protection regulation is more than a decade old and does nor adjust to current dynamics. A new regulation is  urgent in order to give citizens more tools”",
+
+    "joinJorge": "Jorge Zeballos joined using the invitation link",
+    "nameJorge": "Jorge Zeballos (General manager of  ESET Perú)",
+    "txtJorge": "“As citizens, we need the area of personal data protection to be better regulated. My data can’t be walking with liberty, they know where you work, how much you earn, what cards you use, etc., and that is not correct. It belong to my fundamental rights, and it is established even in the Constitution”"
+}
