@@ -62,5 +62,9 @@
 
   "Grafico3": "Delitos informáticos más denunciados en 2024 en el Perú",
   "Grafico3.1": "Modalidades (enero a agosto del 2024)",
-  "Grafico3.2": "Fuente: DIVINDAT"
+  "Grafico3.2": "Fuente: DIVINDAT",
+
+  "link-grafico-1": "https://public.flourish.studio/visualisation/20792110/embed",
+  "link-grafico-2": "https://public.flourish.studio/visualisation/20785916/embed",
+  "link-grafico-3": "https://public.flourish.studio/visualisation/20801750/embed"
 }
