@@ -6,12 +6,11 @@ export default function TeaserSplashScreen({ onSkip }: { onSkip: () => void }) {
     const [videoSrc, setVideoSrc] = useState("");
     const { t } = useTranslation(["general"]);
 
-    const desktopVideo =
-        "https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/inicio-horizontal-logo.webm";
-    const mobileVideo =
-        "https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/inicio-vertical-logo.webm";
+    const desktopVideo = t('splash-desktop-url');
+    const mobileVideo = t('splash-mobile-url');
 
     useEffect(() => {
+        console.log(mobileVideo);
         const updateVideoSrc = () => {
             if (window.innerWidth <= 768) {
                 setVideoSrc(mobileVideo);
