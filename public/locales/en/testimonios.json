@@ -1,0 +1,44 @@
+{
+  "group-msg": "Group created: Testimonials",
+  "group-mem": "Group 4 members",
+  "group-desc": "Learn about the testimonies of those who have suffered from various forms of phishing and how they have dealt with the consequences",
+
+  "inv-1": "Jessica Rojas joined using an invitation link",
+  "inv-2": "Irina González joined using an invitation link",
+  "inv-3": "Ekaterina Zakharova joined using an invitation link",
+  "inv-4": "Sheyla Choque joined using an invitation link",
+
+  "aud1": "Jessica Rojas, 43 years old (Vishing victim)",
+  "jess-1": "Jessica received a phone call that pretended to be from her educational institute. After agreeing to provide them a validation code, the attackers accessed her ",
+  "jess-2": "Whatsapp account ",
+  "jess-3": "and used it to ",
+  "jess-4": "scam her contacts. ",
+  "jess-5": "The crime had an impact in her personal and work life, since -like many- she used the app as an important communication tool.\uD83D\uDCF2.",
+
+  "aud2": "Irina Gonzales García, 40 years old (Smishing and Phishing victim)",
+  "irin-1": "Irina was deceived through a direct message via Instagram that ",
+  "irin-2": "pretended to be from a friend. ",
+  "irin-3": "At the imposter’s request, she ",
+  "irin-4": "shared a code received by SMS \uD83D\uDCF2,",
+  "irin-5": "which allowed the scammers to take over her social media accounts. These were used to send ",
+  "irin-6": "send fraudulent messages \uD83D\uDED1, ",
+  "irin-7": "promoting the purchase of bitcoins, which affected her credibility.",
+
+  "aud3": "Ekaterina Zakharova, 44 years old (Phishing in electronic commerce victim)",
+  "ekat-1": "While shopping on Alibaba, an ",
+  "ekat-2": "online commerce platform \uD83C\uDF10\uD83D\uDED2, ",
+  "ekat-3": "Ekaterina was scammed by a ",
+  "ekat-4": "supposed supplier ",
+  "ekat-5": "who presented ",
+  "ekat-6": "fake documents. ",
+  "ekat-7": "As a consequence, she paid for an order that never arrived.  The scammers created fraudulent profiles and tracking pages, pretending to be legitimate in the trusted platform.",
+
+  "aud4": "Sheyla Choque Vizcarra, 23 years old (Phishing and Vishing victim)",
+  "shey-1": "Sheyla put her data on a ",
+  "shey-2": "fake page of the Banco de Crédito del Perú (BCP) ",
+  "shey-3": "and received a call from the supposed bank. She gave them security codes ",
+  "shey-4": "(TOKEN) ",
+  "shey-5": "and ",
+  "shey-6": "lost S/5,000 \uD83D\uDCB8 ",
+  "shey-7": "from her account in a matter of hours. After the complaint, she could recover the money."
+}
