@@ -23,9 +23,11 @@ export default function UnPocoDeData ({visibleElements,setVisibleElements} :  Pr
                 <div className="flex flex-col items-end animate-fade-in-fast">
                     <div className="chat-box right">
                         <p className="text-sm md:text-md">
-                            {t("SegundoChat1")} <span className="font-bold">{t("SegundoChat2")}</span>
+                            {t("SegundoChat1")} <span
+                            className="font-bold">{t("SegundoChat2.1")}</span> {t("SegundoChat2")}<span
+                            className="font-bold">{t("SegundoChat2.2")}</span>
                             {t("SegundoChat3")} <span className="font-bold">{t("SegundoChat4")} </span>
-                            {t("SegundoChat5")}. 🔒📉💻
+                            {t("SegundoChat5")}.
                         </p>
                         <div className="flex items-center gap-1">
                             <small className="chat-time">{getCurrentTime()}</small>
@@ -59,7 +61,7 @@ export default function UnPocoDeData ({visibleElements,setVisibleElements} :  Pr
                 <div className="flex flex-col items-end animate-fade-in-fast">
                     <div className="chat-box right">
                         <p className="text-sm md:text-md">
-                            {t("CuartoChat1")} <span className="font-bold">{t("CuartoChat2")}</span>. 💰🌐⚠️
+                            {t("CuartoChat1")} <span className="font-bold">{t("CuartoChat2")}</span>.
                         </p>
                         <div className="flex items-center gap-1">
                             <small className="chat-time">{getCurrentTime()}</small>
@@ -79,8 +81,12 @@ export default function UnPocoDeData ({visibleElements,setVisibleElements} :  Pr
                 <div className="flex flex-col items-start animate-fade-in-fast">
                     <div className="chat-box left">
                         <p className="text-sm md:text-md">
-                            {t("QuintoChat1")} <span className="font-bold">{t("QuintoChat2")} </span>
-                             🌍, {t("QuintoChat3")} <span className="font-bold">{t("QuintoChat4")}</span> 🇺🇸 {t("QuintoChat6")}
+                            {t("QuintoChat1")} <span
+                            className="font-bold">{t("QuintoChat2")} </span>{t("QuintoChat2.1")}<span
+                            className="font-bold">{t("QuintoChat2.2")} </span>{t("QuintoChat2.3")}<span
+                            className="font-bold">{t("QuintoChat2.4")} </span>
+                            , {t("QuintoChat3")} <span
+                            className="font-bold">{t("QuintoChat4")}</span> 🇺🇸 {t("QuintoChat6")}
                             <span className="font-bold"> {t("QuintoChat5")}</span> 🇨🇳.
 
                         </p>
@@ -145,8 +151,8 @@ export default function UnPocoDeData ({visibleElements,setVisibleElements} :  Pr
                 <div className="flex flex-col items-start animate-fade-in-fast">
                     <div className="chat-box left">
                         <p className="text-sm md:text-md">
-                            {t("SepChat1")} <span className="font-bold">{t("SepChat2")}</span> {t("SepChat3")}. 📈💻 {t("SepChat4")} <span className="font-bold">{t("SepChat5")}</span>
-                            {t("SepChat6")} <span className="font-bold">{t("SepChat7")}</span>. ⚠️🌐
+                            {t("SepChat1")} <span className="font-bold">{t("SepChat2")}</span> {t("SepChat3")}. 💻 {t("SepChat4")} <span className="font-bold">{t("SepChat5")}</span>
+                            {t("SepChat6")} {t("SepChat7")}.
                         </p>
                         <small className="chat-time">{getCurrentTime()}</small>
                     </div>
@@ -189,7 +195,7 @@ export default function UnPocoDeData ({visibleElements,setVisibleElements} :  Pr
                 <div className="flex flex-col items-end animate-fade-in-fast">
                     <div className="chat-box right">
                         <p className="text-sm md:text-md">
-                            <span className="font-bold">{t("OctChat1")}</span>⚖️💻
+                            <span className="font-bold">{t("OctChat1")}</span>
                         </p>
                         <div className="flex items-center gap-1">
                             <small className="chat-time">{getCurrentTime()}</small>
@@ -234,7 +240,7 @@ export default function UnPocoDeData ({visibleElements,setVisibleElements} :  Pr
                             allowFullScreen
                             title="Flourish Chart"
                         />
-                        <p className="text-sm md:text-md">Fuente: DIVINDAT</p>
+                        <p className="text-sm md:text-md">{t("Grafico3.2")}</p>
                         <div className="flex items-center gap-1">
                             <small className="chat-time">{getCurrentTime()}</small>
                             <img
@@ -272,8 +278,9 @@ export default function UnPocoDeData ({visibleElements,setVisibleElements} :  Pr
                         <p className="text-sm md:text-md">
                             {t("PrimerChat1")} <span className="font-bold">{t("PrimerChat2")} </span>
                             {t("PrimerChat3")} <span
-                            className="font-bold">{t("PrimerChat4")} </span>
-                            .💻⚠️👮‍♂️
+                            className="font-bold">{t("PrimerChat4")} </span>{t("PrimerChat5")}<span
+                            className="font-bold">{t("PrimerChat6")} </span>
+                            .
                         </p>
                         <small className="chat-time">{getCurrentTime()}</small>
                     </div>

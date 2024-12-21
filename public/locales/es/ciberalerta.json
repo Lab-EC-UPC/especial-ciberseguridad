@@ -1,20 +1,27 @@
 {
   "tituloCiber": "¿Qué es la ciberdelincuencia?",
-  "PrimerChat1": "La ciberdelincuencia",
-  "PrimerChat2": "engloba",
-  "PrimerChat3": "todos los delitos cometidos cometidos por medio de internet",
+  "PrimerChat": "La",
+  "PrimerChat1": " ciberdelincuencia",
+  "PrimerChat2": "engloba todos los delitos cometidos cometidos por medio de ",
+  "PrimerChat3": "internet",
   "PrimerChat4": "y las",
   "PrimerChat5": "tecnologías digitales",
   "PrimerChat6": "que vulneran la seguridad de",
   "PrimerChat7": "empresas",
   "PrimerChat8": "y",
   "PrimerChat9": "usuarios",
-  "SegundoChat1": "Este tipo de delito ha aumentado debido a la",
-  "SegundoChat2": "expansión del internet",
+  "SegundoChat1": "Este tipo de delito ha aumentado debido a la expansión del",
+  "SegundoChat2": " internet",
   "SegundoChat3": "y el crecimiento del",
   "SegundoChat4": "comercio electrónico",
   "SegundoChat5": "",
+<<<<<<< HEAD
   "SegundoChat6": "que se potenció a",
   "SegundoChat7": "raíz de la pandemia",
   "video_teaser": "https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/teaser_v2.webm"
+=======
+  "SegundoChat6": "que se potenció a raíz de la ",
+  "SegundoChat7": "pandemia"
+
+>>>>>>> e44e34d4b9ce89cd131dbb5961160d0a3fca5ac9
 }

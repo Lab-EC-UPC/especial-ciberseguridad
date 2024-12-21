@@ -4,5 +4,7 @@
   "title": "Mantente alerta ante los",
   "title-2": "peligros online",
   "start": "Comenzar",
-  "link-verifier": "Verificador de links"
+  "link-verifier": "Verificador de links",
+  "splash-desktop-url": "https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/inicio-horizontal-logo.webm",
+  "splash-mobile-url": "https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/inicio-vertical-logo.webm"
 }

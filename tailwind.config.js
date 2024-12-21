@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+import {nextui} from "@nextui-org/theme";
+
+>>>>>>> e44e34d4b9ce89cd131dbb5961160d0a3fca5ac9
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -80,4 +85,3 @@ export default {
   },
 
 }
-
