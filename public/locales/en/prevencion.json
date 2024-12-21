@@ -2,24 +2,25 @@
     "titulo1": "¿How to prevent cybercrimes?",
     
     "primer1": "According to a ",
-    "primer2": "Kaspersky study, even though seven out of ten Peruvian people ",
-    "primer3": "are worried to check the ",
-    "primer4": "legitimacy of the websites ",
-    "primer5": "🌐 before they enter their ",
-    "primer6": "personal data, ",
-    "primer7": "🔐, ",
-    "primer8": "eight of each ten recognized that they do not know how to find out if the website is fake.",
+    "primer2": "Kaspersky 📊",
+    "primer3": " study, even though  ",
+    "primer4": "seven out of ten Peruvian people ",
+    "primer5": "are worried to check the legitimacy of the ",
+    "primer6": "websites ",
+    "primer7": "before they enter their ",
+    "primer8": "personal data, ",
+    "primer9": "the ",
+    "primer10": "eight of each ten recognized that they do not know how to find out if the website is fake.",
 
     "titulo2": "How can you report these cybercrimes?",
 
-    "segundo1": "In this section you can find the ",
-    "segundo2": "main means to report cybercrimes",
+    "segundo1": "In this section you can find the main means to ",
+    "segundo2": "report cybercrimes",
     "segundo3": " in Peru. In case you have been a",
     "segundo4": " victim of a cybercrime ",
-    "segundo5": " 🖥️🔒 or are looking to ",
-    "segundo6": " report suspicious activity",
-    "segundo7": " ⚠️, you can contact the following",
-    "segundo8": " responsible entities:",
+    "segundo5": "or are looking to ",
+    "segundo6": " report ",
+    "segundo7": "suspicious activity, you can contact the following",
 
     "tercero": "High Technology Crime Investigation Division (DIVINDAT)",
     "cuarto": "This is the specialized unit of the Peruvian National Police (PNP), that deals with computer crimes",
@@ -33,5 +34,7 @@
     "septimo4": "🌐✅It is necessary to ",
     "septimo5": "identify yourself with your ID 🆔 and to provide clear evidence 📂.",
     "octavo1": "Link:",
-    "octavo2": "Online reports"
+    "octavo2": "Online reports",
+
+    "video_yanira": "https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/yanira-en.webm"
 }

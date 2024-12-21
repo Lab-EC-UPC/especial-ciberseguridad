@@ -1,19 +1,26 @@
 {
   "tituloCiber": "What is cybercrime?",
+  "PrimerChat": "",
   "PrimerChat1": "Cybercrime",
-  "PrimerChat2": "includes",
-  "PrimerChat3": "every type of crime committed through the internet",
+  "PrimerChat2": "includes every type of crime committed through the",
+  "PrimerChat3": " internet",
   "PrimerChat4": "and",
   "PrimerChat5": "digital technologies",
   "PrimerChat6": "which violate the security of",
   "PrimerChat7": "companies",
   "PrimerChat8": "and",
   "PrimerChat9": "users",
-  "SegundoChat1": "This type of crime has been increased as a consequence of",
-  "SegundoChat2": "the internet expansion",
-  "SegundoChat3": "and",
-  "SegundoChat4": "the electronic commerce",
+  "SegundoChat1": "This type of crime has been increased as a consequence of the",
+  "SegundoChat2": " internet ",
+  "SegundoChat3": " expansion and the ",
+  "SegundoChat4": "electronic commerce",
   "SegundoChat5": "growth",
+<<<<<<< HEAD
   "SegundoChat6": "which has been enhanced since",
-  "SegundoChat7": " the pandemic"
+  "SegundoChat7": " the pandemic",
+  "video_teaser": "https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/teaser-en_shorted.webm"
+=======
+  "SegundoChat6": "which has been enhanced since the",
+  "SegundoChat7": " pandemic"
+>>>>>>> e44e34d4b9ce89cd131dbb5961160d0a3fca5ac9
 }

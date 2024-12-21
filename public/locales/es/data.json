@@ -3,11 +3,15 @@
   "PrimerChat1": "En el año 2023, la",
   "PrimerChat2": "Policía Nacional del Perú (PNP)",
   "PrimerChat3": "registró un promedio de",
-  "PrimerChat4": "107 intentos de ciberataques por minuto",
+  "PrimerChat4": "107 intentos",
+  "PrimerChat5": " de ciberataques",
+  "PrimerChat6": " por minuto",
 
   "SegundoChat1": "Solo el",
-  "SegundoChat2": "24% de usuarios en la región (Latinoamérica) ",
-  "SegundoChat3": "poseen un",
+  "SegundoChat2": "24% de usuarios ",
+  "SegundoChat2.1": "",
+  "SegundoChat2.2": "",
+  "SegundoChat3": "en la región (Latinoamérica) poseen un",
   "SegundoChat4": "software de seguridad instalado",
   "SegundoChat5": "en sus dispositivos",
 
@@ -18,7 +22,11 @@
   "CuartoChat2": "US$10 billones",
 
   "QuintoChat1": "Esto convierte a la ciberdelincuencia en la",
-  "QuintoChat2": "tercera economía más grande del mundo solo detrás de",
+  "QuintoChat2": "tercera economía",
+  "QuintoChat2.1": " más",
+  "QuintoChat2.2": " grande",
+  "QuintoChat2.3": " del",
+  "QuintoChat2.4": " mundo",
   "QuintoChat3": "solo detrás de",
   "QuintoChat4": "Estados Unidos",
   "QuintoChat5": "China",
@@ -36,7 +44,7 @@
 
   "OctChat1": "¿Qué delito informático se denuncia más?",
 
-  "NonChat1": "La División de Investigación de Delitos de Alta Tecnología (Divindat) de la PNP \uD83D\uDCCA\uD83D\uDCBB recibió",
+  "NonChat1": "La División de Investigación de Delitos de Alta Tecnología (Divindat) de la PNP recibió",
   "NonChat2": "27,934 casos de delitos informáticos",
   "NonChat3": "en 2024. De estos,",
   "NonChat4": "19,067 fueron fraudes informáticos",
