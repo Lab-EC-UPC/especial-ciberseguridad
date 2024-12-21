@@ -125,7 +125,7 @@ export default function UnPocoDeData ({visibleElements,setVisibleElements} :  Pr
                         </p>
                         <iframe
                             className="flourish-embed flourish-chart"
-                            src="https://public.flourish.studio/visualisation/20792110/embed"
+                            src={t("link-grafico-1")}
                             width="100%"
                             height="300"
                             frameBorder="0"
@@ -169,7 +169,7 @@ export default function UnPocoDeData ({visibleElements,setVisibleElements} :  Pr
                             <br></br>{t("Grafico2.1")}</p>
                         <iframe
                             className="flourish-embed flourish-chart"
-                            src="https://public.flourish.studio/visualisation/20785916/embed"
+                            src={t("link-grafico-2")}
                             width="100%"
                             height="300"
                             frameBorder="0"
@@ -233,7 +233,7 @@ export default function UnPocoDeData ({visibleElements,setVisibleElements} :  Pr
                         </p>
                         <iframe
                             className="flourish-embed flourish-charts"
-                            src="https://public.flourish.studio/visualisation/20801750/embed"
+                            src={t("link-grafico-3")}
                             width="100%"
                             height="550"
                             frameBorder="0"
