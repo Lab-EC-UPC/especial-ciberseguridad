@@ -12,7 +12,7 @@ interface Participant {
 const ParticipantCard = (participant: Participant) => {
     return (
         <div className="flex bg-white items-center gap-6">
-            <img src={participant.avatar || "https://github.com/Lab-EC-UPC/assets/blob/main/especial-ciberseguridad/creditos/placeholder-photo.png?raw=true"}
+            <img src={participant.avatar || "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541"}
                  alt={participant.name}
                  className="w-10 h-10 md:w-16 md:h-16 rounded-full object-cover"
             />
@@ -47,7 +47,7 @@ export default function Creditos () {
             <div className="p-4">
                 <div className="flex flex-col items-center animate-fade-in-fast">
                     <div className="flex flex-col gap-2 md:gap-4 chat-box center">
-                        <img src="https://github.com/Lab-EC-UPC/assets/blob/main/logo-ec-data.png?raw=true"
+                        <img src="https://lab-ec-upc.github.io/assets/logo-ec-data.png"
                              alt="ECDATA-UPC"
                              className="w-16 h-16 md:w-32 md:h-32 border rounded-full"
                         />
