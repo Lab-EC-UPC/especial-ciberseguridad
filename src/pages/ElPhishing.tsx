@@ -3,6 +3,7 @@ import getCurrentTime from "../components/CurrentTime.ts";
 import PrevFabButton from "../components/PrevFabButton.tsx";
 import NextFabButton from "../components/NextFabButton.tsx";
 import LoadingDots from "../components/LoadingDots.tsx";
+import {useTranslation} from "react-i18next";
 
 interface Props {
     visibleElements: number;
@@ -12,6 +13,7 @@ interface Props {
 export default function ElPhishing ({visibleElements,setVisibleElements} :  Props) {
     const [isLoading, setIsLoading] = useState(false);
     const lastElementRef = useRef<HTMLDivElement>(null);
+    const {t} = useTranslation(["elphishing"]);
 
     const elements = [
         {
@@ -23,18 +25,18 @@ export default function ElPhishing ({visibleElements,setVisibleElements} :  Prop
                         <p className="text-sm md:text-md">
                             <ul className="list-disc list-inside">
                                 <li>
-                                    Compartir
-                                    <span className="font-bold"> datos confidenciales🔑❌ </span>
+                                    {t("msg2-1")}
+                                    <span className="font-bold"> {t("msg2-2")} </span>
                                 </li>
                                 <li>
-                                    Descargar
-                                    <span className="font-bold"> malwares </span>
-                                    (cualquier tipo de código o aplicacion dañina que puede afectar a un dispositivo)💻⚠️
+                                    {t("msg2-3")}
+                                    <span className="font-bold"> {t("msg2-4")} </span>
+                                    {t("msg2-5")}
                                 </li>
                                 <li>
-                                    Exponer su
-                                    <strong> informacion personal </strong>
-                                    a la ciberdelincuencia 🛡️🚨
+                                    {t("msg2-6")}
+                                    <strong> {t("msg2-7")} </strong>
+                                    {t("msg2-8")}
                                 </li>
                             </ul>
 
@@ -50,11 +52,11 @@ export default function ElPhishing ({visibleElements,setVisibleElements} :  Prop
                 <div className="flex flex-col items-end animate-fade-in-fast">
                     <div className="chat-box right">
                         <p className="text-sm md:text-md">
-                            Entre julio de 2023 y julio de 2024, en toda América Latina, se registraron más de
-                            <strong> 697 millones de bloqueos de phishing 🛡️📧</strong>
-                            , según el Panorama de Amenazas de Kaspersky 🌐, empresa de ciberseguridad 🔒 dedicada a
-                            <strong> ofrecer soluciones y servicios de protección para usuarios y compañías </strong>
-                            en todo el mundo 🌍👩‍💻.
+                            {t("msg3-1")}
+                            <strong> {t("msg3-2")}</strong>
+                            {t("msg3-3")}
+                            {t("msg3-4")}
+                            {t("msg3-5")}
                         </p>
                         <div className="flex items-center gap-1">
                             <small className="chat-time">{getCurrentTime()}</small>
@@ -74,11 +76,11 @@ export default function ElPhishing ({visibleElements,setVisibleElements} :  Prop
                 <div className="flex flex-col items-end animate-fade-in-fast">
                     <div className="chat-box right">
                         <p className="text-sm md:text-md">
-                            En ese mismo periodo, en el Perú 🇵🇪 se registraron cerca de
-                            <strong> 91 millones de ataques de phishing, </strong>
-                            casi
-                            <strong> cuatro veces </strong>
-                            más que en el año anterior. 📈⚠️
+                            {t("msg4-1")}
+                            <strong> {t("msg4-2")} </strong>
+                            {t("msg4-3")}
+                            <strong> {t("msg4-4")} </strong>
+                            {t("msg4-5")}
                         </p>
                         <div className="flex items-center gap-1">
                             <small className="chat-time">{getCurrentTime()}</small>
@@ -98,11 +100,11 @@ export default function ElPhishing ({visibleElements,setVisibleElements} :  Prop
                 <div className="flex flex-col items-start animate-fade-in-fast">
                     <div className="chat-box left">
                         <p className="text-sm md:text-md">
-                            Los países que mostraron un
-                            <strong> mayor crecimiento </strong>
-                            en la actividad de
-                            <strong> phishing 🎣 </strong>
-                            en 2024 en <strong> Latinoamérica </strong> son:
+                            {t("msg5-1")}
+                            <strong>{t("msg5-2")}</strong>
+                            {t("msg5-3")}
+                            <strong>{t("msg5-4")}</strong>
+                            {t("msg5-5")}<strong>{t("msg5-6")}</strong>{t("msg5-7")}
                         </p>
                         <small className="chat-time">{getCurrentTime()}</small>
                     </div>
@@ -115,19 +117,19 @@ export default function ElPhishing ({visibleElements,setVisibleElements} :  Prop
                 <div className="flex flex-col items-start animate-fade-in-fast">
                     <div className="chat-box left">
                         <p className="text-sm md:text-md">
-                            <span className="font-bold">Crecimiento de la actividad de phishing en Latinoamérica en 2024</span>
-                            <br></br>Países con mayor crecimiento de Phishing en Latambr<br></br>
+                            <span className="font-bold">{t("msg6-1")}</span>
+                            <br></br>{t("msg6-2")}<br></br>
                         </p>
                         <iframe
                             className="flourish-embed flourish-charts"
-                            src="https://public.flourish.studio/visualisation/20791460/embed"
+                            src={t("graphic")}
                             width="100%"
                             height="300"
                             frameBorder="0"
                             allowFullScreen
                             title="Flourish Chart"
                         />
-                        <p className="text-sm md:text-md">Fuente: DIVINDAT</p>
+                        <p className="text-sm md:text-md">{t("msg6-3")}</p>
                         <small className="chat-time">{getCurrentTime()}</small>
                     </div>
                 </div>
@@ -143,13 +145,13 @@ export default function ElPhishing ({visibleElements,setVisibleElements} :  Prop
                              className="w-16 h-16 md:w-24 md:h-24"
                         />
                         <h1 className="text-lg font-medium">
-                            Grupo creado por el Phishing
+                            {t("ph-group-title")}
                         </h1>
                         <small>
-                            <strong>Grupo 3 miembros</strong>
+                            <strong>{t("ph-group-mem")}</strong>
                         </small>
                         <p className="text-sm md:text-md">
-                            Conoce acerca de las modalidades de uno de los ciberdelitos más comunes de la región.
+                            {t("ph-group-desc")}
                         </p>
                     </div>
                 </div>
@@ -162,7 +164,7 @@ export default function ElPhishing ({visibleElements,setVisibleElements} :  Prop
 
                     <div className="chat-box center">
                         <p className="text-sm md:text-md">
-                            El <strong> Vishing </strong> se unió usando el enlace de invitación
+                            {t("inv-1")}<strong> {t("inv-2-v")} </strong> {t("inv-3")}
                         </p>
                     </div>
                 </div>
@@ -182,13 +184,14 @@ export default function ElPhishing ({visibleElements,setVisibleElements} :  Prop
                                     className="w-full h-full object-cover aspect-square"
                                 />
                             </div>
-                            <span className="text-sm font-bold text-gray-700">El Vishing</span>
+                            <span className="text-sm font-bold text-gray-700">{t("Vishing")}</span>
                         </div>
                         <p className="text-sm md:text-md">
-                            Derivado de las palabras <strong> "voice" 🎙️ y "phishing" 🎣, </strong>
-                            este método combina una <strong>llamada telefónica 📞</strong> con
-                            <strong> información que el delincuente obtuvo previamente </strong>del usuario mediante
-                            internet 🌐.
+                            {t("msg7-1")}<strong> {t("msg7-2")}</strong>
+                            {t("msg7-3")}<strong>{t("msg7-4")}</strong>
+                            {t("msg7-5")}
+                            {t("msg7-6")}
+                            {t("msg7-7")}
                         </p>
                         <small className="chat-time">{getCurrentTime()}</small>
                     </div>
@@ -209,13 +212,12 @@ export default function ElPhishing ({visibleElements,setVisibleElements} :  Prop
                                     className="w-full h-full object-cover aspect-square"
                                 />
                             </div>
-                            <span className="text-sm font-bold text-gray-700">El Vishing</span>
+                            <span className="text-sm font-bold text-gray-700">{t("Vishing")}</span>
                         </div>
                         <p className="text-sm md:text-md">
-                            El objetivo es <strong> engañarlo 🕵 </strong> para que proporcione un
-                            <strong> token digital 🔑 o un código de verificación 📲 </strong> que le permita al
-                            ciberdelincuente acceder a sus
-                            <strong> cuentas bancarias 💳 y realizar transacciones 💸.</strong>
+                            {t("msg8-1")}<strong>{t("msg8-2")}</strong> {t("msg8-3")}
+                            <strong>{t("msg8-4")}</strong>{t("msg8-5")}
+                            <strong>{t("msg8-6")}</strong>
                         </p>
                         <small className="chat-time">{getCurrentTime()}</small>
                     </div>
@@ -229,7 +231,7 @@ export default function ElPhishing ({visibleElements,setVisibleElements} :  Prop
 
                     <div className="chat-box center">
                         <p className="text-sm md:text-md">
-                            El <strong> Smishing </strong> se unió usando el enlace de invitación
+                            {t("inv-1")}<strong> {t("inv-2-s")} </strong> {t("inv-3")}
                         </p>
                     </div>
                 </div>
@@ -242,7 +244,7 @@ export default function ElPhishing ({visibleElements,setVisibleElements} :  Prop
                     <div className="chat-box right">
                         <div className="flex items-center gap-2 mb-1 justify-end">
                             <span
-                                className="text-sm font-bold text-gray-700">El Smishing</span>
+                                className="text-sm font-bold text-gray-700">{t("Smishing")}</span>
                             <div
                                 className="rounded-full bg-gray-300 overflow-hidden aspect-square w-10 min-w-[40px] min-h-[40px]">
                                 <img
@@ -253,44 +255,9 @@ export default function ElPhishing ({visibleElements,setVisibleElements} :  Prop
                             </div>
                         </div>
                         <p className="text-sm md:text-md">
-                            El smishing es un tipo de <strong> fraude en línea </strong> que consiste en el
-                            <strong> envío de mensajes de texto falsos 📱✉️ </strong> para <strong> engañar </strong>
-                            a las personas y obtener su <strong> información personal o financiera. 🔑💳🚨</strong>
-                        </p>
-                        <div className="flex items-center gap-1">
-                            <small className="chat-time">{getCurrentTime()}</small>
-                            <img
-                                src="read-double-check-icon.svg"
-                                alt="Double check icon"
-                                className="h-4 w-4 md:h-6 md:w-6"
-                            />
-                        </div>
-                    </div>
-                </div>
-        },
-        {
-            cooldown: 800,
-            alignment: "right",
-            content:
-                <div className="flex flex-col items-end animate-fade-in-fast">
-                    <div className="chat-box right">
-                        <div className="flex items-center gap-2 mb-1 justify-end">
-                            <span
-                                className="text-sm font-bold text-gray-700">El Smishing</span>
-                            <div
-                                className="rounded-full bg-gray-300 overflow-hidden aspect-square w-10 min-w-[40px] min-h-[40px]">
-                                <img
-                                    src="el-phishing/3.webp" // Reemplazar con URL dinámica
-                                    alt="Avatar Tú"
-                                    className="w-full h-full object-cover aspect-square"
-                                />
-                            </div>
-                        </div>
-                        <p className="text-sm md:text-md">
-                            Los <strong> ciberdelincuentes </strong>que realizan smishing se hacen pasar por
-                            <strong> entidades legítimas 🏦📞, </strong> como <strong> bancos, empresas o instituciones
-                            públicas, </strong>
-                            para conseguir sus objetivos. 🎯💳🚨
+                            {t("msg9-1")}<strong>{t("msg9-2")}</strong>{t("msg9-3")}
+                            <strong>{t("msg9-4")}</strong>{t("msg9-5")}<strong>{t("msg9-6")}</strong>
+                            {t("msg9-7")}<strong>{t("msg9-8")}</strong>
                         </p>
                         <div className="flex items-center gap-1">
                             <small className="chat-time">{getCurrentTime()}</small>
@@ -311,7 +278,7 @@ export default function ElPhishing ({visibleElements,setVisibleElements} :  Prop
                     <div className="chat-box right">
                         <div className="flex items-center gap-2 mb-1 justify-end">
                             <span
-                                className="text-sm font-bold text-gray-700">El Smishing</span>
+                                className="text-sm font-bold text-gray-700">{t("Smishing")}</span>
                             <div
                                 className="rounded-full bg-gray-300 overflow-hidden aspect-square w-10 min-w-[40px] min-h-[40px]">
                                 <img
@@ -322,10 +289,46 @@ export default function ElPhishing ({visibleElements,setVisibleElements} :  Prop
                             </div>
                         </div>
                         <p className="text-sm md:text-md">
-                            Según un estudio realizado en 10 países por el <strong> Mobile Ecosystem Forum, </strong>
-                            una organización global que analiza las problemáticas del creciente ecosistema móvil,
-                            <strong> 4 de cada 10 consumidores </strong> enfrentaron al menos
-                            <strong> un intento de estafa por SMS </strong> en 2023. 📱🚨📊
+                            {t("msg10-1")}
+                            {t("msg10-2")}
+                            {t("msg10-3")}
+                            {t("msg10-4")}
+                            {t("msg10-5")}<strong>{t("msg10-6")}</strong>
+                            {t("msg10-7")}
+                        </p>
+                        <div className="flex items-center gap-1">
+                            <small className="chat-time">{getCurrentTime()}</small>
+                            <img
+                                src="read-double-check-icon.svg"
+                                alt="Double check icon"
+                                className="h-4 w-4 md:h-6 md:w-6"
+                            />
+                        </div>
+                    </div>
+                </div>
+        },
+        {
+            cooldown: 800,
+            alignment: "right",
+            content:
+                <div className="flex flex-col items-end animate-fade-in-fast">
+                    <div className="chat-box right">
+                        <div className="flex items-center gap-2 mb-1 justify-end">
+                            <span
+                                className="text-sm font-bold text-gray-700">{t("Smishing")}</span>
+                            <div
+                                className="rounded-full bg-gray-300 overflow-hidden aspect-square w-10 min-w-[40px] min-h-[40px]">
+                                <img
+                                    src="el-phishing/3.webp" // Reemplazar con URL dinámica
+                                    alt="Avatar Tú"
+                                    className="w-full h-full object-cover aspect-square"
+                                />
+                            </div>
+                        </div>
+                        <p className="text-sm md:text-md">
+                            {t("msg11-1")}<strong>{t("msg11-2")}</strong>{t("msg11-3")}
+                            <strong>{t("msg11-4")}</strong>{t("msg11-5")}
+                            <strong>{t("msg11-6")}</strong>{t("msg11-7")}
                         </p>
                         <div className="flex items-center gap-1">
                             <small className="chat-time">{getCurrentTime()}</small>
@@ -346,7 +349,7 @@ export default function ElPhishing ({visibleElements,setVisibleElements} :  Prop
 
                     <div className="chat-box center">
                         <p className="text-sm md:text-md">
-                            El <strong> Pharming </strong> se unió usando el enlace de invitación
+                            {t("inv-1")}<strong> {t("inv-2-p")} </strong> {t("inv-3")}
                         </p>
                     </div>
                 </div>
@@ -366,11 +369,11 @@ export default function ElPhishing ({visibleElements,setVisibleElements} :  Prop
                                     className="w-full h-full object-cover aspect-square"
                                 />
                             </div>
-                            <span className="text-sm font-bold text-gray-700">El Pharming</span>
+                            <span className="text-sm font-bold text-gray-700">{t("Pharming")}</span>
                         </div>
                         <p className="text-sm md:text-md">
-                            Este cibercrimen involucra el <strong> uso de malware, </strong> que
-                            <strong> redirige automáticamente a la víctima hacia sitios web falsos. 💻⚠️🌐 </strong>
+                            {t("msg12-1")}<strong>{t("msg12-2")}</strong>{t("msg12-3")}
+                            <strong>{t("msg12-4")}</strong>
                         </p>
                         <small className="chat-time">{getCurrentTime()}</small>
                     </div>
@@ -391,13 +394,12 @@ export default function ElPhishing ({visibleElements,setVisibleElements} :  Prop
                                     className="w-full h-full object-cover aspect-square"
                                 />
                             </div>
-                            <span className="text-sm font-bold text-gray-700">El Pharming</span>
+                            <span className="text-sm font-bold text-gray-700">{t("Pharming")}</span>
                         </div>
                         <p className="text-sm md:text-md">
-                            Las personas <strong> introducen allí sus datos de inicio de sesión o información
-                            personal, </strong>
-                            los cuales son <strong> recolectados </strong> sin que puedan percatarse de que se
-                            <strong> trata de un fraude. 🔑💻❌</strong>
+                            {t("msg13-1")}<strong>{t("msg13-2")}</strong>{t("msg13-3")}
+                            <strong>{t("msg13-4")}</strong>{t("msg13-5")}
+                            <strong>{t("msg13-6")}</strong>
                         </p>
                         <small className="chat-time">{getCurrentTime()}</small>
                     </div>
@@ -421,17 +423,17 @@ export default function ElPhishing ({visibleElements,setVisibleElements} :  Prop
             <div className="p-4">
                 <div className="flex justify-center animate-fade-in-fast">
                     <h1 className="chat-title-box">
-                        Uno de los delitos de mayor crecimiento
+                        {t("title")}
                     </h1>
                 </div>
                 <div className="flex flex-col items-start animate-fade-in-fast">
                     <div className="chat-box left">
                         <p className="text-sm md:text-md">
-                            El phishing es un tipo de
-                            <span className="font-bold"> ciberataque </span>
-                            que
-                            <span className="font-bold"> utiliza correos electrónicos 📧, mensajes de texto 📱 , llamadas telefonicas 📞 o sitios web fraudulentos 🌐 </span>
-                            para engañar a las personas y persuadirlas a realizar acciones como:
+                            {t("msg1-1")}
+                            <span className="font-bold"> {t("msg1-2")} </span>
+                            {t("msg1-3")}
+                            <span className="font-bold"> {t("msg1-4")} </span>
+                            {t("msg1-5")}
                         </p>
                         <small className="chat-time">{getCurrentTime()}</small>
                     </div>

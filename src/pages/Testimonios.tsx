@@ -5,6 +5,7 @@ import getCurrentTime from "../components/CurrentTime.ts";
 import PrevFabButton from "../components/PrevFabButton.tsx";
 import NextFabButton from "../components/NextFabButton.tsx";
 import LoadingDots from "../components/LoadingDots.tsx";
+import {useTranslation} from "react-i18next";
 
 interface Props {
     visibleElements: number;
@@ -15,6 +16,7 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
     const [isLoading, setIsLoading] = useState(false);
     const [currentAudioId, setCurrentAudioId] = useState<string | null>(null);
     const lastElementRef = useRef<HTMLDivElement>(null);
+    const {t} = useTranslation(["testimonios"]);
 
     const elements = [
 
@@ -33,7 +35,7 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
                                     className="w-full h-full object-cover aspect-square"
                                 />
                             </div>
-                            <span className="text-sm font-bold text-gray-700">Jessica Rojas, 43 años (Víctima de Vishing)</span>
+                            <span className="text-sm font-bold text-gray-700">{t("aud1")}</span>
                         </div>
                         {/* Contenido del mensaje */}
                         <div className="flex items-center">
@@ -78,19 +80,15 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
                                     className="w-full h-full object-cover aspect-square"
                                 />
                             </div>
-                            <span className="text-sm font-bold text-gray-700">Jessica Rojas, 43 años (Víctima de Vishing)</span>
+                            <span className="text-sm font-bold text-gray-700">{t("aud1")}</span>
                         </div>
                         <p className="text-sm md:text-md">
-                            Jessica recibió una <strong> llamada 📞 </strong> que simulaba ser de su
-                            <strong> instituto educativo 🎓. </strong> Tras facilitarles un código de validación 🔑, los
-                            atacantes
-                            accedieron a su
-                            <strong> cuenta de WhatsApp 📱 </strong> y la utilizaron para <strong> estafar a sus
-                            contactos
-                            💸. </strong> El delito
-                            <strong> impactó su vida personal 👩‍💼, laboral 💼 y su negocio 🏢, </strong> ya que, como
-                            muchos,
-                            usaba la aplicación como herramienta clave de comunicación 📲.
+                            {t("jess-1")}
+                            <strong>{t("jess-2")}</strong>
+
+                            {t("jess-3")}
+                            <strong>{t("jess-4")}</strong>
+                            {t("jess-5")}
                         </p>
                         <small className="chat-time">{getCurrentTime()}</small>
                     </div>
@@ -103,7 +101,7 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
                 <div className="flex flex-col items-center animate-fade-in-fast">
                     <div className="chat-box center">
                         <p className="text-sm md:text-md">
-                            Irina González se unió usando el enlace de invitación
+                            {t("inv-2")}
                         </p>
                     </div>
                 </div>
@@ -117,7 +115,7 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
                     <div className="chat-box right relative p-3 bg-white shadow-lg rounded-lg">
                         {/* Encabezado: Nombre y Foto en el extremo derecho */}
                         <div className="flex justify-end items-center gap-2 mb-2">
-                            <span className="text-sm font-bold text-gray-700">Irina Gonzales García, 40 años (Víctima de Smishing y Phishing)</span>
+                            <span className="text-sm font-bold text-gray-700">{t("aud2")}</span>
                             <div className="rounded-full bg-gray-300 overflow-hidden aspect-square w-10 min-w-[40px] min-h-[40px]">
                                 <img
                                     src="testimonios/2.webp" // Reemplazar con URL dinámica
@@ -168,7 +166,7 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
                 <div className="flex flex-col items-end animate-fade-in-fast">
                     <div className="chat-box right">
                         <div className="flex items-center gap-2 mb-1 justify-end">
-                            <span className="text-sm font-bold text-gray-700">Irina Gonzales García, 40 años (Víctima de Smishing y Phishing)</span>
+                            <span className="text-sm font-bold text-gray-700">{t("aud2")}</span>
                             <div className="rounded-full bg-gray-300 overflow-hidden aspect-square w-10 min-w-[40px] min-h-[40px]">
                                 <img
                                     src="testimonios/2.webp" // Reemplazar con URL dinámica
@@ -179,12 +177,13 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
                         </div>
 
                         <p className="text-sm md:text-md">
-                            Irina fue engañada por un <strong> mensaje directo </strong> de Instagram 📩 que
-                            <strong> parecía de un amigo 🧑‍🤝‍🧑. </strong> Compartió un <strong> código de SMS
-                            📲 </strong>
-                            y los estafadores <strong> tomaron sus cuentas 🌐, enviando mensajes fraudulentos
-                            🛑 </strong> a su
-                            círculo cercano 👥.
+                            {t("irin-1")}
+                            <strong>{t("irin-2")}</strong>
+                            {t("irin-3")}
+                            <strong>{t("irin-4")}</strong>
+                            {t("irin-5")}
+                            <strong>{t("irin-6")}</strong>
+                            {t("irin-7")}
                         </p>
                         <div className="flex items-center gap-1">
                             <small className="chat-time">{getCurrentTime()}</small>
@@ -204,7 +203,7 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
                 <div className="flex flex-col items-center animate-fade-in-fast">
                     <div className="chat-box center">
                         <p className="text-sm md:text-md">
-                            Ekaterina Zakharova se unió usando el enlace de invitación
+                            {t("inv-3")}
                         </p>
                     </div>
                 </div>
@@ -224,7 +223,7 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
                                     className="w-full h-full object-cover aspect-square"
                                 />
                             </div>
-                            <span className="text-sm font-bold text-gray-700">Ekaterina Zakharova, 44 años (Víctima de Phishing en comercio electrónico)</span>
+                            <span className="text-sm font-bold text-gray-700">{t("aud3")}</span>
                         </div>
                         {/* Contenido del mensaje */}
                         <div className="flex items-center">
@@ -269,19 +268,18 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
                                     className="w-full h-full object-cover aspect-square"
                                 />
                             </div>
-                            <span className="text-sm font-bold text-gray-700">Ekaterina Zakharova, 44 años (Víctima de Phishing en comercio electrónico)</span>
+                            <span className="text-sm font-bold text-gray-700">{t("aud3")}</span>
                         </div>
 
                         <p className="text-sm md:text-md">
-                            Ekaterina, al realizar compras en Alibaba, una <strong> plataforma de comercio en internet
-                            🌐🛒, </strong>
-                            fue estafada por un <strong> supuesto proveedor </strong> que presentó <strong> documentos
-                            falsos.
-                            📄❌ </strong>
-                            Como consecuencia, realizó <strong> pagos por un pedido que nunca llegó. 💸🚫 </strong> Los
-                            estafadores crearon
-                            <strong> perfiles y páginas de seguimiento fraudulentas, simulando ser
-                                legítimos </strong> dentro de la plataforma confiable. 🔍🎭
+                            {t("ekat-1")}
+                            <strong>{t("ekat-2")}</strong>
+
+                            {t("ekat-3")}
+                            <strong>{t("ekat-4")}</strong>
+                            {t("ekat-5")}
+                            <strong>{t("ekat-6")}</strong>
+                            {t("ekat-7")}
                         </p>
                         <small className="chat-time">{getCurrentTime()}</small>
                     </div>
@@ -294,7 +292,7 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
                 <div className="flex flex-col items-center animate-fade-in-fast">
                     <div className="chat-box center">
                         <p className="text-sm md:text-md">
-                            Sheyla Choque se unió usando el enlace de invitación
+                            {t("inv-4")}
                         </p>
                     </div>
                 </div>
@@ -307,7 +305,7 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
                     <div className="chat-box right relative p-3 bg-white shadow-lg rounded-lg">
                         {/* Encabezado: Nombre y Foto en el extremo derecho */}
                         <div className="flex justify-end items-center gap-2 mb-2">
-                            <span className="text-sm font-bold text-gray-700">Sheyla Choque Vizcarra, 23 años (Víctima de Phishing y Vishing)</span>
+                            <span className="text-sm font-bold text-gray-700">{t("aud4")}</span>
                             <div className="rounded-full bg-gray-300 overflow-hidden aspect-square w-10 min-w-[40px] min-h-[40px]">
                                 <img
                                     src="testimonios/4.webp" // Reemplazar con URL dinámica
@@ -358,7 +356,7 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
                 <div className="flex flex-col items-end animate-fade-in-fast">
                     <div className="chat-box right">
                         <div className="flex items-center gap-2 mb-1 justify-end">
-                            <span className="text-sm font-bold text-gray-700">Sheyla Choque Vizcarra, 23 años (Víctima de Phishing y Vishing)</span>
+                            <span className="text-sm font-bold text-gray-700">{t("aud4")}</span>
                             <div className="rounded-full bg-gray-300 overflow-hidden aspect-square w-10 min-w-[40px] min-h-[40px]">
                                 <img
                                     src="testimonios/4.webp" // Reemplazar con URL dinámica
@@ -369,10 +367,13 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
                         </div>
 
                         <p className="text-sm md:text-md">
-                            Sheyla ingresó datos en una <strong> página falsa del BCP 🏦 </strong> y recibió una
-                            <strong> llamada 📞 </strong> del supuesto banco. Proporcionó <strong> códigos de seguridad
-                            (TOKEN) 🔑 y perdió 5,000 soles 💸. </strong>
-                            Tras denunciar, logró recuperar su dinero ✅.
+                            {t("shey-1")}
+                            <strong>{t("shey-2")}</strong>
+                            {t("shey-3")}
+                            <strong>{t("shey-4")}</strong>
+                            {t("shey-5")}
+                            <strong>{t("shey-6")}</strong>
+                            {t("shey-7")}
                         </p>
                         <div className="flex items-center gap-1">
                             <small className="chat-time">{getCurrentTime()}</small>
@@ -401,11 +402,6 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
     return (
         <div className="flex flex-col h-full justify-between">
             <div className="p-4">
-                <div className="flex justify-center animate-fade-in-fast">
-                <h1 className="chat-title-box">
-                        Uno de los delitos de mayor crecimiento
-                    </h1>
-                </div>
                 <div className="flex flex-col items-center animate-fade-in-fast">
                     <div className="chat-box center">
                         <img src="joined-chat-icon.svg"
@@ -413,20 +409,18 @@ export default function Testimonios ({visibleElements,setVisibleElements} :  Pro
                              className="w-16 h-16 md:w-24 md:h-24"
                         />
                         <h1 className="text-lg font-medium">
-                            Se ha creado el grupo: Testimonios
+                            {t("group-msg")}
                         </h1>
                         <small>
-                            Grupo 4 miembros
+                            {t("group-mem")}
                         </small>
                         <p className="text-sm md:text-md">
-                            Conoce los testimonios de quienes han sufrido alguna de las modalidades de phishing y cómo
-                            han
-                            enfrentado las consecuencias
+                            {t("group-desc")}
                         </p>
                     </div>
                     <div className="chat-box center">
                         <p className="text-sm md:text-md">
-                            Jessica Rojas se unió usando el enlace de invitación
+                            {t("inv-1")}
                         </p>
                     </div>
                 </div>
