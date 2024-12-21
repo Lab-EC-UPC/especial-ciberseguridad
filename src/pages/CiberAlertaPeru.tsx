@@ -13,13 +13,28 @@ interface Props {
 export default function CiberAlertaPeru({visibleElements,setVisibleElements} :  Props) {
     const [isLoading, setIsLoading] = useState(false);
     const lastElementRef = useRef<HTMLDivElement>(null);
-    const{ t } = useTranslation(["ciberalerta"])
+    const{ t, i18n } = useTranslation(["ciberalerta"])
+
+    const [key, setKey] = useState(0);
+
+    useEffect(() => {
+        const handleLanguageChange = () => {
+            setKey(prevKey => prevKey + 1);
+        };
+
+        i18n.on('languageChanged', handleLanguageChange);
+
+        return () => {
+            i18n.off('languageChanged', handleLanguageChange);
+        };
+    }, [i18n]);
+
     const elements = [
         {
             cooldown: 800,
             alignment: "left",
             content:
-                <div className="flex flex-col items-start animate-fade-in-fast">
+                <div key={key}  className="flex flex-col items-start animate-fade-in-fast">
                     <div className="chat-box left">
                         <video
                             controls
@@ -28,7 +43,7 @@ export default function CiberAlertaPeru({visibleElements,setVisibleElements} :  
                             playsInline
                         >
                             <source
-                                src="https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/teaser_v2.webm"
+                                src={t("video_teaser")}
                                 type="video/webm"
                             />
                         </video>

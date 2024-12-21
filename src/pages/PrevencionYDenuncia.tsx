@@ -13,8 +13,22 @@ interface Props {
 export default function PrevencionYDenuncia({ visibleElements, setVisibleElements }: Props) {
     const [isLoading, setIsLoading] = useState(false);
     const lastElementRef = useRef<HTMLDivElement>(null);
+    const{ t, i18n } = useTranslation(["prevencion"])
 
-    const { t } = useTranslation(["prevencion"]);
+    const [key, setKey] = useState(0);
+
+    useEffect(() => {
+        const handleLanguageChange = () => {
+            setKey(prevKey => prevKey + 1);
+        };
+
+        i18n.on('languageChanged', handleLanguageChange);
+
+        return () => {
+            i18n.off('languageChanged', handleLanguageChange);
+        };
+    }, [i18n]);
+
 
     const elements = [
         {
@@ -31,7 +45,9 @@ export default function PrevencionYDenuncia({ visibleElements, setVisibleElement
                             {t("primer5")}
                             <span className="font-bold">{t("primer6")}</span>
                             {t("primer7")}
-                            <span className="font-bold">{t("primer8")}</span> ⚠️❌
+                            <span className="font-bold">{t("primer8")}</span>
+                            {t("primer9")}
+                            <span className="font-bold">{t("primer10")}</span> ⚠️❌
                         </p>
                         <div className="flex items-center gap-1">
                             <small className="chat-time">{getCurrentTime()}</small>
@@ -40,6 +56,32 @@ export default function PrevencionYDenuncia({ visibleElements, setVisibleElement
                     </div>
                 </div>
         },
+
+        {
+            cooldown: 800,
+            alignment: "left",
+            content:
+                <div key={key} className="flex flex-col items-start animate-fade-in-fast" style={{ width: 'fit-content' }}>
+                    <div className="chat-box left">
+                        <video 
+                            controls
+                            autoPlay
+                            muted
+                            playsInline
+                            style={{ maxHeight: '80vh', width: 'auto' }}
+                        >
+                            <source
+                                src= {t("video_yanira")}
+                                type="video/webm"
+                            />
+                        </video>
+                        <div className="flex items-center gap-1">
+                            <small className="chat-time">{getCurrentTime()}</small>
+                        </div>
+                    </div>
+                </div>
+        },
+
         {
             cooldown: 800,
             alignment: "center",
@@ -57,14 +99,13 @@ export default function PrevencionYDenuncia({ visibleElements, setVisibleElement
                 <div className="flex flex-col items-start animate-fade-in-fast">
                     <div className="chat-box left">
                         <p className="text-sm md:text-md">
-                        {t("segundo1")}
-                            <span className="font-bold">{t("segundo2")}</span> 
+                            {t("segundo1")}
+                            <span className="font-bold">{t("segundo2")}</span>
                             {t("segundo3")}
                             <span className="font-bold">{t("segundo4")}</span>
                             {t("segundo5")}
-                            <span className="font-bold">{t("segundo6")}</span> 
-                            {t("segundo7")}
-                            <span className="font-bold">{t("segundo8")}</span> 📞📧.
+                            <span className="font-bold">{t("segundo6")}</span>
+                            {t("segundo7")}📞.
                         </p>
                         <div className="flex items-center gap-1">
                             <small className="chat-time">{getCurrentTime()}</small>
@@ -99,7 +140,7 @@ export default function PrevencionYDenuncia({ visibleElements, setVisibleElement
                 <div className="flex flex-col items-end animate-fade-in-fast">
                     <div className="chat-box right">
                         <p className="text-sm md:text-md">
-                        {t("cuarto")}
+                            {t("cuarto")}
                         </p>
                         <div className="flex items-center gap-1">
                             <small className="chat-time">{getCurrentTime()}</small>
@@ -119,7 +160,7 @@ export default function PrevencionYDenuncia({ visibleElements, setVisibleElement
                 <div className="flex flex-col items-end animate-fade-in-fast">
                     <div className="chat-box right">
                         <p className="text-sm md:text-md">
-                        {t("quinto1")}
+                            {t("quinto1")}
                             <br></br>
                             {t("quinto2")}
                             <br></br>
@@ -160,12 +201,12 @@ export default function PrevencionYDenuncia({ visibleElements, setVisibleElement
                     <div className="chat-box left">
                         <p className="text-sm md:text-md">
                             📞 {t("septimo1")}<span className="font-bold">
-                            {t("septimo2")}
-                                </span> 
-                                {t("septimo3")}
-                                <br></br>
+                                {t("septimo2")}
+                            </span>
+                            {t("septimo3")}
+                            <br></br>
                             {t("septimo4")}
-                            
+
                             <span className="font-bold">
                                 {t("septimo5")}</span>
                         </p>

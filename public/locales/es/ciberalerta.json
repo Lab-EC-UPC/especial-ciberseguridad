@@ -15,7 +15,13 @@
   "SegundoChat3": "y el crecimiento del",
   "SegundoChat4": "comercio electrónico",
   "SegundoChat5": "",
+<<<<<<< HEAD
+  "SegundoChat6": "que se potenció a",
+  "SegundoChat7": "raíz de la pandemia",
+  "video_teaser": "https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/teaser_v2.webm"
+=======
   "SegundoChat6": "que se potenció a raíz de la ",
   "SegundoChat7": "pandemia"
 
+>>>>>>> e44e34d4b9ce89cd131dbb5961160d0a3fca5ac9
 }
