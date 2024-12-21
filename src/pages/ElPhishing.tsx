@@ -55,7 +55,7 @@ export default function ElPhishing ({visibleElements,setVisibleElements} :  Prop
                             {t("msg3-1")}
                             <strong> {t("msg3-2")}</strong>
                             {t("msg3-3")}
-                            <strong> {t("msg3-4")} </strong>
+                            {t("msg3-4")}
                             {t("msg3-5")}
                         </p>
                         <div className="flex items-center gap-1">
@@ -122,7 +122,7 @@ export default function ElPhishing ({visibleElements,setVisibleElements} :  Prop
                         </p>
                         <iframe
                             className="flourish-embed flourish-charts"
-                            src="https://public.flourish.studio/visualisation/20791460/embed"
+                            src={t("graphic")}
                             width="100%"
                             height="300"
                             frameBorder="0"
@@ -188,8 +188,10 @@ export default function ElPhishing ({visibleElements,setVisibleElements} :  Prop
                         </div>
                         <p className="text-sm md:text-md">
                             {t("msg7-1")}<strong> {t("msg7-2")}</strong>
-                            {t("msg7-3")}<strong>{t("msg7-4")}</strong>{t("msg7-5")}
-                            <strong>{t("msg7-6")}</strong>{t("msg7-7")}
+                            {t("msg7-3")}<strong>{t("msg7-4")}</strong>
+                            {t("msg7-5")}
+                            {t("msg7-6")}
+                            {t("msg7-7")}
                         </p>
                         <small className="chat-time">{getCurrentTime()}</small>
                     </div>
@@ -287,8 +289,11 @@ export default function ElPhishing ({visibleElements,setVisibleElements} :  Prop
                             </div>
                         </div>
                         <p className="text-sm md:text-md">
-                            {t("msg10-1")}<strong>{t("msg10-2")}</strong>{t("msg10-3")}
-                            <strong>{t("msg10-4")}</strong>{t("msg10-5")}<strong>{t("msg10-6")}</strong>
+                            {t("msg10-1")}
+                            {t("msg10-2")}
+                            {t("msg10-3")}
+                            {t("msg10-4")}
+                            {t("msg10-5")}<strong>{t("msg10-6")}</strong>
                             {t("msg10-7")}
                         </p>
                         <div className="flex items-center gap-1">
