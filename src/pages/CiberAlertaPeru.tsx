@@ -45,7 +45,7 @@ export default function CiberAlertaPeru({visibleElements,setVisibleElements} :  
                 <div className="flex flex-col items-end animate-fade-in-fast">
                     <div className="chat-box right">
                         <p className="text-sm md:text-md">
-                            {t("SegundoChat1")} <span className="font-bold">{t("SegundoChat2")} </span> 🌐 {t("SegundoChat3")} <span className="font-bold">{t("SegundoChat4")}</span> {t("SegundoChat5")} 🛒, {t("SegundoChat6")} <span className="font-bold">{t("SegundoChat7")} </span>.🦠
+                            {t("SegundoChat1")} <span className="font-bold">{t("SegundoChat2")} </span> 🌐 {t("SegundoChat3")} <span className="font-bold">{t("SegundoChat4")}</span> {t("SegundoChat5")} 🛒, {t("SegundoChat6")} <span className="font-bold">{t("SegundoChat7")} </span>.
                         </p>
                         <div className="flex items-center gap-1">
                             <small className="chat-time">{getCurrentTime()}</small>
@@ -89,9 +89,9 @@ export default function CiberAlertaPeru({visibleElements,setVisibleElements} :  
                 <div className="flex flex-col items-start animate-fade-in-fast">
                     <div className="chat-box left">
                         <p className="text-sm md:text-md">
-                            <span className="font-bold">{t("PrimerChat1")}</span> {t("PrimerChat2")} <span className="font-bold"> {t("PrimerChat3")} </span> 🌐 {t("PrimerChat4")} <span
-                            className="font-bold"> {t("PrimerChat5")} </span> 💻📱
-                            {t("PrimerChat6")} <span className="font-bold">{t("PrimerChat7")}</span> 🏢 {t("PrimerChat8")} <span
+                            {t("PrimerChat")}<span className="font-bold">{t("PrimerChat1")}</span> {t("PrimerChat2")} <span className="font-bold"> {t("PrimerChat3")} </span>  {t("PrimerChat4")} <span
+                            className="font-bold"> {t("PrimerChat5")} </span>
+                            {t("PrimerChat6")} <span className="font-bold">{t("PrimerChat7")}</span>  {t("PrimerChat8")} <span
                             className="font-bold"> {t("PrimerChat9")} </span>👤.
                         </p>
                         <small className="chat-time">{getCurrentTime()}</small>
