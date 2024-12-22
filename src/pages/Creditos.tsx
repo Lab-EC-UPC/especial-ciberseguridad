@@ -67,7 +67,7 @@ export default function Creditos () {
                 <div className="flex flex-col items-center">
                     <div className="flex flex-col gap-2 md:gap-4 chat-box center">
                         <div className="flex flex-col items-start gap-3 md:gap-4">
-                            <small className="text-grey text-justify">22 miembros</small>
+                            <small className="text-grey text-justify">{t("miembros")}</small>
                             {participants.slice(0, visibleElements).map((participant, index) => (
                                 <div
                                     key={index}
