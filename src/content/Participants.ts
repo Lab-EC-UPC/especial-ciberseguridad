@@ -121,18 +121,24 @@ export const Participants = [
     },
     {
         id: 21,
+        name: "Yanira Dávila",
+        subtitle: "Colaboración Especial",
+        avatar: "https://lab-ec-upc.github.io/assets/integrantes/yanira-link.jpg",
+    },
+    {
+        id: 22,
         name: "Mayté Ciriaco",
         subtitle: "Supervisión, Coordinación y Edición",
         avatar: "https://lab-ec-upc.github.io/assets/integrantes/mayte-link.jpg",
     },
     {
-        id: 22,
+        id: 23,
         name: "Ariana Lira",
         subtitle: "Supervisión, Coordinación y Edición",
         avatar: "https://lab-ec-upc.github.io/assets/integrantes/ariana-link.jpg",
     },
     {
-        id: 23,
+        id: 24,
         name: "ESET Perú",
         subtitle: "Agradecimientos Especiales",
         avatar: "https://lab-ec-upc.github.io/assets/integrantes/ESET.png",

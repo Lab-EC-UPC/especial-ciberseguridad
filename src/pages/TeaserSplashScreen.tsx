@@ -32,20 +32,17 @@ export default function TeaserSplashScreen({ onSkip }: { onSkip: () => void }) {
         <div className="h-screen w-screen">
             <video
                 autoPlay
-                muted={isMuted}
+                muted={isMuted || true}
                 loop
                 playsInline
                 className="object-fit h-full w-full"
             >
                 <source
-                    src={videoSrc || "https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/inicio-vertical-logo.webm"}
-                    type="video/webm"/>
-                <source
-                    src={videoSrc || "https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/inicio-vertical-logo.webm"}
+                    src={`${videoSrc}.mp4` || "https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/inicio-vertical-logo.mp4"}
                     type="video/mp4"/>
                 <source
-                    src={videoSrc || "https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/inicio-vertical-logo.webm"}
-                    type="video/ogg"/>
+                    src={`${videoSrc}.webm` || "https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/inicio-vertical-logo.webm"}
+                    type="video/webm"/>
                 Your browser does not support HTML video.
             </video>
 

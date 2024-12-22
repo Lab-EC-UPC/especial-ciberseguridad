@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import {NavLink, useLocation} from "react-router-dom";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import {LanguageIcon, SpeakerXMarkIcon} from "@heroicons/react/24/solid";
 import {Dropdown, DropdownItem, DropdownMenu, DropdownTrigger} from "@nextui-org/dropdown";
@@ -14,6 +14,7 @@ interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = ({ routes, toggleSidebar }) => {
     const { t } = useTranslation(["sidebar"]);
+    const location = useLocation();
 
     const [readStatus, setReadStatus] = useState<Record<string, boolean>>(
         routes.reduce((acc, route) => {
@@ -22,13 +23,21 @@ const Sidebar: React.FC<SidebarProps> = ({ routes, toggleSidebar }) => {
         }, {} as Record<string, boolean>)
     );
 
-    const handleNavLinkClick = (link: string) => {
+    useEffect(() => {
+        const currentPath = location.pathname;
         setReadStatus((prevStatus) => ({
             ...prevStatus,
-            [link]: true,
+            [currentPath]: true,
         }));
-        toggleSidebar();
-    };
+    }, [location]);
+
+    // const handleNavLinkClick = (link: string) => {
+    //     setReadStatus((prevStatus) => ({
+    //         ...prevStatus,
+    //         [link]: true,
+    //     }));
+    //     toggleSidebar();
+    // };
 
     const switchLanguage = (lang: string) => {
         i18n.changeLanguage(lang)
@@ -49,19 +58,17 @@ const Sidebar: React.FC<SidebarProps> = ({ routes, toggleSidebar }) => {
                                     className="h-6 text-grey hover:text-green-dark hover:scale-90 duration-200 hover:cursor-pointer"/>
                             </DropdownTrigger>
                             <DropdownMenu>
-                                <DropdownItem key="es">
-                                    <button onClick={() => switchLanguage("es")}
-                                            className="p-2 hover:scale-95 duration-300 flex items-center gap-2">
+                                <DropdownItem key="es" onPress={()=>switchLanguage("es")}>
+                                    <div className="p-2 hover:scale-95 duration-300 flex items-center gap-2">
                                         <img src="language/spanish-flag.svg" alt="Spanish" className="h-8 w-8"/>
                                         <p className="text-xs md:text-md">Español</p>
-                                    </button>
+                                    </div>
                                 </DropdownItem>
-                                <DropdownItem key="en">
-                                    <button onClick={() => switchLanguage("en")}
-                                            className="p-2 hover:scale-95 duration-300 flex items-center gap-2">
+                                <DropdownItem key="en" onPress={()=>switchLanguage("en")}>
+                                    <div className="p-2 hover:scale-95 duration-300 flex items-center gap-2">
                                         <img src="language/english-flag.svg" alt="English" className="h-8 w-8"/>
                                         <p className="text-xs md:text-md">English</p>
-                                    </button>
+                                    </div>
                                 </DropdownItem>
                             </DropdownMenu>
                         </Dropdown>
@@ -80,7 +87,7 @@ const Sidebar: React.FC<SidebarProps> = ({ routes, toggleSidebar }) => {
                         <NavLink
                             key={index}
                             to={route.link}
-                            onClick={() => handleNavLinkClick(route.link)}
+                            // onClick={() => handleNavLinkClick(route.link)}
                             className={({isActive}) =>
                                 `flex items-center p-4 cursor-pointer ${
                                     isActive ? "bg-zinc-100" : "hover:bg-slate-100"
