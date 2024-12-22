@@ -276,11 +276,10 @@ export default function UnPocoDeData ({visibleElements,setVisibleElements} :  Pr
                 <div className="flex flex-col items-start animate-fade-in-fast">
                     <div className="chat-box left">
                         <p className="text-sm md:text-md">
-                            {t("PrimerChat1")} <span className="font-bold">{t("PrimerChat2")} </span>
+                            {t("PrimerChat1")} <span className="font-bold">{t("PrimerChat2")}</span>
                             {t("PrimerChat3")} <span
-                            className="font-bold">{t("PrimerChat4")} </span>{t("PrimerChat5")}<span
-                            className="font-bold">{t("PrimerChat6")} </span>
-                            .
+                            className="font-bold">{t("PrimerChat4")}</span>{t("PrimerChat5")}<span
+                            className="font-bold">{t("PrimerChat6").}</span>
                         </p>
                         <small className="chat-time">{getCurrentTime()}</small>
                     </div>
