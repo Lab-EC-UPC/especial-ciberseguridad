@@ -279,7 +279,7 @@ export default function UnPocoDeData ({visibleElements,setVisibleElements} :  Pr
                             {t("PrimerChat1")} <span className="font-bold">{t("PrimerChat2")}</span>
                             {t("PrimerChat3")} <span
                             className="font-bold">{t("PrimerChat4")}</span>{t("PrimerChat5")}<span
-                            className="font-bold">{t("PrimerChat6").}</span>
+                            className="font-bold">{t("PrimerChat6")}</span>
                         </p>
                         <small className="chat-time">{getCurrentTime()}</small>
                     </div>
