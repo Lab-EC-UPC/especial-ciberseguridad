@@ -83,9 +83,9 @@ export default function UnPocoDeData ({visibleElements,setVisibleElements} :  Pr
                         <p className="text-sm md:text-md">
                             {t("QuintoChat1")} <span
                             className="font-bold">{t("QuintoChat2")} </span>{t("QuintoChat2.1")}<span
-                            className="font-bold">{t("QuintoChat2.2")} </span>{t("QuintoChat2.3")}<span
+                            className="font-bold">{t("QuintoChat2.2"),} </span>{t("QuintoChat2.3")}<span
                             className="font-bold">{t("QuintoChat2.4")} </span>
-                            , {t("QuintoChat3")} <span
+                             {t("QuintoChat3")} <span
                             className="font-bold">{t("QuintoChat4")}</span> 🇺🇸 {t("QuintoChat6")}
                             <span className="font-bold"> {t("QuintoChat5")}</span> 🇨🇳.
 
