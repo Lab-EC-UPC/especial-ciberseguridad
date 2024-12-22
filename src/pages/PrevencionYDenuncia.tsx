@@ -63,16 +63,17 @@ export default function PrevencionYDenuncia({ visibleElements, setVisibleElement
             content:
                 <div key={key} className="flex flex-col items-start animate-fade-in-fast" style={{ width: 'fit-content' }}>
                     <div className="chat-box left">
-                        <video 
-                            controls
-                            autoPlay
-                            muted
-                            playsInline
-                            style={{ maxHeight: '80vh', width: 'auto' }}
+                        <video
+                            controls autoPlay muted playsInline
+                            style={{maxHeight: '80vh', width: 'auto'}}
                         >
                             <source
-                                src= {t("video_yanira")}
+                                src={`${t("video_yanira")}.webm`}
                                 type="video/webm"
+                            />
+                            <source
+                                src={`${t("video_yanira")}.mp4`}
+                                type="video/mp4"
                             />
                         </video>
                         <div className="flex items-center gap-1">
