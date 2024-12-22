@@ -5,14 +5,14 @@ import {LanguageIcon, SpeakerXMarkIcon} from "@heroicons/react/24/solid";
 import {Dropdown, DropdownItem, DropdownMenu, DropdownTrigger} from "@nextui-org/dropdown";
 import {useTranslation} from "react-i18next";
 import {Route} from "../utils/Route.ts";
+import i18n from "i18next";
 
 interface SidebarProps {
     routes: Route[];
     toggleSidebar: () => void;
-    switchLanguage: (lang: string) => void;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ routes, toggleSidebar, switchLanguage }) => {
+const Sidebar: React.FC<SidebarProps> = ({ routes, toggleSidebar }) => {
     const { t } = useTranslation(["sidebar"]);
 
     const [readStatus, setReadStatus] = useState<Record<string, boolean>>(
@@ -28,6 +28,11 @@ const Sidebar: React.FC<SidebarProps> = ({ routes, toggleSidebar, switchLanguage
             [link]: true,
         }));
         toggleSidebar();
+    };
+
+    const switchLanguage = (lang: string) => {
+        i18n.changeLanguage(lang)
+            .then(() => localStorage.setItem("language", lang));
     };
 
     return (
