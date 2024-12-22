@@ -17,7 +17,7 @@
   "msg2-8": "to cybercrime ",
 
   "msg3-1": "Between July 2023 and July 2024, more than ",
-  "msg3-2": "697 million phishing blocks \uD83D\uDEE1\uFE0F\uD83D\uDCE7",
+  "msg3-2": "697 million phishing blocks, \uD83D\uDEE1\uFE0F\uD83D\uDCE7",
   "msg3-3": "were registered throughout Latin America, according to the Kaspersky Threat Panorama, a cybersecurity company dedicated to ",
   "msg3-4": "offering solutions and protection services for users and companies ",
   "msg3-5": "around the world.",
@@ -79,6 +79,7 @@
   "msg9-7": "people and get ",
   "msg9-8": "personal or financial information. ",
 
+  "Pharming": "Pharming",
   "msg10-1": "The ",
   "msg10-2": "cybercriminal ",
   "msg10-3": "who performs smishing pretends to be a ",
