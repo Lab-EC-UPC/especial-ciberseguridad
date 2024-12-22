@@ -35,7 +35,7 @@ export default function TeaserSplashScreen({ onSkip }: { onSkip: () => void }) {
                     i18n.language === 'en' ? (
                             <video
                                 muted={isMuted || true}
-                                autoPlay playsInline loop
+                                loop autoPlay width='100%' height='100%' playsInline
                                 className="object-fit h-full w-full"
                             >
                                 <source
@@ -50,7 +50,7 @@ export default function TeaserSplashScreen({ onSkip }: { onSkip: () => void }) {
                         (
                             <video
                                 muted={isMuted || true}
-                                autoPlay playsInline loop
+                                loop autoPlay width='100%' height='100%' playsInline
                                 className="object-fit h-full w-full"
                             >
                                 <source
@@ -66,7 +66,7 @@ export default function TeaserSplashScreen({ onSkip }: { onSkip: () => void }) {
                     i18n.language === 'en' ? (
                             <video
                                 muted={isMuted || true}
-                                autoPlay playsInline loop
+                                loop autoPlay width='100%' height='100%' playsInline
                                 className="object-fit h-full w-full"
                             >
                                 <source
@@ -81,7 +81,7 @@ export default function TeaserSplashScreen({ onSkip }: { onSkip: () => void }) {
                         (
                             <video
                                 muted={isMuted || true}
-                                autoPlay playsInline loop
+                                loop autoPlay width='100%' height='100%' playsInline
                                 className="object-fit h-full w-full"
                             >
                                 <source
@@ -95,7 +95,6 @@ export default function TeaserSplashScreen({ onSkip }: { onSkip: () => void }) {
                         )
                 )
             }
-            https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/inicio-vertical-logo
             {/*<video*/}
             {/*    autoPlay*/}
             {/*    muted={isMuted || true}*/}
