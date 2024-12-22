@@ -11,40 +11,34 @@ export default function Inicio() {
     const { t } = useTranslation(["general"]);
 
     return (
-        <div className="grid gap-56 p-4">
-            <div className="flex flex-col items-center justify-center">
-                <div className="flex flex-col items-center justify-center w-full gap-6">
-                    <div className="w-full justify-center block">
-                        <img
-                            src="home-title.png"
-                            alt="CiberAlerta Perú"
-                            className="object-cover animate-fade-in block"
-                        />
-                    </div>
-                    <div className="bg-green-light text-white px-8 md:px-24 py-4">
-                        <h1 className="md:text-2xl text-center">
-                            {t("title")}
-                            <br/>
-                            <span className="font-bold">{t("title-2")}</span>
-                        </h1>
-                    </div>
-                    <div className="grid gap-2 w-full max-w-xs">
-                        <Link to="/ciberdelincuencia">
-                            <button
-                                className="button-green grid gap-2 w-full max-w-xs animate-scale-loop">
-                                {t("start")} 🚀
-                            </button>
-                        </Link>
-                        <Link to="/verificador-de-links">
-                            <button
-                                className="button-green grid gap-2 w-full max-w-xs">
-                                {t("link-verifier")} 🔗
-                            </button>
-                        </Link>
-                    </div>
+        <div className="flex flex-col items-center justify-center py-8 md:py-10">
+            <div className="w-full flex flex-col items-center animate-fade-in-fast">
+                <div className="chat-box center font-bold">
+                    <img
+                        src="start-icon.webp"
+                        alt="Joined chat icon"
+                        className="w-16 h-16 md:w-24 md:h-24 m-2"
+                    />
+                    <p className="text-xs">{t("text1")}</p>
+                    <h1 className="text-4xl md:text-5xl">{t("text2")}</h1>
+                    <p className="text-md md:text-xl font-semibold">{t("text3")}</p>
+                </div>
+                <div className="chat-box center">
+                    <p className="text-sm md:text-md">{t("text4")}</p>
                 </div>
             </div>
+            <div className="grid gap-2 w-3/4 md:max-w-xl">
+                <Link to="/verificador-de-links">
+                    <button className="button-start bg-[#122D28] w-full animate-scale-loop">
+                        {t("link-verifier")} 🔗
+                    </button>
+                </Link>
+                <Link to="/ciberdelincuencia">
+                    <button className="button-start bg-[#215C54] w-full">
+                        {t("start")} 🚀
+                    </button>
+                </Link>
+            </div>
         </div>
-
     );
 };
