@@ -7,6 +7,14 @@ import {Link} from "react-router";
 import { Suspense } from "react";
 import i18n from "i18next";
 import {useTranslation} from "react-i18next";
+import {InformationCircleIcon} from "@heroicons/react/24/solid";
+import {
+    Modal,
+    ModalContent,
+    ModalHeader,
+    ModalBody,
+    useDisclosure,
+} from "@nextui-org/modal";
 
 const Layout: React.FC = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -14,14 +22,15 @@ const Layout: React.FC = () => {
     const routes = Chats;
     const location = useLocation();
     const activeRoute = routes.find((route) => route.link === location.pathname) || routes[0];
+    const {isOpen, onOpen, onOpenChange} = useDisclosure();
 
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
     };
 
     const switchLanguage = (lang: string) => {
-        i18n.changeLanguage(lang);
-        localStorage.setItem("language", lang);
+        i18n.changeLanguage(lang)
+            .then(()=>localStorage.setItem("language", lang));
     }
 
     const Loader: React.FC = () => {
@@ -32,6 +41,7 @@ const Layout: React.FC = () => {
         );
     };
 
+    // @ts-ignore
     return (
         <Suspense fallback={<Loader/>}>
             <div className="relative h-screen">
@@ -72,19 +82,46 @@ const Layout: React.FC = () => {
                                     </div>
                                 </Link>
                             </div>
-                            <div className="hidden md:block">
-                                <div className="flex gap-2 text-grey-light items-center ">
+                            {
+                                activeRoute.id === 'verificador-de-links' ? (
                                     <div className="flex">
-                                        <div className="border border-grey-light py-2 px-3">
-                                            <VideoCameraIcon className="h-6"/>
-                                        </div>
-                                        <div className="border border-grey-light py-2 px-3">
-                                            <PhoneIcon className="h-6"/>
+                                        <button onClick={onOpen} className="hover:scale-95 duration-200">
+                                            <InformationCircleIcon className="h-6 md:h-8 text-red-500" />
+                                        </button>
+                                        <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
+                                            <ModalContent>
+                                                {/*@ts-ignore*/}
+                                                {(onClose) => (
+                                                    <>
+                                                        <ModalHeader className="flex flex-col gap-1">
+                                                            {t('disclaimer-title')}
+                                                        </ModalHeader>
+                                                        <ModalBody>
+                                                            <div>
+                                                                Building
+                                                            </div>
+                                                        </ModalBody>
+                                                    </>
+                                                )}
+                                            </ModalContent>
+                                        </Modal>
+                                    </div>
+                                ) : (
+                                    <div className="hidden md:block">
+                                        <div className="flex gap-2 text-grey-light items-center ">
+                                            <div className="flex">
+                                                <div className="border border-grey-light py-2 px-3">
+                                                    <VideoCameraIcon className="h-6"/>
+                                                </div>
+                                                <div className="border border-grey-light py-2 px-3">
+                                                    <PhoneIcon className="h-6"/>
+                                                </div>
+                                            </div>
+                                            <MagnifyingGlassIcon className="h-6"/>
                                         </div>
                                     </div>
-                                    <MagnifyingGlassIcon className="h-6"/>
-                                </div>
-                            </div>
+                                )
+                            }
                         </div>
 
                         <div className="flex-1 overflow-auto bg-wallpaper bg-chat">

@@ -5,7 +5,7 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
-    "./node_modules/@nextui-org/theme/dist/components/(dropdown|popover|menu|divider|button|ripple|spinner).js"
+    "./node_modules/@nextui-org/theme/dist/components/(dropdown|modal|popover|menu|divider|button|ripple|spinner).js"
   ],
   theme: {
     fontSize: {

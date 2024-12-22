@@ -17,7 +17,7 @@ const ParticipantCard = (participant: Participant) => {
                  className="w-10 h-10 md:w-16 md:h-16 rounded-full object-cover"
             />
             <div className="grid text-justify">
-                <h1 className="font-medium text-lg">
+                <h1 className="font-medium text-xs md:text-lg">
                     {participant.name}
                 </h1>
                 <p className="text-sm text-grey">
