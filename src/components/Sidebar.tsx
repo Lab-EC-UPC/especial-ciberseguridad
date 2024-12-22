@@ -31,13 +31,13 @@ const Sidebar: React.FC<SidebarProps> = ({ routes, toggleSidebar }) => {
         }));
     }, [location]);
 
-    // const handleNavLinkClick = (link: string) => {
-    //     setReadStatus((prevStatus) => ({
-    //         ...prevStatus,
-    //         [link]: true,
-    //     }));
-    //     toggleSidebar();
-    // };
+    const handleNavLinkClick = () => {
+        // setReadStatus((prevStatus) => ({
+        //     ...prevStatus,
+        //     [link]: true,
+        // }));
+        toggleSidebar();
+    };
 
     const switchLanguage = (lang: string) => {
         i18n.changeLanguage(lang)
@@ -87,7 +87,7 @@ const Sidebar: React.FC<SidebarProps> = ({ routes, toggleSidebar }) => {
                         <NavLink
                             key={index}
                             to={route.link}
-                            // onClick={() => handleNavLinkClick(route.link)}
+                            onClick={handleNavLinkClick}
                             className={({isActive}) =>
                                 `flex items-center p-4 cursor-pointer ${
                                     isActive ? "bg-zinc-100" : "hover:bg-slate-100"
