@@ -60,13 +60,13 @@ const Sidebar: React.FC<SidebarProps> = ({ routes, toggleSidebar }) => {
                             <DropdownMenu>
                                 <DropdownItem key="es" onPress={()=>switchLanguage("es")}>
                                     <div className="p-2 hover:scale-95 duration-300 flex items-center gap-2">
-                                        <img src="language/spanish-flag.svg" alt="Spanish" className="h-8 w-8"/>
+                                        <img src="language/spanish-flag.webp" alt="Spanish" className="h-8 w-8"/>
                                         <p className="text-xs md:text-md">Español</p>
                                     </div>
                                 </DropdownItem>
                                 <DropdownItem key="en" onPress={()=>switchLanguage("en")}>
                                     <div className="p-2 hover:scale-95 duration-300 flex items-center gap-2">
-                                        <img src="language/english-flag.svg" alt="English" className="h-8 w-8"/>
+                                        <img src="language/english-flag.webp" alt="English" className="h-8 w-8"/>
                                         <p className="text-xs md:text-md">English</p>
                                     </div>
                                 </DropdownItem>
