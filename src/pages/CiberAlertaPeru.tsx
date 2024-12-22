@@ -43,8 +43,12 @@ export default function CiberAlertaPeru({visibleElements,setVisibleElements} :  
                             playsInline
                         >
                             <source
-                                src={t("video_teaser")}
+                                src={`${t("video_teaser")}.webm`}
                                 type="video/webm"
+                            />
+                            <source
+                                src={`${t("video_teaser")}.mp4`}
+                                type="video/mp4"
                             />
                         </video>
                         <div className="flex items-center gap-1">
