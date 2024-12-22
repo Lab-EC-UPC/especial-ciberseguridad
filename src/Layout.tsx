@@ -5,7 +5,6 @@ import { ChevronLeftIcon, MagnifyingGlassIcon, PhoneIcon, VideoCameraIcon } from
 import {Chats} from "./content/Chats.ts";
 import {Link} from "react-router";
 import { Suspense } from "react";
-import i18n from "i18next";
 import {useTranslation} from "react-i18next";
 import {InformationCircleIcon} from "@heroicons/react/24/solid";
 import {
@@ -28,11 +27,6 @@ const Layout: React.FC = () => {
         setIsSidebarOpen(!isSidebarOpen);
     };
 
-    const switchLanguage = (lang: string) => {
-        i18n.changeLanguage(lang)
-            .then(()=>localStorage.setItem("language", lang));
-    }
-
     const Loader: React.FC = () => {
         return (
             <div className="flex items-center justify-center h-screen">
@@ -41,7 +35,6 @@ const Layout: React.FC = () => {
         );
     };
 
-    // @ts-ignore
     return (
         <Suspense fallback={<Loader/>}>
             <div className="relative h-screen">
@@ -54,7 +47,7 @@ const Layout: React.FC = () => {
                             isSidebarOpen ? "translate-x-0" : "-translate-x-full"
                         } transition-transform duration-300 ease-in-out`}
                     >
-                        <Sidebar routes={routes} toggleSidebar={toggleSidebar} switchLanguage={switchLanguage} />
+                        <Sidebar routes={routes} toggleSidebar={toggleSidebar} />
                     </div>
 
                     <div className="flex-1 flex flex-col bg-cover bg-center">
