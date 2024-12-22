@@ -10,106 +10,45 @@ export default function TeaserSplashScreen({ onSkip }: { onSkip: () => void }) {
     // const desktopVideo = t('splash-desktop-url');
     // const mobileVideo = t('splash-mobile-url');
 
+    const getVideoUrls = (videoSrc: string, language: string) => {
+        const baseDesktopEn = "https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/intro-horizontal-en";
+        const baseDesktopOther = "https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/inicio-horizontal-logo";
+        const baseMobileEn = "https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/intro-vertical-en";
+        const baseMobileOther = "https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/inicio-vertical-logo";
+
+        if (videoSrc === "desktop") {
+            return language === "en" ? baseDesktopEn : baseDesktopOther;
+        }
+        return language === "en" ? baseMobileEn : baseMobileOther;
+    };
+
+    const videoBase = getVideoUrls(videoSrc, i18n.language);
+
     useEffect(() => {
         const updateVideoSrc = () => {
-            if (window.innerWidth <= 768) {
-                setVideoSrc("mobile");
-            } else {
-                setVideoSrc("desktop");
-            }
+            setVideoSrc(window.innerWidth <= 768 ? "mobile" : "desktop");
         };
 
         updateVideoSrc();
-
         window.addEventListener("resize", updateVideoSrc);
-
-        return () => {
-            window.removeEventListener("resize", updateVideoSrc);
-        };
+        return () => window.removeEventListener("resize", updateVideoSrc);
     }, []);
 
     return (
         <div className="h-screen w-screen">
-            {
-                videoSrc === 'desktop' ? (
-                    i18n.language === 'en' ? (
-                            <video
-                                muted={isMuted || true}
-                                loop autoPlay width='100%' height='100%' playsInline
-                                className="object-fit h-full w-full"
-                            >
-                                <source
-                                    src="https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/intro-horizontal-en.mp4"
-                                    type="video/mp4"/>
-                                <source
-                                    src="https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/intro-horizontal-en.webm"
-                                    type="video/webm"/>
-                                Your browser does not support HTML video.
-                            </video>
-                        ) :
-                        (
-                            <video
-                                muted={isMuted || true}
-                                loop autoPlay width='100%' height='100%' playsInline
-                                className="object-fit h-full w-full"
-                            >
-                                <source
-                                    src="https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/inicio-horizontal-logo.mp4"
-                                    type="video/mp4"/>
-                                <source
-                                    src="https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/inicio-horizontal-logo.webm"
-                                    type="video/webm"/>
-                                Your browser does not support HTML video.
-                            </video>
-                        )
-                ) : (
-                    i18n.language === 'en' ? (
-                            <video
-                                muted={isMuted || true}
-                                loop autoPlay width='100%' height='100%' playsInline
-                                className="object-fit h-full w-full"
-                            >
-                                <source
-                                    src="https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/intro-vertical-en.mp4"
-                                    type="video/mp4"/>
-                                <source
-                                    src="https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/intro-vertical-en.webm"
-                                    type="video/webm"/>
-                                Your browser does not support HTML video.
-                            </video>
-                        ) :
-                        (
-                            <video
-                                muted={isMuted || true}
-                                loop autoPlay width='100%' height='100%' playsInline
-                                className="object-fit h-full w-full"
-                            >
-                                <source
-                                    src="https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/inicio-vertical-logo.mp4"
-                                    type="video/mp4"/>
-                                <source
-                                    src="https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/inicio-vertical-logo.webm"
-                                    type="video/webm"/>
-                                Your browser does not support HTML video.
-                            </video>
-                        )
-                )
-            }
-            {/*<video*/}
-            {/*    autoPlay*/}
-            {/*    muted={isMuted || true}*/}
-            {/*    loop*/}
-            {/*    playsInline*/}
-            {/*    className="object-fit h-full w-full"*/}
-            {/*>*/}
-            {/*    <source*/}
-            {/*        src={`${videoSrc}.mp4` || "https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/inicio-vertical-logo.mp4"}*/}
-            {/*        type="video/mp4"/>*/}
-            {/*    <source*/}
-            {/*        src={`${videoSrc}.webm` || "https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/inicio-vertical-logo.webm"}*/}
-            {/*        type="video/webm"/>*/}
-            {/*    Your browser does not support HTML video.*/}
-            {/*</video>*/}
+            <video
+                muted={isMuted}
+                loop
+                autoPlay
+                width="100%"
+                height="100%"
+                playsInline
+                className="object-fit h-full w-full"
+            >
+                <source src={`${videoBase}.webm`} type="video/webm"/>
+                <source src={`${videoBase}.mp4`} type="video/mp4"/>
+                Your browser does not support HTML video.
+            </video>
             <div className="flex gap-4 absolute top-2 right-4 z-10">
                 <button
                     onClick={onSkip}
