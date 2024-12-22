@@ -50,6 +50,8 @@
   "inv-2-s": "Smishing ",
   "inv-2-p": "Pharming ",
   "inv-3": "joined using Phishing's invitation link",
+  "phishing": "Phishing ",
+  "inv-4": "joined by stealing an invitation link",
 
   "Vishing": "Vishing",
   "msg7-1": "Derived from the words ",
