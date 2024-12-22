@@ -81,7 +81,7 @@ const Layout: React.FC = () => {
                                         <button onClick={onOpen} className="hover:scale-95 duration-200">
                                             <InformationCircleIcon className="h-6 md:h-8 text-red-500" />
                                         </button>
-                                        <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
+                                        <Modal isOpen={isOpen} onOpenChange={onOpenChange} scrollBehavior="inside">
                                             <ModalContent>
                                                 {/*@ts-ignore*/}
                                                 {(onClose) => (
@@ -91,9 +91,61 @@ const Layout: React.FC = () => {
                                                         </ModalHeader>
                                                         <ModalBody>
                                                             <div>
-                                                                Building
+                                                                {/* Título principal */}
+                                                                <p className="text-lg font-bold text-center">{t('verificador.titulo')}</p>
+
+                                                                {/* Lista de pasos del verificador */}
+                                                                <ol className="list-decimal list-inside mt-2 space-y-2">
+                                                                    <li>{t('verificador.descripcion')}</li>
+                                                                    <li>
+                                                                        <strong>{t('verificador.openphish.titulo')}</strong> {t('verificador.openphish.descripcion')}
+                                                                    </li>
+                                                                    <li>
+                                                                        <strong>{t('verificador.googleWebRisk.titulo')}</strong> {t('verificador.googleWebRisk.descripcion')}
+                                                                    </li>
+                                                                    <li>
+                                                                        <strong>{t('verificador.apiVoid.titulo')}</strong> {t('verificador.apiVoid.descripcion')}
+                                                                    </li>
+                                                                    <li>{t('verificador.agradecimiento')}</li>
+                                                                </ol>
+
+                                                                {/* Título para los canales de denuncia */}
+                                                                <p className="text-lg font-bold text-center mt-6">{t('canales.titulo')}</p>
+                                                                <p className="mt-2">{t('canales.descripcion')}</p>
+
+                                                                {/* Lista de canales de denuncia */}
+                                                                <ol className="list-decimal list-inside mt-4 space-y-4">
+                                                                    <li>
+                                                                        <strong>{t('canales.divindat.titulo')}</strong><br />
+                                                                        {t('canales.divindat.descripcion')}<br />
+                                                                        <strong>{t('canales.divindat.contacto.titulo')}</strong> {t('canales.divindat.contacto.telefono')}<br />
+                                                                        <strong>{t('canales.divindat.contacto.correo.titulo')}</strong>
+                                                                        <a
+                                                                            href={`mailto:${t('canales.divindat.contacto.correo.direccion')}`}
+                                                                            className="text-blue-500 underline"
+                                                                        >
+                                                                            {t('canales.divindat.contacto.correo.direccion')}
+                                                                        </a>
+                                                                        <br />
+                                                                        <strong>{t('canales.divindat.contacto.direccion.titulo')}</strong> {t('canales.divindat.contacto.direccion.detalle')}
+                                                                    </li>
+                                                                    <li>
+                                                                        <strong>{t('canales.ministerioPublico.titulo')}</strong><br />
+                                                                        {t('canales.ministerioPublico.descripcion')}<br />
+                                                                        <strong>{t('canales.ministerioPublico.contacto.titulo')}</strong>
+                                                                        <a
+                                                                            href={t('canales.ministerioPublico.contacto.enlace')}
+                                                                            target="_blank"
+                                                                            rel="noopener noreferrer"
+                                                                            className="text-blue-500 underline"
+                                                                        >
+                                                                            {t('canales.ministerioPublico.contacto.enlace')}
+                                                                        </a>
+                                                                    </li>
+                                                                </ol>
                                                             </div>
                                                         </ModalBody>
+
                                                     </>
                                                 )}
                                             </ModalContent>

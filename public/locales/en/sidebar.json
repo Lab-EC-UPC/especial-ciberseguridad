@@ -53,5 +53,56 @@
     "message": "This special was created by...",
     "time": "00:08"
   },
-  "disclaimer-title": "Disclaimer"
+  "disclaimer-title": "Disclaimer",
+
+
+  "verificador": {
+    "titulo": "Cybersecurity Link Checker",
+    "descripcion": "The link checker is a tool that analyzes the links you submit to verify and report their security level. When you submit a link, it undergoes an analysis through three stages to identify potential threats.",
+    "openphish": {
+      "titulo": "OpenPhish:",
+      "descripcion": "The first layer validates the link using this platform. It compares the link with the information contained in a database of websites known to perform phishing attacks."
+    },
+    "googleWebRisk": {
+      "titulo": "Google Web Risk API:",
+      "descripcion": "The second stage validates the link through this tool, which contains real-time reports of websites that are dangerous due to malware or software attempting to steal information."
+    },
+    "apiVoid": {
+      "titulo": "APIVoid:",
+      "descripcion": "The link's reputation on the web is evaluated, assigning a risk score based on a series of indicators rated according to malicious activities previously associated with the link."
+    },
+    "agradecimiento": "Thanks to the combination of these three layers, the checker generates a clear report on the link's security, indicating whether it is safe or poses a threat to the user. Please note that the checker is an automated tool, and although it performs an exhaustive analysis, caution is always recommended when interacting with suspicious links."
+  },
+  "canales": {
+    "titulo": "Channels and Means to Report Cybercrimes",
+    "descripcion": "If you have been a victim of a cybercrime or detected suspicious activity, you can contact the following entities in Peru to report the situation:",
+    "divindat": {
+      "titulo": "High Technology Crime Investigation Division (DIVINDAT):",
+      "descripcion": "A specialized unit of the Peruvian National Police (PNP) responsible for addressing cybercrimes.",
+      "contacto": {
+        "titulo": "Phone Numbers:",
+        "telefono": "(01) 431-8898 or toll-free line 1818",
+        "correo": {
+          "titulo": "Email:",
+          "direccion": "divindat.depcpi@policia.gob.pe"
+        },
+        "direccion": {
+          "titulo": "Address:",
+          "detalle": "9th Floor, Criminal Investigation Directorate (DIRINCRI), Av. España 323, Cercado de Lima"
+        }
+      }
+    },
+    "ministerioPublico": {
+      "titulo": "Public Ministry - Attorney General's Office:",
+      "descripcion": "On their website, you can file reports on any type of crime, including cybercrimes.",
+      "contacto": {
+        "titulo": "Link:",
+        "enlace": "https://www.gob.pe/mpfn"
+      }
+    }
+  }
+
+
+
+
 }
