@@ -164,6 +164,19 @@ export default function ElPhishing ({visibleElements,setVisibleElements} :  Prop
 
                     <div className="chat-box center">
                         <p className="text-sm md:text-md">
+                            {t("inv-1")}<strong> {t("phishing")} </strong> {t("inv-4")}
+                        </p>
+                    </div>
+                </div>
+        },
+        {
+            cooldown: 800,
+            alignment: "left",
+            content:
+                <div className="flex flex-col items-center pt-3 animate-fade-in-fast">
+
+                    <div className="chat-box center">
+                        <p className="text-sm md:text-md">
                             {t("inv-1")}<strong> {t("inv-2-v")} </strong> {t("inv-3")}
                         </p>
                     </div>

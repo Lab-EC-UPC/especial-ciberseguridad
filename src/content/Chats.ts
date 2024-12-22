@@ -4,7 +4,7 @@ export const Chats: Route[] = [
     {
         id: 'inicio',
         link: "/",
-        title: "CiberAlerta Perú",
+        title: "Bienvenidos...",
         subtitle: "Bienvenidos...",
         message: "Bienvenidos al nuevo especial",
         time: "Jueves",
