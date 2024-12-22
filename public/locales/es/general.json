@@ -3,8 +3,12 @@
   "btn-skip-splash": "Ver especial",
   "title": "Mantente alerta ante los",
   "title-2": "peligros online",
-  "start": "Comenzar",
+  "start": "Ver especial",
   "link-verifier": "Verificador de links",
   "splash-desktop-url": "https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/inicio-horizontal-logo",
-  "splash-mobile-url": "https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/inicio-vertical-logo"
+  "splash-mobile-url": "https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/inicio-vertical-logo",
+  "text1": "Se ha creado el especial",
+  "text2": "CiberDelincuencia",
+  "text3": "Aprende a identificar las estafas digitales antes de que sea demasiado tarde\uD83D\uDEA8",
+  "text4": "⚠\uFE0F Miles de peruanos caen en fraudes digitales cada año. Conoce aquí más sobre ciberseguridad y usa nuestro verificador de links para detectar posibles enlaces maliciosos."
 }
