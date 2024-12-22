@@ -53,5 +53,58 @@
     "message": "Este especial fue hecho por...",
     "time": "00:08"
   },
-  "disclaimer-title": "Aviso"
+  "disclaimer-title": "Verificador de Enlaces:",
+
+
+
+  "verificador": {
+    "titulo": "Verificador de Enlaces de Ciberseguridad",
+    "descripcion": "El verificador de enlaces es una herramienta que analiza los enlaces que envías para comprobar y reportar su nivel de seguridad. Al enviar un enlace, este pasa por un análisis a través de tres etapas para identificar posibles amenazas.",
+    "openphish": {
+      "titulo": "OpenPhish:",
+      "descripcion": "La primera capa se encarga de validar el enlace utilizando esta plataforma. Mediante la misma, se compara con la información contenida en una base de datos de sitios web conocidos por realizar ataques de phishing."
+    },
+    "googleWebRisk": {
+      "titulo": "Google Web Risk API:",
+      "descripcion": "En segunda instancia, el enlace se valida a través del servicio que ofrece esta herramienta, la cual contiene reportes en tiempo real de sitios web que resulten peligrosos debido a contener malware o software que busquen efectuar intentos de robo de información."
+    },
+    "apiVoid": {
+      "titulo": "APIVoid:",
+      "descripcion": "Se evalúa la reputación del enlace en la red, asignando un puntaje de riesgo compuesto de una serie de indicadores que son calificados con base en las actividades maliciosas previas asociadas al enlace."
+    },
+    "agradecimiento": "Gracias a la combinación de estas tres capas, el verificador genera un informe claro sobre la seguridad del enlace, indicando si es seguro o presenta algún peligro para el usuario. Es importante tener en cuenta que el verificador es una herramienta automatizada y, aunque realiza un análisis exhaustivo, siempre se recomienda precaución al interactuar con enlaces sospechosos."
+  },
+  "canales": {
+    "titulo": "Canales y Vías de Denuncia de Ciberdelitos",
+    "descripcion": "Si has sido víctima de un ciberdelito o has detectado alguna actividad sospechosa, puedes ponerte en contacto con las siguientes entidades en Perú para reportar la situación:",
+    "divindat": {
+      "titulo": "División de Investigación de Delitos de Alta Tecnología (DIVINDAT):",
+      "descripcion": "Unidad especializada de la Policía Nacional del Perú (PNP) encargada de atender delitos informáticos.",
+      "contacto": {
+        "titulo": "Teléfonos:",
+        "telefono": "(01) 431-8898 o línea gratuita 1818",
+        "correo": {
+          "titulo": "Correo:",
+          "direccion": "divindat.depcpi@policia.gob.pe"
+        },
+        "direccion": {
+          "titulo": "Dirección:",
+          "detalle": "Piso 9, Dirección de Investigación Criminal (DIRINCRI), Av. España 323, Cercado de Lima"
+        }
+      }
+    },
+    "ministerioPublico": {
+      "titulo": "Ministerio Público - Fiscalía de la Nación:",
+      "descripcion": "En su portal puedes presentar denuncias sobre cualquier tipo de delito, incluidos los ciberdelitos.",
+      "contacto": {
+        "titulo": "Enlace:",
+        "enlace": "https://www.gob.pe/mpfn"
+      }
+    }
+  }
+
+
+
+
+
 }
