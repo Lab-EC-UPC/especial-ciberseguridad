@@ -90,61 +90,53 @@ const Layout: React.FC = () => {
                                                             {t('disclaimer-title')}
                                                         </ModalHeader>
                                                         <ModalBody>
-                                                            <div>
-                                                                {/* Título principal */}
-                                                                <p className="text-lg font-bold text-center">{t('verificador.titulo')}</p>
-
-                                                                {/* Lista de pasos del verificador */}
-                                                                <ol className="list-decimal list-inside mt-2 space-y-2">
-                                                                    <li>{t('verificador.descripcion')}</li>
+                                                            <div className="space-y-4 text-sm text-gray-700">
+                                                                <h2 className="text-lg font-bold">{t("disclaimer.title")}</h2>
+                                                                <p>{t("disclaimer.description")}</p>
+                                                                <ol className="list-decimal pl-6">
                                                                     <li>
-                                                                        <strong>{t('verificador.openphish.titulo')}</strong> {t('verificador.openphish.descripcion')}
+                                                                        <strong>{t("disclaimer.openPhishTitle")}</strong> {t("disclaimer.openPhishDescription")}
                                                                     </li>
                                                                     <li>
-                                                                        <strong>{t('verificador.googleWebRisk.titulo')}</strong> {t('verificador.googleWebRisk.descripcion')}
+                                                                        <strong>{t("disclaimer.googleWebRiskTitle")}</strong> {t("disclaimer.googleWebRiskDescription")}
                                                                     </li>
                                                                     <li>
-                                                                        <strong>{t('verificador.apiVoid.titulo')}</strong> {t('verificador.apiVoid.descripcion')}
-                                                                    </li>
-                                                                    <li>{t('verificador.agradecimiento')}</li>
-                                                                </ol>
-
-                                                                {/* Título para los canales de denuncia */}
-                                                                <p className="text-lg font-bold text-center mt-6">{t('canales.titulo')}</p>
-                                                                <p className="mt-2">{t('canales.descripcion')}</p>
-
-                                                                {/* Lista de canales de denuncia */}
-                                                                <ol className="list-decimal list-inside mt-4 space-y-4">
-                                                                    <li>
-                                                                        <strong>{t('canales.divindat.titulo')}</strong><br />
-                                                                        {t('canales.divindat.descripcion')}<br />
-                                                                        <strong>{t('canales.divindat.contacto.titulo')}</strong> {t('canales.divindat.contacto.telefono')}<br />
-                                                                        <strong>{t('canales.divindat.contacto.correo.titulo')}</strong>
-                                                                        <a
-                                                                            href={`mailto:${t('canales.divindat.contacto.correo.direccion')}`}
-                                                                            className="text-blue-500 underline"
-                                                                        >
-                                                                            {t('canales.divindat.contacto.correo.direccion')}
-                                                                        </a>
-                                                                        <br />
-                                                                        <strong>{t('canales.divindat.contacto.direccion.titulo')}</strong> {t('canales.divindat.contacto.direccion.detalle')}
-                                                                    </li>
-                                                                    <li>
-                                                                        <strong>{t('canales.ministerioPublico.titulo')}</strong><br />
-                                                                        {t('canales.ministerioPublico.descripcion')}<br />
-                                                                        <strong>{t('canales.ministerioPublico.contacto.titulo')}</strong>
-                                                                        <a
-                                                                            href={t('canales.ministerioPublico.contacto.enlace')}
-                                                                            target="_blank"
-                                                                            rel="noopener noreferrer"
-                                                                            className="text-blue-500 underline"
-                                                                        >
-                                                                            {t('canales.ministerioPublico.contacto.enlace')}
-                                                                        </a>
+                                                                        <strong>{t("disclaimer.apivoidTitle")}</strong> {t("disclaimer.apivoidDescription")}
+                                                                        <ul className="list-disc pl-6">
+                                                                            <li>{t("disclaimer.apivoidLowRisk")}</li>
+                                                                            <li>{t("disclaimer.apivoidModerateRisk")}</li>
+                                                                            <li>{t("disclaimer.apivoidHighRisk")}</li>
+                                                                            <li>{t("disclaimer.apivoidCriticalRisk")}</li>
+                                                                        </ul>
                                                                     </li>
                                                                 </ol>
+                                                                <h3 className="text-md font-bold">{t("disclaimer.interpretationTitle")}</h3>
+                                                                <ul className="list-disc pl-6">
+                                                                    <li>{t("disclaimer.interpretationSafe")}</li>
+                                                                    <li>{t("disclaimer.interpretationWarning")}</li>
+                                                                    <li>{t("disclaimer.interpretationUnsafe")}</li>
+                                                                </ul>
+                                                                <p>{t("disclaimer.interpretationDescription")}</p>
+                                                                <h3 className="text-md font-bold">{t("disclaimer.limitationsTitle")}</h3>
+                                                                <p>{t("disclaimer.limitationsDescription")}</p>
+                                                                <ul className="list-disc pl-6 space-y-1">
+                                                                    <li>{t("disclaimer.limitationSocialMedia")}</li>
+                                                                    <li>{t("disclaimer.limitationNewSites")}</li>
+                                                                    <li>{t("disclaimer.limitationRedirects")}</li>
+                                                                    <li>{t("disclaimer.limitationShortUrls")}</li>
+                                                                    <li>{t("disclaimer.limitationDynamicContent")}</li>
+                                                                    <li>{t("disclaimer.limitationRealTimeAttacks")}</li>
+                                                                    <li>{t("disclaimer.limitationOfflineDocs")}</li>
+                                                                    <li>{t("disclaimer.limitationTemporarySites")}</li>
+                                                                    <li>{t("disclaimer.limitationLocalNetworks")}</li>
+                                                                    <li>{t("disclaimer.limitationPhishingPatterns")}</li>
+                                                                    <li>{t("disclaimer.limitationAutoTranslations")}</li>
+                                                                    <li>{t("disclaimer.limitationDatabaseDependency")}</li>
+                                                                    <li>{t("disclaimer.limitationSuspiciousSurveys")}</li>
+                                                                </ul>
                                                             </div>
                                                         </ModalBody>
+
 
                                                     </>
                                                 )}
