@@ -53,11 +53,11 @@
     "message": "This special was created by...",
     "time": "00:08"
   },
-  "disclaimer-title": "Disclaimer",
+  "disclaimer-title": "Link Verifier",
 
 
   "disclaimer": {
-    "title": "Disclaimer",
+    "title": "Legal Disclaimer",
     "description": "The link verifier is a tool designed to evaluate and report the safety of the links you send. Through three stages of analysis, it aims to identify potential threats and help you navigate the digital environment more securely.",
     "openPhishTitle": "OpenPhish:",
     "openPhishDescription": "The first stage checks the link against an updated database of websites known for executing phishing attacks. This allows the detection of URLs associated with identity theft attempts.",
