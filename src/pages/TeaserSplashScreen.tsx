@@ -11,10 +11,10 @@ export default function TeaserSplashScreen({ onSkip }: { onSkip: () => void }) {
     // const mobileVideo = t('splash-mobile-url');
 
     const getVideoUrls = (videoSrc: string, language: string) => {
-        const baseDesktopEn = "https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/intro-horizontal-en";
-        const baseDesktopOther = "https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/inicio-horizontal-logo";
-        const baseMobileEn = "https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/intro-vertical-en";
-        const baseMobileOther = "https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/inicio-vertical-logo";
+        const baseDesktopEn = "https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/splash-final/intro-horizontal-en";
+        const baseDesktopOther = "https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/splash-final/intro-horizontal-es";
+        const baseMobileEn = "https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/splash-final/intro-vertical-en";
+        const baseMobileOther = "https://lab-ec-upc.github.io/assets/especial-ciberseguridad/videos/splash-final/intro-vertical-es";
 
         if (videoSrc === "desktop") {
             return language === "en" ? baseDesktopEn : baseDesktopOther;
