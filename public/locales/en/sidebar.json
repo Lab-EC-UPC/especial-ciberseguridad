@@ -56,51 +56,43 @@
   "disclaimer-title": "Disclaimer",
 
 
-  "verificador": {
-    "titulo": "Cybersecurity Link Checker",
-    "descripcion": "The link checker is a tool that analyzes the links you submit to verify and report their security level. When you submit a link, it undergoes an analysis through three stages to identify potential threats.",
-    "openphish": {
-      "titulo": "OpenPhish:",
-      "descripcion": "The first layer validates the link using this platform. It compares the link with the information contained in a database of websites known to perform phishing attacks."
-    },
-    "googleWebRisk": {
-      "titulo": "Google Web Risk API:",
-      "descripcion": "The second stage validates the link through this tool, which contains real-time reports of websites that are dangerous due to malware or software attempting to steal information."
-    },
-    "apiVoid": {
-      "titulo": "APIVoid:",
-      "descripcion": "The link's reputation on the web is evaluated, assigning a risk score based on a series of indicators rated according to malicious activities previously associated with the link."
-    },
-    "agradecimiento": "Thanks to the combination of these three layers, the checker generates a clear report on the link's security, indicating whether it is safe or poses a threat to the user. Please note that the checker is an automated tool, and although it performs an exhaustive analysis, caution is always recommended when interacting with suspicious links."
-  },
-  "canales": {
-    "titulo": "Channels and Means to Report Cybercrimes",
-    "descripcion": "If you have been a victim of a cybercrime or detected suspicious activity, you can contact the following entities in Peru to report the situation:",
-    "divindat": {
-      "titulo": "High Technology Crime Investigation Division (DIVINDAT):",
-      "descripcion": "A specialized unit of the Peruvian National Police (PNP) responsible for addressing cybercrimes.",
-      "contacto": {
-        "titulo": "Phone Numbers:",
-        "telefono": "(01) 431-8898 or toll-free line 1818",
-        "correo": {
-          "titulo": "Email:",
-          "direccion": "divindat.depcpi@policia.gob.pe"
-        },
-        "direccion": {
-          "titulo": "Address:",
-          "detalle": "9th Floor, Criminal Investigation Directorate (DIRINCRI), Av. España 323, Cercado de Lima"
-        }
-      }
-    },
-    "ministerioPublico": {
-      "titulo": "Public Ministry - Attorney General's Office:",
-      "descripcion": "On their website, you can file reports on any type of crime, including cybercrimes.",
-      "contacto": {
-        "titulo": "Link:",
-        "enlace": "https://www.gob.pe/mpfn"
-      }
-    }
+  "disclaimer": {
+    "title": "Disclaimer",
+    "description": "The link verifier is a tool designed to evaluate and report the safety of the links you send. Through three stages of analysis, it aims to identify potential threats and help you navigate the digital environment more securely.",
+    "openPhishTitle": "OpenPhish:",
+    "openPhishDescription": "The first stage checks the link against an updated database of websites known for executing phishing attacks. This allows the detection of URLs associated with identity theft attempts.",
+    "googleWebRiskTitle": "Google Web Risk API:",
+    "googleWebRiskDescription": "The second stage compares the link with real-time reports of threats such as malware, phishing, and unsafe content. This tool uses global data to identify emerging risks on the web.",
+    "apivoidTitle": "APIVoid:",
+    "apivoidDescription": "In the final stage, the link's reputation is evaluated across the network, assigning a risk score from 0 to 100 based on a series of indicators associated with previous malicious activities.",
+    "apivoidLowRisk": "0 to 10: Low risk. Generally safe.",
+    "apivoidModerateRisk": "11 to 30: Moderate risk. Possible warning signs.",
+    "apivoidHighRisk": "31 to 70: High risk. Linked to malicious activities.",
+    "apivoidCriticalRisk": "71 to 100: Critical risk. Associated with severe malware or phishing.",
+    "interpretationTitle": "Score interpretation and our issued messages:",
+    "interpretationSafe": "0 (Safe): 'it is safe ✅.'",
+    "interpretationWarning": "1 to 10 (Warnings): 'not validated as a dangerous link, but it contains risk warnings, so caution is recommended ⚠️.'",
+    "interpretationUnsafe": "11 to 100 (Unsafe): 'it is unsafe, containing reports of malware and phishing 🚨.'",
+    "interpretationDescription": "The tool also automatically classifies as phishing any link that unjustifiably requests personal information, such as passwords or banking details, especially in suspicious surveys.",
+    "limitationsTitle": "Scenarios where the verifier may have limitations:",
+    "limitationsDescription": "Although this tool is effective, it is not without limitations. These are some scenarios where its effectiveness might be reduced:",
+    "limitationSocialMedia": "Fake social media pages: It does not analyze profiles or pages on these platforms; in such cases, you should use other methods, such as verifying the blue checkmark. This symbol ensures that the profile or page belongs to the official entity, significantly reducing the risk of interacting with fraudulent sites.",
+    "limitationNewSites": "New sites with no malicious history: It may not detect risks on newly created URLs.",
+    "limitationRedirects": "Multiple redirects: It does not follow links that redirect to other domains.",
+    "limitationShortUrls": "Shortened URLs: The verifier automatically expands services like bit.ly before analysis, but accuracy may vary if the link was altered during expansion.",
+    "limitationDynamicContent": "Dynamic content: Some websites change their behavior depending on the user's location or language, making threat detection more challenging.",
+    "limitationRealTimeAttacks": "Real-time attacks: It may not identify malware or malicious activities that have emerged recently and are not yet in updated databases.",
+    "limitationOfflineDocs": "Links in offline documents: It does not evaluate URLs embedded in files such as PDFs or Word documents.",
+    "limitationTemporarySites": "Temporary sites: Threats on pages created for short campaigns may go undetected if they have no prior history.",
+    "limitationLocalNetworks": "Local networks: It does not evaluate internal links within corporate networks.",
+    "limitationPhishingPatterns": "Complex phishing patterns: It may not identify URLs employing advanced social engineering.",
+    "limitationAutoTranslations": "Automatically translated pages: It might overlook threats in linguistically manipulated versions.",
+    "limitationDatabaseDependency": "Dependency on external databases: If OpenPhish or APIVoid databases are not updated, results may lack precision.",
+    "limitationSuspiciousSurveys": "Suspicious surveys: If a survey requests personal information such as passwords or banking data, the system will automatically flag it as phishing."
   }
+
+
+
 
 
 

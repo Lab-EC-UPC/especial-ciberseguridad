@@ -57,54 +57,51 @@
 
 
 
-  "verificador": {
-    "titulo": "Verificador de Enlaces de Ciberseguridad",
-    "descripcion": "El verificador de enlaces es una herramienta que analiza los enlaces que envías para comprobar y reportar su nivel de seguridad. Al enviar un enlace, este pasa por un análisis a través de tres etapas para identificar posibles amenazas.",
-    "openphish": {
-      "titulo": "OpenPhish:",
-      "descripcion": "La primera capa se encarga de validar el enlace utilizando esta plataforma. Mediante la misma, se compara con la información contenida en una base de datos de sitios web conocidos por realizar ataques de phishing."
-    },
-    "googleWebRisk": {
-      "titulo": "Google Web Risk API:",
-      "descripcion": "En segunda instancia, el enlace se valida a través del servicio que ofrece esta herramienta, la cual contiene reportes en tiempo real de sitios web que resulten peligrosos debido a contener malware o software que busquen efectuar intentos de robo de información."
-    },
-    "apiVoid": {
-      "titulo": "APIVoid:",
-      "descripcion": "Se evalúa la reputación del enlace en la red, asignando un puntaje de riesgo compuesto de una serie de indicadores que son calificados con base en las actividades maliciosas previas asociadas al enlace."
-    },
-    "agradecimiento": "Gracias a la combinación de estas tres capas, el verificador genera un informe claro sobre la seguridad del enlace, indicando si es seguro o presenta algún peligro para el usuario. Es importante tener en cuenta que el verificador es una herramienta automatizada y, aunque realiza un análisis exhaustivo, siempre se recomienda precaución al interactuar con enlaces sospechosos."
-  },
-  "canales": {
-    "titulo": "Canales y Vías de Denuncia de Ciberdelitos",
-    "descripcion": "Si has sido víctima de un ciberdelito o has detectado alguna actividad sospechosa, puedes ponerte en contacto con las siguientes entidades en Perú para reportar la situación:",
-    "divindat": {
-      "titulo": "División de Investigación de Delitos de Alta Tecnología (DIVINDAT):",
-      "descripcion": "Unidad especializada de la Policía Nacional del Perú (PNP) encargada de atender delitos informáticos.",
-      "contacto": {
-        "titulo": "Teléfonos:",
-        "telefono": "(01) 431-8898 o línea gratuita 1818",
-        "correo": {
-          "titulo": "Correo:",
-          "direccion": "divindat.depcpi@policia.gob.pe"
-        },
-        "direccion": {
-          "titulo": "Dirección:",
-          "detalle": "Piso 9, Dirección de Investigación Criminal (DIRINCRI), Av. España 323, Cercado de Lima"
-        }
-      }
-    },
-    "ministerioPublico": {
-      "titulo": "Ministerio Público - Fiscalía de la Nación:",
-      "descripcion": "En su portal puedes presentar denuncias sobre cualquier tipo de delito, incluidos los ciberdelitos.",
-      "contacto": {
-        "titulo": "Enlace:",
-        "enlace": "https://www.gob.pe/mpfn"
-      }
-    }
+  "disclaimer": {
+    "title": "Aviso Legal",
+    "description": "El verificador de enlaces es una herramienta diseñada para evaluar y reportar la seguridad de los enlaces que envías. A través de tres etapas de análisis, busca identificar posibles amenazas y ayudarte a navegar de manera más segura en el entorno digital.",
+    "openPhishTitle": "OpenPhish:",
+    "openPhishDescription": "La primera etapa verifica el enlace con una base de datos actualizada de sitios web conocidos por ejecutar ataques de phishing.",
+    "googleWebRiskTitle": "Google Web Risk API:",
+    "googleWebRiskDescription": "En la segunda etapa, el enlace se compara con reportes en tiempo real de amenazas como malware, phishing y contenido inseguro.",
+    "apivoidTitle": "APIVoid:",
+    "apivoidDescription": "En la última capa, se evalúa la reputación del enlace en la red, asignando un puntaje de riesgo del 0 al 100.",
+    "apivoidLowRisk": "0 a 10: Bajo riesgo. Generalmente seguro.",
+    "apivoidModerateRisk": "11 a 30: Riesgo moderado. Posibles señales de alerta.",
+    "apivoidHighRisk": "31 a 70: Riesgo alto. Asociado a actividades maliciosas.",
+    "apivoidCriticalRisk": "71 a 100: Riesgo crítico. Relacionado con malware o phishing grave.",
+    "interpretationTitle": "Interpretación del puntaje y nuestros mensajes emitidos:",
+    "interpretationSafe": "0 (Seguro): 'es seguro ✅.'",
+    "interpretationWarning": "1 a 10 (Advertencias): 'no está validada como enlace peligroso, pero contiene advertencias de riesgo.'",
+    "interpretationUnsafe": "11 a 100 (Inseguro): 'es inseguro, contiene reportes de malware y phishing 🚨.'",
+    "interpretationDescription": "La herramienta también clasifica automáticamente como phishing cualquier enlace que solicite información personal injustificada.",
+    "limitationsTitle": "Escenarios donde el verificador podría tener limitaciones:",
+    "limitationsDescription": "Aunque esta herramienta es eficaz, no está exenta de limitaciones.",
+    "limitationSocialMedia": "Páginas falsas en redes sociales: No analiza perfiles o páginas de estas plataformas.",
+    "limitationNewSites": "Sitios nuevos sin historial malicioso: Puede no detectar riesgos en URLs recién creadas.",
+    "limitationRedirects": "Redirecciones múltiples: No sigue enlaces que redirigen a otros dominios.",
+    "limitationShortUrls": "Acortadores de URL: El verificador expande automáticamente servicios como bit.ly.",
+    "limitationDynamicContent": "Contenido dinámico: Algunos sitios cambian su comportamiento dependiendo de la ubicación.",
+    "limitationRealTimeAttacks": "Ataques en tiempo real: Puede no identificar malware o actividades maliciosas nuevas.",
+    "limitationOfflineDocs": "Enlaces en documentos offline: No evalúa URLs incrustadas en archivos PDF o Word.",
+    "limitationTemporarySites": "Sitios temporales: Amenazas en páginas creadas para campañas de corta duración.",
+    "limitationLocalNetworks": "Redes locales: No evalúa enlaces internos en redes empresariales.",
+    "limitationPhishingPatterns": "Patrones complejos de phishing: Puede no identificar URLs con ingeniería social avanzada.",
+    "limitationAutoTranslations": "Páginas traducidas automáticamente: Podría pasar por alto amenazas.",
+    "limitationDatabaseDependency": "Dependencia de bases de datos externas: Podría no ser preciso.",
+    "limitationSuspiciousSurveys": "Encuestas sospechosas: Si solicitan información personal, serán marcadas automáticamente."
   }
 
 
 
 
-
 }
+
+
+
+
+
+
+
+
+
