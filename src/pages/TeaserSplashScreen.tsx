@@ -52,7 +52,7 @@ export default function TeaserSplashScreen({ onSkip }: { onSkip: () => void }) {
             <div className="flex gap-4 absolute top-2 right-4 z-10">
                 <button
                     onClick={onSkip}
-                    className="button-green animate-scale-loop"
+                    className="bg-green-dark px-8 rounded-full text-white text-xl animate-scale-loop"
                 >
                     {t("btn-skip-splash")}
                 </button>
